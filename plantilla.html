@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/index_layout.css">
+    <link rel="stylesheet" href="styles/navegacion_principal.css">
     <link rel="stylesheet" href="styles/apuntes_layout.css">
-    <link rel="stylesheet" href="styles/index_estilos.css">
     <link rel="stylesheet" href="styles/apuntes_estilos.css">
     <script type="module" src="scripts/temas_titulos.js"></script>
     <script type="module" src="scripts/funciones.js"></script>
@@ -15,13 +14,19 @@
 </head>
 <body>
     <header>
-        <h1 class="plantilla__titulo"></h1>
+        <h1 class="plantilla__titulo">
+            <a class="plantilla__titulo__enlace" href="index.html">
+                Apuntes
+            </a>
+        </h1>
     </header>
+
     <main>
-        <section class="indice">
-            <h2 class="indice__titulo"></h2>
-            <nav class="indice__navegacion">
-                <ul class="indice__lista">
+        <section class="plantilla__indice">
+            <h2 class="plantilla__indice__titulo"></h2>
+            
+            <nav class="plantilla__indice__navegacion">
+                <ul class="plantilla__indice__lista">
                 </ul>
             </nav>
         </section>
@@ -29,14 +34,9 @@
         </article>
         <nav class="navegacion-principal">
 
-            <h2 class="hidden navegacion-principal__titulo" >Más opciones</h2>
+            <h2 class="hidden navegacion-principal__titulo" >Otros temas</h2>
             
             <ul class="navegacion-principal__lista">
-                <li class="navegacion-principal__elemento">
-                    <a class="navegacion-principal__enlace" href="index.html">
-                        Inicio
-                    </a>
-                </li>
                 <li class="navegacion-principal__elemento">
                     <a class="navegacion-principal__enlace" href="plantilla.html?tema=HTML">
                         HTML
@@ -46,10 +46,6 @@
                     <a class="navegacion-principal__enlace" href="plantilla.html?tema=CSS">
                         CSS
                     </a>
-                    <nav class="menu_responsive">
-                        <ul>
-                        </ul>
-                    </nav>
                 </li>
                 <li class="navegacion-principal__elemento">
                     <a class="navegacion-principal__enlace" href="plantilla.html?tema=JavaScript">

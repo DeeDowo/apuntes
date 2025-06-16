@@ -16,17 +16,17 @@ const navegacion = document.querySelector("section > nav > ul")
 switch(tema){
     case "HTML":
         funcion.primeraCarga(funcion.normalizando(tema), funcion.normalizando(indiceHtml[0]), cuerpo);
-        tituloPrincipal.textContent = `Apuntes ${tema}`;
+        
         funcion.generarIndice(indiceHtml, navegacion, tema);
     break;
     case "CSS":
         funcion.primeraCarga(funcion.normalizando(tema), funcion.normalizando(indiceCss[0]), cuerpo);
-        tituloPrincipal.textContent = `Apuntes ${tema}`;
+        
         funcion.generarIndice(indiceCss, navegacion, tema);
     break;
     case "JavaScript":
         funcion.primeraCarga(funcion.normalizando(tema), funcion.normalizando(indiceJavaScript[0]), cuerpo);
-        tituloPrincipal.textContent = `Apuntes ${tema}`;
+        
         funcion.generarIndice(indiceJavaScript, navegacion, tema);
     break;
 }

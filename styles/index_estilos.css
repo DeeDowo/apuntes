@@ -1,15 +1,30 @@
-.pagina__titulo{
-    font-size: 3rem;
-    text-align: center;
+:root{
+    --font-size-indice: 1.4rem;
+    
+    --font-size-parrafos: 1.6rem;
+
+    --font-size-titulo-h4: 2.0rem;
+
+    --font-size-subtitulo-apunte: 2.4rem;
+
+    --font-size-titulo-apunte: 3.2rem;
+
+    --font-size-titulo-pagina: 4.0rem;
+}
+html{
+    font-size: 62.5%;
 }
 
-.navegacion-principal__elemento{
-    list-style: none;
-}
-.navegacion-principal__enlace{
-    display: block;
-    background-color: rgb(236, 236, 236);
-    padding: .5em 0;
+/* =====================elementos pagina principal=================== */
+
+.pagina__titulo{
+    font-size: var(--font-size-titulo-pagina);
     text-align: center;
-    border-radius: .3em;
+    margin: 2rem auto;
+}
+
+.introduccion__parrafo{
+    text-align: center;
+    font-size: var(--font-size-parrafos);
+    margin: 0;
 }
