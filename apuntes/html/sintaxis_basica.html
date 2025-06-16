@@ -1,0 +1,120 @@
+
+<h2 class="apunte__titulo">
+    Sintaxis básica de HTML
+</h2>
+<p class="apunte__parrafo">
+    HTML posee reglas internas sobre el cómo utilizar las diferentes etiquetas disponibles, si bien un uso 
+    incorrecto de estas no ocasiona un error critico, es una buena practica en general el seguir dichas reglas
+</p>
+<h3 class="apunte__subtitulo">
+    Elementos disponibles en HTML (etiquetas)
+</h3>
+<dl class="apunte__lista-descriptiva--grande">
+    <dt class="apunte__lista-descriptiva__titulo--grande">
+        Elementos normales
+    </dt>
+    <dd class="apunte__lista-descriptiva__descripcion--grande">
+        son aquellos que que tienen tanto una etiqueta de inicio como una etiqueta de cierre.
+        <figure class="apunte__figure">
+            <figcaption class="apunte__figure-titulo">Ejemplos elementos normales</figcaption>
+            <ul class="apunte__lista-descriptiva__ul">
+                <li class="apunte__lista-descriptiva__ul-li">
+                    <code class="codigo__linea">&lt;p&gt; &lt;/p&gt;</code>
+                </li>
+                <li class="apunte__lista-descriptiva__ul-li">
+                    <code class="codigo__linea">&lt;section&gt; &lt;/section&gt;</code>
+                </li>
+                <li class="apunte__lista-descriptiva__ul-li">
+                    <code class="codigo__linea">&lt;div&gt; &lt;/div&gt;</code>
+                </li>
+            </ul>
+        </figure>
+        <figure class="apunte__figure">
+            <figcaption class="apunte__figure-titulo">Estructura de un elemento normal</figcaption>
+            <ul class="apunte__lista-descriptiva__ul">
+                <li class="apunte__lista-descriptiva__ul-li">
+                    <span class="codigo__linea">&lt;etiqueta de inicio&gt;</span>
+                </li>
+                <li class="apunte__lista-descriptiva__ul-li">
+                    contenido
+                </li>
+                <li class="apunte__lista-descriptiva__ul-li">
+                    <span class="codigo__linea">&lt;/etiqueta de cierre&gt;</span>
+                </li>
+            </ul>
+        </figure>
+    </dd>
+    <dt class="apunte__lista-descriptiva__titulo--grande">
+        Elementos vacíos
+    </dt>
+    <dd class="apunte__lista-descriptiva__descripcion--grande">
+        Son aquellos que solo poseen una etiqueta, estos no pueden tener contenido anidado.
+        <figure class="apunte__figure">
+            <figcaption class="apunte__figure-titulo">Ejemplos elementos vacíos</figcaption>
+            <ul class="apunte__lista-descriptiva__ul">
+                <li class="apunte__lista-descriptiva__ul-li">
+                    <code class="codigo__linea">&lt;meta&gt;</code>
+                </li>
+                <li class="apunte__lista-descriptiva__ul-li">
+                    <code class="codigo__linea">&lt;link&gt;</code>
+                </li>
+                <li class="apunte__lista-descriptiva__ul-li">
+                    <code class="codigo__linea">&lt;input&gt;</code>
+                </li>
+            </ul>
+        </figure>
+        <figure class="apunte__figure">
+            <figcaption class="apunte__figure-titulo">Estructura de un elemento vacío</figcaption>
+            <ul class="apunte__lista-descriptiva__ul">
+                <li class="apunte__lista-descriptiva__ul-li">
+                    <span class="codigo__linea">&lt;etiqueta&gt;</span>
+                </li>
+            </ul>
+        </figure>
+    </dd>
+</dl>
+
+<h3 class="apunte__subtitulo">
+Atributos HTML 
+</h3>
+<p class="apunte__parrafo">
+    Los elementos descritos anteriormente pueden contener <strong>atributos</strong>, es decir, características adicionales. Los atributos
+    se insertan dentro de las etiquetas y estos se dividen en dos tipos:
+</p>
+<dl class="apunte__lista-descriptiva--grande">
+    <dt class="apunte__lista-descriptiva__titulo--grande">
+        Atributos normales
+    </dt>
+    <dd class="apunte__lista-descriptiva__descripcion--grande">
+        Los atributos normales poseen un nombre clave y un valor. 
+        <figure class="apunte__figure">
+            <figcaption class="apunte__figure-titulo">Ejemplo inserción de un atributo normal</figcaption>
+            <ul class="apunte__lista-descriptiva__ul">
+                <li class="apunte__lista-descriptiva__ul-li">
+                    <span class="codigo__linea">&lt;etiqueta nombre_atributo="valor_atributo"...&gt;...</span>
+                </li>
+            </ul>
+        </figure>
+    </dd>
+    <dt class="apunte__lista-descriptiva__titulo--grande">
+        Atributos booleanos
+    </dt>
+    <dd class="apunte__lista-descriptiva__descripcion--grande">
+        Los atributos booleanos, a diferencia de los atributos normales, no requieren un valor necesariamente ya que su mera
+        presencia indica un valor "true" en estos, es decir, aplican sus características por el simple hecho de encontrarse en 
+        el elemento. 
+        <figure class="apunte__figure">
+            <figcaption class="apunte__figure-titulo">Ejemplo inserción de un atributo booleano</figcaption>
+            <ul class="apunte__lista-descriptiva__ul">
+                <li class="apunte__lista-descriptiva__ul-li">
+                    <span class="codigo__linea">&lt;etiqueta nombre_atributo...&gt;...</span>
+                </li>
+            </ul>
+        </figure>
+    </dd>
+</dl>
+
+<p class="apunte__parrafo">
+    Para que el valor de un atributo sea expresado e interpretado de forma correcta siempre, este debe estar
+    entre comillas dobles ("valor_atributo") o simples ('valor_atributo'), pero no una combinación de ambas.
+</p>

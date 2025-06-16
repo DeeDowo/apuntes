@@ -1,0 +1,166 @@
+/* ================================Titulo Principal================================ */
+
+.plantilla__titulo{
+    text-align: center;
+}
+
+/* ================================Indice Autogenerado================================ */
+
+.indice{
+
+}
+.indice__titulo{
+    text-align: center;
+}
+.indice__navegacion{
+
+}
+.indice__lista{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.indice__elemento{
+    margin-bottom: .3rem;
+    text-align: center;
+}
+.indice__enlace{
+    display: block;
+    text-decoration: none;
+    background-color: rgb(236, 236, 236);
+    padding: .5rem;
+    border-radius: .4rem;
+}
+
+/* ================================Indice Global================================ */
+
+.navegacion-principal__titulo{
+    text-align: center;
+}
+
+/* ================================Apuntes Global================================ */
+
+.contenido{
+}
+.apunte__titulo{
+    text-align: center;
+    text-decoration: underline;
+}
+.apunte__subtitulo{
+    text-align: center;
+}
+.apunte__parrafo{
+    text-align: center;
+}
+/* ================================Apuntes LISTA DESORDENADA================================ */
+
+.apunte__lista-desordenada{
+    padding: 0;
+}
+.apunte__elemento-lista{
+    padding: 1rem;
+    list-style: none;
+}
+.apunte__elemento-lista:nth-child(even){
+    background-color: aquamarine;
+    padding-right: 5vw;
+
+    text-align: right;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    margin: 1rem -5vw 1rem 3rem;
+    
+}
+.apunte__elemento-lista:nth-child(odd){
+    background-color: rgb(205, 245, 232);
+    padding-left: 5vw;
+    
+    text-align: left;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin: 1rem 3rem 1rem -5vw;
+
+}
+@media screen and (40rem <= width) {
+    .apunte__elemento-lista:nth-child(even){
+        padding: 1rem;
+        margin: 1rem 0 1rem 5rem;
+        border-radius: 1rem;
+    }
+    .apunte__elemento-lista:nth-child(odd){
+        padding: 1rem;
+        margin: 1rem 5rem 1rem 0;
+        border-radius: 1rem;
+    }
+    
+}
+
+/* ================================Apuntes LISTA DESCRIPCIONES================================ */
+
+.apunte__lista-descriptiva{
+    display: grid;
+    grid-template-columns: repeat(auto, minmax(100px, 1fr));
+    gap: .5rem 0;
+    margin: 0;
+}
+.apunte__lista-descriptiva > :nth-of-type(even){
+    background-color: rgb(212, 212, 212);
+}
+.apunte__lista-descriptiva > :nth-of-type(odd){
+    background-color: rgb(232, 232, 232);
+}
+.apunte__lista-descriptiva__titulo{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.apunte__lista-descriptiva__descripcion{
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+}
+
+/* ================================Apuntes LISTA DESCRIPCIONES GRANDE================================ */
+
+.apunte__lista-descriptiva--grande{
+}
+.apunte__lista-descriptiva__titulo--grande{
+    text-align: center;
+}
+.apunte__lista-descriptiva__descripcion--grande{
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+.apunte__lista-descriptiva__descripcion--grande:nth-last-child{
+    margin: 0;
+}
+.apunte__figure{
+    border-radius: 1rem;
+    border-left: 1rem solid greenyellow;
+    background-color: rgb(240, 240, 240);
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.apunte__figure-titulo{
+    margin: 0;
+    padding: 0;
+    display: inline;
+
+}
+.apunte__lista-descriptiva__ul{
+    margin: 0;
+    padding: 0;
+}
+.apunte__lista-descriptiva__ul-li{
+    word-break: break-word;
+    hyphens: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.codigo__linea{
+    background-color: rgb(231, 231, 231);
+    border-radius: .3rem;
+}

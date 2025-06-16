@@ -1,0 +1,94 @@
+<article id="Imagenes, media y formularios">
+                <h2>
+                    Comportamientos en CSS
+                </h2>
+                <p>
+                    En CSS, algunos elementos tienen un comportamiento diferente al de las "cajas" normales.
+                </p>
+                <h3>
+                    Elementos reemplazados
+                </h3>
+                <p>
+                    Los elementos reemplazados son elementos HTML cuyo contenido está definido por un recurso externo al propio documento. El navegador reemplaza el 
+                    elemento HTML con el contenido externo, por esto es que CSS no puede modificar estos recursos externos. Lo que CSS sí puede modificar es 
+                    el cómo son representados estos en la página.
+                </p>
+                <p>
+                    Por ejemplo, dos elementos muy comunes, 
+                    las imágenes y videos son considerados como elementos reemplazados. Las imágenes y videos poseen un aspect
+                    ratio y un tamaño intrínseco, cuando decimos que
+                    CSS no
+                    puede afectar a estos, nos referimos a que estas "propiedades" las definen los propios elementos
+                    en sí. Lo que CSS puede modificar es el cómo se muestran,
+                    es decir, ya sean recortadas, redimensionadas, etc.
+                    Sin embargo, la imagen o video en si mismos, siempre mantendrán sus propias características. Algunos otros ejemplos de 
+                    elementos reemplazados son:
+                </p>
+                <ul>
+                    <li>
+                        <span class="codigo--linea">&lt;iframe&gt;</span>
+                    </li>
+                    <li>
+                        <span class="codigo--linea">&lt;input&gt;</span>
+                    </li>
+                    <li>
+                        <span class="codigo--linea">&lt;object&gt;</span>
+                    </li>
+                    <li>
+                        <span class="codigo--linea">&lt;embed&gt;</span>
+                    </li>
+                </ul>
+                <h3>
+                    Dimensionando imágenes
+                </h3>
+                <p>
+                    Una vez más, todo en CSS es una "caja" y cuando colocamos una imagen dentro de una de estas,
+                    las imágenes se mostrarán con su tamaño intrínseco, es decir, si la imagen es
+                    mas pequeña, se contendrá en la caja, pero cuando esta es más grande, ocurrirá un desbordamiento.
+                </p>
+                <p>
+                    Una forma de evitar estos desbordamientos es aplicar la propiedad "max-width" con un valor de "100%" a la imagen en cuestión,
+                    esto hará que la imagen tome como máximo el 100% del tamaño de la caja y que cuando lo sobrepase, esta
+                    se redimensione para contenerse en ella (esto no afecta la aspect ratio de la imagen), este método funciona
+                    tanto en imágenes como en videos.
+                </p>
+                <p>
+                    Otra forma común de redimencionar es utilizando la propiedad "object-fit"
+                    (funciona para cualquier elemento reemplazado), esta
+                    propiedad puede tener varios valores:
+                </p>
+                <ul>
+                    <li>
+                        cover: Hará que el elemento reemplazado cubra toda la caja respetando su aspect ratio, por ende, partes
+                        de la imagen pueden ser "cortadas" y en el caso de elementos más pequeños, estos serán
+                        agrandados lo cual puede ocasionar una perdida de calidad
+                    </li>
+                    <li>
+                        contain: Reduce o incrementa el tamaño del elemento reemplazado para que abarque todo el tamaño posible
+                        de su contenedor sin "cortarlo", es decir, genera espacios en blanco cuando la caja no es del mismo aspect ratio
+                    </li>
+                    <li>
+                        fill: Redimenciona el elemento reemplazado para que abarque todo la caja sin respetar el aspect ratio, po ello suele provocar deformaciones 
+                        en el contenido
+                    </li>
+                </ul>
+                
+                <h3>
+                    Normalizando comportamientos
+                </h3>
+                <p>
+                    En CSS la mayoría de elementos tienen ciertas características definidas, sin embargo, hay aspectos que pueden variar ya sea 
+                    por el navegador o el propio sistema operativo por mencionar algunos. Una forma de tener el mayor control 
+                    posible sobre nuestros documentos es "normalizando" 
+                    la mayor cantidad de aspectos posibles, es decir, definiendo explícitamente comportamientos como "margins", "paddings", "box-sizing" y demás.
+                </p>
+                <p>
+                    Por ejemplo, una característica que puede variar en formularios usualmente es la herencia o el tipo de "box-sizing".
+                </p>
+                <p>
+                    Una buena practica es "reiniciar" los estilos en un documento a un punto base homogéneo antes de comenzar a trabajar en el.
+                    El formateo más popular para esto es "normalize.css" que se encuentra en
+                    <a href="normalize.com">normalize.com</a>
+                </p>
+                
+            </article>

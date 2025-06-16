@@ -1,0 +1,222 @@
+<section id="Strings">
+                    <h2>
+                        Strings
+                    </h2>
+                    <p>
+                        Los "strings" son cadenas de texto, este es un tipo de dato en JavaScript. Para inicializar una variable con un "string", hay cuatro formas principalmente,
+                        estas son:
+                    </p>
+                    <dl>
+                        <dt>
+                            Comillas simples
+                        </dt>
+                        <dd>
+                            El texto a asignar se envuelve en comillas simples.
+                        </dd>
+                        <dt>
+                            Comillas dobles
+                        </dt>   
+                        <dd>
+                            El texto a asignar se envuelve en comillas dobles.
+                        </dd>
+                        <dt>
+                            Backticks
+                        </dt>
+                        <dd>
+                            A diferencia de las comillas simples o dobles, los strings asignados usando "backticks", son 
+                            considerados como un tipo especial, llamado "template literal". En esencia estos son iguales que 
+                            los strings normales, pero tienen ciertas propiedades especiales:
+                            <ul>
+                                <li>
+                                    Se pueden insertar variables o código JavaScript en ellos por medio de "${}".
+                                </li>
+                                <li>
+                                    Los "template literals" se pueden declarar en multiples lineas.
+                                </li>
+                            </ul>
+                            <figure>
+                                <figcaption>Ejemplo Backticks</figcaption>
+                                <var><pre>
+const nombre = "dowo";
+const especie = 'humano';
+const mensaje = `${nombre} es un ${especie} de ${12+12} años.`;
+console.log(mensaje)</pre></var>
+                            </figure>
+                        </dd>
+                        <dt>
+                            Otra variable
+                        </dt>
+                        <dd>
+                            Se asigna una variable que contenga algún string a otra.
+                        </dd>
+                    </dl>
+                    <h3>
+                        Concatenación
+                    </h3>
+                    <p>
+                        A la union de diferentes "strings" se le llama concatenación. Existen dos formas principalmente:
+                    </p>
+                    <dl>
+                        <dt>
+                            Operador +
+                        </dt>
+                        <dd>
+                            Se pueden unir diferentes strings utilizando el operador "+", estos strings pueden ser literales o estar almacenados en una variable.
+                        </dd>
+                        <dd>
+                            <figure>
+                                <figcaption>Ejemplo</figcaption>
+                                <var>
+<pre>
+const texto = "hola";
+const textoDos = "dowo";
+const mensaje = texto + " " + textoDos;</pre>
+                                </var>
+                            </figure>
+                        </dd>
+                        <dt>
+                            Template literals
+                        </dt>
+                        <dd>
+                            La forma más común de hacer una concatenación es utilizando "template literals" en conjunto con "${}" que es la notación para poder 
+                            agregar variables, operaciones o código JavaScript dentro de un "template literal".
+                        </dd>
+                        <dd>
+                            <figure>
+                                <figcaption>Ejemplo</figcaption>
+                                <var>
+                                    <pre>
+const texto = "hola";
+const textoDos = "dowo";
+const mensaje = `${texto} ${textoDos}`;</pre>
+                                </var>
+                            </figure>
+                        </dd>
+                    </dl>
+                    <h3>
+                        Comillas
+                    </h3>
+                    <p>
+                        La forma para sencilla para poder agregar comillas en un string es usando uno diferente al que estemos usando para inicializar es string u otra opción
+                        es el usar caracteres escapados ("\'" o "\"").
+                    </p>
+                    <h3>
+                        Numbers vs strings
+                    </h3>
+                    <p>
+                        Al intentar hacer una operación entre un string y un número, JavaScript realiza una conversion implícita y hace que el numero se 
+                        convierta en un string, entonces la operación que se termina realizando es una concatenación.
+                    </p>
+                    <p>
+                        Existen funciones para hacer estas conversiones entre tipos de forma explicita, algunas de ellas:
+                    </p>
+                    <dl>
+                        <dt>
+                            Number()
+                        </dt>
+                        <dd>
+                            Convierte algo a un número.
+                        </dd>
+                        <dt>
+                            String()
+                        </dt>
+                        <dd>
+                            Convierte algo a un texto.
+                        </dd>
+                    </dl>
+                    <h3>
+                        Métodos para strings
+                    </h3>
+                    <p>
+                        Al declarar una variable de algún tipo, en realidad estamos declarando una instancia de un objeto de dicho tipo, de esta forma es que tenemos acceso 
+                        a diferentes métodos para diferentes tipos de variables. Por ejemplo, para un string algunos métodos y propiedades comunes son:
+                    </p>
+                    <dl>
+                        <dt>
+                            Length
+                        </dt>
+                        <dd>
+                            Para poder saber el tamaño de string, podemos usar la propiedad "length". Para poder aplicar esta propiedad 
+                            la notación es "string.length", esto nos devolverá la cantidad de caracteres que posea un string.
+                        </dd>
+                        <dt>
+                            Include()
+                        </dt>
+                        <dd>
+                            Para encontrar si algún substring se encuentra dentro de un string. 
+                            Esto se puede realizar usando el método "include()", al cual como parámetro se le asigna 
+                            el string a buscar, este método devuelve true o false dependiendo de si encuentra o no el substring
+                        </dd>
+                        <dt>
+                            StartsWith()
+                        </dt>
+                        <dd>
+                            Similar a "include()". El método "startsWith()" sirve para encontrar un substring específicamente al inicio de un string.
+                        </dd>
+                        <dt>
+                            EndsWith()
+                        </dt>
+                        <dd>
+                            Similar a "include()". El método "endWitch()" sirve para encontrar un substring específicamente al final de un string.
+                        </dd>
+                        <dt>
+                            IndexOf()
+                        </dt>
+                        <dd>
+                            Para encontrar la posición de un substring utilizando podemos utilizar el método "indexOf()". Este método toma
+                            dos parámetros, el primero es el substring que queremos encontrar y un segundo que especifica el 
+                            punto de partida en el string para la búsqueda (indice), sin embargo, este segundo parámetro es opcional. cuando "indexOf()" encuentra 
+                            el substring, devuelve el indice de en dónde se encuentra el inicio de este, cuando no lo encuentra devuelve "-1".
+                        </dd>
+                        <dt>
+                            Slice()
+                        </dt>
+                        <dd>
+                            Para "extraer" un fragmento de un string, 
+                            utilizamos el método "slice()", Este toma dos parámetros, el indice de inicio y el 
+                            indice del fin de la parte del string que queremos extraer. El punto de inicio es inclusivo, 
+                            esto significa que se incluye en la extracción mientras que el punto final el exclusivo, 
+                            es decir, este no se incluye en el string extraído. Similar a "indexOf()", el segundo parámetro no es obligatorio,
+                            cuando este no se agrega, la extracción es desde el indice de inicio hasta el final del string.
+                        </dd>
+                        <dt>
+                            ToLowerCase()
+                        </dt>
+                        <dd>
+                            Para convertir todos los caracteres de un string a minúsculas, utilizamos "toLowerCase()", este método no toma parámetros. Una practica 
+                            común es el normalizar texto utilizando "toLowerCase()".
+                        </dd>
+                        <dt>
+                            ToUpperCase()
+                        </dt>
+                        <dd>
+                            Para convertir todos los caracteres de un string a mayúsculas, utilizamos "toUpperCase()", este método no toma parámetros.
+                        </dd>
+                        <dt>
+                            Replace()
+                        </dt>
+                        <dd>
+                            Para reemplazar fragmentos de un string con otro, podemos utilizar el método "replace()", este toma dos parámetros. El primer parámetro que toma 
+                            el el fragmento a reemplazar y el segundo es el string con el que será reemplazado el string indicado. Solo reemplaza la primer ocurrencia del string 
+                            indicado.
+                        </dd>
+                        <dt>
+                            Replace()
+                        </dt>
+                        <dd>
+                            Posee el mismo funcionamiento que "replace()", con la diferencia de que en lugar de solo reemplazar la primera ocurrencia, las reemplaza todas.
+                        </dd>
+                    </dl>
+                    <p>
+                        Estos son solo algunos de los métodos y propiedades disponibles para strings, el resultado que estos métodos devuelven solo son una copia de original 
+                        con la modificación aplicada, es decir, el string original no es modificado en ningún momento.
+                    </p>
+                    <h3>
+                        Posición de un carácter
+                    </h3>
+                    <p>
+                        Es posible obtener el carácter en un punto especifico de un string usando la notación "texto[]" dentro de estos 
+                        corchetes se inserta el "indice" del carácter que queremos obtener (al igual que con los arrays, el indice comienza 
+                        desde 0).
+                    </p>
+                </section>

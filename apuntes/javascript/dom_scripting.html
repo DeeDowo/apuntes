@@ -1,0 +1,350 @@
+ <section id="DOM scripting">
+                    <h2>
+                        DOM scripting
+                    </h2>
+
+<p>
+    Al escribir código para "web apps" o "web pages", una de las acciones más comunes es le querer modificar
+    de alguna manera la estructura del documento. La manipulación del documento mediante JavaScript
+    es posible gracias a la API "Document
+    Object Model" (DOM).
+</p>
+
+<h3>Navegadores</h3>
+
+<p>
+    Un navegador web es complicado en varios sentidos, de los cuales la mayoría no pueden
+    ser controlados por nosotros a través del uso de JS, aunque esto parezca una limitación
+    en primer lugar, es una medida se seguridad, ya que de esta forma las páginas no
+    pueden acceder a información sensible.
+</p>
+
+<p>
+    Sin embargo, aún con dichas limitaciones, las "web APIs" nos siguen dando un acceso a
+    una gran variedad de funcionalidades que nos permiten hacer una gran cantidad de cosas
+    con las páginas web.
+</p>
+
+<p>Una página se divide en en el navegador, la ventana y el documento.</p>
+
+<dl>
+    <dt>
+        El navegador
+    </dt>
+    <dd>
+        Representa el estado e identidad del buscador, en JavaScript es representado 
+        como el "navigator object", a través de este podemos recolectar información 
+        como el lenguaje de preferencia del usuario.
+    </dd>
+    <dt>
+        La ventana
+    </dt>
+    <dd>
+        Es la "pestaña" del navegador en donde una página web es cargada, 
+        esta es representada en JavaScript como el "window object", a 
+        través de este podemos saber el tamaño de la ventana o manipular 
+        el documento cargado en la ventana por mencionar algunos ejemplos.
+    </dd>
+    <dt>
+        El documento
+    </dt>
+    <dd>
+        Es la página cargada en la ventana y es representada en JavaScript por 
+        el "document object", a través de este podemos manipular información en el HTML y 
+        CSS que componen el documento, cambiado el texto en algún contenido, 
+        aplicando nuevos estilos, crear nuevos elementos o incluso eliminarlos por mencionar algunos ejemplos.
+    </dd>
+</dl>
+
+<h3>El modelo "document object"</h3>
+
+<p>
+    Cada documento mostrado en cada pestaña de un navegador es represando por un DOM,
+    este es una representación en forma de una estructura de ramificaciones creada por el navegador,
+    permite que la estructura HTML se de fácil acceso a través de código.
+    Por ejemplo, el propio navegador la utiliza para poder
+    aplicar de forma correcta los estilos a determinado elementos.
+    Nosotros podemos manipular el DOM con JavaScript una vez este se haya cargado por completo.
+</p>
+
+<p>
+    El DOM visualmente es una cadena de ramificaciones. Cada elemento en el "árbol"
+    es un nodo y los diferentes nodos son referidos por su posición en el "árbol" en relación a otros.
+</p>
+
+<dl>
+    <dt>
+        root node
+    </dt>
+    <dd>
+        El nodo más alto en el "arbor", que en el caso de un documento HTML, 
+        siempre será el nodo HTML.
+    </dd>
+    <dt>
+        Child node
+    </dt>
+    <dd>
+        Un nodo que es un "hijo" directo de otro.
+    </dd>
+    <dt>
+        Descendant node
+    </dt>
+    <dd>
+        Un nodo anidado en cual sea el nivel dentro de otro.
+    </dd>
+    <dt>
+        Parent node
+    </dt>
+    <dd>
+        Un nodo el cual contiene al menos otro nodo dentro de este.
+    </dd>
+    <dt>
+        Sibling nodes
+    </dt>
+    <dd>
+        Nodos que están en el mismo nivel en el "árbol".
+    </dd>
+</dl>
+
+<p>
+    Es util familiarizarse con estos términos ya que se suelen usar en multiples
+    lenguajes.
+</p>
+
+<h3>Manipulación básica del DOM</h3>
+
+<p>
+    Para manipular un elemento en el DOM, primero tenemos que crear una referencia a
+    este, por ejemplo, para seleccionar el primer elemento link de una página lo
+    haríamos de la siguiente manera:
+</p> 
+
+<figure>
+    <figcaption>Ejemplo seleccionando un elemento mediante el DOM</figcaption>
+    <var>
+        <pre>
+const link = document.querySelector("a");</pre>
+    </var>
+</figure>
+
+<p>
+    Una vez creada la referencia a algún elemento, podemos manipular este utilizando las
+    diferentes propiedades y métodos disponibles. Estas diferentes herramientas para
+    un entendimiento básico se pueden clasificar en tres tipos:
+</p>
+<ul>
+    <li>
+        Aquellas exclusivas para 
+        dicho tipo de elemento.
+    </li>
+    <li>
+        Aquellas compartidas con algunos otros elementos.
+    </li>
+    <li>
+        Aquellas 
+        generales para todos los elementos.
+    </li>
+</ul>
+
+<p>Ahora en este podríamos aplicar modificar la URL y agregar un texto al elemento de la siguiente forma:</p> 
+
+<figure>
+    <figcaption>Ejemplo modificando un elemento mediante el DOM</figcaption>
+    <code>
+        <pre>
+link.textContent = "link 1";
+link.href = "https...";</pre>
+    </code>
+</figure>
+
+<p>
+    Existen multiples formas de seleccionar un elemento para poder guardar la
+    referencia a este en una variable.
+</p>
+
+<dl>
+    <dt>
+        Document.querySelector()
+    </dt>
+    <dd>
+        Es la recomendación actualmente, permite seleccionar 
+        un elemento utilizando selectores de CSS.
+        Solo selecciona la primera instancia de un link en el elemento
+    </dd>
+    <dd>
+        <figure>
+            <figcaption>Ejemplo querySelector()</figcaption>
+            <var>
+                <pre>
+const para = document.querySelector("p");</pre>
+            </var>
+        </figure>
+    </dd>
+    <dt>
+        Document.querySelectorAll()
+    </dt>
+    <dd>
+        Sirve para seleccionar todos los elementos 
+        que posean dicho selector especificado. Este genera un "nodeList" con toas 
+        las referencias.
+    </dd>
+    <dd>
+        <figure>
+            <figcaption>Ejemplo querySelectorAll()</figcaption>
+            <var>
+                <pre>
+const paraAll = document.querySelectorAll("p");</pre>
+            </var>
+        </figure>
+    </dd>
+    
+</dl>
+
+<p>
+    Estas son las formas más actuales de trabajar con el DOM (querySelector/querySelectorAll), pero existen
+    métodos más antiguos que pueden ser útiles al trabajar con navegadores
+    de este tipo ya que estos no suelen soportar "querySelector()" ni "querySelectorAll()".
+</p>
+
+<dl>
+    <dt>
+        Document.getElementById()
+    </dt>
+    <dd>
+        Selecciona un elemento con una cierta "ID"
+    </dd>
+    <dd>
+        <figure>
+            <figcaption>Ejemplo getElementById()</figcaption>
+            <var>
+        <pre>
+    const paraId = document.getElementById(para)</pre>
+            </var>
+        </figure>
+    </dd>
+    <dt>
+        Document.getElementByTagName()
+    </dt>
+    <dd>
+        Devuelve una "node list" conteniendo 
+        todos los elementos en la página del tipo especificado.
+    </dd>
+    <dd>
+        <figure>
+            <figcaption>Ejemplo getElementByTagName()</figcaption>
+            <var>
+                <pre>
+const paraTag = document.getElementByTagName(p);</pre>
+            </var>
+        </figure>
+    </dd>
+</dl>
+
+<h3>Creando y posicionando nuevos nodos</h3>
+
+<p>
+    Una practica común es el crear nuevos nodos y posicionar estos en donde
+    deseemos, para esto tenemos que seguir una serie de pasos:
+</p>
+
+<ol>
+    <li>
+        Creamos la referencia al elemento en donde queremos colocar 
+        este nuevo nodo.
+    </li>
+    <li>
+        Creamos un nuevo elemento utilizando "Document.createElement()".
+    </li>
+    <li>
+        Podemos darle algún contenido a nuestro nuevo elemento utilizando la propiedad "textContent".
+    </li>
+    <li>
+        Una vez realizados los pasos anteriores, el elemento existe, pero no realmente en la 
+        página ya que no hemos especificado su posición. una forma de posicionar un nuevo elemento es
+        utilizando el método "appendChild()", el cual agrega un elemento como "hijo" dentro de otro.
+    </li>
+</ol>
+
+<p>
+    También existe una forma de poder crear un nodo de texto el cual se podría agregar a
+    cualquier texto existente, esto se realiza mediante "Document.createTextNode()".
+</p>
+
+<p>
+    Al posicionar un nodo de texto mediante "appendChild()", este se agregará al final del nodo de texto preexistente,
+    sin embargo,
+    este texto es agregado de forma literal, es decir, si queremos espacios
+    o saltos de lineas, estos tienen que ser explícitamente agregados.
+</p>
+
+<h3>Mover y remover elementos</h3>
+
+<p>
+    Otra práctica común es la de querer mover algún elemento ya existente o
+    querer eliminar estos del documento.
+</p>
+
+<p>
+    Para poder mover un elemento solo hay que tener su referencia y podríamos
+    utiliza "Document.appendChild()" para convertir un elemento en "hijo" de otro.
+</p>
+
+<p>
+    A primera vista podría parecer que estamos creando un copia al crear la
+    referencia a un objeto, pero lo que realmente hacemos internamente es
+    crear una especie de "puntero", es decir, estamos tomando al elemento
+    original y aplicando métodos o propiedades a este, no a una copia. para
+    poder crear una copia de un nodo, podemos utilizar "node.cloneNode()".
+</p>
+
+<p>
+    Para remover un nodo anidado podemos utilizar el siguiente método "node.removeChild()".
+    Esto eliminaría por completo el elemento del documento. También es
+    posible eliminar un elemento en referencia a si mismo, para esto utilizamos "node.remove()",
+    el problema con este método es que no es soportado por navegador más
+    antiguos, ya que esos no tienen un método para decirle a un nodo que
+    se elimine a si mismo, sin embargo, una forma de simular este comportamiento
+    es utilizando "parentNode.removeChild(elemento);".
+</p>
+
+<h3>Manipulando estilos</h3> 
+
+<p>
+    Otra practica común es que es posible manipular estilos CSS a través de JavaScript.
+    Una primera forma sencilla es agregando "inline styles" (mala practica) de forma directa en los
+    elementos, esto se puede realizar utilizando "HTMLElement.style" e indicando la
+    propiedad que queremos modificar.
+</p>
+
+<figure>
+    <figcaption>Ejemplo inline styles con JavaScript</figcaption>
+    <code><pre>
+referencia.style.color = "red";
+referencia.style.backgroundColor = "black";</pre></code>
+</figure>
+
+<p>Si miramos el html de la página podremos ver como estas propiedades son agregadas.</p>
+
+<p>
+    Una segunda forma de manipular estilos de forma dinámica es mediante el uso de
+    clases, es decir, podemos tener ciertos estilos aplicados a una clase y
+    en lugar de agregar "inline styles"
+    agregamos la clase a los elementos que queramos estilar. Esto lo realizamos con
+    el método "Element.setAttribute()", este toma 2 argumentos, el atributo que
+    queremos agregar al elemento y el valor que queremos asignarle a este, en el
+    caso de aplicar estilos, el atributo que queremos es una clase y el valor es
+    el nombre de la clase que tiene dichos estilos.
+</p>
+
+<figure>
+    <figcaption>Ejemplo asignando clases con JavaScript</figcaption>
+    <code><pre>
+para.setAttribute("class", "estilos");</pre></code>
+</figure>
+
+<p>
+    De esta forma evitamos "ensuciar" el código HTML de forma innecesaria.
+    Realmente el uso del DOM en páginas estáticas, no suele tener una gran utilidad
+    ya que suele ser más fácil y eficiente el agregar las cosas directamente en el documento HTML o CSS.
+</p>
+                </section>

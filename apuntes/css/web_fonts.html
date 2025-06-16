@@ -1,0 +1,230 @@
+<article id="Web fonts">
+                <h2>
+                    Web fonts
+                </h2>
+                <p>
+                    Una vez conocidas las bases para estilizar textos en CSS al igual
+                    que el cómo estas fuentes pueden ser personalizadas, ahora
+                    podremos ver cómo agregar fuentes más allá de las que están disponibles en
+                    nuestros dispositivos por defecto.
+                </p>
+                <p>
+                    Visto previamente, la fuente de una pagina puede ser definida con
+                    la propiedad "font-family", esta propiedad permite ingresar una
+                    o más fuentes para que el navegador busque en el sistema cual está disponible en este
+                    para poder aplicarla y
+                    mostrar el contenido de la forma que nosotros hayamos pensado.
+                </p>
+                <p>
+                    Aunque este sistema funciona, también es muy limitante ya que dependemos totalmente
+                    de que una fuente esté disponible en el sistema.
+                </p>
+                <h3>
+                    Web font
+                </h3>
+                <p>
+                    Complementando el punto anterior, para poder trabajar sin estas limitantes,
+                    CSS nos permite utilizar fuentes externas.
+                    Estas fuentes se descargan y aplican, de esta forma podemos
+                    tener un mayor control tanto creativo como funcional. Sin embargo,
+                    sigue siendo recomendable siempre tener "fallbacks".
+                </p>
+                <p>
+                    La primer forma de hacer esto es la siguiente:
+                </p>
+<code><pre>
+@font-face {
+font-family: "myFont";
+src: url("myFont.woff2");
+}
+html {
+font-family: "myFont", serif;
+}</pre>     </code>
+                <p>
+                    Con este código al inicio de nuestro archivo CSS haremos que
+                    la fuente se descargue y aplique en todo nuestro documento html. Este método es para una fuente local, es decir,
+                    una fuente que agregamos dentro de los archivos de nuestra página. Algunos puntos a considerar:
+                </p>
+                <ul>
+                    <li>
+                        Las fuentes generalmente no son gratis (a menos que explícitamente se indique).
+                        Por ende no deberíamos "robarlas",
+                        es decir, usarlas sin su permiso.
+                    </li>
+                    <li>
+                        Algunas fuentes al igual que lo visto con los derechos de autor,
+                        pueden tener solo ciertas restricciones o peticiones.
+                    </li>
+                    <li>
+                        La mayoría de navegadores actuales e incluso algunos no tan actuales suelen
+                        soportar las fuentes en formato "WOFF" o "WFF2" (Web open font format, version 1 y 2 respectivamente).
+                    </li>
+                    <li>
+                        "WOFF2" soporta completamente las especificaciones de "truetype" y "opentype",
+                        incluyendo fuentes variables, fuentes cromáticas y colecciones de fuentes.
+                    </li>
+                    <li>
+                        El orden en qué se listan las fuentes es importante, al igual que lo visto
+                        previamente, el navegador solo aplicará aquella primera fuente disponible.
+                    </li>
+                    <li>
+                        Al trabajar con navegadores "legacy", es decir, antiguos, se debe proveer al
+                        navegador de "EOT", "TTF" y "SVG web fonts" para descargar.
+                    </li>
+                </ul>
+                <h3>
+                    Dónde encontrar fuentes?
+                </h3>
+                <p>
+                    Existen tres tipos diferentes de sitios en donde se puede obtener una fuente
+                </p>
+                <dl>
+                    <dt>
+                        Un distribuidor gratis
+                    </dt>
+                    <dd>
+                        Sitios donde las fuentes son gratis (algunas aun
+                        pueden tener ciertas restricciones), algunos ejemplos son "font squirrel", "dafont" y "everything fonts".
+                    </dd>
+                    <dt>
+                        Un distribuidor de pago
+                    </dt>
+                    <dd>
+                        Sitios donde las fuentes están a la venta, como
+                        "fonts.com" o "myfonts.com". Estas también se pueden comprar directamente de "las
+                        compañías de fuentes" como "linotype", "monotype" o "exljbris"    
+                    </dd>
+                    <dt>
+                        Servicio online de fuentes
+                    </dt>
+                    <dd>
+                        Sitio que guarda y sirve todas las fuentes
+                        para el usuario, esto hace el proceso más sencillo ya que no se necesita su presencia en los archivos locales 
+                        de la página (pueden ser gratis o de pago).
+                    </dd>
+                </dl>
+                <h4>
+                    Descargando y aplicando una fuente
+                </h4>
+                <ol>
+                    <li>
+                        Podemos ir a "font squirrel" y escoger 2 fuentes, una para
+                        los títulos y una para los textos en general. Usualmente las fuentes se
+                        descargan en un formato comprimido, nuestro trabajo es solo descomprimirlas
+                        y resubir los archivos (a excepción de la licencia) a la herramienta
+                        "webfont generator" de la misma pagina "font squirrel", esto nos permitirá
+                        descargar el "kit" que usaremos para importar las fuentes a nuestros archivos ".css".
+                    </li>
+                    <li>
+                        Una vez creado el "kit" este se descarga de forma automática dándonos otro
+                        archivo comprimido, este será la carpeta final, lo más apropiado sería
+                        poner esta carpeta con un nombre fácil de identificar como "fuentes" y
+                        junto al resto de carpetas o archivos de nuestra pagina.
+                    </li>
+                    <li>
+                        En la carpeta descomprimida, habrán diferentes versiones de las fuentes, 
+                        al igual que archivos html para poder previsualizar el cómo se verán aplicadas las diferentes fuentes.
+                        En esta carpeta hay un archivo CSS del cual solo tendremos que copiar y
+                        pegar su contenido en nuestro propio archivo ".CSS", siempre colocándole
+                        lo más arriba posible para una correcta importación.
+                    </li>
+                    <li>
+                        El único detalle a verificar es que la ruta de las fuentes en la
+                        función url sea la correcta. Podemos usar nuestras fuentes personalizadas
+                        usando los nombres predeterminados o alguno de nuestra preferencia.
+                    </li>
+                </ol>
+                <h4>
+                    Usando un servicio de fuentes
+                </h4>
+                <p>
+                    El procedimiento anterior parece y es más laborioso, existe otra
+                    forma de importar fuentes con muchos menos pasos y preocupaciones.
+                </p>
+                <p>
+                    Las "online font service", almacenan y "sirven" fuentes, es decir,
+                    nosotros no tenemos que hacer el proceso de descargarlas.
+                    Estas por lo general funcionan solo copiando y pegando código
+                    de la pagina que provee las fuentes a nuestros archivos .
+                </p>
+                <p>
+                    Algunos ejemplos de paginas proveedoras son "adobe fonts" y
+                    "cloud.typography", sin embargo, estas en particular son paginas de suscripción.
+                    Una mejor alternativa es "google fonts", esta es
+                    gratuita y nos permite poder probar rápidamente
+                    diferentes fuentes en nuestro trabajo, por ejemplo, para agregar una fuente desde google fonts los pasos
+                    serían:
+                </p>
+                <ol>
+                    <li>
+                        Ir a Google fonts
+                    </li>
+                    <li>
+                        Buscar alguna fuente o fuentes que queramos probar
+                    </li>
+                    <li>
+                        Dar "click" en la fuente elegida seguido de un "click" en "get font"
+                    </li>
+                    <li>
+                        Ahora en la nueva pestaña veremos la opción "web" de donde
+                        podremos solo copiar el código y pegarlo en nuestros documentos HTML y CSS
+                    </li>
+                </ol>
+                <p>
+                    Con estos pasos podemos tener acceso a una fuente
+                    personalizada sin tener que descargar nada en si.
+                </p>
+                <p>
+                    Cada uno de los dos métodos mencionados tiene sus propias ventajas y desventajas. Por ejemplo, aunque sea un proceso
+                    mas tedioso el agregar una fuente de manera local a nuestra pagina, esta no depende del funcionamiento de un
+                    tercero para su correcto funcionamiento, lo cual puede hacer que nuestra pagina tenga un poco más de "rigidez".
+                </p>
+                <h3>
+                    @font-face
+                </h3>
+                <p>
+                    El ruleset "@font-face" es lo que usamos para poder
+                    implementar fuentes que nosotros tenemos descargadas
+                    en los archivos de la pagina y no mediante
+                    una pagina externa. En esta podemos también indicar diversas propiedades para las fuentes como su grosor, estilo y demás. un ejemplo sería:
+                </p>
+<code><pre>
+@font-face {
+font-family: "zantrokeregular";
+src:
+url("zantroke-webfont.woff2") format("woff2"),
+url("zantroke-webfont.woff") format("woff");
+font-weight: normal;
+font-style: normal;
+}</pre>     </code>
+                <dl>
+                    <dt>
+                        font-family: "..";
+                    </dt>
+                    <dd>
+                        Establece el nombre con el que se podrá
+                        acceder a la fuente a lo largo del documento, no necesariamente tiene que ser el nombre de la
+                        fuente oficial. Nosotros podemos ponerle el nombre que queramos
+                        siempre y cuando seamos consistentes con el uso de este.
+                    </dd>
+                    <dt>
+                        src: url(...) format();
+                    </dt>
+                    <dd>
+                        Indica la ubicación de la fuente importada, se usa en
+                        conjunto con la función "url" y a
+                        su vez que incluye la función "format" para indicar el tipo
+                        de formato de la fuente, normalmente "woff" o "woff2". Si bien la función "format"
+                        no es estrictamente necesaria, ayuda al navegador a
+                        elegir con mayor agilidad una fuente soportada. Multiples
+                        declaraciones de diferentes formatos deben ser separadas por ','.
+                    </dd>
+                    <dt>
+                        font-weight/font-style
+                    </dt>
+                    <dd>
+                        Especifican el grosor de la fuente y si serán itálicas o no.
+                    </dd>
+                </dl>
+
+            </article>

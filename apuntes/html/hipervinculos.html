@@ -1,0 +1,123 @@
+<section id="Link &lt;a&gt; &lt;/a&gt;">
+                <h2>Links</h2>
+                <p>
+                    Un hipervínculo, link o enlace, permite conectar un documento con otro, vincular partes especificas
+                    dentro de
+                    documentos o incluso crear aplicaciones web. Los enlaces son fundamentales en la estructura de la web.
+                </p>
+                <p>
+                    Un link se define mediante el elemento "anchor" y el atributo "href" 
+                    que especifica
+                    el destino del enlace,
+                    es decir, la <abbr title="Uniform Resource Locator">URL</abbr>.
+                </p>
+                <ul>
+                    <li>
+                        <span class="codigo--linea">&lt;a href="www.ejemplo.com"&gt; Ejemplo &lt;/a&gt;</span>
+                    </li>
+                </ul>
+                <p>
+                    No solo los fragmentos de texto pueden ser usado como links, cualquier elemento que esté envuelvo por
+                    el elemento "anchor" puede ser un link.
+                    Como bloques de texto, botones, imágenes, etc.
+                </p>
+                <ul>
+                    <li>
+                        <span class="codigo--linea">&lt;a href="..."&gt;&lt;span&gt; ... &lt;/span&gt;&lt;/a&gt;</span>
+                    </li>
+                </ul>
+
+                <h3>
+                    Links a elementos de un documento
+                </h3>
+                <p>
+                    Es posible enlazar una parte especifica dentro de un documento html mediante un link, para hacer esto, el destino debe
+                    tener un "ID".
+                    Si el elemento a enlazar es del mismo archivo, solo se indica el "ID" con el prefijo '#'. Cuando el elemento no se
+                    encuentra en el
+                    mismo archivo, se debe indicar la <abbr title="Uniform Resource Locator">URL</abbr> y el "ID" con su
+                    prefijo '#'.
+                </p>
+                <ul>
+                    <li>
+                        <span class="codigo--linea">&lt;a href="#id"&gt; Ejemplo &lt;/a&gt;</span> (Enlace a un elemento)
+                    </li>
+                    <li>
+                        <span class="codigo--linea">&lt;a href="/carpeta/index.html#id"&gt; Ejemplo &lt;/a&gt;</span> (Enlace a un elemento fuera del documento
+                        actual)
+                    </li>
+                </ul>
+
+                <h3>
+                    Uniform Resource Locator 
+                </h3>
+                <p>
+                    La URL indica la dirección de algo, ya sea un elemento, documento, archivo, pagina web, etc. Existen dos tipos, URL relativas y URL 
+                    absolutas.
+                </p>
+                <h4>URL relativa</h4>
+                <p>
+                    Aquella que se indica tomando un <strong>punto de referencia</strong>, si la referencia cambia, la ruta
+                    cambia.
+                </p>
+                <ul>
+                    <li>
+                        "/carpeta/carpeta2/image.png"
+                    </li>
+                </ul>
+                <h4>URL absoluta</h4>
+                <p>
+                    Aquella que se sin importar desde donde se referencie, no cambia.
+                </p>
+                <ul>
+                    <li>
+                        "https://www.ejemplo.com/pagina.html"
+                    </li>
+                </ul>
+                <h3>
+                    Enlaces a recursos
+                </h3>
+                <p>
+                    Cuando un link lleva a algo que no es una pagina, por ejemplo, un pdf,imagen o archivo descargable, es 
+                    recomendable:
+                </p>
+                <ul>
+                    <li>
+                        Indicar el tipo de recurso (Formato y tamaño)
+                    </li>
+                    <li>
+                        Explicar si será una descarga o una previsualización
+                    </li>
+                </ul>
+                <p>
+                    Para una descarga se utiliza el
+                    atributo <strong>dowload</strong> (boolean), se iniciará la descarga de ser posible y
+                    si le asignamos un valor al atributo, el archivo se descargará con este nombre.
+                </p>
+                <p>
+                    para abrir algo en una pestaña nueva, se utiliza el
+                    atributo "target" con el valor "_blank". Por defecto
+                    todos los links
+                    se abren en la misma página.
+                </p>
+                <h3>
+                    Algunas buenas practicas para el uso de links
+                </h3>
+                <ul>
+                    <li>
+                        Claridad textual (palabras cortas)
+                    </li>
+                    <li>
+                        Claridad visual (debe entenderse a simple vista que es un link)
+                    </li>
+                    <li>
+                        No repetir nombres en la medida de lo posible
+                    </li>
+                </ul>
+                <p>
+                    Especialmente suele ser una <strong>buena practica</strong> indicar explícitamente o visualmente qué se realizará, ya
+                    sea una descarga, abrir en una nueva pestaña
+                    o cualquier comportamiento posible
+                    (la forma mas común es por medio de iconos).
+                </p>
+            </section>

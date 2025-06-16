@@ -1,0 +1,246 @@
+<section id="Semantica general de HTML">
+                <h2>
+                    Semántica general HTML
+                </h2>
+                <p>
+                    En HTML esencialmente todos los elementos disponibles tienen un significado, es decir, estos 
+                    tienen una finalidad definida, ya sea para un orden jerárquico o para
+                    tipos específicos de información.
+                </p>
+                <h3>
+                    Títulos
+                </h3>
+                <p>
+                    por defecto existen seis niveles de títulos, desde "h1" hasta "h6", estos sirven para estructurar una página
+                    de manera jerárquica. Algunas recomendaciones al usar títulos son las siguientes:
+                </p>
+                <ul>
+                    <li>
+                        De entre todos los títulos de una pagina, el "h1" es el más importante y solo debería de haber uno por página ya que
+                        este indica el foco central de la misma.
+                    </li>
+                    <li>
+                        No se deberían usar mas de 3 o 4 niveles de encabezados por página.
+                    </li>
+                    <li>
+                        Usar la jerarquía de los títulos de forma correcta.
+                    </li>
+                </ul>
+                <h3>
+                    Párrafos
+                </h3>
+                <p>
+                    la forma mas básica y general de indicar un bloque de texto en un documento HTML.
+                </p>
+                <h3>
+                    Elementos dentro de textos
+                </h3>
+                <h4>
+                    Elementos comunes
+                </h4>
+                <dl>
+                    <dt>
+                        <span class="codigo--linea--titulo">&lt;em&gt; &lt;/em&gt;</span>
+                    </dt>
+                    <dd>
+                        Indica que un bloque o fragmento de texto tiene especial relevancia, en otras palabras,
+                        denota la importancia de algo. Da un formato de "itálica".
+                    </dd>
+                    <dt>
+                        <span class="codigo--linea--titulo">&lt;strong&gt; &lt;/strong&gt;</span>
+                    </dt>
+                    <dd>
+                        Resalta que algo (relativo a un texto) tiene mayor importancia.
+                        No solo resalta una idea, más bien, indica que esta es de alta relevancia
+                        para el texto en particular.
+                    </dd>
+                    <dt>
+                        <span class="codigo--linea--titulo">&lt;br&gt;</span>
+                    </dt>
+                    <dd>
+                        Fuerza un salto de linea, sin embargo, su uso debería estar limitado a cuando
+                        este salto tiene algún significado semántico y no solo como algo visual.
+                    </dd>
+                    <dt>
+                        <span class="codigo--linea--titulo">&lt;hr&gt;</span>
+                    </dt>
+                    <dd>    
+                        Visualmente crea una linea horizontal entre 2 elementos e indica un cambio de tema.
+                    </dd>
+                </dl>
+                
+                <h4>
+                    Elementos poco comunes
+                </h4>
+                <dl>
+                    <dt>
+                        Citas
+                    </dt>
+                    <dd>
+                        Para indicar que un bloque, bloques o lineas de texto son una cita textual o parafraseada existen dos elementos:
+                        <ul>
+                            <li>
+                                <span class="codigo--linea">&lt;blockquote&gt; &lt;/blockquote&gt;</span> (Indica que uno o más bloques de texto es o son una cita.
+                                Visualmente agrega una apariencia anidada.)
+                            <li>
+                                <span class="codigo--linea">&lt;q&gt; &lt;/q&gt;</span> (Indica que una linea o lineas de un texto son una cita, agrega un indicador
+                                visual de comillas dobles al inicio y fin de la cita.)
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt>
+                        Referencias
+                    </dt>
+                    <dd>
+                        Existe un elemento y un atributo que acompañan a la citas para indicar la referencia de estas, es decir, el origen de la
+                        información.
+                        <ul>
+                            <li>
+                                <span class="codigo--linea">&lt;cite&gt; https... &lt;/cite&gt;</span> (le da un valor semántico a la referencia)
+                            </li>
+                            <li>
+                                <span class="codigo--linea">&lt;q cite="https..."&gt; ... &lt;/q&gt;</span> (el atributo cite, se agrega en el elemento
+                                para indicar la referencia, sin embargo, este atributo
+                                solo agrega metadata, es decir, nada visual)
+                            </li>
+                        </ul>
+                    </dd>
+                    <dd>
+                        La forma más común es usar este elemento y atributo en conjunto con un link a la referencia misma.
+                    </dd>
+                    <dt>
+                        Abreviaciones y acrónimos
+                    </dt>
+                    <dd>
+                        Existe un elemento para indicar que algo es una abreviación o acrónimo de manera semántica, su uso es recomendable
+                        solo cuando no se explica la abreviación o acrónimo en el texto circundante.
+                        <ul>
+                            <li>
+                                <code class="codigo--linea">&lt;abbr title="Texto completo de la abreviación/acrónimo"&gt; ... &lt;/abbr&gt;</code>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt>
+                        Contacto
+                    </dt>
+                    <dd>
+                        Existe un elemento para indicar que algún texto hace referencia a una forma de contacto (no necesariamente una dirección).
+                        <ul>
+                            <li>
+                                <code class="codigo--linea">&lt;address&gt; teléfono: 55... &lt;/address&gt;</code>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt>
+                        Superindice y subindice
+                    </dt>
+                    <dd>
+                        Existen elementos para indicar que algún texto es un subindice o superindice, su uso más común es con fechas o
+                        formulas científicas.
+                        <ul>
+                            <li>
+                                <span class="codigo--linea">&lt;sup&gt; &lt;/sup&gt;</span> (ejemplo<sup>sup</sup>)
+                            </li>
+                            <li>
+                                <span class="codigo--linea">&lt;sub&gt; &lt;/sub&gt;</span> (ejemplo<sub>sub</sub>)
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt>
+                        Formas de representar código
+                    </dt>
+                    <dd>
+                        Para poder mostrar código de forma correcta tanto visual como semántica, tenemos multiples
+                        elementos.
+                        Estos elementos suelen usarse en conjunto para crear un texto más "rico" en un sentido semántico.
+                        <ul>
+                            <li>
+                                <span class="codigo--linea">&lt;code&gt; &lt;/code&gt;</span> (Indica de forma genérica que algo es un código)
+                            </li>
+                            <li>
+                                <span class="codigo--linea">&lt;pre&gt; &lt;/pre&gt;</span> (Muestra el código de forma textual, es decir, no eliminará espacios ni
+                                hará algún formateo que no
+                                esté explícitamente expresado por nosotros)
+                            </li>
+                            <li>
+                                <span class="codigo--linea">&lt;var&gt; &lt;/var&gt;</span> (Indica que algo es una variable)
+                            </li>
+                            <li>
+                                <span class="codigo--linea">&lt;kbd&gt; &lt;/kbd&gt;</span> (Indica algún "input", generalmente combinaciones de teclas)
+                            </li>
+                            <li>
+                                <span class="codigo--linea">&lt;samp&gt; &lt;/samp&gt;</span> (Indica un "output", es decir, el resultado de algún código)
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt>
+                        Fechas y tiempos
+                    </dt>
+                    <dd>
+                        Envuelve de manera semántica una fecha, hora o duración de tiempo. Sin embargo, para su uso
+                        correcto, requiere del atributo "datetime", el cual asocia una version estandarizada de la fecha y
+                        hora en formato
+                        "iso 8601". Esto facilita que navegadores, aplicaciones y motores búsqueda puedan interpretar y procesar
+                        correctamente la información sin importar
+                        el formato o idioma en que se muestra al usuario.
+                    </dd>
+                    <dd>
+                        Su estructura es la siguiente:<br>
+                        <span class="codigo--linea">
+                            &lt;time datatime="YYYY-MM-DD-Thh:mm:ssTZD"&gt;...&lt;/time&gt;
+                        </span><br>
+                        Donde:
+                        <ul>
+                            <li>YYYY: año con cuatro dígitos (por ejemplo, 2025)</li>
+                            <li>MM: mes con dos dígitos (por ejemplo, 04 para abril)</li>
+                            <li>DD: día con dos dígitos (por ejemplo, 15)</li>
+                            <li>T: separador entre la fecha y la hora</li>
+                            <li>hh: hora en formato de 24 horas con dos dígitos (por ejemplo, 14 para las 2 PM)</li>
+                            <li>mm: minutos con dos dígitos (por ejemplo, 30)</li>
+                            <li>ss: segundos con dos dígitos (por ejemplo, 00)</li>
+                            <li>TZD: indicador de zona horaria (por ejemplo, Z para UTC o +02:00 para una zona horaria específica)
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                
+                <h3>Listas</h3>
+                <p>
+                    existes 3 formas diferentes de indicar listas:
+                </p>
+                <dl>
+                    <dt>
+                        Unordered list 
+                    </dt>
+                    <dd>
+                        Una <strong>lista sin un orden en particular</strong> (<span class="codigo--linea--titulo">&lt;ul&gt;...&lt;/ul&gt;</span>).
+                        Cada elemento de agrega con las etiquetas "list item" (<span class="codigo--linea">&lt;li&gt;...&lt;/li&gt;</span>).
+                    </dd>
+                    <dt>
+                        Ordered list
+                    </dt>
+                    <dd>
+                        Una <strong>lista con un orden en particular</strong> (<span class="codigo--linea">&lt;ol&gt;...&lt;/ol&gt;</span>).
+                        Cada elemento de agrega con las etiquetas "list item" (<span class="codigo--linea">&lt;li&gt;...&lt;/li&gt;</span>).
+                    </dd>
+                    <dt>
+                        Description list
+                    </dt>
+                    <dd>
+                        Una <strong>lista de descripciones</strong> (<span class="codigo--linea">&lt;dl&gt;...&lt;/dl&gt;</span>).
+                        A diferencia de "ul" y "ol", para agregar elementos a
+                        una lista de descripciones se necesitan dos elementos:
+                        <ol>
+                            <li>
+                                <span class="codigo--linea">&lt;dt&gt;...&lt;/dt&gt;</span> (Definition term)
+                            </li>
+                            <li>
+                                <span class="codigo--linea">&lt;dd&gt;...&lt;/dd&gt;</span> (Definition description)
+                            </li>
+                        </ol>
+                    </dd>
+                </dl>
+                <p>
+                    Los diferentes tipos de listas pueden anidarse entre si.
+                </p>
+            </section>

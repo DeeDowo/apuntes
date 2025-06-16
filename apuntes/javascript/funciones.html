@@ -1,0 +1,174 @@
+<section id="Funciones">
+                    <h2>
+                        Funciones
+                    </h2>
+                    <p>
+                        Las funciones son bloques reutilizables de código.
+                        Otro punto esencial en programación son las funciones, estas permiten definir un bloque de código que realiza una 
+                        tarea en particular, dando la posibilidad a llamar estos bloques cuando sean necesarios, estos pueden tomar algo 
+                        como parámetro o solo ejecutar una acción sin necesidad de estos.
+                    </p>
+                    <p>
+                        Las funciones son especialmente útiles para evitar el tener que escribir multiples veces el mismo código para
+                        cada vez que queramos realizar dicha acción. Las funciones se pueden dividir en dos tipos principalmente, las creadas por nosotros mismos y aquellas
+                        obtenidas de terceros, por ejemplo, por medio de una API.
+                    </p>
+                    <figure>
+                        <figcaption>Estructura de una función</figcaption>
+                        <span><pre>
+function nombre_de_la_función (parámetros_de_la_función){
+    ...código...
+}</pre></span>
+                    </figure>
+                    <h4>
+                        Partes de una función
+                    </h4>
+                    <ul>
+                        <li>
+                            Palabra clave "function".
+                        </li>
+                        <li>
+                            Parámetros (opcionales).
+                        </li>
+                        <li>
+                            Bloque de código.
+                        </li>
+                    </ul>
+                    <h3>
+                        Funciones vs métodos
+                    </h3>
+                    <p>
+                        Las funciones que son parte de objetos, son llamadas "métodos", entonces podemos decir que todos los métodos son funciones, pero 
+                        no todas las funciones son métodos.
+                    </p>
+                    <h3>
+                        Llamando una función
+                    </h3>
+                    <p>
+                        Para poder usar una función que ya ha sido definida, solo hay que utilizar su nombre y un par de paréntesis. 
+                        En caso de que la función requiera de algún parámetro, este se ingresa entre los paréntesis.
+                    </p>
+                    <h3>
+                        Parámetros opcionales
+                    </h3>
+                    <p>
+                        Algunas veces los parámetros para una función pueden ser opcionales, es decir, la función realiza lo indicado
+                        en ella con o sin parámetros, generalmente 
+                        proporcionando un comportamiento "por defecto".
+                        Por ejemplo la función "join()", para convertir un array a una cadena de texto, a esta 
+                        función se le puede indicar algún separador para cada elemento del array al unirlos en la 
+                        cadena de texto, si no indica ningún parámetro, la función "join()" por defecto usará comas ",".
+                    </p>
+                    <h3>
+                        Parámetros por defecto
+                    </h3>
+                    <p>
+                        Al escribir una función, si queremos soportar "parámetros opcionales", debemos especificar 
+                        un valor "por defecto" utilizando "=" en la declaración del parámetro, es decir:
+                    </p>
+                    <figure>
+                        <figcaption>Ejemplo parámetro "por defecto"</figcaption>
+                        <code><pre>
+function hola(nombre = "dowo"){
+    console.log(hola, ${nombre})
+}</pre></code>
+                    </figure>
+                    <p>
+                        Este ejemplo por defecto siempre dirá "hola, dowo", pero si se ingresa algún 
+                        parámetro (nombre diferente), la función reescribirá este "nombre" y se adaptará al nuevo valor.
+                    </p>
+                    <h3>
+                        Funciones anónimas o funciones de flecha
+                    </h3>
+                    <p>
+                        Son llamadas "anonymous functions" debido a que a diferencia de una función normal, estas 
+                        no tiene nombre. Usualmente se utilizan cuando alguna 
+                        función espera recibir otra función como parámetro. generalmente son funciones que no se reutilizarán a lo largo del código más que en su 
+                        declaración.
+                    </p>
+                    <figure>
+                        <figcaption>Estructura de una función anónima</figcaption>
+                        <span><pre>
+...(function(parámetro){...código...}, parámetro)...</pre></span>
+                    </figure>
+                    <h4>
+                        Funciones de flecha
+                    </h4>
+                    <p>
+                        Una "Arrow functions" es nada más que una forma alternativa para escribir una función anónima, esta es más clara y fácil de entender
+                        a simple vista. La característica principal es que de esta forma no es necesario agregar la palabra clave "function".
+                    </p>
+                    <figure>
+                        <figcaption>Estructura de una función de flecha</figcaption>
+                        <span><pre>
+...((parámetro) => {...código...}, parámetro)...</pre></span>
+                    </figure>
+                    <p>
+                        Esta forma se puede simplificar aún más cuando la función anónima solo ocupa un parámetro.
+                    </p>
+                    <figure>
+                        <figcaption>Estructura de una función de flecha con un parámetro</figcaption>
+                        <span><pre>
+...(parámetro => {...código...}, parámetro)...</pre></span>
+                    </figure>
+                    <p>
+                        Incluso es posible simplificar aún más cuando 
+                        la función solo contiene una linea y está es un "return", en este caso podemos omitir las llaves ({}) y la propia palabra return.
+                    </p>
+                    <figure>
+                        <figcaption>Estructura de una función de flecha con un parámetro y un "return"</figcaption>
+                        <span><pre>
+...(parámetro => ...código..., parámetro)...</pre></span>
+                    </figure>
+                    <p>
+                        Es por todo esto que al usar funciones "sencillas", el código es mas legible y fácil de entender.
+                    </p>
+                    <figure>
+                        <figcaption>Ejemplo practico "Arrow function"</figcaption>
+                        <code><pre>
+const numeros = [1,2,3];
+const numeros_cuadrado = numero.map(numero => numero**2);</pre></code>
+                    </figure>
+                    <h3>
+                        Scope de funciones y conflictos
+                    </h3>
+                    <p>
+                        En JavaScript, cuando se usan múltiples archivos JavaScript normales (sin type="module"), el orden de 
+                        carga en el HTML es importante, ya que las funciones o variables definidas en archivos posteriores pueden 
+                        sobrescribir a las declaradas en archivos anteriores si tienen el mismo nombre. En cuanto al scope, 
+                        existen distintos niveles:
+                    </p>
+                    <dl>
+                        <dt>
+                            Global
+                        </dt>
+                        <dd>
+                            Un scope "global" permite acceder a funciones o variables desde cualquier 
+                            parte del código.
+                        </dd>
+                        <dt>
+                            Local
+                        </dt>
+                        <dd>
+                            Un scope "local" significa que no se puede acceder a estos elementos fuera del bloque en donde se 
+                            declararon. Las variables con let y const 
+                            tienen scope de "local", esto significa que al salir de su bloque, estas desaparecen.
+                        </dd>
+                    </dl>
+                    <h3>
+                        Valores de retorno
+                    </h3>
+                    <p>
+                        Un ultimo concepto esencial para el entendimiento de las funciones son los valores de retorno. 
+                        como el nombre indica, es "algo" que "devuelve" una función después de ejecutarse. Por ejemplo, 
+                        el resultado de una operación matemática o la concatenación de algunos textos. Sin embargo no todas las 
+                        funciones "devuelven" algún valor, algunas solo realizan 
+                        una acción. Por ejemplo, mostrar un mensaje en pantalla, cambiar el color de 
+                        algo o abrir algún archivo. Aunque estos ejemplos den la impresión de 
+                        "devolver" algo, cuando hacemos referencia a algún valor de retorno es a un resultado no a la ejecución de
+                        una acción. Estos valores de retorno pueden ser almacenados en nuevas variables o desencadenar algún otro comportamiento.
+                    </p>
+                    <p>
+                        "return" es la palabra clave para indicar un valor de retorno.
+                    </p>
+                </section>

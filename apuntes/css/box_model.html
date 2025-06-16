@@ -1,0 +1,278 @@
+<article id="Box model">
+                <h2>
+                    Box model
+                </h2>
+                <p>
+                    La forma más fácil de comprender CSS, es entiendo que todo en CSS es "una caja", en otras
+                    palabras, todo en CSS es un contenedor. 
+                </p>
+                <h3>
+                    Block e Inline
+                </h3>
+                <p>
+                    Block ("Block boxes") e Inline ("Inline boxes") son los 2 tipos principales de "display"
+                    que indican de qué manera se comporta un elemento en la pagina y el cómo es su relación con el resto de elementos
+                    en esta. La disposición "block" e "inline" son el por defecto en que se comporta la web.
+                </p>
+                <dl>
+                    <dt>
+                        display: block;
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li>
+                                La "caja" crea un salto de linea tanto antes como después
+                            </li>
+                            <li>
+                                La "caja" tiene width y height
+                            </li>
+                            <li>
+                                El padding y el margin empujan otras cajas
+                            </li>
+                            <li>
+                                Si el "width" no es especificado, la caja tomará todo el ancho disponible
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt>
+                        display: inline;
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li>
+                                La "caja" no genera nuevas lineas
+                            </li>
+                            <li>
+                                La "caja" no tiene ni "width" ni "height"
+                            </li>
+                            <li>
+                                El padding y el margin no mueven otras cajas, solo crean espacio en la dirección de la linea
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <p>
+                    Un par de formas de identificar con facilidad el tipo de "display" que posee una "caja" es:
+                </p>
+                <ul>
+                    <li>
+                        Cuando los elementos se agregan uno a lado de otro, son de "display: inline;"
+                    </li>
+                    <li>
+                        Cuando los elementos se agregan uno debajo de otro, son de "display: block"
+                    </li>
+                </ul>
+                <h3>
+                    Inner y outer display
+                </h3>
+                <p>
+                    Cada elemento posee un "inner display type" y un "outre display type". El
+                    "inner display type" hace referencia a el cómo se distribuyen los elementos dentro de una "caja" mientras que el
+                    "outer display type" hace referencia a el cómo se comportan los elementos en relación al resto de elementos.
+                    El "inner display" al igual que el "outer display type" (visto en el punto anterior), también puede ser modificado,
+                </p>
+                <p>
+                    "block" e "inline" son del tipo "outer display type" ya que afectar al cómo son mostradas las
+                    "cajas" en relación a otras, sin embargo, no son los únicos valores posibles. "inline-block" es otro tipo de "display" que
+                    en esencia es una combinación de ambos tipos (block e inline), de ahí su nombre, comparte todas las características
+                    de un elemento de tipo "block", con la excepción de no forzar un salto de linea antes y después de este.
+                </p>
+                <h3>
+                    Qué es el Box-model?
+                </h3>
+                <p>
+                    Define el conjunto de partes que forman a una "caja" (margin, border,
+                    padding y contenido) y el cómo interpreta el navegador dichas "cajas".
+                </p>
+                <p>
+                    Existe dos modelos, el modelo estándar y el modelo alternativo.
+                    por defecto, los navegadores usan el modelo estándar.
+                </p>
+                <h4>
+                    Partes de una caja
+                </h4>
+                <p>
+                    Todo elemento en CSS tiene 4 elementos:
+                </p>
+                <ul>
+                    <li>
+                        width/height: Depende del "Box-mode".
+                    </li>
+                    <li>
+                        padding: Espacio blanco al rededor del contenido.
+                    </li>
+                    <li>
+                        margin: Espacio blanco entra elementos.
+                    </li>
+                    <li>
+                        border: División entre el "margin" y el elemento (envuelve el contenido).
+                    </li>
+                </ul>
+                <h4>
+                    Modelo estándar
+                </h4>
+                <p>
+                    En el modelo estándar, llamado "content-box", el tamaño de la "caja" es la sumatoria de los elementos, es decir:
+                </p>
+                <ul>
+                    <li>
+                        ancho/largo: width + 2 x padding + 2 x border
+                    </li>
+                    <li>
+                         alto: height + 2 x padding + 2 x border
+                    </li>
+                </ul>
+                <p>
+                    Para el modelo estándar, el "width/height" son solo las medidas del contenido interno de una "caja" (sin contar padding ni border).
+                </p>
+                <h4>
+                    Modelo alternativo (recomendado)
+                </h4>
+                <p>
+                    La principal diferencia con el modelo estándar es que el "width/height" son el total de "caja" y no solo una parte de esta,
+                    es decir, en el modelo alternativo, llamado "border-box", el "width/height" representan la dimensiones totales que vemos de la "caja".
+                </p>
+                <p>
+                    Por defecto los navegadores usan el modelo estándar (content-box).
+                    El método para poder usar el modelo alternativo (border-box) en un documento HTML es agregando las siguientes reglas en nuestro archivo ".css":
+                </p>
+                <figure>
+                    <figcaption>Método para utilizar "border-box"</figcaption>
+                    <code><pre>
+html {
+box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+box-sizing: inherit;
+}</pre></code>
+                </figure>
+                <p>
+                    Estas reglas realizan:
+                </p>
+                <ol>
+                    <li>
+                        Asignar el modelo alternativo (border-box) a la raíz del documento, el cual será heredado a todos
+                        los elementos dentro de este.
+                    </li>
+                    <li>
+                        Hacer que el resto de elementos hereden el modelo alternativo (border-box) de la raíz usando el
+                        selector universal y la declaración "box-sizing: inherit".
+                    </li>
+                    <li>
+                        hacer que los pseudoelementos "::before" y "::after" también hereden el modelo.
+                    </li>
+                </ol>
+                <p>
+                    Por qué heredar en lugar de aplicar el modelo alternativo (border-box) explícitamente?
+                    Esto se hace ya que de esta forma si en algún momento queremos usar el modelo estándar (content-box), los hijos
+                    de estos elementos tendrán el mismo modelo fijado por el elemento padre y lo mismo con los
+                    pseudoelementos "::before" y "::after".
+                </p>
+                <h3>
+                    Más sobre margin, padding y border
+                </h3>
+                <p>
+                    Visto en el punto anterior, estos son los elementos de una "caja" de CSS aparte del contenido de esta.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                Elemento
+                            </th>
+                            <th scope="col">
+                                Descripción
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                margin
+                            </th>
+                            <td>
+                                El espacio invisible al rededor de las "cajas", puede empujar a otros
+                                elementos. Un margen puede tener tanto valores positivos o negativos.
+                                "margin" es una propiedad "shorthand", esta manipula
+                                los 4 lados de la "caja" a la vez y puede ser divida en propiedades más especificas (margin-top, margin-bottom,
+                                margin-left, margin-right).
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                padding
+                            </th>
+                            <td>
+                                Es el espacio que se encuentra entre el contenido de la "caja" y el "border", empuja al contenido desde el borde hacia adentro.
+                                A diferencias de los margenes, no se pueden tener paddings negativos.
+                                Sin embargo, al igual que con "margin", "padding" es una propiedad "shorthand" que manipula
+                                los 4 lados a la vez y puede ser divida en propiedades más especificas (padding-top, padding-bottom, padding-left, padding-right).
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                border
+                            </th>
+                            <td>
+                                Es la división que separa el contenido y "padding" del "margin",
+                                puede tener una variedad de tamaños, colores y estilos.
+                                Al igual que con "margin" y "padding", la propiedad
+                                "border" es un "shorthand" que manipula
+                                los 4 lados a la vez y puede ser divida en propiedades más especificas (border-top, border-bottom, border-left, border-right).
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>
+                    Colapso de margenes
+                </h4>
+                <p>
+                    Cuando los margenes verticales de 2 elementos diferentes "chocan",
+                    pueden provocar diferentes comportamientos, dependiendo de sus valores.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                Caso
+                            </th>
+                            <th scope="col">
+                                Resultado
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                Dos margenes positivos
+                            </th>
+                            <td>
+                                Cuando Dos margenes positivos "chocan", aquel que tenga el mayor valor será el
+                                que se respetará, en otras palabras, el margen más grande será el margen entre estos
+                                Dos elementos.
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                Dos margenes negativos
+                            </th>
+                            <td>
+                                Cuando Dos margenes negativos
+                                "chocan", se respetará aquel que tenga el menor valor, es decir, aquel más alejado del 0.
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                Un margen positivo y Un negativo
+                            </th>
+                            <td>
+                                Cuando un margen positivo "choca" con uno negativo, estos 
+                                se suman (margen1 + (- margen2) = margen1 - margen2).
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>

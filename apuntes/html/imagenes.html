@@ -1,0 +1,160 @@
+<section id="Imagenes">
+                <h2>Imágenes</h2>
+                <p>
+                    Para insertar imágenes en un documento, 
+                    necesitamos el elemento <span class="codigo--linea">&lt;img&gt;</span> en conjunto con al menos los 
+                    siguientes atributos:
+                </p>
+                <ul>
+                    <li>
+                        src="URL" (Indica donde se encuentra el archivo, recomendable el uso de rutas relativas)
+                    </li>
+                    <li>
+                        alt="descripción de la imagen"
+                        (Proporciona una descripción breve de la imagen)
+                    </li>
+                </ul>
+                <p>
+                    El atributo "alt" es especialmente util cuando:
+                </p>
+                <ul>
+                    <li>
+                        La imagen no pueda cargarse (por conexión o preferencia)
+                    </li>
+                    <li>
+                        Para lectores de pantalla (accesibilidad)
+                    </li>
+                    <li>
+                        Para mejorar el <abbr title="Search Engine Optimization">seo</abbr> de una página
+                    </li>
+                </ul>
+                <h3>
+                    Algunas buenas practicas con imágenes
+                </h3>
+                <ul>
+                    <li>
+                        Nombres claros y breves para los archivos
+                    </li>
+                    <li>
+                        Definir dimensiones con los atributos "width" y "height" (solo para
+                        precargar el espacio. Idealmente el tamaño intrínseco de las imágenes debería ser el mostrado)
+                    </li>
+                    <li>
+                        El atributo "alt" solo debería usarse cuando previamente no se ha explicado la imagen
+                    </li>
+                </ul>
+                <h3>
+                    Imágenes HTML vs CSS
+                </h3>
+                <p>
+                    Si bien podemos realizar las mismas acciones visuales con imágenes agregadas por medio de <abbr
+                        title="HyperText Markup Language">HTML</abbr>
+                    o por medio de <abbr title="Cascading Style Sheets">CSS</abbr>
+                    estas no son iguales.
+                </p>
+                <table>
+                    <caption>Imágenes HTML vs Imágenes CSS</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                Origen
+                            </th>
+                            <th scope="col">
+                                Función
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                HTML
+                            </th>
+                            <td>
+                                Significativas para el contenido, afectan a la comprensión o el propósito del
+                                documento
+                                mismo,
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                CSS
+                            </th>
+                            <td>
+                                Uso decorativo, no afectan al documento más que de manera visual.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>
+                    Figure y figcaption
+                </h3>
+                <p>
+                    Estos elementos trabajan en conjunto, envuelven y describen cualquier contenido que pueda beneficiarse de
+                    una descripción (no solo imágenes).
+                </p>
+                <ul>
+                    <li>
+                        <span class="codigo--linea">&lt;figure&gt; ... &lt;/figure&gt;</span> (Agrupa)
+                    </li>
+                    <li>
+                        <span class="codigo--linea">&lt;figcaption&gt; ... &lt;/figcaption&gt;</span> (Describe el contenido agrupado)
+                    </li>
+                </ul>
+                <h3>
+                    Licencias de imágenes
+                </h3>
+                <p>
+                    No todas las imágenes en internet están disponibles para su libre uso, es fundamental siempre respetar
+                    los derechos de autor.
+                </p>
+                <table>
+                    <caption>Tipos de licencias</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                Licencia
+                            </th>
+                            <th scope="col">
+                                Descripción
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                All rights reserved (todos los derechos reservados)
+                            </th>
+                            <td>
+                                El creador debe dar permiso explicito para cualquier uso.
+                                Al momento de crear algo, por defecto, el creador tiene todos
+                                los derechos.
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                Permissive licenses (licencias permisivas)
+                            </th>
+                            <td>
+                                Permite el uso libre, pero puede requerir algunas condiciones, por ejemplo:
+                                <ul>
+                                    <li>Dar créditos al autor</li>
+                                    <li>No uso comercial</li>
+                                    <li>Cualquier creación debe ser compartida</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                Public domain (dominio publico)
+                            </th>
+                            <td>
+                                Cualquiera puede hacer lo que desee con dicho contenido sin restricciones ni necesidad de permisos;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    Una buena practica es siempre asumir que todo en internet tiene algún tipo de copyright, salvo que lo contrario se
+                    indique explícitamente.
+                </p>
+            </section>

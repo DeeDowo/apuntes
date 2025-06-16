@@ -1,0 +1,15 @@
+.pagina__titulo{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.navegacion-principal__elemento{
+    list-style: none;
+}
+.navegacion-principal__enlace{
+    display: block;
+    background-color: rgb(236, 236, 236);
+    padding: .5em 0;
+    text-align: center;
+    border-radius: .3em;
+}

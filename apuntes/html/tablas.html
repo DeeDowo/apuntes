@@ -1,0 +1,182 @@
+<section id="tablas &lt;table&gt; &lt;/table&gt;">
+                <h2>
+                    Tablas
+                </h2>
+                <p>
+                    Las tablas organizan <strong>información estructurada en filas y columnas</strong>,
+                    deben ser claras tanto visualmente como de forma semántica. Una buena tabla es
+                    un mezcla entre contenido y estilo.
+                </p>
+                <p>
+                    El único objetivo de una tabla debe ser mostrar el <strong>información tabular</strong>.
+                </p>
+                <table>
+                    <caption>
+                        Elementos principales de una tabla
+                    </caption>
+                    <tr>
+                        <th scope="col">
+                            Elemento
+                        </th>
+                        <th scope="col">
+                            Función
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <span class="codigo--linea">&lt;table&gt; &lt;/table&gt;</span> (Table data)
+                        </th>
+                        <td>
+                            Elemento principal que envuelve toda una tabla.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <span class="codigo--linea">&lt;td&gt; &lt;/td&gt;</span>
+                        </th>
+                        <td>
+                            Agrega una nueva celda contigua. Es en dónde se inserta el contenido.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <span class="codigo--linea">&lt;tr&gt; &lt;/tr&gt;</span> (Table row)
+                        </th>
+                        <td>
+                            Envuelve celdas en una fila.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <span class="codigo--linea">&lt;th&gt; &lt;/th&gt;</span> (Table header)
+                        </th>
+                        <td>
+                            Por defecto todos las celdas tienen el mismo peso semántico, este elemento
+                            indica que una celda contendrá un titulo,
+                            lo cual le da un mayor valor semántico.
+                    </tr>
+                </table>
+                <p>
+                    Al crear una tabla, cuando queremos que una celda en particular ocupe más de de un celda, tenemos dos atributos
+                    para esta tarea en particular, estos son: 
+                </p>
+                <ul>
+                    <li>
+                        colspan="cantidad de casillas" (Indica la cantidad de celdas, horizontalmente, que abarcará una celda)
+                    </li>
+                    <li>
+                        rowspan="cantidad de casillas" (Indica la cantidad de celdas, verticalmente, que abarcará una celda)
+                    </li>
+                </ul>
+                <h3>
+                    Accesibilidad en tablas
+                </h3>
+                <p>
+                    Si bien con los elementos y atributos mencionados previamente ya se podría crear
+                    una tabla bastante completa en si misma,
+                    existen más elementos y tributos para hacer a una tabla mas
+                    accesible.
+                </p>
+                <dl>
+                    <dt>
+                        Caption
+                    </dt>
+                    <dd>
+                        El elemento <span class="codigo--linea">&lt;caption&gt; &lt;/caption&gt;</span>
+                        debe ser el primer elemento anidado en una tabla y contiene una descripción clara y concisa sobre qué
+                        tratará
+                        la tabla, como un titulo para esta.
+                    </dd>
+                    <dt>
+                        Scope
+                    </dt>
+                    <dd>
+                        El atributo "scope" se agrega a las celdas de tipo "header" e indica la relación entre estas con el resto de celdas, es decir,
+                        indica de qué celdas es el titulo:
+                        <ul>
+                            <li>
+                                <strong>scope="col"</strong> (Es el encabezado de toda una columna)
+                            </li>
+                            <li>
+                                <strong>scope="row"</strong> (Es el encabezado de toda una fila)
+                            </li>
+                            <li>
+                                <strong>scope="colgroup/rowgroup"</strong> (Mismo comportamiento que los dos puntos anteriores
+                                respectivamente, pero para encabezados que abarcan multiples columnas o filas, aquellos headers que
+                                tienen el atributo "colspan" o "rowspan")
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+        
+                <h4>
+                    Id y headers
+                </h4>
+                <p>
+                    Un método con funcionamiento similar al atributo "scope", pero con una mayor complejidad y precisión. 
+                    Su metodología es la siguiente:
+                </p>
+                <ol>
+                    <li>
+                        a cada elemento <strong>"th"</strong> se le asigna un "ID" sin espacios
+                    </li>
+                    <li>
+                        a cada elemento <strong>"td"</strong> se le asigna el atributo "headers" cuyo valor será el "ID" 
+                        del titulo que lo define.
+                        Si un elemento tiene más de un titulo, los diferentes "ID" se separan por medio de espacios.
+                    </li>
+                </ol>
+                <p>
+                    Este método permite crear asociaciones mas complejas, pero más claras, con la "desventaja"
+                    de estar abierto a más posibles errores que el uso del atributo "scope".
+                </p>
+                <p>
+                    Generalmente su uso debería ser exclusivo para cuando "scope" no es suficiente, es decir, 
+                    para tablas con una complejidad alta.
+                </p>
+                <h3>
+                    Otros elementos
+                </h3>
+                <p>
+                    Los elementos <strong>"thead"</strong>, <strong>"tbody"</strong> y <strong>"tfoot"</strong> ayudan a organizar
+                    de mejor manera una tabla, sin embargo,
+                    la función principal de esto es para poder aplicar CSS con mayor comodidad.
+                </p>
+                <ul>
+                    <li>
+                        <span class="codigo--linea">&lt;thead&gt; ... &lt;/thead&gt;</span> (Normalmente contiene la primera fila, generalmente
+                        títulos)
+                    </li>
+                    <li>
+                        <span class="codigo--linea">&lt;tbody&gt; ... &lt;/tbody&gt;</span> (Normalmente contiene el resto de elementos no
+                        asignados por "thead" y "tfoot". Cuando este
+                        no se define explícitamente, el "tbody" se agrega de forma automática y abarca a todos los elementos)
+                    </li>
+                    <li>
+                        <span class="codigo--linea">&lt;tfoot&gt; ... &lt;/tfoot&gt;</span> (Normalmente contiene el final de la tabla,
+                        generalmente resultados)
+                    </li>
+                </ul>
+                <h3>
+                    buenas practicas para tablas
+                </h3>
+                <ul>
+                    <li>
+                        Usar "th" para encabezados
+                    </li>
+                    <li>
+                        Agregar el elemento caption
+                    </li>
+                    <li>
+                        Solo usar tablas para información tabular
+                    </li>
+                    <li>
+                        usar "scope" o "id-headers"
+                    </li>
+                    <li>
+                        Aplicar estilos sin perder semántica
+                    </li>
+                    <li>
+                        Solo usar "colspan" y "rowspan" si es necesario
+                    </li>
+            </section>

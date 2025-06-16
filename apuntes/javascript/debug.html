@@ -1,0 +1,174 @@
+<section id="Debugging JavaScript">
+                    <h2>
+                        Debugging JavaScript
+                    </h2>
+
+<p>
+    Al trabajar con código JS es posible que nos enfrentemos
+    a diversos errores, los maś comunes son errores de sintaxis y errores de lógica.
+</p>
+
+<p>
+    Para los errores de sintaxis, la propia consola nos indicará en dónde se encuentran estos.
+    Una buena practica siempre es el verificar que nuestro código sea valido en primer
+    lugar, esto se puede hacer comprobándolo por medio de un verificador, estos existen
+    tanto en forma web como en forma de extensiones en algunos editores de código.
+</p>
+
+<p>Algunos problemas comunes en JavaScript son:</p>
+
+<ul>
+    <li>
+        Problemas de sintaxis o lógica.
+    </li>
+    <li>
+        Variables no definidas en el scope correcto.
+    </li>
+    <li>
+        Confusión con la palabra clave "this".
+    </li>
+    <li>
+        Uso incorrecto de loops.
+    </li>
+    <li>
+        Querer utilizar resultados de funciones asíncronas antes de tiempo.
+    </li>
+</ul>
+
+<h3>La consola del navegador</h3>
+
+<p>
+    las "devtools" de un navegador son especialmente útiles a la hora de que querer
+    resolver errores en un código JavaScript, ya que para empezar, los errores serán reportados en la consola del navegador.
+</p>
+
+<h3>La "console API"</h3>
+
+<p>
+    Esta API es la que permite interactuar al código JS con la consola de los
+    navegadores. Como cualquier otra API esta tiene multiples funciones disponibles, algunas de las más comunes son:
+</p>
+
+<dl>
+    <dt>
+        console.log()
+    </dt>
+    <dd>
+        Muestra un mensaje.
+    </dd>
+    <dt>
+        console.error()
+    </dt>
+    <dd>
+        Muestra un error en rojo.
+    </dd>
+    <dt>
+        console.warn()
+    </dt>
+    <dd>
+        Muestra una advertencia en amarillo.
+    </dd>
+    <dt>
+        console.info()
+    </dt>
+    <dd>
+        Similar a "console.log", pero muestra la información de forma estilizada.
+    </dd>
+    <dt>
+        console.table()
+    </dt>
+    <dd>
+        Muestra la información en formato tabular.
+    </dd>
+    <dt>
+        console.clear()
+    </dt>
+    <dd>
+        Limpia la consola de mensajes anteriores.
+    </dd>
+    <dt>
+        console.time() - console.timeEnd()
+    </dt>
+    <dd>    
+        Mide el tiempo de ejecución entre llamadas.
+    </dd>
+    <dt>
+        console.assert()
+    </dt>
+    <dd>
+        Toma 2 parámetros, una condición y un mensaje, si la condición es falsa, se muestra el mensaje.
+    </dd>
+    <dt>
+        console.group() - console.groupEnd()
+    </dt>
+    <dd>
+        Envuelve mensajes relacionados.
+    </dd>
+    <dt>
+        console.count()
+    </dt>
+    <dd>
+        Lleva el conteo de las cantidad de veces que se ha utilizado.
+    </dd>
+</dl>
+
+<p>
+    Es una buena practica utilizar estas funciones a lo largo de nuestro código para poder
+    revisar el estado de nuestros programas. De todas los métodos mencionados
+    anteriormente, los más comunes de usar son:
+</p> 
+
+<ul>
+    <li>
+        console.log()
+    </li>
+    <li>
+        console.error()
+    </li>
+    <li>
+        console.table()
+    </li>
+</ul>
+
+<p>
+    Siempre se deben de eliminar todos estos mensajes una vez
+    comprobado el correcto funcionamiento del programa.
+</p>
+
+<h3>Manejando errores en JavaScript</h3>
+
+<p>
+    HTML y CSS son lenguajes permisivos, es decir, que los errores en estos
+    generalmente solo serán ignorados y no tendrán un gran impacto en nuestras
+    páginas. Sin embargo, javascript no es así, cuando en un código javascript
+    se encuentran problemas, este lanzará errores.
+</p>
+
+<p>
+    Nuestra primera herramienta para poder manejar errores es por medio de las condicionales,
+    de esta forma podemos ejecutar diferentes bloques de código dependiendo
+    de diferentes resultado como posibles errores.
+</p>
+
+<h3>Errores personalizados</h3>
+
+<p>
+    Es posible crear nuestros propios mensaje de error para tener aun más
+    control sobre estos. esto se realiza creando un nuevo objeto "Error" y
+    con la palabra clave "throw", esto "arrojará" un objeto de tipo "error" para ser manejado.
+</p>
+
+<h3>try...catch</h3>
+
+<p>Es la declaración especialmente diseñada para manejar errores</p>
+
+<figure>
+    <figcaption>Estructura try...catch</figcaption>
+    <span><pre>
+try{
+	código;
+}catch (error){
+	código en caso de error;
+}</pre></span>
+</figure>
+                </section>

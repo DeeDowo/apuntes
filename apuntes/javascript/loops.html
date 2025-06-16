@@ -1,0 +1,230 @@
+<section id="Loops">
+                    <h2>
+                        Loops
+                    </h2>
+                    <p>
+                        La principal utilidad de los loops es repetir una misma tarea un cierta cantidad de veces o de forma indefinida. Por ejemplo,
+                        los loops para recorrer arrays ("for...of", map(), filter()).
+                    </p>
+                    <dl>
+                        <dt>
+                            For...of
+                        </dt>
+                        <dd>
+                            El loop más básico para recorrer arrays en JavaScript.
+                        </dd>
+                        <dt>  
+                            Map()
+                        </dt>
+                        <dd>
+                            Toma como argumento alguna función para realizar una cierta acción en todos los elementos de una colección y luego guardar estos en una nueva 
+                            colección con el elementos modificados.
+                        </dd>
+                        <dt>
+                            Filter()
+                        </dt>
+                        <dd>
+                            Similar a "map()", con la excepción de que "filter()" solo crea una nueva colección con los elementos 
+                            que cumplan una o varias condiciones. Esta función "test" devuelve un boolean una vez ejecutada, si 
+                            el resultado el "true" el elemento se guarda en la nueva colección, si el resultado es "false", este se omite.
+                            Para poder conservar la colección resultante, hay que asignar esta a una variable
+                        </dd>
+                    </dl>
+                    <h3>
+                        For loop
+                    </h3>
+                    <p>
+                        Un "for" loop, como cualquier otro loop, nos permite realizar alguna acción un número determinado o indeterminado número de veces. Este 
+                        tiene la siguiente estructura:
+                    </p>
+                    <figure>
+                        <figcaption>Estructura "for"</figcaption>
+                        <span><pre>
+for (initicializador; condición; expresión final) {
+    ...código...
+}</pre></span>
+                    </figure>
+                    <p>
+                        En la estructura de un "for" loop tenemos:
+                    </p>
+                    <ul>
+                        <li>
+                            La palabra clave "for".
+                        </li>
+                        <li>
+                            Un par de paréntesis para indicar los parámetros de nuestro loop.
+                        </li>
+                        <li>
+                            El "inicializador", el cual es el lugar reservado para declarar nuestra variable de control del loop, 
+                            es decir, aquella que le indicará cuando parar a este.
+                        </li>
+                        <li>
+                            La "condición, el cual es el lugar reservado para insertar una condición, es decir, mientras esta sea 
+                            verdadera, nuestro loop continuará ejecutándose. esta condición es referente a nuestra variable de control generalmente.
+                        </li>
+                        <li>
+                            La "expresión final", el cual es el lugar reservado en donde colocamos una expresión que modificará 
+                            nuestra variable de control con cada iteración del loop y de esta forma aseguramos que en algún punto nuestro 
+                            loop se terminará.
+                        </li>
+                        <li>
+                            Por ultimo un par de llaves que envuelven a todo nuestro código a iterar "n" número de veces.
+                        </li>
+                    </ul>
+                    <figure>
+                                <figcaption>Ejemplo for</figcaption>
+                                <code><pre>
+for (let i = 1; i &lt;= 10 ; i++) {
+    console.log("hola");
+}</pre></code>
+                    </figure>
+                    <figure>
+                                <figcaption>Ejemplo for para un array</figcaption>
+                                <code><pre>
+for (let i = 0 ; i &lt; arreglo.length ; i++){
+    console.log(arreglo[i]\n);
+}</pre></code>
+                    </figure>
+                    <h3>
+                        While y do while
+                    </h3>
+                    <p>
+                        "for" no es el único bucle disponible en JavaScript, existen varios más, principalmente "while" y 
+                        "do...while", estos 2 son bastante similares, ahí el que tengan nombres tan parecidos.
+                    </p>
+                    <figure>
+                        <figcaption>Estructura while</figcaption>
+                        <span><pre>
+                            inicializador;
+                    while (condición){
+                        ...código...
+                        expresión final;
+                    }
+                        </pre></span>
+                    </figure>
+                    <p>
+                        Podemos notar que la estructura de un bucle "for" y la de un bucle "while" son bastante similares, pero con un orden diferente. En el bucle "while"
+                        el orden es:
+                    </p>
+
+                    <ul>
+                        <li>
+                            Inicializador.
+                        </li>
+                        <li>
+                            Palabra clave "while".
+                        </li>
+                        <li>
+                            Condición.
+                        </li>
+                        <li>
+                            "Expresión final" dentro del propio código a ejecutar en el bucle.
+                        </li>
+                    </ul>
+                    <p>
+                        Cada uno de lo elementos cumple la misma función que en el bucle "for".
+                    </p>
+                    <figure>
+                                <figcaption>Ejemplo while</figcaption>
+                                <code><pre>
+let i = 0;
+while (i&lt;10) {
+    console.log("hola");
+    i++;
+}</pre></code>
+                    </figure>
+                    <figure>
+                                <figcaption>Ejemplo while para un array</figcaption>
+                                <code><pre>
+let i = 0;
+while (i&lt;arreglo.length) {
+    console.log(arreglo[i]\n);
+    i++;
+}</pre></code>el bucle "do while"
+                    <p>
+                        Por otra parte, la unica verdadera diferencia entre un bucle "while" y un bucle "do...while"
+                        es que el bucle "do...while", siempre hace al menos una iteración del código, su estructura es: 
+                    </p>
+                    <figure>
+                        <figcaption>Estructura do...while</figcaption>
+                        <span><pre>
+inicializador;
+do{
+expresión final;
+} while (condición);</pre></span>
+                    </figure>
+                    <p>
+                        En su estructura tenemos:
+                    </p>
+                    <ul>
+                        <li>
+                            Inicializador.
+                        </li>
+                        <li>
+                            Palabra clave "do".
+                        </li>
+                        <li>
+                            "Expresión final" dentro del propio código a ejecutar en el bucle.
+                        </li>
+                        <li>
+                            Palabra clave "while".
+                        </li>
+                        <li>
+                            Condición.
+                        </li>
+                    </ul>
+                    <figure>
+                        <figcaption>Ejemplo do...while</figcaption>
+                        <code><pre>
+let i =0;
+do{
+    console.log("hola");
+    i++;
+} while (i &lt; 10);
+                        </pre></code>
+                    </figure>
+                    <figure>
+                        <figcaption>Ejemplo do...while para un array</figcaption>
+                        <code><pre>
+let i =0;
+do{
+    console.log(arreglo[i]\n);
+    i++;
+} while (i &lt; arreglo.length)
+                        </pre></code>
+                    </figure>
+                    <p>
+                        Algo a considerar es que al trabajar con loops, es posible caer en un loop infinito, esto sucede cuando la 
+                        condición expresada siempre es "true" y esto puede provocar multiples errores. Por 
+                        eso siempre hay que crear una relación solida entre la variable de control, la 
+                        expresión para modificar esta y la condición, ya que de estas tres es de quienes depende el buen funcionamiento de un bucle.
+                    </p>
+                    <h3>
+                        Saliendo de los loops
+                    </h3>
+                    <p>
+                        Cuando queremos terminar un loop antes de haber hecho todas las iteraciones o en el caso de una 
+                        colección, antes de haberla recorrido por completo, podemos usar la palabra clave "break". El 
+                        funcionamiento de "break" en un loop es el mismo que en un "switch statements", es decir, finaliza el proceso, en este caso, el loop.
+                        Esto es especialmente util cuando, por ejemplo, queremos buscar un elemento en una colección y 
+                        que al encontrarlo podamos salir de este loop en lugar de recorrer todos los elementos dentro de este.
+                    </p>
+                    <h3>
+                        Omitiendo iteraciones
+                    </h3>
+                    <p>
+                        Cuando queremos omitir una iteración en un loop e ir con el siguiente valor, podemos usar la 
+                        palabra clave "continue", de esta forma el valor actual se descartará para la aplicación del 
+                        código subsecuente a este e iremos directamente al siguiente valor como si hubiéramos terminado todo el proceso anterior.
+                        Esto es especialmente util cuando, por ejemplo, queremos solo tomar ciertos valores que 
+                        cumplan ciertas características y que aunque descartemos algún valor, sí nos interesa seguir iterando.
+                    </p>
+                    <h3>
+                        Qué loop utilizar?
+                    </h3>
+                    <p>
+                        Al iterar sobre una colección, generalmente el "for...of" es la mejor opción. 
+                        mientras que para "for", "while" y "do...while", estos generalmente pueden ser 
+                        intercambiables.
+                    </p>
+                </section>

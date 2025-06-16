@@ -1,0 +1,179 @@
+<article id="Conflictos en CSS">
+                <h2>
+                    Conflictos en CSS
+                </h2>
+                <p>
+                    En CSS existe una "jerarquía", la cual indica en qué order se ejecutan las reglas, cómo se heredan y cuanto "peso" tiene cada una. 
+                    Para una correcta aplicación de estilos, se tiene que ser consiente de estos tres factores y cómo se relacionan entre ellos, ya 
+                    que estos pueden provocar comportamientos inesperados entre ellos.
+                </p>
+                <dl>
+                    <dt>
+                        Cascada
+                    </dt>
+                    <dd>
+                        Hace referencia a que el origen y orden de las reglas en CSS son importantes,
+                        cuando se tienen dos reglas con el mismo valor de "especificidad", la ultima declarada es aquella que tiene mayor "peso".
+                    </dd>
+                    <dt>
+                        Herencia
+                    </dt>
+                    <dd>
+                        Algunas propiedades de CSS aplicadas en un elemento "padre", son heredadas a los elementos "hijos" por defecto, es decir, 
+                        que los valores de estas propiedades se heredarán a sus hijos.
+                        Por ejemplo tenemos a la propiedades "color" y "font-family" que son heredadas a todos los elementos "hijos" del elementos en donde se declaren.
+                    </dd>
+                    <dt>
+                        Especificidad
+                    </dt>
+                    <dd>    
+                        La "especificidad" es un algoritmo que el navegador usa para asignar un valor a un selector y con base en este valor dar un
+                        mayor o menor "peso" a este.
+                        Por ejemplo, cuando se tienen multiples bloques de reglas que intentan aplicarse a un mismo elemento, aquel
+                        selector que
+                        tenga un mayor valor de "especificidad" será el que tendrá un mayor "peso".
+                        La "especificidad" es básicamente una forma de medida que indica que tan especifico es un selector.
+                    </dd>
+                </dl>
+                <h3>
+                    Más sobre la herencia
+                </h3>
+                <p>
+                    Para controlar la herencia existen cinco posibles valores:
+                </p>
+                <ul>
+                    <li>
+                        inherit: El valor de cual sea la propiedad que tenga el padre, se hereda al hijo
+                    </li>
+                    <li>
+                        initial: Se asigna el valor inicial de dicha propiedad, definido por el propio CSS
+                    </li>
+                    <li>
+                        revert: Revierte el valor de una propiedad al por defecto del navegador
+                    </li>
+                    <li>
+                        revert-layer: Revierte el valor de la propiedad al definido en una capa
+                        CSS anterior, si no hay capas, funciona como revert
+                    </li>
+                    <li>
+                        unset: Reinicia una propiedad a su valor natural (si una propiedad se puede
+                        heredar del elemento "padre", funciona como "inherit". Cuando una propiedad
+                        no se puede heredar, funciona como "initial"), sirve como un "reset" inteligente
+                        que hereda si es posible o usa el valor inicial si no es posible.
+                    </li>
+                </ul>
+                <p>
+                    Al hablar de herencia, cabe mencionar la propiedad shorthand "all", esta sirve para aplicar uno de los posibles
+                    valores de herencia a esencialmente todas las propiedades. Los valores más comunes para "all" son:
+                </p>
+                <ul>
+                    <li>
+                        initial: El elemento ignora todo (padre y navegador) y utiliza el valor predeterminado por el propio CSS
+                    </li>
+                    <li>
+                        revert: El elemento usará los estilos predefinidos del navegador
+                    </li>
+                    <li>
+                        inherit: El elemento copia todas las propiedades explicitas del padre
+                    </li>
+                </ul>
+                <p>
+                    Al aplicar la propiedad "all" a algún elemento, sus hijos heredarán
+                    solo aquellas que se heredarían por defecto, es decir, si usamos "all" para forzar heredar algo como "border", esta no se heredará a los 
+                    hijos del elemento en donde hayamos usado "all", ya que "border" no es una propiedad que se herede por defecto. En otras palabras,
+                    "all" solo aplica en el elemento donde se declara.
+                </p>
+                <h3>
+                    Más sobre la cascada
+                </h3>
+                <p>
+                    Cuando hay diferentes bloques de reglas con un mismo selector,
+                    se consideran dos factories para decidir que selector tendrá un mayor "peso":
+                </p>
+                <ul>
+                    <li>
+                        Orden de declaración
+                    </li>
+                    <li>
+                        Especificidad
+                    </li>
+                </ul>
+                <p>
+                    Cuando se tienen multiples bloques de reglas para un selector con el mismo "peso",
+                    se respetan las declaraciones del ultimo bloque. Algo a tener presente es que esto no significa que las declaraciones previas 
+                    se borren o se ignoren en su totalidad, el decir que se respetan las declaraciones del ultimo bloque significa que estas sobrescribirán las 
+                    previamente declaradas de ser el caso. El orden solo importa cuando los selectores tienen el mismo "peso" de especificidad.
+                </p>
+                <h3>
+                    Más sobre la especificidad
+                </h3>
+                <p>
+                    Cuanto más especifico es un selector, mayor será su "peso" y este será el que defina qué selectores tendrán
+                    prioridad por sobre otros.
+                    Por ejemplo, una clase tiene más "peso" que un selector general.
+                    Una practica común es declarar
+                    reglas generales con selectores generales primero y luego reglas especificas con selectores más específicos, de esta forma evitamos 
+                    la repetición innecesaria.
+                </p>
+                <p>
+                    Esta "especificad" no es algo arbitrario, el navegador tiene una métrica exacta para
+                    definir qué selectores son mas específicos que otros (medir la "cantidad" de especificidad). Esta métrica es una sumatoria de "puntos" en
+                    diferentes divisiones, cada una de estas divisiones suma puntos de ciertos tipos de selectores, una forma de visualizar esto es:
+                </p>
+                <ul>
+                    <li>
+                        ID (1-0-0)
+                    </li>
+                    <li>
+                        Clases, atributos, pseduoclases (0-1-0)
+                    </li>
+                    <li>
+                        Elementos, pseudoelemento (0-0-1)
+                    </li>
+                </ul>
+                <p>
+                    Cada selector suma un punto en su división lo cual le da mayor "peso" sobre
+                    otros selectores, sin embargo, no hay igualdades entre divisiones, es decir, no
+                    importa la cantidad de clases que hayan, jamás tendrán mas especificidad que un solo id.
+                </p>
+                <p>
+                    Algo a considerar, es que no es recomendable el uso de "id" como selector, más que en casos extremadamente
+                    específicos, ya que estos limitan la posible reutilización de reglas, lo cual no suele ser un buen
+                    acercamiento al crea hojas de estilos.
+                </p>
+                <h4>
+                    Inline styles y la especificidad
+                </h4>
+                <p>
+                    Al hablar de "especificad" es importante saber que los "inline styles" (atributos de estilo en 
+                    el documento HTML) tiene una mayor "especificidad" (1-0-0-0) a lo mencionado anteriormente, es decir, sin 
+                    importar las reglas declaradas en el documento ".css",
+                    los "inline styles" siempre se aplicarán por sobre estos, salvo un caso en especifico.
+                </p>
+                <h4>
+                    !important
+                </h4>
+                <p>
+                    La palabra clave "!important" en CSS indica que un
+                    atributo se aplicará por sobre todos sin importar su especificidad, incluso por sobre los "inline
+                    styles", por lo mismo, no es recomendable su uso. La unica forma de sobrescribir una propiedad con la palabra clave "!important" es con
+                    el uso de esta misma en la propiedad con el nuevo valor que se quiere aplicar.
+                </p>
+                <h3>
+                    Selectores conflictivos
+                </h3>
+                <p>
+                    Algunos posibles conflictos que pueden suceder son:
+                </p>
+                <ul>
+                    <li>
+                        Tener diferentes bloques de reglas con un mismo selector
+                    </li>
+                    <li>
+                        valores que se heredan por defecto 
+                    </li>
+                    <li>
+                        selectores que tiene mayor "peso" por su especificad
+                    </li>
+                </ul>
+            </article>

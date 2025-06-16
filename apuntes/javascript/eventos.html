@@ -1,0 +1,488 @@
+<section id="Eventos">
+                    <h2>
+                        Eventos
+                    </h2>
+                    <p>
+                        Los eventos son cosas que suceden en el sistema, este mismo nos 
+                        dice acerca de ellos para que de esta forma nuestro código pueda reaccionar a estos. Por ejemplo, algo típico en JavaScript es reaccionar a 
+                        cuando el usuario hace click en un botón.
+                    </p>
+                    <p>
+                        Los eventos suceden o se "disparan" cuando una de señal de algún tipo ocurre, 
+                        el propio sistema provee de un mecanismo para poder ejecutar algún código cuando estas 
+                        señales ocurren. Algunos ejemplos son:
+                    </p>
+                    <ul>
+                        <li>
+                            El usuario selecciona, hace "click" o "sobrevuela" un cierto elemento.
+                        </li>
+                        <li>
+                            El usuario presiona una tecla en el teclado.
+                        </li>
+                        <li>
+                            El usuario redimensiona una ventana.
+                        </li>
+                        <li>
+                            Un página web termina de cargarse.
+                        </li>
+                        <li>
+                            Un formulario en enviado.
+                        </li>
+                        <li>
+                            Un video es reproducido, pausado o finalizado.
+                        </li>
+                        <li>
+                            Algún error ocurre.
+                        </li>
+                    </ul>
+                    <p>
+                        Para poder reaccionar a un evento, se tiene que asignar un controlador de eventos ("event handler") 
+                        a estos. Esto en esencia es un bloque de código (usualmente una función que nosotros creamos) que se 
+                        ejecuta cuando un evento se dispara. Cuando un bloque de código es defino para accionarse en 
+                        respuesta a una evento, decimos que estamos registrando un controlador de eventos.
+                    </p>
+                    <p>
+                        Los 
+                        "event handlers" aveces son llamados también "event listeners", sin embargo, hablando de 
+                        forma técnica, en realidad estas son dos partes que trabajan juntas. El "listener" 
+                        "escucha" los eventos y el "handler" es el código que responde a lo que "escucha" el "listener".
+                    </p>
+                    <p>
+                        Los "web events" no son parte de JavaScript en si mismos, estos son definidos 
+                        por parte del las APIs precargadas en el navegador.
+                    </p>
+                    <figure>
+                        <figcaption>Ejemplo Evento</figcaption>
+                        <code><pre>
+const btn = document.querySelector("button");
+
+function random(number){
+	return Math.floor(Math.random() * (number + 1));
+}
+
+btn.addEventListener("click", () => {
+	const rndCol = rgb(${random(255)} ${random(255)} ${random(255)});
+	document.body.style.backgroundColor = rndCol;
+});</pre></code>
+                    </figure>
+                    <p>
+                        En este ejemplo tenemos un botón que al presionarlo, hace que el color de fondo de la página cambie. Las partes de este son:
+                    </p>
+                    <ol>
+                        <li>
+                            El elemento HTML &lt;button&gt; disparará un evento cuando el usuario haga "click" sobre 
+                            este, entonces definimos un "addEventListener()" y a este método le pasamos dos parámetros.
+                        </li>
+                        <li>
+                            El string "click", indica que queremos "escuchar" un evento "click". Los botones pueden 
+                            disparar diferente eventos, un par de ejemplos son "mouseover", para cuando el usuario mueve el 
+                            mouse sobre un botón o "keydown", para cuando el usuario utiliza una tecla de navegación y el botón es seleccionado.
+                        </li>
+                        <li>
+                            Una función que se ejecuta cuando el evento descrito en el parámetro anterior sucede, en este 
+                            caso ocupamos una función anónima para generar un color aleatorio usando la función RGB y 
+                            aplicar este al "backgroundColor" de la página.La función puede o no ser anónima.
+                        </li>
+                    </ol>
+                    <figure>
+                        <figcaption>Ejemplo Evento sin función anónima</figcaption>
+                        <code><pre>
+const btn = document.querySelector("button");
+
+function random(number){
+	return Math.floor(Math.random() * (number + 1));
+}
+
+function changeBackground(){
+	const rndCol = rgb(${random(255)} ${random(255)} ${random(255)});
+	document.body.style.backgroundColor = rndCol;
+}
+
+btn.addEventListener("click", changeBackground);</pre></code>
+                    </figure>
+                    <h3>
+                        AddEventListener()
+                    </h3>
+                    <p>
+                        El método "addEventListener()" es el mecanismo recomendado para agregar controladores de eventos.
+                    </p>
+                    <h4>
+                        Algunos eventos comunes
+                    </h4>
+                    <dl>
+                        <dt>
+                            Focus y Blur
+                        </dt>
+                        <dd>
+                            Los eventos "focus" y "blur" suelen usarse en conjunto. sirven para cuando un elemento es "seleccionado" o "deseleccionado".
+                            Generalmente son utilizados en campos de entrada para indicar qué ingresar o indicar algún 
+                            error de formato por mencionar algunos ejemplos.
+                        </dd>
+                        <dd>
+
+                        </dd>
+                        <dt>
+                            Dbclick
+                        </dt>
+                        <dd>
+                            El evento "dblclick" se utiliza para "escuchar" un doble "click" sobre algún elemento. Generalmente se utiliza en botones.
+                        <dd>
+
+                        </dd>
+                        <dt>
+                            "mouseover" y "mouseout"
+                        </dt>
+                        <dd>
+                            Los eventos "mouseover" y "mouseout" suelen usarse en conjunto. sirven para cuando el mouse "sobrevuela" un elemento y
+                            para cuando el mouse deja de "sobrevolar" un el elemento.
+                        </dd>
+                        <dd>
+
+                        </dd>
+                    </dl>
+                    <p>
+                        Los eventos tienen su propia clasificación, es decir, existen algunos eventos que están disponibles en prácticamente todos los elementos, mientras 
+                        que existen otros que son más específicos y que solamente sirven para ciertos 
+                        elementos. Por ejemplo, "play", este evento solo está disponible para elementos como video o audio.
+                    </p>
+                    <h3>
+                        RemoveEventListener()
+                    </h3>
+                    <p>
+                        Como su nombre indica, este método es la contraparte de "addEventListener", 
+                        este sirve para remover algún evento, es decir, que se una vez ejecutado un "removeEventListener()" 
+                        tratamos de volver a ejecutar el "addEventListener()", este no se funcionará ya que ya no existirá.
+                    </p>
+                    <figure>
+                        <figcaption>Ejemplo removeEventListener()</figcaption>
+                    </figure>
+                    <p>
+                        La utilidad de "removeEventListener" es que esto puede mejorar la eficiencia cuando se tiene 
+                        un exceso de "addEventListener()".
+                    </p>
+                    <p>
+                        Otra forma de remover "addEventListener" es pasando una "AbortSignal" a los "addEventListener()" y después 
+                        en el código llamar la función "abort()" en el controlador de la "AbortSignal".
+                    </p>
+                    <h3>
+                        Multiples "addEventListener()" a un solo elemento
+                    </h3>
+                    <p>
+                        El agregar multiples "addEventListener()" a un mismo elemento, es un practica común para hacer que este 
+                        reaccione de multiples formas a un mismo evento.
+                    </p>
+                    <figure>
+                        <figcaption>Ejemplo multiples addEventListener()</figcaption>
+                        <span><pre>
+elemento.addEventListener("click", función1);
+elemento.addEventListener("click", función2);</pre></span>
+                    </figure>
+                    <h3>
+                        Otros mecanismos para "escuchar" eventos
+                    </h3>
+                    <p>
+                        "addEventListener()" es lo recomendable para registrar diferentes "events handlers", 
+                        es el método más poderoso y escala de una buena forma con programas mas complejos, sin 
+                        embargo, existen otras dos formas para registrar estos eventos.
+                    </p>
+                    <dl>
+                        <dt>
+                            Event handler properties
+                        </dt>
+                        <dd>
+                            Algunos objetos tienen propiedades con el prefijo "on" seguido del nombre del evento. Por ejemplo, para botones 
+                            tenemos la propiedad "onclick", que se activa cuando se hace "click" en el, esta es llamada una "event handler property", 
+                            para usar esta hay que asignar la función al elementos con esta propiedad. se puede usar tanto una función de flecha como una normal.
+                        </dd>
+                        <dd>
+                            
+                            <figure>
+                                <figcaption>Ejemplo "event handler property" con función de flecha</figcaption>
+                                <code><pre>
+btn.onclick = () => {
+    const rndCol = rgb(${random(255)} ${random(255)} ${random(255)});
+    document.body.style.backgroundColor = rndCol;
+};</pre></code>
+                            </figure>
+                        </dd>
+                        <dd>
+                            A diferencia de "addEventListener()", no se pueden agregar multiples "event handler properties"
+                            a un mismo elemento, esto sucede ya que cualquier función 
+                            asignada al final, sobrescribirá todas las asignaciones anteriores.
+                        </dd>
+                        <dd>
+                            <figure>
+                                <figcaption>Ejemplo "event handler properties" sobrescritura</figcaption>
+                                <span>
+                                    <pre>
+elemento.onclick = función1;
+elemento.onclick = función2;</pre>
+                                </span>
+                            </figure>
+                        </dd>
+                        <dt>
+                            Inline event handlers
+                        </dt>
+                        <dd>
+                            Los "inline event handlers" se agregan directamente en el documento HTML, es el 
+                            método más primitivo para registrar eventos y actualmente considerada una mala practica, 
+                            principalmente porque al igual que lo visto previamente con HTML y CSS, no es buena 
+                            bueno combinar semántica (HTML) con estilos(CSS) con funcionalidad(JS) en el mismo 
+                            documento. La mejor practica es mantener los diferentes elementos proporcionados por 
+                            los diferentes lenguajes en diferentes archivos. Por lo general la mayoría de 
+                            servidores desactivarán el "inline JavaScript" como medida de seguridad.
+                        </dd>
+                    </dl> 
+                    <h3>
+                        Objetos de eventos
+                    </h3>
+                    <p>
+                        Algunas veces, dentro de una "event handler function", existirá la presencia de 
+                        un parámetro con el nombre "event", "evt" o "e". Este es llamado el "event object", es 
+                        "pasado" de forma automática al "event handler" para proveer información y características extras.
+                    </p>
+                    <figure>
+                        <figcaption>Ejemplo Event object</figcaption>
+                        <code><pre>
+const btn = document.querySelector("button");
+
+function random(number){
+    return Math.floor(Math.random() * (number + 1));
+}
+
+function bgChange(e){
+    const rndCol = rgb(${random(255)} ${random(255)} ${random(255)});
+    e.target.style.backgroundColor = rndCol;
+}
+
+btn.addEventListener("click", bgChange);</pre></code>
+                    </figure>
+                    <p>
+                        En este ejemplo estamos modificando el elemento "e.target", el cual es el propio botón, 
+                        la propiedad "target" del evento es siempre una referencia al elemento en donde está 
+                        sucediendo el evento, en este ejemplo, el fondo aleatorio ocurre en el botón, no en la página
+                    </p>
+                    <p>
+                        Es posible usar cualquier nombre posible para el "event object", sin embargo, la practica 
+                        más común es utilizar "e", "evt" o "event". Una vez elegido un nombre, solo hay que ser consistente con este.
+                    </p>
+                    <h3>
+                        Propiedades extras para el event object
+                    </h3>
+                    <p>
+                        La mayoría de "event objects" tienen un set estándar de propiedades y métodos disponibles, 
+                        algunos "event objects" tienen propiedades extra, relevantes para ese tipo de evento en 
+                        particular. Por ejemplo, los eventos "keydown" que se disparan cuando el usuario presiona 
+                        alguna tecla, el "event object" de este tiene una propiedad especial, "key", la cual indica qué tecla fue presionada.
+                    </p>
+                    <figure>
+                        <figcaption>Ejemplo "key"</figcaption>
+                        <code><pre>
+const textBox = document.querySelector("#textbox");
+const output = document. querySelector("#output");
+
+textBox.addEventListener("keydown", (event) => {
+    output.textContent = presionaste "${event.key}".;
+});</pre></code>
+                    </figure>
+                    <h3>
+                        Previniendo comportamiento "por defecto"
+                    </h3>
+                    <p>
+                        El método "preventDefault()" hace referencia a cuando queremos que algo ignore su comportamiento por defecto, 
+                    </p>
+                    <p>
+                        El 
+                        ejemplo más común es con formularios. Por defecto, al llenar un formulario y hacer 
+                        "click" en el botón "submit", la información será enviada a una página especificada 
+                        para su procesamiento. El problema ocurre cuando el usuario ha llenado de forma incorrecta el formulario, 
+                        como desarrollador, uno de nuestros trabajos es evitar que estos errores se manden al servidor.
+                        Para prevenir esto se envía un mensaje de error al usuario diciéndole en dónde está el error 
+                        y qué se necesita corregir para solucionar dicho error. 
+                    </p>
+                    <p>
+                        Algunos navegadores realizan verificaciones 
+                        de forma automática, pero otros no, por ende es recomendable implementar nuestras propias verificaciones siempre.
+                    </p>
+                    <figure>
+                        <figcaption>Ejemplo preventDefault()</figcaption>
+                        <code><pre>
+const form = document.querySelector("form");
+const fname = document.querySelector("fname");
+const lname = document.querySelector("lname");
+const para = document.querySelector("p");
+
+form.addEventListener("submit", (e) => {
+    if (fname.value === "" || lname.value === ""){
+        e.preventDefault();
+        para.textContent = "necesita ingresar nombre y apellido";
+    }
+});</pre></code>
+                    </figure>
+                    <p>
+                        En este ejemplo el punto más importante es el uso de "e.preventDefault()", este método como 
+                        su nombre indica, evita el comportamiento "por defecto", en este caso, el enviar el formulario.
+                    </p>
+                    <p>
+                        Algo a considerar es que los eventos no son únicos de JavaScript, la mayoría de lenguajes de programación tienen algún 
+                        tipo de "event model", al igual que su propia metodología del cómo funcionan estos. Generalmente
+                        diferente a JavaScript. De hecho, el propio modelo para eventos en JavaScript en paginas web es diferente al 
+                        modelo usado en otros entornos derivados de JavaScript.
+                    </p>
+                    <h3>
+                        Event bubbling
+                    </h3>
+                    <p>
+                        Hasta ahora hemos visto cómo una web está compuesta por diferentes elementos y que 
+                        podemos "escuchar" eventos en estos. Por ejemplo, ejecutar un código cuando el 
+                        usuario haga "click" en un botón.
+                        Una vez entendido eso podemos ver el "event bubbling", esto hace referencia a el cómo se "dispersan" los eventos.
+                    </p>
+                    <p>
+                        considerando una página con la siguiente estructura:
+                    </p>
+                    <figure>
+                        <figcaption>Ejemplo "event bubbling"</figcaption>
+<code>
+<pre>
+&lt;div id="container"&gt;
+
+    &lt;button&gt;click&lt;/button&lt;
+
+&lt;/div&gt;
+
+&lt;pre id="output"&gt;&lt;/pre&gt;</pre>
+</code>
+                    </figure>
+                    <p>
+                        Teniendo un botón dentro de un elemento "div", podemos decir que el 
+                        elemento "div" es "padre" del elemento "button".
+                    </p>
+                        
+
+                    <figure>
+                        <figcaption>Ejemplo event bubbling</figcaption>
+<code><pre>
+const output = document.querySelector("#output");
+
+function handleClick(e){
+    output.textContent += hiciste click en un elemento ${e.currentTarget.tagName}\n;
+}
+
+const container = document.querySelector("#container");
+container.addEventListener("click", handleClick);</pre></code>
+                    </figure>
+                    <p>
+                        En este ejemplo podemos ver como al hacer "click" en el botón, esto dispara 
+                        un evento definido en el elemento "padre", el "div".
+                    </p>
+                    <p>
+                        Si agregamos un "event listener" también al botón como al elemento padre del propio "div", 
+                        veremos que en los tres disparan el evento "click", en orden ascendente, es decir, 
+                        primero en el botón, luego en el "div" y por ultimo en el "padre" del div, a este 
+                        comportamiento se le llama "bubbles up". Esto es algo que  
+                        puede resultar util, pero a la vez puede generar problemas inesperados, ya que 
+                        si tenemos un mismo tipo de "event listener" para multiples elementos anidados, uno solo dispararía todos.
+                    </p>
+                    <h3>
+                        Arreglando el problema con "stopPropagation()"
+                    </h3>
+                    <p>
+                        "stopPropagation()" es una método disponible para los "event objects", 
+                        esta al ser declarada dentro de un "event handler" evita la propagación 
+                        del evento como su nombre lo indica, esta debe ser la primera expresión en el "event handler".
+                    </p>
+                    <h3>
+                        Captura de eventos
+                    </h3>
+                    <p>
+                        Una forma alternativa de "event propagation" es "event capture". se podría 
+                        decir que es la inversa de "event bubbling", es decir, en lugar  propagarse 
+                        desde el elemento más anidado, se propaga desde el elemento "menos anidado" 
+                        o el elemento "padre" hasta llegar al elemento más anidado. "even 
+                        capture" está deshabilitado por defecto, para poder activarlo se tiene que 
+                        pasar como parámetro en la función "addEventListener()" de la siguiente forma:
+                    </p>
+                        
+
+                    <figure>
+<figcaption>Activando "event capture"</figcaption>
+<span><pre>
+elemento.addEventListener("click", función, {capture: true}){
+    ...código...
+}</pre></span>
+                    </figure>
+                    <p>
+                        Por defecto, la gran mayoría de "event handlers" registran eventos de la 
+                        forma "bubbles up" ya que es lo que hace sentido la mayoría de las veces.
+                    </p>
+                    <h3>
+                        Delegación de eventos
+                    </h3>
+                    <p>
+                        El "event bubbling" puede pareces molesto, pero en varias ocasiones este 
+                        comportamiento puede resultar útil, en particular porque permite el "event delegation", es decir,
+                        que un elemento diferente al que queremos agregar algún 
+                        comportamiento se haga cargo de manejar este comportamiento. 
+                    </p>
+                    <p>
+                        Por ejemplo, 
+                        cuando queremos que un cierto código se ejecute al interactuar con cualquiera 
+                        de los "hijos" de un elemento, podemos definir un "event listener" en elemento 
+                        "padre" para que cuando el evento llegue a el a causa del "bubbling up", este se 
+                        haga cargo del comportamiento, de esta forma evitamos tener que indicar un 
+                        comportamiento a cada uno de los elementos "hijos" de manera individual.
+                    </p>
+                        
+
+                        
+
+                    <figure>
+                        <figcaption>Ejemplo "Event delegation"</figcaption>
+<code>
+<pre>
+function random(number){
+    return Math.floor(Math.random(number) + 1)
+}
+
+function bgChange(){
+    const rndCol = rgb(${random(255)} ${random(255)} ${random(255)});
+    return rndCol;
+}
+
+const container = document.querySelector("#container");
+
+container.addEventListener("click", (event) => {
+    event.target.style.backgroundColor = bgChange();
+});</pre>
+</code>
+                    </figure>
+                    <p>
+                        La parte más importante y referente a este tema en el ejemplo es el "event.target", 
+                        esta es la parte que se encargará de seleccionar el elemento de origen del 
+                        evento, en este caso el "hijo" en donde se originó el "click" y aplicar el código en dicho elemento.
+                    </p>
+                    <p>
+                        Si quisiéramos en este ejemplo modificar al elemento padre, podríamos usar 
+                        "event.currentTarget", el cual como su nombre indica, hace referencia al 
+                        elemento actual donde se "escucho" el evento incluso si este no es el origen.
+                    </p>
+                    <dl>
+                        <dt>    
+                            Target
+                        </dt>
+                        <dd>
+                            Fija. se refiere al origen del evento
+                        </dd>
+                        <dt>
+                            CurrentTarget
+                        </dt>
+                        <dd>
+                            Variable. se refiere a en qué punto de dispersion está el evento.
+                        </dd>
+                    </dl>
+                    <p>
+                        La propiedad "target" suele ser utilizada principalmente al 
+                        delegar un evento (event delegation).
+                    </p>
+                </section>

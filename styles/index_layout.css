@@ -1,0 +1,29 @@
+html{
+    box-sizing: border-box;
+}
+*,
+::after,
+::before{
+    box-sizing: inherit;
+}
+body {
+/* se toma un valor el valor mínimo. En resoluciones pequeñas 90vw, en resoluciones mayores 80ch*/
+  width: min(90vw, 80ch); 
+  margin: 0 auto;
+}
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.navegacion-principal__lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: .5em; /* para separar elementos */
+    padding: 0;
+}
+
+.navegacion-principal__elemento {
+    flex: 1 1 200px; 
+}

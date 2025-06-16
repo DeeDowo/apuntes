@@ -1,0 +1,98 @@
+<article id="Positioning">
+                <h2>
+                    Posicionamiento
+                </h2>
+                <p>
+                    La propiedad "position" en CSS define cómo se comporta un elemento
+                    dentro del flujo de un documento, es decir, el cómo se mostrará
+                    algún elemento respecto al resto. Esta propiedad sobrescribe el flujo normal del documento
+                    puede tomar 5 valores
+                </p>
+                <dl>
+                    <dt>
+                        Static
+                    </dt>
+                    <dd>
+                        El valor por defecto, los elementos se posicionan según el orden
+                        en que aparecen en el documento HTML y permanecen en el flujo normal,
+                        lo que significa que el resto de elementos reconocen su presencia y
+                        por ello respetan su espacio al posicionarse.
+                    </dd>
+                    <dt>
+                        Relative
+                    </dt>
+                    <dd>
+                        El valor "relative", el elemento no
+                        sale del flujo normal en si, sin embargo, ahora se puede
+                        modificar su posición final. El elemento ahora
+                        se puede mover visualmente en relación a su posición
+                        inicial con las propiedades "top", "bottom", "right" y "left".
+                        Este moviendo solo es visual, es decir, su espacio
+                        sigue siendo reservado por el navegador y respetado por el resto de elementos.
+                    </dd>
+                    <dt>
+                        Absolute
+                    </dt>
+                    <dd>
+                        A diferencia de "static" y "relative", el valor "absolute" sí saca por completo
+                        un elemento del flujo normal y lo posiciona en una capa diferente, superpuesta
+                        al flujo normal y separada del resto de elementos, los elementos con este valor
+                        ahora no ocupan espacio en el documento.
+                    </dd>
+                    <dd>
+                        Estos se posicionan en relación a su contenedor de posicionamiento, que es
+                        el primer ancestro
+                        con position diferente de static, si no
+                        hay ninguno, se posiciona respecto al viewport inicial de la pagina. Los elementos con valor
+                        "absolute" se posicionan con referencia a un elemento que lo contenga, si este elemento se mueve, el elemento
+                        con valor "absolute" se moverá con el automáticamente ya que su posición queda fijada a este elemento.
+                    </dd>
+                    <dd>
+                        La practica más normal es envolver un elemento "absolute" dentro del elemento donde lo
+                        queremos posicionar y a este darle un valor "relative", ya que este asegura
+                        cambios nulos, pero permite que ahora podamos posicionar el elemento absolute con respecto a este.
+                    </dd>
+                    <dt>
+                        Fixed
+                    </dt>
+                    <dd>
+                        Al igual que absolute, fixed también saca los elementos del
+                        flujo normal, pero estos se posiciona respecto al "visual viewport",
+                        es decir, siempre se mostrará en pantalla.
+                        De esta forma se pueden crear elementos que
+                        permanecerán en pantalla todo el tiempo, como una barra
+                        de navegación o un botón de chat por mencionar algunos ejemplos.
+                    </dd>
+                    <dt>
+                        Sticky
+                    </dt>
+                    <dd>
+                        Relativamente nueva, este valor es una mezcla entre "relative" y
+                        "fixed". El elemento con este valor está en el flujo normal, esta
+                        es una ventaja ya que no hay que modificar margenes o paddings,
+                        al alcanzar un cierto punto (que nosotros indicamos, generalmente
+                        con top o bottom) el elemento se "pega" al "visual viewport", este
+                        comportamiento se mantiene hasta que su contenedor sale del "visual viewport".
+                    </dd>
+                </dl>
+                <h3>
+                    Z-index
+                </h3>
+                <p>
+                    Cuando comenzamos a modificar la posición de los elementos utilizando la propiedad "position",
+                    estos se comienzas a sobreponer a otros o entre ellos mismos,
+                    de tal forma que cuando queremos indicar explícitamente qué
+                    elemento está más "adelante" o "atrás" respecto a otros,
+                    usamos la propiedad "z-index", la cual cuanto más grande
+                    sea el valor, mas adelante respecto al resto se mostrará
+                    y cuanto más chico sea este, incluidos valores negativos, estos se mostrarán por detrás.
+                </p>
+                <p>
+                    Por defecto todos los elementos posicionados (diferente de static) "ganan"
+                    sobre los no posicionados, esto significa que nuestros elementos "relative",
+                    "absolute", "fixed" o "sticky" siempre se mostraran sobre el documento normal.
+                    Sin embargo, cuando tenemos más de 1 elemento posicionado, estos se sobreponen
+                    dependiendo del orden de aparición original en el documento. "z-index" tiene un valor de "auto" o "0", lo cual ocasiona el
+                    comportamiento descrito anteriormente.
+                </p>
+            </article>

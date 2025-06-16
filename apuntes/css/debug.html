@@ -1,0 +1,76 @@
+<article id="Debugging CSS">
+                <h2>
+                    Debugging CSS
+                </h2>
+                <p>
+                    Al escribir código CSS, en la gran mayoría de los veces
+                    nos encontraremos en situaciones donde hayan comportamientos
+                    inesperados o situaciones donde queramos ver el funcionamiento de algún
+                    elemento de una pagina web externa,
+                    para esto, el propio navegador nos provee de herramientas.
+                    Cada navegador tiene sus propias herramientas y su propia forma de
+                    acceso a estas, la forma más común es usando "f12".
+                </p>
+                <h3>
+                    Código fuente vs código mostrado
+                </h3>
+                <p>
+                    El código fuente hace referencia al documento HTML original,
+                    mientras que el código mostrado es aquel ya corregido y es el que el navegador nos muestra.
+                    En otras palabras, se hace referencia a un antes y después.
+                </p>
+                <h3>
+                    Inspeccionando el CSS aplicado
+                </h3>
+                <p>
+                    Al inspeccionar el HTML de una pagina web, podemos navegar a traves de ella para
+                    ver las diferentes propiedades aplicadas a cada elemento, al igual que las propiedades heredadas de cada elemento.
+                    Para mayor facilidad también podemos inspeccionar directamente un elemento sin tener
+                    que navegar en el HTML, haciendo "click" derecho sobre un elemento en particular y seleccionando "inspeccionar".
+                    Algunas acciones comunes que podemos realizar o comportamientos que podemos observar al inspeccionar algún elemento es:
+                </p>
+                <ul>
+                    <li>
+                        Si este elemento usa propiedades shorthand, el navegador nos
+                        mostrará todas las propiedades asignadas a este shorthand, incluso cuando no estén en uso.
+                    </li>
+                    <li>
+                        Podemos hacer que alguna propiedad se active o desactive con tan solo
+                        seleccionar o deselecionar el "checkbox" que aparece al inicio de cada propiedad.
+                    </li>
+                    <li>
+                        Podemos modificar cada una de estas propiedades y ver un cambio en vivo
+                        de estos cambios sin la necesidad de actualizar la pagina.
+                    </li>
+                    <li>
+                        Podemos agregar más propiedades y visualizar sus efector
+                        en tiempo real.
+                    </li>
+                    <li>
+                        Podemos visualizar el "box-model" del elemento
+                        seleccionado al igual que sus medidas.
+                    </li>
+                </ul>
+                <h3>
+                    Resolviendo problemas específicos
+                </h3>
+                <p>
+                    Al trabajar con CSS pueden surgir problemas donde ciertas propiedades no se aplican de la forma que queremos
+                    o al tener que modificar CSS de sitios preexistentes, por mencionar un par de ejemplos, esto generalmente se debe
+                    a que dichas propiedades hacen "conflicto" con propiedades con un mayor "peso". Una solución 
+                    para estos problemas en particular son las "devtools", estas nos mostrarán las propiedades que están siendo 
+                    sobrescritas con un formato "tachado"
+                    y a su vez nos mostrarán cual es y de dónde proviene la propiedad que la reescribe.
+                </p>
+                <p>
+                    Algo que siempre se debe tener en consideration es si el navegador soporta las propiedades
+                    que queremos aplicar en primer lugar, por eso es importante siempre tener claro que tan
+                    soportadas son las propiedades que queremos usar al igual que incluir opciones para
+                    cuando ciertas propiedades no sean soportadas (fallbacks).
+                </p>
+                <p>
+                    Una metodología para resolver comportamientos inesperados es el recrear estos conflictos en
+                    entornos más controlados, es decir, tratar de extraer estos errores del documento en si,
+                    al minimizarlos podremos encontrar con mayor facilidad el problema.
+                </p>
+            </article>

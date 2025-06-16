@@ -1,0 +1,291 @@
+
+                <h2>
+                    Fundamentos de "media query"
+                </h2>
+                <p>
+                    Como mencionado anteriormente, los "media queries" son una especie de "test" que permiten aplicar reglas solo 
+                    cuando este "test" es aprobado. Por ejemplo, que el tamaño de una pantalla sea de un cierto tamaño. Estas son 
+                    especialmente útiles en el RWD ya que nos permiten hacer desde cambios 
+                    sutiles a cambios extremos dependiendo del espacio disponible o alguna otra regla.
+                </p>
+                <h3>
+                    Estructura básica de un "media query"
+                </h3>
+                <figure>
+                    <figcaption>Estructura media query</figcaption>
+                    <span><pre>
+@media media-type and (media-feature-rule){
+	/* 
+		Reglas CSS
+	*/
+}</pre></span>
+                </figure>
+                <dl>
+                    <dt>
+                        Media type
+                    </dt>
+                    <dd>
+                        Indica para qué tipo de medio son estas reglas, cuando este no se especifica, por defecto se aplica "all".
+                        <ul>
+                            <li>
+                                Contenido impreso (print)
+                            </li>
+                            <li>
+                                Contenido mostrado en pantalla (screen)
+                            </li>
+                            <li>
+                                Ambos (all)
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt>
+                        Media expression
+                    </dt>
+                    <dd>
+                        Indica una regla o "test" que se debe pasar para que las reglas declaradas sean aplicadas.
+                    </dd>
+                    <dt>
+                        Reglas CSS
+                    </dt>
+                    <dd>
+                        Los diferentes bloques de reglas que queramos aplicar al contenido que pase el "test" definido.
+                    </dd>
+                </dl>
+                <h3>
+                    Reglas en "media queries"
+                </h3>
+                <p>
+                    Una vez especificado el "media type" es posible especificar alguna o algunas reglas.
+                </p>
+                <h4>
+                    Tamaños
+                </h4>
+                <figure>
+                    <figcaption>Ejemplo tamaños</figcaption>
+                    <code><pre>
+@media screen and (width: 500px){
+	body{
+		color: red;
+	}
+}</pre></code>
+                </figure>
+                <p>
+                    En este ejemplo declaramos que cuando el "media type" sea de tipo "screen", es decir, 
+                    contenido mostrado en pantalla y este posee un tamaño de "500px" se aplicará un 
+                    color rojo a todo el "foreground" del elemento "body" de nuestro documento.
+                </p>
+                <p>
+                    Generalmente al usar "media queries" para diferentes tamaños, la practica más común y 
+                    recomendada es utilizar propiedades mínimas y máximas en conjunto con unidades relativas. Por ejemplo: 
+                </p>
+                <figure>
+                    <figcaption>Ejemplo tamaños mejorado</figcaption>
+                    <code><pre>
+@media screen (max-width: 50rem){
+	body{
+		color: red
+	}
+}</pre></code>
+                </figure>
+                <p>
+                    Este ejemplo realiza prácticamente lo mismo que el ejemplo anterior, con la 
+                    diferencia de que ahora el color rojo al "foreground" se aplicará hasta que el tamaño 
+                    del dispositivo supere los "50rem", es decir, 50 veces el tamaño de fuente por defecto de su navegador.
+                </p>
+                <h4>
+                    Orientación
+                </h4>
+                <p>
+                    Otra regla bastante soportado es "orientation" para la orientación, cuyos valores son: 
+                </p>
+                <ul>
+                    <li>
+                        portrait (vertical)
+                    </li>
+                    <li>
+                        landscape (horizontal)
+                    </li>
+                </ul>
+                <figure>
+                    <figcaption>Ejemple orientación</figcaption>
+                    <code><pre>
+@media screen (orientation: landscape){
+	body{
+		color: blue;
+	}
+}</pre></code>
+                </figure>
+                <p>
+                    En este ejemplo el "foreground" del elemento "body" será de color azul cuando la orientación sea de tipo "landscape" (horizontal). 
+                    Las páginas vistas en una computadora de escritorio o laptop, por defecto tienen la orientation de tipo "landscape".
+                </p>
+                <h4>
+                    Punteros
+                </h4>
+                <p>
+                    La regla "hover" verifica si el usuario está usando algún puntero. La navegación por teclado o en una pantalla touch no cuentan como "hover"
+                </p>
+                <p>
+                    La regla "pointer" identifica el tipo de medio para apuntar que se esta utilizando, puede tomar tres valores diferentes: 
+                </p>
+                <dl>
+                    <dt>
+                        Fine
+                    </dt>
+                    <dd>
+                        El valor "fine" indica que el usuario está utilizando algo como un mouse o track pad, 
+                        esto es util ya que podemos crear nuestros estilos basados en la idea de que el usuario puede seleccionar elementos con precisión.
+                    </dd>
+                    <dt>
+                        Coarse
+                    </dt>
+                    <dd>
+                        El valor "coarse" indica que el usuario está utilizando una "touchscreen", esto es util ya que podemos crear nuestros estilos 
+                        basados en la idea de que el usuario no puede seleccionar con elementos con tanta precisión.
+                    </dd>
+                    <dt>
+                        None
+                    </dt>
+                    <dd>
+                        El valor "none" significa que el usuario no tiene ningún dispositivo para seleccionar, 
+                        es decir, este está utilizando ya sea un teclado para navegador o comandos de voz.
+                    </dd>
+                </dl>
+                <p>
+                    Utilizar la regla "pointer" puede ser de ayuda para crear diferentes interfaces para diferentes medios y 
+                    de esta forma dar una mejor experiencia al usuario.
+                </p>
+                <h4>
+                    Usando sintaxis de rangos
+                </h4>
+                <p>
+                    Una practica común es utilizar "media queries" con un rango, es decir:
+                </p>
+                <figure>
+                    <figcaption>Ejemplo Media query con rango</figcaption>
+                    <code><pre>
+@media (min-width: 40rem) and (max-width: 80rem){
+	...
+}</pre></code>
+                </figure>
+                <p>
+                    En este ejemplo estamos aplicando como "test" un rango, una forma más sencilla para expresar esto es con la sintaxis de rango: 
+                </p>
+                <figure>
+                    <figcaption>Ejemplo Media query con sintaxis de rango</figcaption>
+                    <code><pre>
+@media (40rem &lt;= width &lt;= 80rem){
+	...
+}</pre></code>
+                </figure>
+                <p>
+                    Esta sintaxis es más sencilla y fácil de entender a simple vista. Las reglas 
+                    declaradas dentro del "media query" se aplicarán cuando el "width" sea mayor a 40rem y menor a 80rem.
+                </p>
+                <h4>
+                    Media queries de mayor complejidad
+                </h4>
+                <p>
+                    Similar a los lenguajes de programación, es posible utilizar operadores lógicos 
+                    para crear "media queries" de mayor complejidad combinando multiples "tests". Estos operadores son: 
+                </p>
+                <dl>
+                    <dt>
+                        OR
+                    </dt>
+                    <dd>
+                        El operador "," indica que las reglas se aplicarán mientras se cumpla al menos unos de los "test" indicados. 
+                        <figure>
+                            <figcaption>Ejemplo or</figcaption>
+                            <code><pre>
+@media screen and (width: 200px), screen and (width: 500px){
+	...
+}</pre></code>
+                        </figure>
+                    </dd>
+                    <dt>
+                        AND
+                    </dt>
+                    <dd>
+                        El operador "and" indica que las reglas se aplicarán cuando se cumplan ambos "test" comparados.
+                        <figure>
+                            <figcaption>Ejemplo and</figcaption>
+                            <code><pre>
+@media screen and (width: 200px) and (orientation: landscape){
+	...
+}</pre></code>
+                        </figure>
+                    </dd>
+                    <dt>
+                        NOT
+                    </dt>
+                    <dd>
+                        El operador "not" indica que las reglas se aplicarán cuando un "test" en particular no se cumpla.
+                        <figure>
+                            <figcaption>Ejemplo not</figcaption>
+                            <code><pre>
+@media screen and (not (orientation: landscape)){
+	...
+}</pre></code>
+                        </figure>
+                    </dd>
+                </dl>
+                <p>
+                    Estos pueden combinarse entre si, por ejemplo: 
+                </p>
+                <figure>
+                    <figcaption>Ejemplo combinando operadores</figcaption>
+                    <code><pre>
+@media (screen and (40rem &lt;= width &lt;= 50rem), 
+    screen and (width: 200px)) and ( not (width: 2000px)){
+	...
+}</pre></code>
+                </figure>
+                <p>
+                    En este ejemplo estamos indicando que las reglas declaradas dentro del "media query" se aplicarán 
+                    cuando el "media type" sea "screen" y el tamaño esté en un rango de entre 40rem a 50rem o que el 
+                    tamaño sea exactamente de 200px y que a su vez el tamaño no sea 2000px.
+                </p>
+                <h3>
+                    Cómo escoger los puntos de quiebre
+                </h3>
+                <p>
+                    Anteriormente se solían utilizar los diferentes tamaños de los diferentes dispositivos disponibles, sin embargo, 
+                    actualmente esa no es la mejor practica ya que ahora existe una variedad mucho mayor de estos. 
+                </p>
+                <p>
+                    El tipo de acercamiento más utilizado actualmente es el modificar el diseño de algo cuando este se "rompe", 
+                    es decir, cuando el diseño comienza a perder significado o el contenido ya no puede ser contenido de forma 
+                    clara. Con este tipo de acercamiento realmente no importan los tamaños 
+                    específicos de los diferentes dispositivos disponibles.
+                </p>
+                <p>
+                    En las "devtools" de Firefox podremos encontrar el "responsive design mode", en este modo 
+                    podemos hacer el "viewport" más grande o más pequeño para ver en qué puntos nuestro diseño necesita un cambio o algunos ajustes.
+                </p>
+                <h3>
+                    Diseño responsivo "mobile first"
+                </h3>
+                <p>
+                    Generalmente existes dos enfoques principalmente a la hora de diseñar una página web, estos son:
+                </p>
+                <ul>
+                    <li>
+                        Diseñar desde el mayor tamaño e ir reduciendo a partir de este.
+                    </li>
+                    <li>
+                        Diseñar desde el menor tamaño e ir aumentando a partir de este.
+                    </li>
+                </ul>
+                <p>
+                    El segundo es conocido como "mobile first" y suele ser el enfoque más común y practico.
+                </p>
+                <p>
+                    El diseño para dispositivos más pequeños generalmente solo será una columna, por ello suele ser solo un diseño 
+                    simple con ajustes mínimos y por ello suele ser muy similar al flujo normal por defecto.
+                </p>
+                <p>
+                    Algo a considerar es que no siempre es necesario el uso de "media queries", algunos de los diferentes métodos para layout como 
+                    "flexbox" o "grid" suelen tener comportamientos que son responsivos por defecto, solo hay que saber 
+                    utilizarlos, esto es algo que se consigue entiendo el comportamiento de las propiedades que estos nos proveen y con la practica.
+                </p>

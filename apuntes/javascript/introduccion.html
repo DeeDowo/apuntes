@@ -1,0 +1,182 @@
+<section id="Introducción a JavaScript">
+                    <h2>
+                        Introducción a JavaScript
+                    </h2>
+                    <p>
+                        JavaScript es un lenguaje de programación que permite implementar funciones complejas en una página web. Se usa en conjunto con HTML y CSS principalmente.
+                    </p>
+                    <dl>
+                        <dt>
+                            HTML
+                        </dt>
+                        <dd>    
+                            Es el lenguaje de marcado que usamos para estructurar y dar significado al contenido web.
+                        </dd>
+                        <dt>
+                            CSS
+                        </dt>
+                        <dd>
+                            Es el lenguaje de reglas que usamos para aplicar estilos al contenido web.
+                        </dd>
+                        <dt>
+                            JavaScript
+                        </dt>
+                        <dd>
+                            Es un lenguaje de programación con varios usos, unos de los más importantes relacionados al diseño web es que permite crear webs dinámicas
+                            y agregar funcionalidades a estas.
+                        </dd>
+                    </dl>
+                    <h3>
+                        Algunas cosas que se pueden hacer con JavaScript
+                    </h3>
+                    <ul>
+                        <li>
+                            Guardar valores en variables.
+                        </li>
+                        <li>
+                            Operaciones con "strings".
+                        </li>
+                        <li>
+                            Ejecutar código en respuesta a ciertos eventos.
+                        </li>
+                    </ul>
+                    <p>
+                        Una de las aplicaciones más importantes e interesantes de JavaScript es la disponibilidad de las "APIs" 
+                        (application programming interfaces), las cuales en esencia son código predefinido que permiten implementar funciones
+                        de una forma sencilla. Las "APIs" se pueden dividir en dos:
+                    </p>
+                    <dl>
+                        <dt>
+                            APIs del navegador
+                        </dt>
+                        <dd>
+                            Estas son las APIs que vienen con el propio navegador. La más utilizada generalmente es DOM (Document Object Model) API.
+                        </dd>
+                        <dt>
+                            APIs externas (third party APIs)
+                        </dt>
+                        <dd>
+                            Como su propio nombre lo indica, estas no se encuentran de forma nativa en los navegadores. El código de estas se tiene que obtener de 
+                            una fuente externa. Un ejemplo puede ser "Google maps API", la cual permite hacer implementaciones de google maps en una página.
+                        </dd>
+                    </dl>
+                    <h3>
+                        Seguridad del navegador
+                    </h3>
+                    <p>
+                        Al cargar una página el navegador nos muestra todo nuestro código en conjunto (HTML, CSS, JS), es decir, 
+                        el navegador toma todos nuestros archivos y nos muestra el resultado del conjunto de estos.
+                        Por seguridad, generalmente cada ventana en el navegador es un propio "visualizador", es decir que
+                        cada pestaña ejecuta el código de su pagina por separado, de esta forma una pestaña no puede modificar 
+                        o realizar acciones en otra. Esto no significa que no sea posible realizar dicha acción, sin embargo, no es el 
+                        comportamiento por defecto.
+                    </p>
+                    <h3>
+                        Orden de ejecución
+                    </h3>
+                    <p>
+                        El navegador al encontrar código JS, este lo ejecuta y lo lee de arriba hacia abajo (generalmente), esto significa 
+                        que  si por ejemplo, escribimos algo que 
+                        requiere de un código que aún está disponible, esto generaría un error.
+                    </p>
+                    <h3>
+                        Código interpretado vs código compilado
+                    </h3>
+                    <p>
+                        JavaScript es un lenguaje interpretado y en un lenguaje de este tipo, el código se ejecuta de arriba hacia abajo y el resultado es 
+                        mostrado de forma inmediata, es decir, conforme se vaya procesando. El código no se tiene 
+                        que transformar antes de poder ser ejecutado. Mientras que
+                        en un lenguaje compilado, el código es transformado (compilado) a otro lenguaje antes de ser ejecutado. Por ejemplo, 
+                        en el caso de c++, el código primero es transformado a código maquina y este luego es ejecutado. El programa es ejecutado 
+                        desde un formato binario, el cual es generado con base en el código original.
+                    </p>
+                    <p>
+                        Actualmente, los interpretadores de JS más modernos usan una técnica llamada "just-in-time-compiling" para mejorar el 
+                        rendimiento. El código JS es compilado en un formato binario mientras este es utilizado, de esta forma puede ser ejecutado lo 
+                        más rápido posible, sin embargo, JS sigue siendo considerado un lenguaje interpretado ya que esta "compilación" ocurre en el 
+                        "run-time" a diferencia de un lenguaje compilado que tiene tanto un "compile-time" (antes de ejecutarse) como un "run-time" 
+                        (al estar en ejecución).
+                    </p>
+                    <h3>
+                        Dinámico vs estático
+                    </h3>
+                    <p>
+                        La palabra "dinámico" describe el cambio, es decir, la habilidad de mostrar diferente contenido en una pagina 
+                        o aplicación. Por ejemplo, podemos crear una tabla que cambie dependiendo de información extraída de un servidor.
+                        Mientras que una web estática, a diferencia de una dinámica, no cambia, es decir que siempre muestra el mismo contenido.
+                    </p>
+                    <h3>
+                        Agregando JS a una página
+                    </h3>
+                    <p>
+                        Existen varias formas de agregar código JS en una página web.
+                    </p>
+                    <dl>
+                        <dt>
+                            JavaScript interno
+                        </dt>
+                        <dd>
+                            El código se agrega entre las etiquetas <span class="codigo--linea">&lt;script&gt; ... &lt;/script&gt;</span>, el cual debe 
+                            ir justo antes de la etiqueta <span class="codigo--linea">&lt;/body&gt;</span>, esto se debe a la forma en que el 
+                            contenido es cargado. Haciendo esto nos aseguramos de 
+                            que el código JS se ejecutará una vez cargado todo el documento HTML.
+                        </dd>
+                        <dt>
+                            JavaScript inline
+                        </dt>
+                        <dd>
+                            Es posible agregar código JS directamente en los elementos HTML, sin embargo, 
+                            esto es una mala practica y debería evitarse lo más posible.
+                        </dd>
+                        <dt>
+                            JavaScript externo
+                        </dt>
+                        <dd>
+                            Al igual que con CSS, podemos crear un archivo externo para contener nuestro código JS, esta es la practica más común. Este se agrega con 
+                            el atributo "src" 
+                            en la etiqueta <span class="codigo--linea">&lt;script&gt; ... &lt;/script&gt;</span> para indicar la ubicación del archivo.
+                        </dd>
+                    </dl>
+                    <h4>
+                        Estrategias para el cargado de scripts
+                    </h4>
+                    <p>
+                        Todo el HTML en una pagina es cargado conforma aparece, al usar JS para manipular 
+                        este, el código no funcionará si este es cargado antes que el propio HTML. Para evitar estos posibles errores, existen diferentes métodos:
+                    </p>
+                    <ul>
+                        <li>
+                            Cuando el código JS está al final del documento HTML, este solo ejecutará después de que el documento HTML 
+                            se haya cargado por completo.
+                        </li>
+                        <li>
+                            Usando "type='module'", al ser tratado el código JS como un modulo, el navegador espera a que se
+                            cargue el contenido HTML para luego ejecutar el modulo JS.
+                        </li>
+                        <li>
+                            Usando el atributo "defer", esto sirve para JS no modular, o el 
+                        </li>
+                        <li>
+                            Usando el atributo "async" cuando los 
+                            scripts no necesitan que el documento HTML se cargue.
+                        </li>
+                    </ul>
+                    <p>
+                        La práctica más común actualmente es el utilizar JS como módulos.
+                    </p>
+                    <h3>
+                        Comentarios en JavaScript
+                    </h3>
+                    <p>
+                        Al igual que con HTML y CSS, en JavaScript también es posible incluir comentarios, es decir, texto que es ignorado al ejecutar el código JS.
+                        Los comentarios son útiles para documentar, agregar recordatorios,
+                    </p>
+                    <ul>
+                        <li>
+                            // (comentarios de una linea)
+                        </li>
+                        <li>
+                            /* */ (comentarios de bloque)
+                        </li>
+                    </ul>
+                </section>

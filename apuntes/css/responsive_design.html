@@ -1,0 +1,196 @@
+
+                <h2>
+                    Responsive design
+                </h2>
+                <p>
+                    RWD (responsive web design) es un acercamiento al diseño web, principalmente hace referencia a crear diseños adaptables a toda clase de entornos.
+                </p>
+                <h3>
+                    Media query
+                </h3>
+                <p>
+                    Nos permiten ejecutar un "test" para aplicar CSS de forma selectiva. Por ejemplo, un "test" para contenido mostrado en pantallas con un cierto tamaño:
+                </p>
+                <figure>
+                    <figcaption>Ejemplo "test"</figcaption>
+<pre>
+@media screen and (min-width: 80rem){
+    selector{
+        propiedad
+    }
+}</pre>
+                </figure>
+                <p>
+                    El uso de "media queries" es una practica común para estilar una página web adaptable a diferentes resoluciones o 
+                    circunstancias. Los puntos donde los "media queries" 
+                    se activan son conocidos como puntos de quiebre o "break points".
+                </p>
+                <p>
+                    Uno de los acercamientos más comunes al diseñar una página es conocido como "mobile first", este método hace referencia a estilar 
+                    una página desde un tamaño más compacto e ir pogresivamente adaptando este diseño a distintos tamaños.
+                </p>
+                <p>
+                    Al usar puntos de quiebre en una página web, la mejor practica es estos estén definidos con unidades relativas en lugar de unidades 
+                    fijas. Las reglas dentro de los "media queries" pueden ir desde algunas propiedades hasta enlazar un archivo CSS completamente aparte.
+                </p>
+                <p>
+                    Si bien los "media queries" sirven para el RWD, estos no son ni requeridos ni necesarios para aplicar este tipo de enfoque de diseño. 
+                    Existe una gran variedad de elementos HTML y propiedades CSS que por defecto ya son "responsive".
+                </p>
+                <h3>
+                    Responsive layout
+                </h3>
+                <p>
+                    Principalmente "Flexbox" y "Grid" son "responsive" por defecto. 
+                </p>
+                <h4>
+                    Responsive flexbox
+                </h4>
+                <p>
+                    Los "flex items" pueden contraerse o expandirse dependiendo del tamaño disponible en el "flex container". 
+                    Con las propiedades "flex-grow" y "flex-shrink" podemos determinar que clase de comportamiento sucederá cuando 
+                    los "flex items" tengan más o menos espacio disponible. 
+                    Si quisiéramos aplicar esto en un media query podríamos realizar lo siguiente: 
+                </p>
+                <figure>
+                    <figcaption>Ejemplo responsive flex</figcaption>
+                <code><pre>
+@media screen and (min-width: 60rem){
+	.contenedor{
+		display: flex;
+	}
+	.elemento{
+		flex-grow: 1;
+	}
+	.elementoDos{
+		flex-grow: 2;
+	}
+}</pre></code>
+                </figure>
+                <p>
+                    En este ejemplo estamos aplicando un "media query" cuando el contenido es mostrado en una pantalla y el 
+                    tamaño de esta de al menos "60rem" y cuando este "test" se cumple, ocurren dos cosas principalmente:
+                </p>
+                <ol>
+                    <li>
+                        Convertimos un contenedor de dos elementos en un "flex container".
+                    </li>
+                    <li>
+                        A los elementos anidados en este contenedor les repartimos el espacio disponible. Al primero le asignamos 1/3 y al segundo le asignamos 2/3.
+                    </li>
+                </ol>
+                <p>
+                    En pantallas más pequeñas a la resolución especificada, los elementos solo se mostrarán una sobre otro. 
+                    Mientras que en pantallas donde se cumpla el "test", el contenido se mostrará en dos columnas, una a lado de la otra.
+                </p>
+                <h4>
+                    Responsive grid
+                </h4>
+                <p>
+                    Con "grid" tenemos la unidades "fr" la cual divide siempre de forma homogénea el espacio disponible. 
+                    Por ejemplo, para lograr un efecto similar al realizado con "flex", el código sería el siguiente:
+                </p>
+                <figure>
+                    <figcaption>Ejemplo grid</figcaption>
+                    <code><pre>
+@media screen and (min-width: 60rem){
+	.contenedor{
+		display: grid;
+		grid-template-column: 1fr 2fr;
+		gap: 1rem;
+	}
+}</pre></code>
+                </figure>
+                <p>
+                    Algo que se puede notar a simple vista es que con "grid" no hay que especificar cómo se comporta cada elemento 
+                    ya que estos por defecto tomarán los espacios disponibles en el "grid" creado conforme aparezcan en el documento HTML.
+                </p>
+                <p>
+                    Aparte, una de las principales diferencias entre "grid" y "flex", es que con "flex" 
+                    podemos configurar el comportamiento de cada uno de los "flex items" de forma más "natural" 
+                    esto se debe a que el modelo "flexbox" es más orientado al comportamiento de los "flex items" 
+                    de forma individual. Mientras que con "grid" se tiene un enfoque diferente, en donde los diferentes 
+                    elementos se adaptan al "grid" principalmente. Es por ello que "flex" se suele usar especialmente para 
+                    elementos que pueden funcionar de forma "individual" mientras que "grid" se suele utilizar especialmente 
+                    para un conjunto de elementos en donde el objetivo principal es mostrar este contenido con un cierto "formato".
+                </p>
+                <h3>
+                    Imágenes/media responsive
+                </h3>
+                <p>
+                    Una forma sencilla de siempre poder asegurarnos de que cualquier tipo de media, especialmente imágenes 
+                    y videos, se adapten a su contenedor es con el siguiente código: 
+                </p>
+                <figure>
+                    <figcaption>Ejemplo media</figcaption>
+                    <code><pre>
+img,
+video,
+pincture {
+	max-width: 100%;
+}</pre></code>
+                </figure>
+                <p>
+                    Lo que se está indicando aquí es que dichos elementos tendrán un tamaño máximo igual al 100% 
+                    del tamaño del elemento padre, esto porque las unidades relativas de porcentaje se basan en el 
+                    valor del padre, es decir, en este caso de "width: 100%" se basa en el tamaño total del contenedor 
+                    sin importar cual sea este exactamente. Esta es una solución simple, pero tampoco es la más efectiva.
+                </p>
+                <h4>
+                    Cosas a considerar al usar media
+                </h4>
+                <ul>
+                    <li>
+                        Utilizar un formato correcto al igual que optimizar los diferentes archivos.
+                    </li>
+                    <li>
+                        Existen alternativas en CSS para agregar efectos o formas sin la necesidad del uso de archivos externos.
+                    </li>
+                    <li>
+                        Es posible usar "media queries" para tener diferentes archivos para diferentes dispositivos.
+                    </li>
+                </ul>
+                <h3>
+                    Tipografía responsive
+                </h3>
+                <p>
+                    Este termino hace referencia a adaptar el tamaño de nuestros textos dependiendo del dispositivo. Esto se puede realizar con "media queries", por ejemplo: 
+                </p>
+                <figure>
+                    <figcaption>Ejemplo tipografía</figcaption>
+                    <code><pre>
+@media screen and (min-width: 120rem){
+	h1{
+		font-size: 5rem;
+	}
+}</pre></code>
+                </figure>
+                <p>
+                    En este ejemplo estamos aplicando un cierto tamaño cuando el tamaño disponible es de al menos "120rem".
+                </p>
+                <h4>
+                    Usando "viewport units"
+                </h4>
+                <p>
+                    El usar estas unidades de forma individual ocasionará que sin importar la cantidad de 
+                    zoom-in o zoom-out realizado el texto no cambiará de tamaño ya que este está ligado al 
+                    tamaño de la ventana, sin embargo, esto puede ser usado a nuestro favor. Si usamos la función 
+                    "calc()" y dentro de ella realizamos la suma de un valor con una unidad relativa y un valor con una 
+                    unidad relativa al viewport de la página, este tamaño si variaría dependiendo del zoom-in, zoom-out y 
+                    el tamaño por defecto del navegador, ya que el resultado de esta operación sería un valor fijo "adaptable", 
+                    de esta forma podemos solo especificar una vez el tamaño de nuestras fuentes.
+                </p>
+                <h3>
+                    La etiqueta meta "viewport"
+                </h3>
+                <p>
+                    Esta etiqueta hace que los navegadores mobiles usen el "width" real del dispositivo como el "viewport width", 
+                    esto se debe a que algunos navegadores móviles tienden a "mentir" sobre este aspecto, es decir, en lugar de usar el 
+                    tamaño real del dispositivo, utilizan otra medida arbitraría, generalmente "980px".
+                </p>
+                <figure>
+                    <figcaption>Etiqueta meta</figcaption>
+                    <code><pre>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</pre></code>
+                </figure>
+

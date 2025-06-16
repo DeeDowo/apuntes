@@ -1,0 +1,328 @@
+<section id="Objetos en JavaScript">
+                    <h2>
+                        Objetos en JavaScript
+                    </h2>
+                    <h3>
+                        JavaScript objects basics
+                    </h3>
+
+                        <p>
+                            Un objeto es una colección de información relacionada, estos suelen incluir multiples
+                            propiedades y funciones.
+                        </p>
+
+                        <p>La creación de un objeto es de la siguiente forma:</p> 
+<figure>
+<figcaption>Estructura básica de un objeto</figcaption>
+<code><pre>
+const objeto = {
+    miembro1nombre: miembro1valor,
+    miembro2nombre: miembro2valor,
+};</pre></code>
+</figure>
+
+                        <p>
+                            Con esta notación podemos crear objetos de cual sea su complejidad, en el ejemplo
+                            anterior vemos que se declara como cualquier variable, pero es asignada a un par de
+                            llaves ({}), dentro de estas es donde se declara todo el contenido del objeto.
+                        </p>
+
+                        <p>
+                            Como podemos ver, dentro de un objeto cada "miembro" tiene un nombre y un valor,
+                            estos dos son separados por ":" y cada "miembro" con su respectivo valor es
+                            separado de otros con una  ",". Los valores para los miembros pueden ser
+                            prácticamente cualquier cosa. Cuando se trata de un "data item",
+                            se llaman "propiedades". Cuando se trata de una función, se llaman "métodos".
+                        </p> 
+
+<figure>
+<figcaption>Ejemplo de un objeto en JavaScript</figcaption>
+<code><pre>
+const persona = {
+    nombre: ["dowo", "dowa"],
+    edad: 24,
+    bio: function (){
+    console.log(${this.name[0]} tiene ${this.edad} años.);},
+    introduceSelf: function(){
+    console.log(Hola! soy ${this.name[0]}.);},
+};</pre></code>
+                        </figure>
+
+                        <p>
+                            Con este código hemos creado un objeto, al que podemos y podemos acceder
+                            a sus propiedades y métodos por medio del
+                            nombre del objeto seguido de un "." seguido del nombre del miembro al que queremos acceder.
+                        </p>
+
+                        <p>
+                            Cuando se declara un método de un objeto, estos pueden tener una
+                            notación alternativa más compacta.
+                        </p>
+
+                        <p>
+                            Para el ejemplo visto esta sería la notación alternativa para la función
+                            "bio()" e "introduceSelf()", esta suele ser la forma más común de escribir un método:
+                        </p>
+
+<figure>
+<figcaption>Sintaxis alternativa para métodos</figcaption>
+<span>
+<pre>
+...
+bio(){
+    console.log(...);
+},
+introduceSelf(){
+    console.log(...);
+}
+...</pre>
+</span>
+</figure>
+
+<figure>
+<figcaption>Ejemplo accediendo a miembros de un objeto</figcaption>
+<code><pre>
+console.log(persona.nombre[0]);
+persona.bio();
+</pre></code>
+</figure>
+
+                        <p>
+                            Un objeto como el del ejemplo es llamado "object literal", ya que escribimos
+                            el contenido conforme lo creamos.
+                        </p>
+
+                        <p>
+                            Es común la creación de un "object literal" al querer transferir
+                            información relacionada y ordenada. Por ejemplo, al enviar una solicitud
+                            a un servidor para ser almacenada en una base de datos, el enviar objetos
+                            es mas eficiente que enviar la información por separado al igual que es más sencillo
+                            trabajar con objetos.
+                        </p>
+
+                        <h3>Dot notation</h3>
+
+                        <p>
+                            La notación para acceder a las propiedades de un objeto o a sus métodos
+                            es llamada "dot notation", esta hace referencia a agregar un "." entre el nombre del
+                            objeto y la propiedad o método. El nombre del objeto es indispensable para
+                            poder acceder a la información dentro de este.
+                        </p>
+                        
+                        <h3>Objetos como propiedades</h3>
+
+                        <p>Una propiedad de un objeto puede ser a su vez otro objeto</p>
+
+<figure>
+<figcaption>Ejemplo objetos anidados</figcaption>
+<code>
+<pre>
+const persona = {
+    nombres: {
+        nombre1: "dowo",
+        nombre2: "dowa",
+    },
+};</pre>
+</code>
+</figure>
+
+                        <p>Para acceder a estas propiedades anidadas, solo hay que encadenar los multiples objetos de la siguiente forma:</p>
+                        <ul>
+                            <li>
+                                persona.nombre.nombre1;
+                            </li>
+                            <li>
+                                persona.nombre.nombre2;
+                            </li>
+                        </ul>
+
+                        <h3>Bracket notation</h3>
+
+                        <p>Esta es una forma alternativa a la "dot notation" para acceder a las propiedades y métodos de los objetos.</p>
+
+                        <ul>
+                            <li>
+                                persona["edad"];
+                            </li>
+                            <li>
+                                persona["nombre"]["nombre1"];
+                            </li>
+                        </ul>
+
+                        <p>
+                            Esta notación es bastante similar a la forma en que se ingresa a un elemento de un
+                            array, en lugar de usar un indice, se utiliza el nombre de la propiedad o método envuelto entre comillas,
+                            por esta similitud es que los objetos pueden ser llamados "associative arrays".
+                        </p>
+
+                        <h3>Qué notación utilizar</h3> 
+
+                        <p>
+                            La "dot notation" sigue siendo preferida sobre la "bracket notation" ya que es más
+                            simple y fácil de leer.
+                        </p> 
+
+                        <p>
+                            Sin embargo, existen situaciones donde no es posible
+                            utilizar la "dot notation", un ejemplo es cuando el nombre de una propiedad es
+                            guardada en una variable con un nombre diferente a este, si utilizamos la "dot
+                            notation" con el nombre de esta variable, se buscará una propiedad con este
+                            nombre literal y no el del valor guardado en la variable, pero si utilizamos
+                            la "bracket notation", notaremos que funciona sin
+                            ningún problema, ya que que esta sí utiliza el valor guardado en la variable.
+                        </p> 
+
+                        <ul>
+                            <li>
+                                persona.variable; (buscará una propiedad en el objeto persona con el nombre "variable")
+                            </li>
+                            <li>
+                                persona[variable]; (buscará una propiedad en el objeto persona con el nombre guardado en la variable)
+                            </li>   
+                        </ul>
+
+                        <h3>Miembros de un objeto</h3>
+
+                        <p>
+                            Hasta ahora solo hemos visto como obtener información del objeto, pero también
+                            es posible modificar esta información. esto se realiza seleccionando el miembro a modificar
+                            por medio de la "dot notation" o "bracket notation" y asignándole el nuevo valor.
+                        </p>
+
+<figure>
+<figcaption>Ejemplo modificando el valor de un propiedad</figcaption>
+<code><pre>
+persona.edad = 44;
+persona[nombre][nombre1] = "si";</pre></code>
+</figure>
+
+<p>Ahora si volvemos a "llamar" a estas propiedades obtendremos los nuevos valores.</p>
+
+<p>
+    También podemos agregar
+    propiedades o métodos completamente nuevos a estos objetos simplemente declarando nuevos
+    nombres para estos miembros.
+</p>
+
+<figure>
+<figcaption>Ejemplo agregando propiedades nuevas</figcaption>
+<code><pre>
+persona.ojos = "cafe"; 
+persona.dobleEdad = function(){
+console.log(this.edad*2);
+};</pre></code>
+</figure>
+
+<p>
+    Un aspecto util de la "bracket notation" es que se pueden agregar
+    propiedades, funciones o valores tomando como referencia una variable,
+    es decir:
+</p>
+
+<figure>
+<figcaption>Ejemplo agregando propiedad nuevas (bracket notation)</figcaption>
+<code><pre>
+const myDataName = "altura";
+const myDataValue = "1.65";
+
+persona[myDataName] = myDataValue;
+</pre></code>
+</figure>
+
+                        <h3>Qué es "this"?</h3>
+
+                        <p>
+                            Esta es una palabra clave que hace referencia al propio objeto en el
+                            que se encuentra, esto es especialmente util en los "constructors".
+                        </p>
+
+                        <h3>Constructors</h3>
+
+                        <p>
+                            Usar "object literals" está bien para cuando solo se necesita crear un
+                            objeto, pero cuando se necesitan crear más de uno no es eficiente, ya que
+                            para agregar propiedades o métodos, cada una de estas declaraciones de
+                            "object literals" tendrían que ser actualizadas una por una. Lo
+                            que se suele hacer es crear una especia de "plantilla".
+                        </p>
+
+                        <p>La primera version de esto es solamente una función, un ejemplo sería:</p>
+
+                        <figure>
+                            <figcaption>Ejemplo función como constructor</figcaption>
+                            <code>
+<pre>
+function createPerson(name){
+    const obj = {};
+    obj.name = name;
+    obj.introduceSelf = function () {
+        console.log(hola! Mi nombre es ${this.name});
+    };
+
+    return obj;
+}</pre>
+                            </code>
+                        </figure>
+
+                        <p>En el ejemplo, esta función crea y devuelve un nuevo objeto cada vez que la llamamos, este objeto tendrá dos miembros.</p>
+
+                        <ul>
+                            <li>
+                                La propiedad "name".
+                            </li>
+                            <li>
+                                El método "introduceSelf()".
+                            </li>
+                        </ul>
+
+                        <p>
+                            Esta "plantilla" solo toma como parámetro un "nombre" para definir las diferentes
+                            propiedades y métodos de este objeto. Una vez creada podemos usarla tantas
+                            veces como queramos.
+                        </p>
+
+                        <p>
+                            Podemos crear n cantidad de objetos con esta plantilla. esto funciona bien,
+                            pero hay una forma más sencilla, esta es usando un "constructor". Los "constructors" son
+                            solo una función a la cual llamamos utilizando la palabra clave "new", cuando
+                            llamamos a un "constructor" sucede lo siguiente:
+                        </p>
+
+                        <ol>
+                            <li>
+                                Se crea un nuevo objeto temporal.
+                            </li>
+                            <li>
+                                Los "this" en el constructor son "reemplazados" por el objeto temporal.
+                            </li>
+                            <li>
+                                Una vez finalizado todo el proceso del constructor, este "objTemp" es 
+                                devuelto y asignado a la variable donde lo hayamos inicializado.
+                            </li>
+                        </ol>
+
+                        <p>
+                            La palabra clave "this" al usarse dentro un objeto
+                            hace referencia a miembros en el mismo objeto.
+                        </p>
+
+                        <p>
+                            Por convención, los nombres de los "constructores" inician con
+                            mayúsculas y son nombrados por el tipo de objeto que crean, por ejemplo:
+                        </p>
+
+                        <figure>
+                            <figcaption>Ejemplo constructor</figcaption>
+<code><pre>
+function Persona(nombre){
+    this.name = name;
+    this.saludo = function (){
+        console.log(hola! mi nombre es ${this.name}.);
+        };
+}</pre></code>
+                        </figure>
+                        <p>
+                            La diferencia entre un constructor y una función es que en el constructor no es necesario crear un objeto
+                            temporal explícitamente y en este se hace uso de la palabra clave "this".
+                        </p>
+                </section>
