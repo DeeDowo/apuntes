@@ -49,6 +49,9 @@
 .apunte__subtitulo{
     text-align: center;
 }
+.apunte__titulo-h4{
+    text-align: center;
+}
 .apunte__parrafo{
     text-align: center;
 }
@@ -163,4 +166,14 @@
 .codigo__linea{
     background-color: rgb(231, 231, 231);
     border-radius: .3rem;
+}
+
+/* ================================Apuntes LISTA ORDENADA================================ */
+
+.apunte__lista-ordenada{
+    padding: 0;
+}
+.apunte__lista-ordenada__elemento{
+    list-style: none;
+    text-align: center;
 }
