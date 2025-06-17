@@ -1,30 +1,33 @@
-:root{
-    --font-size-indice: 1.4rem;
-    
-    --font-size-parrafos: 1.6rem;
-
-    --font-size-titulo-h4: 2.0rem;
-
-    --font-size-subtitulo-apunte: 2.4rem;
-
-    --font-size-titulo-apunte: 3.2rem;
-
-    --font-size-titulo-pagina: 4.0rem;
-}
-html{
-    font-size: 62.5%;
-}
 
 /* =====================elementos pagina principal=================== */
 
-.pagina__titulo{
-    font-size: var(--font-size-titulo-pagina);
+.header__titulo {
+    font-size: var(--font-size-titulo-h1);
     text-align: center;
-    margin: 2rem auto;
+    color: var(--color-destacado);
+  
+  margin: 0;
 }
 
 .introduccion__parrafo{
     text-align: center;
-    font-size: var(--font-size-parrafos);
     margin: 0;
+}
+.introduccion__enlace{
+    color: var(--color-extras);
+
+    white-space: nowrap;
+}
+
+.introduccion__enlace::after{
+  content: "";
+  display: inline-block;
+  background-image: url(/icons/open_in_new_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg);
+  height: var(--font-size-parrafo);
+  width: var(--font-size-parrafo);
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin-left: var(--margin-pequeño);
+  background-attachment: local;
 }

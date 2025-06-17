@@ -1,79 +1,29 @@
-html {
-    font-size: 62.5%;
-}
-
-:root {
-    --font-size-indice: 1.4rem;
-
-    --font-size-parrafos: 1.6rem;
-
-    --font-size-titulo-h4: 2.0rem;
-
-    --font-size-subtitulo-apunte: 2.4rem;
-
-    --font-size-titulo-apunte: 3.0rem;
-
-    --font-size-titulo-pagina: 4.0rem;
-
-/* ======================Colores HTML=====================*/
-
-    --html-principal: #e34c26;
-    --html-secundario: #f06529;
-    --html-fondo: #fff4f1;
-    --html-texto: #3d3d3d;
-    --html-accento: #ebebeb;
-    --html-bordes: #ffc7b8;
-
-    --css-principal: #264de4;
-    --css-secundario: #2965f1;
-    --css-fondo: #f0f5ff;
-    --css-texto: #2d3748;
-    --css-accento: #e2e8f0;
-    --css-bordes: #a3bffa;
-
-    /* JavaScript */
-    --js-principal: #f0db4f;
-    --js-secundario: #f7df1e;
-    --js-fondo: #fffdf0;
-    --js-texto: #323330;
-    --js-accento: #f7f3e3;
-    --js-bordes: #f7e08c;
-}
-
-footer{
-    height: 20rem;
-}
-
 /* ================================Titulo Principal================================ */
 
-.plantilla__titulo{
+.header__titulo--apuntes{
     text-align: center;
-    margin: 2rem auto;
+    margin: var(--margin-grande) auto;
+
 }
-.plantilla__titulo__enlace{
+.header__enlace--apuntes{
     text-decoration: none;
-    font-size: var(--font-size-titulo-pagina);
-    color: var(--html-principal);
+    font-size: var(--font-size-titulo-h1);
+    color: var(--color-texto);
+}
+.header__tema{
+  color: var(--color-destacado);
 }
 
 /* ================================Indice Autogenerado================================ */
 
-.plantilla__indice{
+.indice{
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+.indice__navegacion{}
 
-.plantilla__indice__titulo{
-    color: var(--html-principal);
-    margin: 0;
-    text-align: center;
-    font-size: var(--font-size-titulo-h4);
-}
-
-.plantilla__indice__navegacion{}
-
-.plantilla__indice__lista{
+.indice__lista{
     list-style: none;
     margin: 0;
     padding: 0;
@@ -82,91 +32,55 @@ footer{
     flex-direction: column;
     gap: .5rem;
 }
-.plantilla__indice__elemento{
+.indice__elemento{
 }
-.plantilla__indice__enlace{
+.indice__enlace{
     display: block;
     font-size: var(--font-size-indice);
     text-align: center;
     text-decoration: none;
 
-    background-color: var(--html-secundario);
+    background-color: var(--color-destacado);
     color: white;
     padding: 1rem;
     border-radius: 1rem;
+}
+.indice__enlace:hover{
+    background-color: var(--color-destacado-hover);
 }
 /* ================================Indice Global================================ */
 
 .navegacion-principal__titulo{
     text-align: center;
-    color: var(--html-principal);
-    font-size: var(--font-size-titulo-h4);
+    color: var(--color-destacado);
+    font-size: var(--font-size-titulo-h2);
 }
 
 /* ================================Apuntes Global================================ */
 
 .contenido{
-}
-.apunte__titulo{
     text-align: center;
-    font-size: var(--font-size-titulo-apunte);
-    color: var(--html-principal);
 }
-.apunte__subtitulo{
-    text-align: center;
-    font-size: var(--font-size-subtitulo-apunte);
+.apunte__titulo-h2{
+    font-size: var(--font-size-titulo-h2);
+    margin: var(--margin-grande) 0;
+}
+.titulo-h2__span{
+    color: var(--color-destacado);
+}
+.apunte__titulo-h3{
+    font-size: var(--font-size-titulo-h3);
 }
 .apunte__titulo-h4{
-    text-align: center;
     font-size: var(--font-size-titulo-h4);
-}
-.apunte__parrafo{
-    font-size: var(--font-size-parrafos);
-    text-align: center;
 }
 /* ================================Apuntes LISTA DESORDENADA================================ */
 
-.apunte__lista-desordenada{
-    padding: 0;
+.lista-desordenada{
 }
-.apunte__elemento-lista{
-    color: white;
-    padding: 1rem;
+.lista-desordenada__elemento{
+    padding: var(--padding-grande);
     list-style: none;
-    font-size: var(--font-size-parrafos);
-}
-.apunte__elemento-lista:nth-child(even){
-    background-color: var(--html-principal);
-    padding-right: 5vw;
-
-    text-align: center;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    margin: 1rem -5vw 1rem 3rem;
-    
-}
-.apunte__elemento-lista:nth-child(odd){
-    background-color:var(--html-principal);
-    padding-left: 5vw;
-    
-    text-align: center;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    margin: 1rem 3rem 1rem -5vw;
-
-}
-@media screen and (40rem <= width) {
-    .apunte__elemento-lista:nth-child(even){
-        padding: 1rem;
-        margin: 1rem 0 1rem 5rem;
-        border-radius: 1rem;
-    }
-    .apunte__elemento-lista:nth-child(odd){
-        padding: 1rem;
-        margin: 1rem 5rem 1rem 0;
-        border-radius: 1rem;
-    }
-    
 }
 
 /* ================================Apuntes LISTA DESCRIPCIONES================================ */

@@ -4,23 +4,19 @@ export function normalizando(texto) {
 
 // función para crear el indice, parámetros (array, referencia al elemento de navegación, indice del tema)
 export function generarIndice(array, navegacion, tema){
-    const tituloIndice = document.querySelector("section > h2")
-    tituloIndice.textContent = `Indice ${tema}`;
     for(let i = 0 ; i < array.length ; i++){
 
         const linkIndice = document.createElement("a");
         linkIndice.href="#";
         linkIndice.textContent = array[i];
         linkIndice.dataset.url= array[i];
-        linkIndice.setAttribute("class", "plantilla__indice__enlace")
+        linkIndice.setAttribute("class", "indice__enlace")
         const listItemIndice = document.createElement("li");
-        listItemIndice.setAttribute("class", "plantilla__indice__elemento")
+        listItemIndice.setAttribute("class", "indice__elemento")
         listItemIndice.appendChild(linkIndice);
 
         navegacion.appendChild(listItemIndice);
-    }
-
-    
+    }    
 }
 
 export function primeraCarga(temaPrimeraCarga, apuntePrimeraCarga, cuerpo){

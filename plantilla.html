@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="styles/normalize.css">
+    
+    <link rel="stylesheet" href="styles/variables.css">
     <link rel="stylesheet" href="styles/navegacion_principal.css">
     <link rel="stylesheet" href="styles/apuntes_layout.css">
     <link rel="stylesheet" href="styles/apuntes_estilos.css">
@@ -14,19 +16,21 @@
 </head>
 <body>
     <header>
-        <h1 class="plantilla__titulo">
-            <a class="plantilla__titulo__enlace" href="index.html">
+        <h1 class="header__titulo--apuntes">
+            <a class="header__enlace--apuntes" href="index.html">
                 Apuntes
+                <span class="header__tema">
+                </span>
             </a>
+            
         </h1>
     </header>
 
     <main>
-        <section class="plantilla__indice">
-            <h2 class="plantilla__indice__titulo"></h2>
+        <section class="indice">
             
-            <nav class="plantilla__indice__navegacion">
-                <ul class="plantilla__indice__lista">
+            <nav class="indice__navegacion">
+                <ul class="indice__lista">
                 </ul>
             </nav>
         </section>
@@ -38,17 +42,17 @@
             
             <ul class="navegacion-principal__lista">
                 <li class="navegacion-principal__elemento">
-                    <a class="navegacion-principal__enlace" href="plantilla.html?tema=HTML">
+                    <a class="navegacion-principal__enlace navegacion-principal__enlace--no-fondo" href="plantilla.html?tema=HTML">
                         HTML
                     </a>
                 </li>
                 <li class="navegacion-principal__elemento">
-                    <a class="navegacion-principal__enlace" href="plantilla.html?tema=CSS">
+                    <a class="navegacion-principal__enlace navegacion-principal__enlace--no-fondo" href="plantilla.html?tema=CSS">
                         CSS
                     </a>
                 </li>
                 <li class="navegacion-principal__elemento">
-                    <a class="navegacion-principal__enlace" href="plantilla.html?tema=JavaScript">
+                    <a class="navegacion-principal__enlace navegacion-principal__enlace--no-fondo" href="plantilla.html?tema=JavaScript">
                         JavaScript
                     </a>
                 </li>

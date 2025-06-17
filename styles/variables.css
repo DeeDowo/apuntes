@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 html{
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 16px;
   line-height: 1.6;
 }
 *,
@@ -15,46 +17,57 @@ html{
 
 :root{
 /* ========== Variables Tamaños de fuente =========== */
-    --font-size-titulo-h1: 5.61rem;
-    --font-size-titulo-h2: 4.209rem;
-    --font-size-titulo-h3: 3.157rem;
-    --font-size-titulo-h4: 2.369rem;
+    --font-size-titulo-h1: clamp(2.75rem, 1.32rem + 5.72vw, 5.61rem);
+    --font-size-titulo-h2: clamp(2.25rem, 1.271rem + 3.92vw, 4.209rem);
+    --font-size-titulo-h3: clamp(2rem, 1.421rem + 2.31vw, 3.157rem);
+    --font-size-titulo-h4: clamp(1.75rem, 1.44rem + 1.24vw, 2.369rem);
+    --font-size-botones:   1.5rem;
     --font-size-parrafo:   1rem;
+
+    --font-family-inter: "Inter";
 
 /* ========== Variables paddings =========== */
 
     --padding-pequeño: 0.25rem;    
     --padding-normal:  0.5rem;
-    --padding-grande:  1rem;
+    --padding-grande:  1.0rem;
 
 /* ========== Variables margins =========== */
 
     --margin-pequeño: 0.25rem;    
     --margin-normal:  0.5rem;
-    --margin-grande:  1rem;
+    --margin-grande:  1.0rem;
 
 /* ========== Variables Borde-radius =========== */
 
-    --borde-pequeño: 0.5rem;    
-    --borde-normal:  1rem;
-    --borde-grande:  1.5rem;
+    --borde-pequeño: 0.25rem;    
+    --borde-normal:  0.5rem;
+    --borde-grande:  1.0rem;
 
 /* ========== Variables gaps =========== */
 
     --gap-pequeño: 0.5rem;    
     --gap-normal:  1.0rem;
-    --gap-grande:  2rem;
+    --gap-grande:  1.5rem;
 
 /* ========== Variables Colores =========== */
 
-    --color--blanco:     #ffffff;
-    --color--negro:      #000000;
+    --color-blanco:     #ffffff;
+    --color-negro:      #000000;
 
-    --color--fondo:      hsl(241, 50%, 90%); 
-    --color--texto:      hsl(241, 50%, 10%); 
-    --color--destacados: hsl(301, 80%, 20%);
+    --color-fondo:      hsl(241, 50%, 90%); 
+    --color-texto:      hsl(241, 50%, 10%); 
+    --color-destacado: hsl(301, 80%, 20%);
 
-    --color--extras: hsl(181, 80%, 20%);
-    --color--hover:  hsl(301, 78%, 16%);
+    --color-extras: hsl(181, 80%, 20%);
+    --color-destacado-hover:  hsl(301, 78%, 16%);
 
+}
+body{
+  background-color: var(--color-fondo);
+  font-family: var(--font-family-inter), sans-serif;
+  color: var(--color-texto);
+
+  width: min(90vw, 1200px);
+  margin: 0 auto;
 }

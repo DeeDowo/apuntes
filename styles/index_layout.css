@@ -1,23 +1,4 @@
-html{
-    box-sizing: border-box;
-    font-size: 62.5%;
-}
-*,
-::after,
-::before{
-    box-sizing: inherit;
-}
-body {
-  width: min(90vw, 120ch); 
-  margin: 0 auto;
-}
-main{
-}
+main{}
 
-.navegacion-principal__lista {
-    
-}
-
-.navegacion-principal__elemento {
-    
-}
+.navegacion-principal__lista {}
+.navegacion-principal__elemento {}
