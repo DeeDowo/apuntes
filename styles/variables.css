@@ -57,14 +57,17 @@ html{
 
     --color-fondo:      hsl(241, 50%, 90%); 
     --color-texto:      hsl(241, 50%, 10%); 
-    --color-destacado: hsl(301, 80%, 20%);
+    --color-destacado:  hsl(301, 80%, 20%);
 
-    --color-extras: hsl(181, 80%, 20%);
-    --color-destacado-hover:  hsl(301, 78%, 16%);
+    --color-destacado-hover: hsl(301, 78%, 16%);
 
+    --color-extras:   hsl(181, 80%, 20%);
+    --color-extras-2: #3E6680;
+    --color-extras-3: hsl(241, 50%, 70%);
+    
 }
 body{
-  background-color: var(--color-fondo);
+  background-color: var(--color-blanco);
   font-family: var(--font-family-inter), sans-serif;
   color: var(--color-texto);
 

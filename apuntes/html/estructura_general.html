@@ -1,35 +1,43 @@
 
-<h2 class="apunte__titulo">
-    Estructura general
+<h2 class="apunte__titulo-h2">
+    <span class="titulo-h2__span">Estructura</span> general
 </h2>
 <p class="apunte__parrafo">
     Existe una estructura que debe tener cualquier documento HTML para poder ser interpretado correctamente.
 </p>
 <dl class="apunte__lista-descriptiva">
-    <dt class="apunte__lista-descriptiva__titulo">
-        <code class="apunte__codigo--linea">&lt;!DOCTYPE html&gt;</code>
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion">
-        Declara el tipo de documento y asegura que el navegador logre interpretar este de forma correcta.
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo">
-        <code class="apunte__codigo--linea">&lt;html&gt;<br>...<br>&lt;/html&gt;</code>
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion">
-        Es el elemento raíz que envuelve todo el contenido del documento.
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo">
-        <code class="apunte__codigo--linea">&lt;head&gt;<br>...<br>&lt;/head&gt;</code>
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion">
-        Incluye todo lo que no es contenido visible (metadatos, enlaces a recursos o
-        configuraciones de comportamientos).
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo">
-        <code class="apunte__codigo--linea">&lt;body&gt;<br>...<br>&lt;/body&gt;</code>
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion">
-        Incluye todo el contenido visible en la página. este tiene a la vez su propia
-        jerarquía.
-    </dd>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            &lt;!DOCTYPE html&gt;
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Declara el tipo de documento y asegura que el navegador logre interpretar este de forma correcta.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            &lt;html&gt;...&lt;/html&gt;
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Es el elemento raíz que envuelve todo el contenido del documento.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            &lt;head&gt;...&lt;/head&gt;
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Incluye todo lo que no es contenido visible (metadatos, enlaces a recursos o
+            configuraciones de comportamientos).
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            &lt;body&gt;...&lt;/body&gt;
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Incluye todo el contenido visible en la página. este tiene a la vez su propia
+            jerarquía.
+        </dd>
+    </div>
 </dl>
