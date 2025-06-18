@@ -1,120 +1,136 @@
-
-<h2 class="apunte__titulo">
-    Sintaxis básica de HTML
+<h2 class="apunte__titulo-h2">
+    Sintaxis básica de <span class="titulo-h2__span">HTML</span>
 </h2>
 <p class="apunte__parrafo">
-    HTML posee reglas internas sobre el cómo utilizar las diferentes etiquetas disponibles, si bien un uso 
-    incorrecto de estas no ocasiona un error critico, es una buena practica en general el seguir dichas reglas
+    HTML posee reglas internas sobre el cómo utilizar las diferentes etiquetas disponibles. Si bien un uso
+    incorrecto de estas no ocasiona un error crítico, es una buena práctica en general el seguir dichas reglas.
 </p>
-<h3 class="apunte__subtitulo">
-    Elementos disponibles en HTML (etiquetas)
+
+<h3 class="apunte__titulo-h3">
+    Tipos de elementos
 </h3>
-<dl class="apunte__lista-descriptiva--grande">
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Elementos normales
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        son aquellos que que tienen tanto una etiqueta de inicio como una etiqueta de cierre.
-        <figure class="apunte__figure">
-            <figcaption class="apunte__figure-titulo">Ejemplos elementos normales</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;p&gt; &lt;/p&gt;</code>
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;section&gt; &lt;/section&gt;</code>
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;div&gt; &lt;/div&gt;</code>
-                </li>
-            </ul>
-        </figure>
-        <figure class="apunte__figure">
-            <figcaption class="apunte__figure-titulo">Estructura de un elemento normal</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;etiqueta de inicio&gt;</span>
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    contenido
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;/etiqueta de cierre&gt;</span>
-                </li>
-            </ul>
-        </figure>
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Elementos vacíos
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Son aquellos que solo poseen una etiqueta, estos no pueden tener contenido anidado.
-        <figure class="apunte__figure">
-            <figcaption class="apunte__figure-titulo">Ejemplos elementos vacíos</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;meta&gt;</code>
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;link&gt;</code>
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;input&gt;</code>
-                </li>
-            </ul>
-        </figure>
-        <figure class="apunte__figure">
-            <figcaption class="apunte__figure-titulo">Estructura de un elemento vacío</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;etiqueta&gt;</span>
-                </li>
-            </ul>
-        </figure>
-    </dd>
+
+<dl class="lista-descriptiva lista-descriptiva--con-ejemplos">
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">Elementos normales</dt>
+            <dd class="lista-descriptiva__descripcion">
+                Son aquellos que tienen tanto una etiqueta de inicio como una etiqueta de cierre.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+            <figure class="figure">
+                <figcaption class="figure__titulo">Estructura de un elemento normal</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">
+                            &lt;etiqueta de inicio&gt;<br>
+                            contenido<br>
+                            &lt;/etiqueta de cierre&gt;
+                        </span>
+                    </li>
+                </ul>
+            </figure>
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplos elementos normales</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;p&gt; ... &lt;/p&gt;</code>
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;section&gt; ... &lt;/section&gt;</code>
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;div&gt; ... &lt;/div&gt;</code>
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
+
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">Elementos vacíos</dt>
+            <dd class="lista-descriptiva__descripcion">
+                Son aquellos que solo poseen una etiqueta. Estos no pueden tener contenido anidado.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplos elementos vacíos</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;meta&gt;</code>
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;link&gt;</code>
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;input&gt;</code>
+                    </li>
+                </ul>
+            </figure>
+            <figure class="figure">
+                <figcaption class="figure__titulo">Estructura de un elemento vacío</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;etiqueta&gt;</span>
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
 </dl>
 
-<h3 class="apunte__subtitulo">
-Atributos HTML 
-</h3>
+<h3 class="apunte__titulo-h3">Atributos</h3>
 <p class="apunte__parrafo">
-    Los elementos descritos anteriormente pueden contener <strong>atributos</strong>, es decir, características adicionales. Los atributos
-    se insertan dentro de las etiquetas y estos se dividen en dos tipos:
+    Los elementos descritos anteriormente pueden contener <strong>atributos</strong>, es decir, características
+    adicionales. Los atributos se insertan dentro de las etiquetas y estos se dividen en dos tipos:
 </p>
-<dl class="apunte__lista-descriptiva--grande">
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Atributos normales
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Los atributos normales poseen un nombre clave y un valor. 
-        <figure class="apunte__figure">
-            <figcaption class="apunte__figure-titulo">Ejemplo inserción de un atributo normal</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;etiqueta nombre_atributo="valor_atributo"...&gt;...</span>
-                </li>
-            </ul>
-        </figure>
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Atributos booleanos
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Los atributos booleanos, a diferencia de los atributos normales, no requieren un valor necesariamente ya que su mera
-        presencia indica un valor "true" en estos, es decir, aplican sus características por el simple hecho de encontrarse en 
-        el elemento. 
-        <figure class="apunte__figure">
-            <figcaption class="apunte__figure-titulo">Ejemplo inserción de un atributo booleano</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;etiqueta nombre_atributo...&gt;...</span>
-                </li>
-            </ul>
-        </figure>
-    </dd>
+
+<dl class="lista-descriptiva lista-descriptiva--con-ejemplos">
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">Atributos normales</dt>
+            <dd class="lista-descriptiva__descripcion">
+                Los atributos normales poseen un nombre clave y un valor.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo inserción de un atributo normal</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;etiqueta nombre_atributo="valor_atributo" ... &gt; ...</span>
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
+
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">Atributos booleanos</dt>
+            <dd class="lista-descriptiva__descripcion">
+                Los atributos booleanos, a diferencia de los normales, no requieren un valor necesariamente, ya que su mera
+                presencia indica un valor "true" en estos. Es decir, aplican sus características por el simple hecho de
+                encontrarse en el elemento.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo inserción de un atributo booleano</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;etiqueta nombre_atributo ... &gt; ...</span>
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
 </dl>
 
 <p class="apunte__parrafo">
-    Para que el valor de un atributo sea expresado e interpretado de forma correcta siempre, este debe estar
-    entre comillas dobles ("valor_atributo") o simples ('valor_atributo'), pero no una combinación de ambas.
+    Para que el valor de un atributo sea expresado e interpretado de forma correcta siempre, este debe estar entre
+    comillas dobles ("valor_atributo") o simples ('valor_atributo'), pero no una combinación de ambas.
 </p>

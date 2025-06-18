@@ -21,7 +21,8 @@ html{
     --font-size-titulo-h2: clamp(2.25rem, 1.271rem + 3.92vw, 4.209rem);
     --font-size-titulo-h3: clamp(2rem, 1.421rem + 2.31vw, 3.157rem);
     --font-size-titulo-h4: clamp(1.75rem, 1.44rem + 1.24vw, 2.369rem);
-    --font-size-botones:   1.5rem;
+    --font-size-botones:   1.3rem;
+    --font-size-titulo-figure: 1.2rem;
     --font-size-parrafo:   1rem;
 
     --font-family-inter: "Inter";

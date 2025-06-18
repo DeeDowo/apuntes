@@ -59,9 +59,11 @@
 }
 .apunte__titulo-h3{
     font-size: var(--font-size-titulo-h3);
+    margin: var(--margin-grande) 0;
 }
 .apunte__titulo-h4{
     font-size: var(--font-size-titulo-h4);
+    margin: var(--margin-grande) 0;
 }
 .apunte__parrafo{
     text-align: left;
@@ -85,12 +87,16 @@
     border-left: solid var(--color-extras-3) var(--borde-pequeño);
 }
 
+.lista-desordenada__elemento--f-blanco{
+    background-color: var(--color-blanco);
+}
+
 /* ================================Apuntes LISTA DESCRIPTIVA================================ */
 
-.apunte__lista-descriptiva{
+.lista-descriptiva{
     display: flex;
     flex-direction: column;
-    gap: var(--gap-pequeño);
+    gap: var(--gap-normal);
 
     margin: var(--margin-grande) 0;
 }
@@ -113,61 +119,52 @@
     padding: var(--padding-grande);
 }   
 
-/* ================================Apuntes LISTA DESCRIPCIONES GRANDE================================ */
+/* ================================Apuntes LISTA DESCRIPCIONES COMPLEJA================================ */
 
-.apunte__lista-descriptiva--grande{
+.lista-descriptiva--con-ejemplos{
 }
-.apunte__lista-descriptiva__titulo--grande{
+.lista-descriptiva__ejemplos{
+    gap: 0;
+}
+
+.lista-desordenada--figure{
+    margin: 0;
+}
+.lista-desordenada__elemento--figure{
     text-align: center;
 }
-.apunte__lista-descriptiva__descripcion--grande{
+
+/* ================================Apuntes figure================================ */
+
+.figure{
+}
+.figure__titulo{
+    font-size: var(--font-size-titulo-figure);
     text-align: center;
-    margin: 0 0 1rem 0;
-}
-.apunte__lista-descriptiva__descripcion--grande:nth-last-child{
-    margin: 0;
-}
-.apunte__figure{
-    margin: 1rem auto;
-    border-radius: 1rem;
-    border-left: 1rem solid greenyellow;
-    background-color: rgb(240, 240, 240);
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: min(80vw, 100ch);
-    overflow-x: auto;
-}
-.apunte__figure-titulo{
-    margin: 0;
-    padding: 0;
-    display: inline;
+    font-weight: bold;
 
-}
-.apunte__lista-descriptiva__ul{
-    margin: 0;
-    padding: 0;
-}
-.apunte__lista-descriptiva__ul-li{
-    word-break: break-word;
-    hyphens: auto;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.codigo__linea{
-    background-color: rgb(231, 231, 231);
-    border-radius: .3rem;
+    margin: var(--margin-grande) 0;
 }
 
-/* ================================Apuntes LISTA ORDENADA================================ */
+/* ================================Apuntes Ejemplos código================================ */
 
-.apunte__lista-ordenada{
-    padding: 0;
-}
-.apunte__lista-ordenada__elemento{
-    list-style: none;
+.codigo__bloque{
+    background-color: var(--color-fondo);
     text-align: center;
+    padding: var(--padding-grande);
+    border-radius: var(--borde-grande);
+
+    border-top: var(--borde-normal) solid var(--color-extras-2);
 }
-pre{
-    overflow: auto;
+
+/* ================================Apuntes Lista ORDENADA================================ */
+
+.lista-ordenada{}
+.lista-ordenada__elemento{
+    background-color: red;
+    list-style-position: inside;
+}
+.lista-ordenada__elemento > span{
+    width: 10%;
+    background-color: blue;
 }

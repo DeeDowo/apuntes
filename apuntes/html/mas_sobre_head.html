@@ -1,86 +1,107 @@
-
-<h2 class="apunte__titulo">
-    Más sobre <span class="codigo--linea--titulo">&lt;head&gt;...&lt;/head&gt;</span>
+<h2 class="apunte__titulo-h2">
+    Más sobre <span class="titulo-h2__span">&lt;head&gt;...&lt;/head&gt;</span>
 </h2>
+
 <p class="apunte__parrafo">
-    Esta es una sección invisible del documento HTML que actúa
-    como el "cerebro" de este. <strong>No muestra contenido</strong>, pero es esencial principalmente para:
+    Esta es una sección invisible del documento HTML que actúa como el "cerebro" de este.
+    <strong>No muestra contenido</strong>, pero es esencial principalmente para:
 </p>
-<ul class="apunte__lista-desordenada">
-    <li class="apunte__elemento-lista">
+
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
         Definir <strong>metadatos</strong>
     </li>
-    <li class="apunte__elemento-lista">
+    <li class="lista-desordenada__elemento">
         Enlazar <strong>recursos</strong>
     </li>
-    <li class="apunte__elemento-lista">
+    <li class="lista-desordenada__elemento">
         Configurar <strong>comportamientos</strong>
     </li>
 </ul>
-<dl class="apunte__lista-descriptiva--grande">
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Metadatos
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Dan contexto sobre el contenido y características de la página, facilitan y mejoran la
-        exposición de la misma.
-    </dd>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Se indican con la etiqueta <span class="codigo__linea">&lt;meta&gt;</span>:
-        <figure class="apunte__figure">
-            <figcaption>Ejemplo etiqueta "meta"</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;meta charset="utf-8"&gt;</code>
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;meta name="author" content="Dowo"&gt;</code>
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;meta name="description" content="Apuntes de HTML..."&gt;</code>
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
-                </li>
-            </ul>
-        </figure>
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Enlaces a recursos
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Permite el uso de elementos externos.
-    </dd>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Se indican con la etiqueta <span class="codigo__linea">&lt;link&gt;</span>:
-        <figure class="apunte__figure">
-            <figcaption class="apunte__figure-titulo">Ejemplos etiqueta "link"</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;link rel="stylesheet" href="ruta/al/directorio"&gt;</code>
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;link rel="icon" type="image/png" href="ruta/al/directorio"&gt;</code>
-                </li>
-            </ul>
-        </figure>
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo--grande">    
-        Configurar comportamientos
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Permite agregar funcionalidades a una página mediante código JavaScript.
-        Se utiliza la etiqueta<span class="codigo__linea"> &lt;script&gt; &lt;/script&gt;</span> y generalmente en conjunto 
-        con el atributo
-        "<strong>defer</strong>"" (booleano) para hacer que los scripts se carguen después de la de
-        la página, evitando así posibles errores de ejecución.
-        <figure class="apunte__figure">
-            <figcaption class="apunte__figure-titulo">Ejemplo etiqueta "script"</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;script src="ubicacion/del/archivo" defer&gt;&lt;/script&gt;</code>
-                </li>
-            </ul>
-        </figure>
-    </dd>
+
+<dl class="lista-descriptiva lista-descriptiva--con-ejemplos">
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">
+                Metadatos
+            </dt>
+            <dd class="lista-descriptiva__descripcion">
+                Dan contexto sobre el contenido y características de la página, facilitan y mejoran la exposición de la
+                misma. Se indican con la etiqueta &lt;meta&gt;.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+        
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo etiqueta "meta"</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;meta charset="utf-8"&gt;</code>
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;meta name="author" content="Dowo"&gt;</code>
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;meta name="description" content="Apuntes de HTML..."&gt;</code>
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code
+                            class="codigo__linea">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
+
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">
+                Enlaces a recursos
+            </dt>
+            <dd class="lista-descriptiva__descripcion">
+                Permite el uso de elementos externos. Se indican con la etiqueta <span>&lt;link&gt;</span>.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+        
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplos etiqueta "link"</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;link rel="stylesheet" href="ruta/al/directorio"&gt;</code>
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;link rel="icon" type="image/png" href="ruta/al/directorio"&gt;</code>
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
+
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">
+                Configurar comportamientos
+            </dt>
+            <dd class="lista-descriptiva__descripcion">
+                Permite agregar funcionalidades a una página mediante código JavaScript.
+                Se utiliza la etiqueta <span class="codigo__linea">&lt;script&gt; &lt;/script&gt;</span> y generalmente en
+                conjunto
+                con el atributo <strong>defer</strong> (booleano) para hacer que los scripts se carguen después de la
+                página,
+                evitando así posibles errores de ejecución.
+            </dd>
+        
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo etiqueta "script"</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;script src="ubicacion/del/archivo" defer&gt;&lt;/script&gt;</code>
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
 </dl>

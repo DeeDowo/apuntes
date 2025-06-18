@@ -1,277 +1,348 @@
 
-<h2 class="apunte__titulo">
-    Semántica general HTML
+<h2 class="apunte__titulo-h2">
+    Semántica <span class="titulo-h2__span">HTML</span>
 </h2>
 <p class="apunte__parrafo">
-    En HTML esencialmente todos los elementos disponibles tienen un significado, es decir, estos 
+    En HTML, esencialmente todos los elementos disponibles tienen un significado, es decir, estos
     tienen una finalidad definida, ya sea para un orden jerárquico o para
     tipos específicos de información.
 </p>
-<h3 class="apunte__subtitulo">
+<h3 class="apunte__titulo-h3">
     Títulos
 </h3>
 <p class="apunte__parrafo">
-    por defecto existen seis niveles de títulos, desde "h1" hasta "h6", estos sirven para estructurar una página
+    Por defecto, existen seis niveles de títulos, desde "h1" hasta "h6". Estos sirven para estructurar una página
     de manera jerárquica. Algunas recomendaciones al usar títulos son las siguientes:
 </p>
-<ul class="apunte__lista-desordenada">
-    <li class="apunte__elemento-lista">
-        De entre todos los títulos de una pagina, el "h1" es el más importante y solo debería de haber uno por página ya que
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        De entre todos los títulos de una página, el "h1" es el más importante y solo debería haber uno por página, ya
+        que
         este indica el foco central de la misma.
     </li>
-    <li class="apunte__elemento-lista">
-        No se deberían usar mas de 3 o 4 niveles de encabezados por página.
+    <li class="lista-desordenada__elemento">
+        No se deberían usar más de 3 o 4 niveles de encabezados por página.
     </li>
-    <li class="apunte__elemento-lista">
+    <li class="lista-desordenada__elemento">
         Usar la jerarquía de los títulos de forma correcta.
     </li>
 </ul>
-<h3 class="apunte__subtitulo">
+<h3 class="apunte__titulo-h3">
     Párrafos
 </h3>
 <p class="apunte__parrafo">
-    la forma mas básica y general de indicar un bloque de texto en un documento HTML.
+    La forma más básica y general de indicar un bloque de texto en un documento HTML.
 </p>
-<h3 class="apunte__subtitulo">
+<h3 class="apunte__titulo-h3">
     Elementos dentro de textos
 </h3>
 <h4 class="apunte__titulo-h4">
     Elementos comunes
 </h4>
-<dl class="apunte__lista-descriptiva">
-    <dt class="apunte__lista-descriptiva__titulo">
-        <span class="codigo__linea">&lt;em&gt; &lt;/em&gt;</span>
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion">
-        Indica que un bloque o fragmento de texto tiene especial relevancia, en otras palabras,
-        denota la importancia de algo. Da un formato de "itálica".
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo">
-        <span class="codigo__linea">&lt;strong&gt; &lt;/strong&gt;</span>
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion">
-        Resalta que algo (relativo a un texto) tiene mayor importancia.
-        No solo resalta una idea, más bien, indica que esta es de alta relevancia
-        para el texto en particular.
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo">
-        <span class="codigo__linea">&lt;br&gt;</span>
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion">
-        Fuerza un salto de linea, sin embargo, su uso debería estar limitado a cuando
-        este salto tiene algún significado semántico y no solo como algo visual.
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo">
-        <span class="codigo__linea">&lt;hr&gt;</span>
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion">    
-        Visualmente crea una linea horizontal entre 2 elementos e indica un cambio de tema.
-    </dd>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            <span class="codigo__linea">&lt;em&gt; &lt;/em&gt;</span>
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Indica que un bloque o fragmento de texto tiene especial relevancia. En otras palabras,
+            denota la importancia de algo. Da un formato de "itálica".
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            <span class="codigo__linea">&lt;strong&gt; &lt;/strong&gt;</span>
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Resalta que algo (relativo a un texto) tiene mayor importancia.
+            No solo resalta una idea, más bien, indica que esta es de alta relevancia
+            para el texto en particular.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            <span class="codigo__linea">&lt;br&gt;</span>
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Fuerza un salto de línea. Sin embargo, su uso debería estar limitado a cuando
+            este salto tiene algún significado semántico y no solo como algo visual.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            <span class="codigo__linea">&lt;hr&gt;</span>
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Visualmente crea una línea horizontal entre dos elementos e indica un cambio de tema.
+        </dd>
+    </div>
 </dl>
-
 <h4 class="apunte__titulo-h4">
     Elementos poco comunes
 </h4>
-<dl class="apunte__lista-descriptiva--grande">
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Citas
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Para indicar que un bloque, bloques o lineas de texto son una cita textual o parafraseada.
-        <figure>
-            <figcaption>Quote y blockquote</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;blockquote&gt; ... &lt;/blockquote&gt;</span> (Indica que uno o más bloques de texto es o son una cita.
-                    Visualmente agrega una apariencia anidada.)
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;q&gt; ... &lt;/q&gt;</span> (Indica que una linea o lineas de un texto son una cita, agrega un indicador
-                    visual de comillas dobles al inicio y fin de la cita.)
-                </li class="apunte__lista-descriptiva__ul-li">
-            </ul>
-        </figure>
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Referencias
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Existe un elemento y un atributo que acompañan a la citas para indicar la referencia de estas, es decir, el origen de la
-        información.La forma más común es usar este elemento y atributo en conjunto con un link a la referencia misma.
-        <figure>
-            <figcaption>Referencias</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;cite&gt; https... &lt;/cite&gt;</span> (le da un valor semántico a la referencia)
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;q cite="https..."&gt; ... &lt;/q&gt;</span> (el atributo cite, se agrega en el elemento
-                    para indicar la referencia, sin embargo, este atributo
-                    solo agrega metadata, es decir, nada visual)
-                </li>
-            </ul>
-        </figure>
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Abreviaciones y acrónimos
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Existe un elemento para indicar que algo es una abreviación o acrónimo de manera semántica, su uso es recomendable
-        solo cuando no se explica la abreviación o acrónimo en el texto circundante.
-        <figure>
-            <figcaption>Ejemplo "abbr"</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;abbr title="Texto completo de la abreviación/acrónimo"&gt; ... &lt;/abbr&gt;</span>
-                </li>
-            </ul>
-        </figure>
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Contacto
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Existe un elemento para indicar que algún texto hace referencia a una forma de contacto.
-        <figure>
-            <figcaption>Ejemplo "address"</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <code class="codigo__linea">&lt;address&gt; teléfono: 55... &lt;/address&gt;</code>
-                </li>
-            </ul>
-        </figure>
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Superindice y subindice
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Existen elementos para indicar que algún texto es un subindice o superindice, su uso más común es con fechas o
-        formulas científicas.
-        <figure>
-            <figcaption>Ejemplo "sup" y "sub"</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;sup&gt; &lt;/sup&gt;</span> (texto<sup>sup</sup>)
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;sub&gt; &lt;/sub&gt;</span> (texto<sub>sub</sub>)
-                </li>
-            </ul>
-        </figure>
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Formas de representar código
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        Para poder mostrar código de forma correcta tanto visual como semántica, tenemos multiples
-        elementos.
-        Estos elementos suelen usarse en conjunto para crear un texto más "rico" en un sentido semántico.
-        <figure>
-            <figcaption>Ejemplo representación de código</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;code&gt; &lt;/code&gt;</span> (Indica de forma genérica que algo es un código)
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;pre&gt; &lt;/pre&gt;</span> (Muestra el código de forma textual, es decir, no eliminará espacios ni
-                    hará algún formateo que no
-                    esté explícitamente expresado por nosotros)
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;var&gt; &lt;/var&gt;</span> (Indica que algo es una variable)
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;kbd&gt; &lt;/kbd&gt;</span> (Indica algún "input", generalmente combinaciones de teclas)
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">&lt;samp&gt; &lt;/samp&gt;</span> (Indica un "output", es decir, el resultado de algún código)
-                </li>
-            </ul>
-        </figure>
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo--grande">
-        Fechas y tiempos
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion--grande">
-        "time" envuelve de manera semántica una fecha, hora o duración de tiempo. Sin embargo, para su uso
-        correcto, requiere del atributo "datetime", el cual asocia una version estandarizada de la fecha y
-        hora en formato
-        "iso 8601". Esto facilita que navegadores, aplicaciones y motores búsqueda puedan interpretar y procesar
-        correctamente la información sin importar
-        el formato o idioma en que se muestra al usuario.
-        <figure>
-            <figcaption>Estructura "time" y "datetime"</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    <span class="codigo__linea">
-                        &lt;time datetime="YYYY-MM-DD-Thh:mm:ssTZD"&gt;...&lt;/time&gt;
-                    </span>
-                </li>
-            </ul>
-        </figure>
-        <figure>
-            <figcaption>Partes de "datetime"</figcaption>
-            <ul class="apunte__lista-descriptiva__ul">
-                <li class="apunte__lista-descriptiva__ul-li">
-                    YYYY: año con cuatro dígitos (por ejemplo, 2025)
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    MM: mes con dos dígitos (por ejemplo, 04 para abril)
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    DD: día con dos dígitos (por ejemplo, 15)
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    T: separador entre la fecha y la hora
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    hh: hora en formato de 24 horas con dos dígitos (por ejemplo, 14 para las 2 PM)
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    mm: minutos con dos dígitos (por ejemplo, 30)
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    ss: segundos con dos dígitos (por ejemplo, 00)
-                </li>
-                <li class="apunte__lista-descriptiva__ul-li">
-                    TZD: indicador de zona horaria (por ejemplo, Z para UTC o +02:00 para una zona horaria específica)
-                </li>
-            </ul>
-        </figure>
-    </dd>
+<dl class="lista-descriptiva lista-descriptiva--con-ejemplos">
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">
+                Citas
+            </dt>
+            <dd class="lista-descriptiva__descripcion">
+                Para indicar que un bloque, bloques o líneas de texto son una cita textual o parafraseada.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+            <figure class="figure">
+                <figcaption class="figure__titulo">Quote y blockquote</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;blockquote&gt; ... &lt;/blockquote&gt;</span> (Indica que uno o
+                        más bloques de texto son una cita. Visualmente agrega una apariencia anidada.)
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;q&gt; ... &lt;/q&gt;</span> (Indica que una línea o líneas de un
+                        texto son una cita. Agrega un indicador visual de comillas dobles al inicio y fin de la cita.)
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
+
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">
+                Referencias
+            </dt>
+            <dd class="lista-descriptiva__descripcion">
+                Existe un elemento y un atributo que acompañan a las citas para indicar la referencia de estas, es
+                decir, el origen de la
+                información. La forma más común es usar este elemento y atributo en conjunto con un link a la referencia
+                misma.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+            <figure class="figure">
+                <figcaption class="figure__titulo">Referencias</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;cite&gt; https... &lt;/cite&gt;</span> (Le da un valor semántico
+                        a la referencia)
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;q cite="https..."&gt; ... &lt;/q&gt;</span> (El atributo cite se
+                        agrega en el elemento para indicar la referencia. Sin embargo, este atributo
+                        solo agrega metadata, es decir, nada visual)
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
+
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">
+                Abreviaciones y acrónimos
+            </dt>
+            <dd class="lista-descriptiva__descripcion">
+                Existe un elemento para indicar que algo es una abreviación o acrónimo de manera semántica. Su uso es
+                recomendable
+                solo cuando no se explica la abreviación o acrónimo en el texto circundante.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo "abbr"</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;abbr title="Texto completo de la abreviación/acrónimo"&gt; ...
+                            &lt;/abbr&gt;</span>
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
+
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">
+                Contacto
+            </dt>
+            <dd class="lista-descriptiva__descripcion">
+                Existe un elemento para indicar que algún texto hace referencia a una forma de contacto.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo "address"</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <code class="codigo__linea">&lt;address&gt; teléfono: 55... &lt;/address&gt;</code>
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
+
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">
+                Superíndice y subíndice
+            </dt>
+            <dd class="lista-descriptiva__descripcion">
+                Existen elementos para indicar que algún texto es un subíndice o superíndice. Su uso más común es con
+                fechas o
+                fórmulas científicas.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo "sup" y "sub"</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;sup&gt; &lt;/sup&gt;</span> (texto<sup>sup</sup>)
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;sub&gt; &lt;/sub&gt;</span> (texto<sub>sub</sub>)
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
+
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">
+                Formas de representar código
+            </dt>
+            <dd class="lista-descriptiva__descripcion">
+                Para poder mostrar código de forma correcta tanto visual como semántica, tenemos múltiples
+                elementos. Estos elementos suelen usarse en conjunto para crear un texto más "rico" en un sentido
+                semántico.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo representación de código</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;code&gt; &lt;/code&gt;</span> (Indica de forma genérica que algo
+                        es un código)
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;pre&gt; &lt;/pre&gt;</span> (Muestra el código de forma textual,
+                        es decir, no eliminará espacios ni hará algún formateo que no esté explícitamente expresado por
+                        nosotros)
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;var&gt; &lt;/var&gt;</span> (Indica que algo es una variable)
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;kbd&gt; &lt;/kbd&gt;</span> (Indica algún "input", generalmente
+                        combinaciones de teclas)
+                    </li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;samp&gt; &lt;/samp&gt;</span> (Indica un "output", es decir, el
+                        resultado de algún código)
+                    </li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
+
+    <div>
+        <div class="lista-descriptiva__bloque">
+            <dt class="lista-descriptiva__titulo">
+                Fechas y tiempos
+            </dt>
+            <dd class="lista-descriptiva__descripcion">
+                "time" envuelve de manera semántica una fecha, hora o duración de tiempo. Sin embargo, para su uso
+                correcto, requiere del atributo "datetime", el cual asocia una versión estandarizada de la fecha y
+                hora en formato "ISO 8601". Esto facilita que navegadores, aplicaciones y motores de búsqueda puedan
+                interpretar y procesar
+                correctamente la información sin importar el formato o idioma en que se muestra al usuario.
+            </dd>
+        </div>
+        <dd class="lista-descriptiva__ejemplos">
+            <figure class="figure">
+                <figcaption class="figure__titulo">Estructura "time" y "datetime"</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+                        <span class="codigo__linea">&lt;time
+                            datetime="YYYY-MM-DDThh:mm:ssTZD"&gt;...&lt;/time&gt;</span>
+                    </li>
+                </ul>
+            </figure>
+            <figure class="figure">
+                <figcaption class="figure__titulo">Partes de "datetime"</figcaption>
+                <ul class="lista-desordenada lista-desordenada--figure">
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">YYYY: año con cuatro
+                        dígitos (por ejemplo, 2025)</li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">MM: mes con dos dígitos
+                        (por ejemplo, 04 para abril)</li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">DD: día con dos dígitos
+                        (por ejemplo, 15)</li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">T: separador entre la
+                        fecha y la hora</li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">hh: hora en formato de
+                        24 horas con dos dígitos (por ejemplo, 14 para las 2 PM)</li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">mm: minutos con dos
+                        dígitos (por ejemplo, 30)</li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">ss: segundos con dos
+                        dígitos (por ejemplo, 00)</li>
+                    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">TZD: indicador de zona
+                        horaria (por ejemplo, Z para UTC o +02:00 para una zona horaria específica)</li>
+                </ul>
+            </figure>
+        </dd>
+    </div>
 </dl>
 
-<h3 class="apunte__subtitulo">
+<h3 class="apunte__titulo-h3">
     Listas
 </h3>
 <p class="apunte__parrafo">
-    existes 3 formas diferentes de indicar listas:
+    Existen 3 formas diferentes de indicar listas:
 </p>
-<dl class="apunte__lista-descriptiva">
-    <dt class="apunte__lista-descriptiva__titulo">
-        Unordered list 
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion">
-        Una <strong>lista sin un orden en particular</strong> (<span class="codigo__linea">&lt;ul&gt;...&lt;/ul&gt;</span>).
-        Cada elemento de agrega con las etiquetas "list item" (<span class="codigo__linea">&lt;li&gt;...&lt;/li&gt;</span>).
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo">
-        Ordered list
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion">
-        Una <strong>lista con un orden en particular</strong> (<span class="codigo__linea">&lt;ol&gt;...&lt;/ol&gt;</span>).
-        Cada elemento de agrega con las etiquetas "list item" (<span class="codigo__linea">&lt;li&gt;...&lt;/li&gt;</span>).
-    </dd>
-    <dt class="apunte__lista-descriptiva__titulo">
-        Description list
-    </dt>
-    <dd class="apunte__lista-descriptiva__descripcion">
-        Una <strong>lista de descripciones</strong> (<span class="codigo__linea">&lt;dl&gt;...&lt;/dl&gt;</span>).
-        A diferencia de "ul" y "ol", para agregar elementos a
-        una lista de descripciones se necesitan dos elementos, 
-        <span class="codigo__linea">&lt;dt&gt;...&lt;/dt&gt;</span> (Definition term) y 
-        <span class="codigo__linea">&lt;dd&gt;...&lt;/dd&gt;</span> (Definition description).
-    </dd>
+
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Unordered list
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Una <strong>lista sin un orden en particular</strong>
+            (<span class="codigo__linea">&lt;ul&gt;...&lt;/ul&gt;</span>).
+            Cada elemento se agrega con las etiquetas "list item"
+            (<span class="codigo__linea">&lt;li&gt;...&lt;/li&gt;</span>).
+        </dd>
+    </div>
+
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Ordered list
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Una <strong>lista con un orden en particular</strong>
+            (<span class="codigo__linea">&lt;ol&gt;...&lt;/ol&gt;</span>).
+            Cada elemento se agrega con las etiquetas "list item"
+            (<span class="codigo__linea">&lt;li&gt;...&lt;/li&gt;</span>).
+        </dd>
+    </div>
+
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Description list
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Una <strong>lista de descripciones</strong>
+            (<span class="codigo__linea">&lt;dl&gt;...&lt;/dl&gt;</span>).
+            A diferencia de "ul" y "ol", para agregar elementos a una lista de descripciones
+            se necesitan dos elementos:
+            <span class="codigo__linea">&lt;dt&gt;...&lt;/dt&gt;</span> (Definition term) y
+            <span class="codigo__linea">&lt;dd&gt;...&lt;/dd&gt;</span> (Definition description).
+        </dd>
+    </div>
 </dl>
+
 <p class="apunte__parrafo">
-    Los diferentes tipos de listas pueden anidarse entre si.
+    Los diferentes tipos de listas pueden anidarse entre sí.
 </p>
