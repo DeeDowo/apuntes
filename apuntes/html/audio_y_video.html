@@ -1,66 +1,79 @@
-<section id="audio &lt;audio&gt; &lt;/audio&gt; y video &lt;video&gt; &lt;/video&gt;">
-                <h2>Audio y video</h2>
-                <p>
-                    Para la integración de contenido multimedia de tipo audio o video, existen los elementos:
-                </p>
-                <ul>
-                    <li>
-                        <span class="codigo--linea">&lt;video&gt; &lt;/video&gt;</span>
-                    </li>
-                    <li>
-                        <span class="codigo--linea">&lt;audio&gt; &lt;/audio&gt;</span>
-                    </li>
-                </ul>
-                <p>
-                    Ambos utilizan el atributo "src" para enlazar el contenido:
-                </p>
-                <ul>
-                    <li>
-                        <span class="codigo--linea">&lt;video src="carpeta/video.formato"&gt; &lt;/video&gt;</span>
-                    </li>
-                    <li>
-                        <span class="codigo--linea">&lt;audio src="carpeta/audio.formato"&gt; &lt;/audio&gt;</span>
-                    </li>
-                </ul>
-                <p>
-                    La principal desventaja del uso del atributo "src" es que de esta forma solo tenemos una posible fuente,
-                    lo recomendable y la practica común es utilizar multiples
-                    elementos <span class="codigo--linea">&lt;source&gt;</span> para tener la mayor compatibilidad posible.
-                    Cada uno enlazando con un formato diferente y con un
-                    atributo "type" que sirve para indicar el formato del archivo,
-                    de esta forma le damos multiples opciones al navegador
-                    para elegir aquel formato soportado correctamente.
-                </p>
-                <p>
-                    Cuando el atributo "type"
-                    no está, el navegador tratará de cargar todos los archivos, uno por uno hasta
-                    encontrar uno valido. Cuando sí
-                    se utiliza "type", el navegador solo buscará aquel que tenga un formato soportado.
-                </p>
-                <p>
-                    Una buena practica es el agregar un
-                    "fallback", es decir, en caso de que ocurra un error o que ningún formato sea valido, poder proporcionar
-                    alguna otra
-                    opción de acceso al contenido, ya sea dar una alternativa de descarga o al menos poder informar al usuario de que ha ocurrido un
-                    error.
-                </p>
-                <ul>
-                    <li>
-                        <figure>
-                            <figcaption>Video con una sola fuente (poco recomendable)</figcaption>
-                            <code><pre>
+
+<h2 class="apunte__titulo-h2">
+    Audio y video
+</h2>
+
+<p class="apunte__parrafo">
+    Para la integración de contenido multimedia de tipo audio o video, existen los elementos:
+</p>
+
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        &lt;video&gt; &lt;/video&gt;
+    </li>
+    <li class="lista-desordenada__elemento">
+        &lt;audio&gt; &lt;/audio&gt;
+    </li>
+</ul>
+
+<p class="apunte__parrafo">
+    Ambos utilizan el atributo "src" para enlazar el contenido:
+</p>
+
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        <span class="codigo__linea">&lt;video src="carpeta/video.formato"&gt; &lt;/video&gt;</span>
+    </li>
+    <li class="lista-desordenada__elemento">
+        <span class="codigo__linea">&lt;audio src="carpeta/audio.formato"&gt; &lt;/audio&gt;</span>
+    </li>
+</ul>
+
+<p class="apunte__parrafo">
+    La principal desventaja del uso del atributo "src" es que de esta forma solo tenemos una posible fuente,
+    lo recomendable y la práctica común es utilizar múltiples
+    elementos <span class="codigo__linea">&lt;source&gt;</span> para tener la mayor compatibilidad posible.
+    Cada uno enlazando con un formato diferente y con un
+    atributo "type" que sirve para indicar el formato del archivo,
+    de esta forma le damos múltiples opciones al navegador
+    para elegir aquel formato soportado correctamente.
+</p>
+
+<p class="apunte__parrafo">
+    Cuando el atributo "type"
+    no está, el navegador tratará de cargar todos los archivos, uno por uno hasta
+    encontrar uno válido. Cuando sí
+    se utiliza "type", el navegador solo buscará aquel que tenga un formato soportado.
+</p>
+
+<p class="apunte__parrafo">
+    Una buena práctica es el agregar un
+    "fallback", es decir, en caso de que ocurra un error o que ningún formato sea válido, poder proporcionar
+    alguna otra
+    opción de acceso al contenido, ya sea dar una alternativa de descarga o al menos poder informar al usuario de que ha
+    ocurrido un
+    error.
+</p>
+
+<ul class="lista-desordenada lista-desordenada--figure">
+    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+        <figure class="figure">
+            <figcaption class="figure__titulo">Video con una sola fuente (poco recomendable)</figcaption>
+            <pre class="codigo__bloque">
 &lt;video src="video_URL"&gt;
 &lt;p&gt; 
 error inesperado 
 &lt;a href="video_URL" download="video"&gt;descargar video&lt;/a&gt;
 &lt;/p&gt;
-&lt;/video&gt;</pre></code>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <figcaption>Video con multiples fuentes (recomendable)</figcaption>
-                            <code><pre>
+&lt;/video&gt;
+            </pre>
+        </figure>
+    </li>
+    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+        <figure class="figure">
+            <figcaption class="figure__titulo">Video con múltiples fuentes (recomendable)</figcaption>
+            <pre class="codigo__bloque">
+&lt;video&gt;
 &lt;source src="video_URL" type="formato1"&gt;
 &lt;source src="video_URL" type="formato2"&gt;
 &lt;source src="video_URL" type="formato3"&gt;
@@ -68,25 +81,27 @@ error inesperado
 error inesperado 
 &lt;a href="video_URL" download="video"&gt;descargar video&lt;/a&gt;
 &lt;/p&gt;
-&lt;/video&gt;</pre></code>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <figcaption>Audio con una sola fuente (poco recomendable)</figcaption>
-                            <code><pre>
+&lt;/video&gt;
+            </pre>
+        </figure>
+    </li>
+    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+        <figure class="figure">
+            <figcaption class="figure__titulo">Audio con una sola fuente (poco recomendable)</figcaption>
+            <pre class="codigo__bloque">
 &lt;audio src="audio_URL"&gt;
 &lt;p&gt; 
 error inesperado 
 &lt;a href="audio_URL" download="audio"&gt;descargar audio&lt;/a&gt;
 &lt;/p&gt;
-&lt;/audio&gt;</pre></code>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <figcaption>Audio con multiples fuentes (recomendable)</figcaption>
-                            <code><pre>
+&lt;/audio&gt;
+            </pre>
+        </figure>
+    </li>
+    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
+        <figure class="figure">
+            <figcaption class="figure__titulo">Audio con múltiples fuentes (recomendable)</figcaption>
+            <pre class="codigo__bloque">
 &lt;audio&gt;
 &lt;source src="audio_URL" type="formato1"&gt;
 &lt;source src="audio_URL" type="formato2"&gt;
@@ -95,191 +110,120 @@ error inesperado
 error inesperado 
 &lt;a href="audio_URL" download="audio"&gt;descargar audio&lt;/a&gt;
 &lt;/p&gt;
-&lt;/audio&gt;</pre></code>
-                        </figure>
-                    </li>
-                </ul>
-                <table>
-                    <caption>Atributos comunes para multimedia</caption>
-                    <tbody>
-                        <tr>
-                            <th scope="col">
-                                Atributo
-                            </th>
-                            <th scope="col">
-                                Función
-                            </th>
-                            <th scope="col">
-                                Tipo de multimedia
-                            </th>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                controls (atributo boolean)
-                            </th>
-                            <td>
-                                Muestra los controles por defecto del navegador para la reproducción del contenido.
-                            </td>
-                            <td>
-                                Audio y Video
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                width/height
-                            </th>
-                            <td>
-                                Para asignar un tamaño fijo al contenedor, no modifica el "aspect ratio".
-                            </td>
-                            <td>
-                                Video
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                autoplay (atributo boolean)
-                            </th>
-                            <td>
-                                Hace que el contenido se empiece a reproducir de forma automática al ingresar a la página (no recomendable).
-                            </td>
-                            <td>
-                                Audio y Video
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                loop (atributo boolean)
-                            </th>
-                            <td>
-                                Hace que el contenido se repita automáticamente.
-                            </td>
-                            <td>
-                                Audio y Video
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                muted (atributo boolean)
-                            </th>
-                            <td>
-                                Hace que el contenido no tenga sonido por defecto (volumen).
-                            </td>
-                            <td>
-                                Audio y Video
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                poster
-                            </th>
-                            <td>
-                                Permite agregar una "miniatura".
-                            </td>
-                            <td>
-                                Videos
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                preload
-                            </th>
-                            <td>
-                                Define el tipo de pre carga del contenido, puede tomar tres valores:
-                                <ul>
-                                    <li>
-                                        auto (pre carga el contenido)
-                                    </li>
-                                    <li>
-                                        metadata (solo pre carga la metadata)
-                                    </li>
-                                    <li>
-                                        none (no pre carga nada)
-                                    </li>
-                                </ul>
-                            </td>
-                            <td>
-                                Audio y Video
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>
-                    Algo a tener en consideración es que no es buena practica usar "autoplay" por defecto, 
-                    siempre es mejor dejar que sea el usuario el que elija si
-                    reproducir el contenido o no, especialmente con audios.
-                </p>
-                <h3>
-                    Pistas de texto
-                </h3>
-                <p>
-                    Para mejorar la <strong>accesibilidad y la experiencia del usuario</strong>, es posible agregar pistas
-                    de texto como subtítulos, descripciones
-                    o captions a videos utilizando <span class="codigo--linea">&lt;track&gt;</span> (elemento void).
-                </p>
-                <p>
-                    El elemento  <span class="codigo--linea">&lt;track&gt;</span>
-                    utiliza un archivo en formato ".vtt", este es el formato estándar para mostrar texto en
-                    determinados tiempos y por
-                    determinados lapsos.
-                </p>
-                <p>
-                    Cada elemento "track" solo puede contener una pista y ciertos atributos para definir el comportamiento de esta:
-                </p>
-                <ul>
-                    <li>
-                        <strong>src</strong>: Ruta del archivo ".vtt".
-                    </li>
-                    <li>
-                        <strong>kind</strong>: Tipo de pista.
-                        <ul>
-                            <li>
-                                kind="subtitles": Traducción de dialogo (para quienes no hablan el idioma).
-                            </li>
-                            <li>
-                                kind="captions": Transcripción del audio incluyendo efectos sonoros (para sordos).
-                            </li>
-                            <li>
-                                kind="descriptions": Descripción textual del contenido visual.
-                            </li>
-                            <li>
-                                kind="chapter": Navegación por secciones del video.
-                            </li>
-                            <li>
-                                kind="metadata": Información para scripts (no visible para el usuario).
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>srclang</strong>: Idioma del archivo.
-                    </li>
-                    <li>
-                        <strong>label</strong>: Etiqueta visible para el usuario.
-                    </li>
-                </ul>
-                <h3>
-                    Algunas recomendaciones
-                </h3>
-                <ul>
-                    <li>
-                        Siempre proveer subtítulos para videos con dialogo
-                    </li>
-                    <li>
-                        Incluir transcripciones para contenido de audio
-                    </li>
-                    <li>
-                        Evitar el uso de "autoplay" o si es necesario, usarlo en conjunto con "muted"
-                    </li>
-                    <li>
-                        Comprimir archivos multimedia adecuadamente
-                    </li>
-                    <li>
-                        Usar el formato más eficiente (webm para video, opus para audio)
-                    </li>
-                    <li>
-                        Considerar usar "streaming" para videos largos
-                    </li>
-                    <li>
-                        Considerar los derechos de autor para cualquier tipo de archivo multimedia
-                    </li>
-                </ul>
-            </section>
+&lt;/audio&gt;
+            </pre>
+        </figure>
+    </li>
+</ul>
+
+<div class="informacion-tabular">
+    <table class="informacion-tabular__tabla">
+        <caption>Atributos comunes para multimedia</caption>
+        <thead class="tabla__head">
+            <tr class="head__row">
+                <th class="head__titulo" scope="col">Atributo</th>
+                <th class="head__titulo" scope="col">Función</th>
+                <th class="head__titulo" scope="col">Tipo de multimedia</th>
+            </tr>
+        </thead>
+        <tbody class="tabla__body">
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">controls (atributo boolean)</th>
+                <td class="body__celda">Muestra los controles por defecto del navegador para la reproducción del contenido.</td>
+                <td class="body__celda">Audio y Video</td>
+            </tr>
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">width/height</th>
+                <td class="body__celda">Para asignar un tamaño fijo al contenedor, no modifica el "aspect ratio".</td>
+                <td class="body__celda">Video</td>
+            </tr>
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">autoplay (atributo boolean)</th>
+                <td class="body__celda">Hace que el contenido se empiece a reproducir de forma automática al ingresar a la página (no recomendable).</td>
+                <td class="body__celda">Audio y Video</td>
+            </tr>
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">loop (atributo boolean)</th>
+                <td class="body__celda">Hace que el contenido se repita automáticamente.</td>
+                <td class="body__celda">Audio y Video</td>
+            </tr>
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">muted (atributo boolean)</th>
+                <td class="body__celda">Hace que el contenido no tenga sonido por defecto (volumen).</td>
+                <td class="body__celda">Audio y Video</td>
+            </tr>
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">poster</th>
+                <td class="body__celda">Permite agregar una "miniatura".</td>
+                <td class="body__celda">Videos</td>
+            </tr>
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">preload</th>
+                <td class="body__celda">
+                    Define el tipo de precarga del contenido, puede tomar tres valores:
+                    <ul class="lista-desordenada">
+                        <li class="lista-desordenada__elemento">auto (precarga el contenido)</li>
+                        <li class="lista-desordenada__elemento">metadata (solo precarga la metadata)</li>
+                        <li class="lista-desordenada__elemento">none (no precarga nada)</li>
+                    </ul>
+                </td>
+                <td class="body__celda">Audio y Video</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p class="apunte__parrafo">
+    Algo a tener en consideración es que no es buena práctica usar "autoplay" por defecto,
+    siempre es mejor dejar que sea el usuario quien elija si
+    reproducir el contenido o no, especialmente con audios.
+</p>
+
+<h3 class="apunte__titulo-h3">
+    <span class="titulo-h3__span">Pistas de texto</span>
+</h3>
+
+<p class="apunte__parrafo">
+    Para mejorar la <strong>accesibilidad y la experiencia del usuario</strong>, es posible agregar pistas
+    de texto como subtítulos, descripciones
+    o captions a videos utilizando <span class="codigo__linea">&lt;track&gt;</span> (elemento void).
+</p>
+
+<p class="apunte__parrafo">
+    El elemento <span class="codigo__linea">&lt;track&gt;</span>
+    utiliza un archivo en formato ".vtt", este es el formato estándar para mostrar texto en
+    determinados tiempos y por determinados lapsos.
+</p>
+
+<p class="apunte__parrafo">
+    Cada elemento <span class="codigo__linea">&lt;track&gt;</span> solo puede contener una pista y ciertos atributos para definir el comportamiento de esta:
+</p>
+
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento"><strong>src</strong>: Ruta del archivo ".vtt".</li>
+    <li class="lista-desordenada__elemento"><strong>kind</strong>: Tipo de pista.
+        <ul class="lista-desordenada">
+            <li class="lista-desordenada__elemento">kind="subtitles": Traducción de diálogo (para quienes no hablan el idioma).</li>
+            <li class="lista-desordenada__elemento">kind="captions": Transcripción del audio incluyendo efectos sonoros (para sordos).</li>
+            <li class="lista-desordenada__elemento">kind="descriptions": Descripción textual del contenido visual.</li>
+            <li class="lista-desordenada__elemento">kind="chapter": Navegación por secciones del video.</li>
+            <li class="lista-desordenada__elemento">kind="metadata": Información para scripts (no visible para el usuario).</li>
+        </ul>
+    </li>
+    <li class="lista-desordenada__elemento"><strong>srclang</strong>: Idioma del archivo.</li>
+    <li class="lista-desordenada__elemento"><strong>label</strong>: Etiqueta visible para el usuario.</li>
+</ul>
+
+<h3 class="apunte__titulo-h3">
+    <span class="titulo-h3__span">Algunas recomendaciones</span>
+</h3>
+
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">Siempre proveer subtítulos para videos con diálogo</li>
+    <li class="lista-desordenada__elemento">Incluir transcripciones para contenido de audio</li>
+    <li class="lista-desordenada__elemento">Evitar el uso de "autoplay" o, si es necesario, usarlo en conjunto con "muted"</li>
+    <li class="lista-desordenada__elemento">Comprimir archivos multimedia adecuadamente</li>
+    <li class="lista-desordenada__elemento">Usar el formato más eficiente (webm para video, opus para audio)</li>
+    <li class="lista-desordenada__elemento">Considerar usar "streaming" para videos largos</li>
+    <li class="lista-desordenada__elemento">Considerar los derechos de autor para cualquier tipo de archivo multimedia</li>
+</ul>

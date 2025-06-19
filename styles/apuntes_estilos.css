@@ -67,6 +67,7 @@
 }
 .apunte__parrafo{
     text-align: left;
+    margin: var(--margin-grande) 0;
 }
 /* ================================Apuntes LISTA DESORDENADA================================ */
 
@@ -167,4 +168,61 @@
 .lista-ordenada__elemento > span{
     width: 10%;
     background-color: blue;
+}
+
+/* ================================Apuntes tablas================================ */
+.informacion-tabular{
+    margin: var(--margin-grande) 0;
+}
+.informacion-tabular__cards{
+    display: flex;
+    gap: var(--gap-normal);
+    flex-direction: column;
+    flex: 1 1 0%;
+    margin: var(--margin-grande) 0;
+}
+.card{
+    border-radius: var(--borde-normal);
+    overflow: hidden;
+}
+.card__titulo{
+    text-align: center;
+    background-color: var(--color-extras-3);
+    color: var(--color-blanco);
+    padding: var(--padding-grande);
+}
+.card__parrafo{
+    text-align: center;
+    padding: var(--padding-grande);
+    background-color: var(--color-fondo);
+}
+
+.informacion-tabular__tabla{
+    display: none;
+}
+@media screen and (min-width: 500px){
+    .informacion-tabular__cards{
+        display: none;
+    }
+    .informacion-tabular__tabla{
+        display: table;
+        border-collapse: collapse;
+    }
+    .head__titulo,
+    .body__titulo,
+    .body__celda{
+        padding: var(--padding-grande);
+        text-align: center;
+        border: solid 1px var(--color-texto);
+    }
+    .tabla__head{
+        background-color: var(--color-extras-3);
+        color: var(--color-blanco);
+    }
+    .body__row:nth-child(odd){
+        background-color: var(--color-blanco);
+    }
+    .body__row:nth-child(even){
+        background-color: var(--color-fondo);
+    }
 }

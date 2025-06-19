@@ -1,84 +1,84 @@
-<section id="formularios en html &lt;form&gt; &lt;/form&gt;">
-                <h2>
-                    Formularios
-                </h2>
-                <p>
-                    Los formularios permiten <strong>recopilar información del usuario</strong> mediante diversos controles
-                    de entrada. su estructura semántica se conforma principalmente por:
-                </p>
-                <table>
-                    <caption>Elementos principales de un formulario</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">
-                                Elemento
-                            </th>
-                            <th scope="col">
-                                Descripción
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">
-                                <span class="codigo--linea">&lt;form&gt; ... &lt;/form&gt;</span>
-                            </th>
-                            <td>
-                                El elemento principal que se encarga de contener todos los elementos de un formulario.
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <span class="codigo--linea">&lt;fieldset&gt; ... &lt;/fieldset&gt;</span> y 
-                                <span class="codigo--linea">&lt;legend&gt; ... &lt;/legend&gt;</span>
-                            </th>
-                            <td>
-                                "Fieldset" se encarga de agrupar elementos relacionado
-                                dentro de un formulario, este se usa en conjunto con "legend", el cual
-                                debe ser el primer elemento anidado y contiene un breve titulo para este grupo.
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <span class="codigo--linea">&lt;label&gt; ... &lt;/label&gt</span>;
-                            </th>
-                            <td>
-                                Define una etiqueta para un control de entrada de un formulario, mejorando la usabilidad y
-                                accesibilidad. En otras palabras, indica el nombre del campo de entrada. Este elemento se asocia con un "input".
-                                <ul>
-                                    <li>
-                                        Asociación implícita (menos flexible, cuando el control de entrada se anida dentro
-                                        del elemento label)
-                                    </li>
-                                    <li>
-                                        Asociación explicita (más flexible, se logra mediante el atributo "for" en label, que
-                                        debe coincidir con el "ID" del control correspondiente)
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
 
-                <form>
-                    <fieldset>
-                        <legend>Ejemplo</legend>
-                        <div>
-                            <label for="nombre">nombre (forma explicita)</label>
-                            <input type="text" id="nombre">
-                        </div>
-                        <div>
-                            <label>apellido (forma implícita)
-                                <input type="text">
-                            </label>
-                        </div>
-                    </fieldset>
-                </form>
+<h2 class="apunte__titulo-h2">
+    Formularios
+</h2>
+<p>
+    Los formularios permiten <strong>recopilar información del usuario</strong> mediante diversos controles
+    de entrada. su estructura semántica se conforma principalmente por:
+</p>
+<table>
+    <caption>Elementos principales de un formulario</caption>
+    <thead>
+        <tr>
+            <th scope="col">
+                Elemento
+            </th>
+            <th scope="col">
+                Descripción
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">
+                <span class="codigo--linea">&lt;form&gt; ... &lt;/form&gt;</span>
+            </th>
+            <td>
+                El elemento principal que se encarga de contener todos los elementos de un formulario.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <span class="codigo--linea">&lt;fieldset&gt; ... &lt;/fieldset&gt;</span> y 
+                <span class="codigo--linea">&lt;legend&gt; ... &lt;/legend&gt;</span>
+            </th>
+            <td>
+                "Fieldset" se encarga de agrupar elementos relacionado
+                dentro de un formulario, este se usa en conjunto con "legend", el cual
+                debe ser el primer elemento anidado y contiene un breve titulo para este grupo.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <span class="codigo--linea">&lt;label&gt; ... &lt;/label&gt</span>;
+            </th>
+            <td>
+                Define una etiqueta para un control de entrada de un formulario, mejorando la usabilidad y
+                accesibilidad. En otras palabras, indica el nombre del campo de entrada. Este elemento se asocia con un "input".
+                <ul>
+                    <li>
+                        Asociación implícita (menos flexible, cuando el control de entrada se anida dentro
+                        del elemento label)
+                    </li>
+                    <li>
+                        Asociación explicita (más flexible, se logra mediante el atributo "for" en label, que
+                        debe coincidir con el "ID" del control correspondiente)
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-                <p>
-                    El ejemplo anterior sirve para ilustrar de manera simple la estructura de un formulario y su código HTML es el siguiente:
-                </p>
-                <code><pre>
+<form>
+    <fieldset>
+        <legend>Ejemplo</legend>
+        <div>
+            <label for="nombre">nombre (forma explicita)</label>
+            <input type="text" id="nombre">
+        </div>
+        <div>
+            <label>apellido (forma implícita)
+                <input type="text">
+            </label>
+        </div>
+    </fieldset>
+</form>
+
+<p>
+    El ejemplo anterior sirve para ilustrar de manera simple la estructura de un formulario y su código HTML es el siguiente:
+</p>
+<code><pre>
 &lt;form&gt;
 &lt;fieldset&gt;
 &lt;legend&gt;Ejemplo&lt;/legend&gt;
@@ -88,91 +88,91 @@
 &lt;/div&gt;
 &lt;div&gt;
 &lt;label&gt;apellido (forma implicita)
-    &lt;input type="text"&gt;
+&lt;input type="text"&gt;
 &lt;/label&gt;
 &lt;/div&gt;
 &lt;/fieldset&gt;
 &lt;/form&gt;</pre></code>
-                
-                <h3>
-                    tipos de entrada
-                </h3>
-                <p>
-                    Existen dos tipos de entrada en los formularios
-                </p>
-                <h4>
-                    Input
-                </h4>
-                <p>
-                    Permite diferentes tipos datos mediante el atributo "type",
-                    cada tipo proporciona un comportamiento predefinido. A su vez existen más tributos que pueden modificar
-                    aun más
-                    el comportamiento de estos.
-                    Algunos de los tipos más comunes son:
-                </p>
-                <ul>
-                    <li>
-                        text
-                    </li>
-                    <li>
-                        email
-                    </li>
-                    <li>
-                        password
-                    </li>
-                    <li>
-                        number
-                    </li>
-                    <li>
-                        checkbox
-                    </li>
-                    <li>
-                        radio
-                    </li>
-                    <li>
-                        file
-                    </li>
-                    <li>
-                        date
-                    </li>
-                    <li>
-                        color
-                    </li>
-                    <li>
-                        range
-                    </li>
-                    <li>
-                        tel
-                    </li>
-                    <li>
-                        url
-                    </li>
-                    <li>
-                        search
-                    </li>
-                    <li>
-                        hidden
-                    </li>
-                </ul>
-                <h4>
-                    Select
-                </h4>
-                <p>
-                    Crea una lista desplegable de opciones, donde cada opción se agrega con el elemento "option" y estas a su
-                    vez están
-                    anidadas en el elemento "select", un ejemplo de esto sería:
-                </p>
-                <form>
-                    <label for="nombre2">nombre</label>
-                    <select name="nombre" id="nombre2">
-                        <option value="dowo">dowo</option>
-                        <option value="dowa">dowa</option>
-                    </select>
-                </form>
-                <p>
-                    El ejemplo anterior sirve para entender el cómo funciona el elemento "select" y su código HTML es el siguiente:
-                </p>
-                <code><pre>
+
+<h3>
+    tipos de entrada
+</h3>
+<p>
+    Existen dos tipos de entrada en los formularios
+</p>
+<h4>
+    Input
+</h4>
+<p>
+    Permite diferentes tipos datos mediante el atributo "type",
+    cada tipo proporciona un comportamiento predefinido. A su vez existen más tributos que pueden modificar
+    aun más
+    el comportamiento de estos.
+    Algunos de los tipos más comunes son:
+</p>
+<ul>
+    <li>
+        text
+    </li>
+    <li>
+        email
+    </li>
+    <li>
+        password
+    </li>
+    <li>
+        number
+    </li>
+    <li>
+        checkbox
+    </li>
+    <li>
+        radio
+    </li>
+    <li>
+        file
+    </li>
+    <li>
+        date
+    </li>
+    <li>
+        color
+    </li>
+    <li>
+        range
+    </li>
+    <li>
+        tel
+    </li>
+    <li>
+        url
+    </li>
+    <li>
+        search
+    </li>
+    <li>
+        hidden
+    </li>
+</ul>
+<h4>
+    Select
+</h4>
+<p>
+    Crea una lista desplegable de opciones, donde cada opción se agrega con el elemento "option" y estas a su
+    vez están
+    anidadas en el elemento "select", un ejemplo de esto sería:
+</p>
+<form>
+    <label for="nombre2">nombre</label>
+    <select name="nombre" id="nombre2">
+        <option value="dowo">dowo</option>
+        <option value="dowa">dowa</option>
+    </select>
+</form>
+<p>
+    El ejemplo anterior sirve para entender el cómo funciona el elemento "select" y su código HTML es el siguiente:
+</p>
+<code><pre>
 &lt;form&gt;
 &lt;label for="nombre2"&gt;nombre&lt;/label&gt;
 &lt;select name="nombre" id="nombre2"&gt;
@@ -180,48 +180,48 @@
 &lt;option value="dowa"&gt;dowa&lt;/option&gt;
 &lt;/select&gt;
 &lt;/form&gt;</pre></code>
-                
-                <h3>
-                    Más sobre checkbox y radio
-                </h3>
-                <p>
-                    Estos 2 tipos de "input" en particular, sirven para <strong>marcar opciones</strong>. En el caso de "checkbox", se
-                    pueden elegir una o más opciones.
-                    Mientras que en el caso de "radio", solo se puede marcar una de las opciones
-                    , generalmente, las diferentes opciones se envuelven en un fieldset para una mayor claridad.
-                </p>
-                <h4>
-                    Checkbox
-                </h4>
-                <p>
-                    Los tres atributos esenciales para usar "checkbox" son:
-                </p>
-                <ul>
-                    <li>
-                        type (Indica que le "input" será un "checkbox")
-                    </li>
-                    <li>
-                        name (Es el atributo que se encarga de relacionar a los diferentes checkbox)
-                    </li>
-                    <li>
-                        value (El valor de la casilla)
-                    </li>
-                </ul>
-                <form>
-                    <fieldset>
-                        <legend>Ejemplo checkbox</legend>
-                        <label for="musica">Música</label>
-                        <input type="checkbox" name="gustos" id="musica">
-                        <label for="peliculas">Películas</label>
-                        <input type="checkbox" name="gustos" id="peliculas">
-                        <label for="juegos">Juegos</label>
-                        <input type="checkbox" name="gustos" id="juegos">
-                    </fieldset>
-                </form>
-                <p>
-                    El ejemplo anterior sirve para entender el cómo funciona el tipo "checkbox" y su código HTML es el siguiente:
-                </p>
-                <code><pre>
+
+<h3>
+    Más sobre checkbox y radio
+</h3>
+<p>
+    Estos 2 tipos de "input" en particular, sirven para <strong>marcar opciones</strong>. En el caso de "checkbox", se
+    pueden elegir una o más opciones.
+    Mientras que en el caso de "radio", solo se puede marcar una de las opciones
+    , generalmente, las diferentes opciones se envuelven en un fieldset para una mayor claridad.
+</p>
+<h4>
+    Checkbox
+</h4>
+<p>
+    Los tres atributos esenciales para usar "checkbox" son:
+</p>
+<ul>
+    <li>
+        type (Indica que le "input" será un "checkbox")
+    </li>
+    <li>
+        name (Es el atributo que se encarga de relacionar a los diferentes checkbox)
+    </li>
+    <li>
+        value (El valor de la casilla)
+    </li>
+</ul>
+<form>
+    <fieldset>
+        <legend>Ejemplo checkbox</legend>
+        <label for="musica">Música</label>
+        <input type="checkbox" name="gustos" id="musica">
+        <label for="peliculas">Películas</label>
+        <input type="checkbox" name="gustos" id="peliculas">
+        <label for="juegos">Juegos</label>
+        <input type="checkbox" name="gustos" id="juegos">
+    </fieldset>
+</form>
+<p>
+    El ejemplo anterior sirve para entender el cómo funciona el tipo "checkbox" y su código HTML es el siguiente:
+</p>
+<code><pre>
 &lt;form&gt;
 &lt;fieldset&gt;
 &lt;legend&gt;ejemplo checkbox&lt;/legend&gt;
@@ -235,41 +235,41 @@
 
 &lt;/fieldset&gt;
 &lt;/form&gt;</pre></code>
-                
-                <h4>
-                    Radio
-                </h4>
-                <p>
-                    Los tres atributos esenciales para usar "radio" son:
-                </p>
-                <ul>
-                    <li>
-                        type (Indica que le "input" será un "radio")
-                    </li>
-                    <li>
-                        name (Es el atributo que se encarga de relacionar a los diferentes "radio")
-                    </li>
-                    <li>
-                        value (El valor del "radio")
-                    </li>
-                </ul>
-                <form>
-                    <fieldset>
-                        <legend>ejemplo radio/gustos</legend>
-                        
-                        <label for="musica-r">Música</label>
-                        <input type="radio" name="radio" id="musica-r" value="musica">
-                        <label for="peliculas-r">Películas</label>
-                        <input type="radio" name="radio" id="peliculas-r" value="peliculas">
-                        <label for="juegos-r">Juegos</label>
-                        <input type="radio" name="radio" id="juegos-r" value="juegos">
-                        
-                    </fieldset>
-                </form>
-                <p>
-                    El ejemplo anterior sirve para entender el cómo funciona el tipo "radio" y su código HTML es el siguiente:
-                </p>
-                <code><pre>
+
+<h4>
+    Radio
+</h4>
+<p>
+    Los tres atributos esenciales para usar "radio" son:
+</p>
+<ul>
+    <li>
+        type (Indica que le "input" será un "radio")
+    </li>
+    <li>
+        name (Es el atributo que se encarga de relacionar a los diferentes "radio")
+    </li>
+    <li>
+        value (El valor del "radio")
+    </li>
+</ul>
+<form>
+    <fieldset>
+        <legend>ejemplo radio/gustos</legend>
+        
+        <label for="musica-r">Música</label>
+        <input type="radio" name="radio" id="musica-r" value="musica">
+        <label for="peliculas-r">Películas</label>
+        <input type="radio" name="radio" id="peliculas-r" value="peliculas">
+        <label for="juegos-r">Juegos</label>
+        <input type="radio" name="radio" id="juegos-r" value="juegos">
+        
+    </fieldset>
+</form>
+<p>
+    El ejemplo anterior sirve para entender el cómo funciona el tipo "radio" y su código HTML es el siguiente:
+</p>
+<code><pre>
 &lt;form&gt;
 &lt;fieldset&gt;
 &lt;legend&gt;ejemplo radio/gustos&lt;/legend&gt;
@@ -283,5 +283,3 @@
 
 &lt;/fieldset&gt;
 &lt;/form&gt;</pre></code>
-                
-            </section>

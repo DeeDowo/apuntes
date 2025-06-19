@@ -1,62 +1,67 @@
-<section id="botones">
-                <h2>
-                    Botones
-                </h2>
-                <p>
-                    Existen tres tipos de botones
-                </p>
-                <table>
-                    
-                    <thead>
-                        <tr>
-                            <th scope="col">
-                                Tipo
-                            </th>
-                            <th scope="col">
-                                Función
-                            </th>
-                            <th scope="col">
-                                Ejemplo
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">
-                                type="submit"
-                            </th>
-                            <td>
-                                Envía la información del formulario relacionado.
-                            </td>
-                            <td>
-                                <button type="submit">submit</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                type="reset"
-                            </th>
-                            <td>
-                                Restablece el formulario relacionado a sus valores por defecto (no recomendable).
-                            </td>
-                            <td>
-                                <button type="reset">reset</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                type="button"
-                            </th>
-                            <td>
-                                Un botón sin comportamiento predeterminado, nosotros se lo asignamos.
-                            </td>
-                            <td>
-                                <button type="button">button</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>
-                    Para que los botones relacionados con formularios funcionen, estos deben estar anidados en uno primero.
-                </p>
-            </section>
+<h2 class="apunte__titulo-h2">
+    Botones
+</h2>
+<div class="informacion-tabular">
+    <div class="informacion-tabular__cards">
+        <figure class="card">
+            <figcaption class="card__titulo">type="submit"</figcaption>
+            <p class="card__parrafo">
+                Envía la información del formulario relacionado.
+            </p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">type="reset"</figcaption>
+            <p class="card__parrafo">
+                Restablece el formulario relacionado a sus valores por defecto (no recomendable).
+            </p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">type="button"</figcaption>
+            <p class="card__parrafo">
+                Un botón sin comportamiento predeterminado; nosotros le asignamos la funcionalidad.
+            </p>
+        </figure>
+    </div>
+    <table class="informacion-tabular__tabla">
+        <thead class="tabla__head">
+            <tr class="head__row">
+                <th class="head__titulo" scope="col">Tipo</th>
+                <th class="head__titulo" scope="col">Función</th>
+                <th class="head__titulo" scope="col">Ejemplo</th>
+            </tr>
+        </thead>
+        <tbody class="tabla__body">
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">type="submit"</th>
+                <td class="body__celda">
+                    Envía la información del formulario relacionado.
+                </td>
+                <td class="body__celda">
+                    <button type="submit">submit</button>
+                </td>
+            </tr>
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">type="reset"</th>
+                <td class="body__celda">
+                    Restablece el formulario relacionado a sus valores por defecto (no recomendable).
+                </td>
+                <td class="body__celda">
+                    <button type="reset">reset</button>
+                </td>
+            </tr>
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">type="button"</th>
+                <td class="body__celda">
+                    Un botón sin comportamiento predeterminado; nosotros le asignamos la funcionalidad.
+                </td>
+                <td class="body__celda">
+                    <button type="button">button</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p class="apunte__parrafo">
+    Para que los botones relacionados con formularios funcionen correctamente, deben estar anidados dentro de un
+    formulario.
+</p>
