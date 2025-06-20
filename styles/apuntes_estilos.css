@@ -69,16 +69,21 @@
     text-align: left;
     margin: var(--margin-grande) 0;
 }
+.parrafo__subrayado{
+    background-color: var(--color-fondo);
+}
 /* ================================Apuntes LISTA DESORDENADA================================ */
 
-.lista-desordenada{
+.lista-desordenada,
+.lista-ordenada{
     margin: var(--margin-grande) 0;
 
     display: flex;
     flex-direction: column;
     gap: var(--gap-pequeño);
 }
-.lista-desordenada__elemento{
+.lista-desordenada__elemento,
+.lista-ordenada__elemento{
     text-align: left;
     list-style: none;
     background-color: var(--color-fondo);
@@ -151,23 +156,18 @@
 
 .codigo__bloque{
     background-color: var(--color-fondo);
-    text-align: center;
     padding: var(--padding-grande);
     border-radius: var(--borde-grande);
-
+    overflow: auto;
+    text-align: left;
     border-top: var(--borde-normal) solid var(--color-extras-2);
 }
 
 /* ================================Apuntes Lista ORDENADA================================ */
 
-.lista-ordenada{}
 .lista-ordenada__elemento{
-    background-color: red;
-    list-style-position: inside;
-}
-.lista-ordenada__elemento > span{
-    width: 10%;
-    background-color: blue;
+    border-left: none;
+    border-right: solid var(--color-extras-3) var(--borde-pequeño);
 }
 
 /* ================================Apuntes tablas================================ */
@@ -225,4 +225,18 @@
     .body__row:nth-child(even){
         background-color: var(--color-fondo);
     }
+    .body__row:nth-child(even) > .lista-desdordenada__elemento{
+        background-color: var(--color-blanco);
+    }
 }
+
+/* ============ formularios ============= */
+
+.formulario{}
+.formulario__envoltura{
+    border-radius: var(--borde-normal);
+}
+.formulario__titulo{
+    font-size: var(--font-size-botones);
+}
+.formulario__seccion{}

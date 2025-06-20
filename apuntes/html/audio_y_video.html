@@ -1,6 +1,5 @@
-
 <h2 class="apunte__titulo-h2">
-    Audio y video
+    Audio y <span class="titulo-h2__span">video</span>
 </h2>
 
 <p class="apunte__parrafo">
@@ -32,7 +31,7 @@
 <p class="apunte__parrafo">
     La principal desventaja del uso del atributo "src" es que de esta forma solo tenemos una posible fuente,
     lo recomendable y la práctica común es utilizar múltiples
-    elementos <span class="codigo__linea">&lt;source&gt;</span> para tener la mayor compatibilidad posible.
+    elementos <span class="parrafo__subrayado">&lt;source&gt;</span> para tener la mayor compatibilidad posible.
     Cada uno enlazando con un formato diferente y con un
     atributo "type" que sirve para indicar el formato del archivo,
     de esta forma le damos múltiples opciones al navegador
@@ -54,25 +53,20 @@
     ocurrido un
     error.
 </p>
-
-<ul class="lista-desordenada lista-desordenada--figure">
-    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
-        <figure class="figure">
-            <figcaption class="figure__titulo">Video con una sola fuente (poco recomendable)</figcaption>
-            <pre class="codigo__bloque">
+<figure class="figure">
+    <figcaption class="figure__titulo">Video con una sola fuente (poco recomendable)</figcaption>
+    <pre class="codigo__bloque">
 &lt;video src="video_URL"&gt;
 &lt;p&gt; 
 error inesperado 
 &lt;a href="video_URL" download="video"&gt;descargar video&lt;/a&gt;
 &lt;/p&gt;
 &lt;/video&gt;
-            </pre>
-        </figure>
-    </li>
-    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
-        <figure class="figure">
-            <figcaption class="figure__titulo">Video con múltiples fuentes (recomendable)</figcaption>
-            <pre class="codigo__bloque">
+    </pre>
+</figure>
+<figure class="figure">
+    <figcaption class="figure__titulo">Video con múltiples fuentes (recomendable)</figcaption>
+    <pre class="codigo__bloque">
 &lt;video&gt;
 &lt;source src="video_URL" type="formato1"&gt;
 &lt;source src="video_URL" type="formato2"&gt;
@@ -82,26 +76,22 @@ error inesperado
 &lt;a href="video_URL" download="video"&gt;descargar video&lt;/a&gt;
 &lt;/p&gt;
 &lt;/video&gt;
-            </pre>
-        </figure>
-    </li>
-    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
-        <figure class="figure">
-            <figcaption class="figure__titulo">Audio con una sola fuente (poco recomendable)</figcaption>
-            <pre class="codigo__bloque">
+    </pre>
+</figure>
+<figure class="figure">
+    <figcaption class="figure__titulo">Audio con una sola fuente (poco recomendable)</figcaption>
+    <pre class="codigo__bloque">
 &lt;audio src="audio_URL"&gt;
 &lt;p&gt; 
 error inesperado 
 &lt;a href="audio_URL" download="audio"&gt;descargar audio&lt;/a&gt;
 &lt;/p&gt;
 &lt;/audio&gt;
-            </pre>
-        </figure>
-    </li>
-    <li class="lista-desordenada__elemento lista-desordenada__elemento--figure">
-        <figure class="figure">
-            <figcaption class="figure__titulo">Audio con múltiples fuentes (recomendable)</figcaption>
-            <pre class="codigo__bloque">
+    </pre>
+</figure>
+<figure class="figure">
+    <figcaption class="figure__titulo">Audio con múltiples fuentes (recomendable)</figcaption>
+    <pre class="codigo__bloque">
 &lt;audio&gt;
 &lt;source src="audio_URL" type="formato1"&gt;
 &lt;source src="audio_URL" type="formato2"&gt;
@@ -111,14 +101,72 @@ error inesperado
 &lt;a href="audio_URL" download="audio"&gt;descargar audio&lt;/a&gt;
 &lt;/p&gt;
 &lt;/audio&gt;
-            </pre>
-        </figure>
-    </li>
-</ul>
-
+    </pre>
+</figure>
+<h3 class="apunte__titulo-h3">
+    Atributos
+</h3>
 <div class="informacion-tabular">
+    <div class="informacion-tabular__cards">
+        <figure class="card">
+            <figcaption class="card__titulo">
+                controls (atributo boolean)
+            </figcaption>
+            <p class="card__parrafo">
+                Muestra los controles por defecto del navegador para la reproducción del contenido.
+            </p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">
+                width/height
+            </figcaption>
+            <p class="card__parrafo">
+                Para asignar un tamaño fijo al contenedor, no modifica el "aspect ratio".
+            </p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">
+                autoplay (atributo boolean)
+            </figcaption>
+            <p class="card__parrafo">
+                Hace que el contenido se empiece a reproducir de forma automática al ingresar a la página (no recomendable).
+            </p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">
+                loop (atributo boolean)
+            </figcaption>
+            <p class="card__parrafo">
+                Hace que el contenido se repita automáticamente.
+            </p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">
+                muted (atributo boolean)
+            </figcaption>
+            <p class="card__parrafo">
+                Hace que el contenido no tenga sonido por defecto (volumen).
+            </p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">
+                poster
+            </figcaption>
+            <p class="card__parrafo">
+                Permite agregar una "miniatura".
+            </p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">
+                preload
+            </figcaption>
+            <p class="card__parrafo">
+                Define el tipo de precarga del contenido, auto (precarga el contenido), metadata (solo precarga la metadata),
+                none (no precarga nada).
+            </p>
+        </figure>
+    </div>
     <table class="informacion-tabular__tabla">
-        <caption>Atributos comunes para multimedia</caption>
         <thead class="tabla__head">
             <tr class="head__row">
                 <th class="head__titulo" scope="col">Atributo</th>
@@ -180,42 +228,47 @@ error inesperado
 </p>
 
 <h3 class="apunte__titulo-h3">
-    <span class="titulo-h3__span">Pistas de texto</span>
+    Pistas de texto
 </h3>
 
 <p class="apunte__parrafo">
     Para mejorar la <strong>accesibilidad y la experiencia del usuario</strong>, es posible agregar pistas
     de texto como subtítulos, descripciones
-    o captions a videos utilizando <span class="codigo__linea">&lt;track&gt;</span> (elemento void).
+    o captions a videos utilizando <span class="parrafo__subrayado">&lt;track&gt;</span> (elemento void).
 </p>
 
 <p class="apunte__parrafo">
-    El elemento <span class="codigo__linea">&lt;track&gt;</span>
+    El elemento <span class="parrafo__subrayado">&lt;track&gt;</span>
     utiliza un archivo en formato ".vtt", este es el formato estándar para mostrar texto en
     determinados tiempos y por determinados lapsos.
 </p>
 
 <p class="apunte__parrafo">
-    Cada elemento <span class="codigo__linea">&lt;track&gt;</span> solo puede contener una pista y ciertos atributos para definir el comportamiento de esta:
+    Cada elemento <span class="parrafo__subrayado">&lt;track&gt;</span> solo puede contener una pista y ciertos atributos para definir el comportamiento de esta:
 </p>
 
 <ul class="lista-desordenada">
     <li class="lista-desordenada__elemento"><strong>src</strong>: Ruta del archivo ".vtt".</li>
-    <li class="lista-desordenada__elemento"><strong>kind</strong>: Tipo de pista.
-        <ul class="lista-desordenada">
-            <li class="lista-desordenada__elemento">kind="subtitles": Traducción de diálogo (para quienes no hablan el idioma).</li>
-            <li class="lista-desordenada__elemento">kind="captions": Transcripción del audio incluyendo efectos sonoros (para sordos).</li>
-            <li class="lista-desordenada__elemento">kind="descriptions": Descripción textual del contenido visual.</li>
-            <li class="lista-desordenada__elemento">kind="chapter": Navegación por secciones del video.</li>
-            <li class="lista-desordenada__elemento">kind="metadata": Información para scripts (no visible para el usuario).</li>
-        </ul>
-    </li>
+    <li class="lista-desordenada__elemento"><strong>kind</strong>: Tipo de pista.</li>
     <li class="lista-desordenada__elemento"><strong>srclang</strong>: Idioma del archivo.</li>
     <li class="lista-desordenada__elemento"><strong>label</strong>: Etiqueta visible para el usuario.</li>
 </ul>
 
+<h4>
+    Valores de "kind"
+</h4>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">kind="subtitles": Traducción de diálogo (para quienes no hablan el idioma).
+    </li>
+    <li class="lista-desordenada__elemento">kind="captions": Transcripción del audio incluyendo efectos sonoros (para
+        sordos).</li>
+    <li class="lista-desordenada__elemento">kind="descriptions": Descripción textual del contenido visual.</li>
+    <li class="lista-desordenada__elemento">kind="chapter": Navegación por secciones del video.</li>
+    <li class="lista-desordenada__elemento">kind="metadata": Información para scripts (no visible para el usuario).</li>
+</ul>
+
 <h3 class="apunte__titulo-h3">
-    <span class="titulo-h3__span">Algunas recomendaciones</span>
+    Algunas recomendaciones
 </h3>
 
 <ul class="lista-desordenada">

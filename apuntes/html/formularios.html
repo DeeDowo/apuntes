@@ -2,214 +2,267 @@
 <h2 class="apunte__titulo-h2">
     Formularios
 </h2>
-<p>
+<p class="apunte__parrafo">
     Los formularios permiten <strong>recopilar información del usuario</strong> mediante diversos controles
     de entrada. su estructura semántica se conforma principalmente por:
 </p>
-<table>
-    <caption>Elementos principales de un formulario</caption>
-    <thead>
-        <tr>
-            <th scope="col">
-                Elemento
-            </th>
-            <th scope="col">
-                Descripción
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">
-                <span class="codigo--linea">&lt;form&gt; ... &lt;/form&gt;</span>
-            </th>
-            <td>
+<div class="informacion-tabular">
+    <div class="informacion-tabular__cards">
+        <figure class="card">
+            <figcaption class="card__titulo">
+                &lt;form&gt; ... &lt;/form&gt;
+            </figcaption>
+            <p class="card__parrafo">
                 El elemento principal que se encarga de contener todos los elementos de un formulario.
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <span class="codigo--linea">&lt;fieldset&gt; ... &lt;/fieldset&gt;</span> y 
-                <span class="codigo--linea">&lt;legend&gt; ... &lt;/legend&gt;</span>
-            </th>
-            <td>
+            </p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">
+                &lt;fieldset&gt; ... &lt;/fieldset&gt; y
+                &lt;legend&gt; ... &lt;/legend&gt;
+            </figcaption>
+            <p class="card__parrafo">
                 "Fieldset" se encarga de agrupar elementos relacionado
                 dentro de un formulario, este se usa en conjunto con "legend", el cual
                 debe ser el primer elemento anidado y contiene un breve titulo para este grupo.
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <span class="codigo--linea">&lt;label&gt; ... &lt;/label&gt</span>;
-            </th>
-            <td>
+            </p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">
+                &lt;label&gt; ... &lt;/label&gt;
+            </figcaption>
+            <p class="card__parrafo">
                 Define una etiqueta para un control de entrada de un formulario, mejorando la usabilidad y
                 accesibilidad. En otras palabras, indica el nombre del campo de entrada. Este elemento se asocia con un "input".
-                <ul>
-                    <li>
-                        Asociación implícita (menos flexible, cuando el control de entrada se anida dentro
-                        del elemento label)
-                    </li>
-                    <li>
-                        Asociación explicita (más flexible, se logra mediante el atributo "for" en label, que
-                        debe coincidir con el "ID" del control correspondiente)
-                    </li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
+            </p>
+    </div>
+    <table class="informacion-tabular__tabla">
+        <thead class="tabla__head">
+            <tr class="head__row">
+                <th class="head__titulo" scope="col">
+                    Elemento
+                </th>
+                <th class="head__titulo" scope="col">
+                    Descripción
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tabla__body">
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">
+                    &lt;form&gt; ... &lt;/form&gt;
+                </th>
+                <td class="body__celda">
+                    El elemento principal que se encarga de contener todos los elementos de un formulario.
+                </td>
+            </tr>
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">
+                    &lt;fieldset&gt; ... &lt;/fieldset&gt; y
+                    &lt;legend&gt; ... &lt;/legend&gt;
+                </th>
+                <td class="body__celda">
+                    "Fieldset" se encarga de agrupar elementos relacionado
+                    dentro de un formulario, este se usa en conjunto con "legend", el cual
+                    debe ser el primer elemento anidado y contiene un breve titulo para este grupo.
+                </td>
+            </tr>
+            <tr class="body__row">
+                <th class="body__titulo" scope="row">
+                    &lt;label&gt; ... &lt;/label&gt;
+                </th>
+                <td class="body__celda">
+                    Define una etiqueta para un control de entrada de un formulario, mejorando la usabilidad y
+                    accesibilidad. En otras palabras, indica el nombre del campo de entrada. Este elemento se asocia con un "input".
+                    <ul class="lista-desordenada">
+                        <li class="lista-desordenada__elemento">
+                            Asociación implícita (menos flexible, cuando el control de entrada se anida dentro
+                            del elemento label)
+                        </li>
+                        <li class="lista-desordenada__elemento">
+                            Asociación explicita (más flexible, se logra mediante el atributo "for" en label, que
+                            debe coincidir con el "ID" del control correspondiente)
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-<form>
-    <fieldset>
-        <legend>Ejemplo</legend>
-        <div>
-            <label for="nombre">nombre (forma explicita)</label>
+<form class="formulario">
+    <fieldset class="formulario__envoltura">
+        <legend class="formulario__titulo">Ejemplo</legend>
+        <div class="formulario__seccion">
+            <label for="nombre">Nombre (forma explicita)</label>
             <input type="text" id="nombre">
         </div>
-        <div>
-            <label>apellido (forma implícita)
+        <div class="formulario__seccion">
+            <label>Apellido (forma implícita)
                 <input type="text">
             </label>
         </div>
     </fieldset>
 </form>
 
-<p>
-    El ejemplo anterior sirve para ilustrar de manera simple la estructura de un formulario y su código HTML es el siguiente:
-</p>
-<code><pre>
-&lt;form&gt;
-&lt;fieldset&gt;
-&lt;legend&gt;Ejemplo&lt;/legend&gt;
-&lt;div&gt;
-&lt;label for="nombre"&gt;nombre (forma explicita)&lt;/label&gt;
-&lt;input type="text" id="nombre"&gt;
-&lt;/div&gt;
-&lt;div&gt;
-&lt;label&gt;apellido (forma implicita)
-&lt;input type="text"&gt;
-&lt;/label&gt;
-&lt;/div&gt;
-&lt;/fieldset&gt;
-&lt;/form&gt;</pre></code>
+<figure class="figure">
+    <figcaption class="figure__titulo">Estructura del ejemplo</figcaption>
+    <code><pre class="codigo__bloque">
+    &lt;form&gt;
 
-<h3>
+        &lt;fieldset&gt;
+
+            &lt;legend&gt;Ejemplo&lt;/legend&gt;
+
+            &lt;div&gt;
+
+                &lt;label for="nombre"&gt;nombre (forma explicita)&lt;/label&gt;
+                &lt;input type="text" id="nombre"&gt;
+
+            &lt;/div&gt;
+            &lt;div&gt;
+
+                &lt;label&gt;apellido (forma implicita)
+                &lt;input type="text"&gt;
+                &lt;/label&gt;
+
+            &lt;/div&gt;
+
+        &lt;/fieldset&gt;
+
+    &lt;/form&gt;</pre></code>
+</figure>
+
+<h3 class="apunte__titulo-h3">
     tipos de entrada
 </h3>
-<p>
+<p class="apunte__parrafo">
     Existen dos tipos de entrada en los formularios
 </p>
-<h4>
+<h4 class="apunte__titulo-h4">
     Input
 </h4>
-<p>
+<p class="apunte__parrafo">
     Permite diferentes tipos datos mediante el atributo "type",
     cada tipo proporciona un comportamiento predefinido. A su vez existen más tributos que pueden modificar
     aun más
     el comportamiento de estos.
     Algunos de los tipos más comunes son:
 </p>
-<ul>
-    <li>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
         text
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         email
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         password
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         number
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         checkbox
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         radio
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         file
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         date
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         color
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         range
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         tel
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         url
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         search
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         hidden
     </li>
 </ul>
-<h4>
+<h4 class="apunte__titulo-h4">
     Select
 </h4>
-<p>
+<p class="apunte__parrafo">
     Crea una lista desplegable de opciones, donde cada opción se agrega con el elemento "option" y estas a su
     vez están
     anidadas en el elemento "select", un ejemplo de esto sería:
 </p>
-<form>
-    <label for="nombre2">nombre</label>
-    <select name="nombre" id="nombre2">
-        <option value="dowo">dowo</option>
-        <option value="dowa">dowa</option>
-    </select>
+<form class="formulario">
+    <fieldset class="formulario__envoltura">
+        <legend class="formulario__titulo">Ejemplo select</legend>
+        <label for="nombre2">nombre</label>
+        <select name="nombre" id="nombre2">
+            <option value="dowo">dowo</option>
+            <option value="dowa">dowa</option>
+        </select>
+    </fieldset>
 </form>
 <p>
     El ejemplo anterior sirve para entender el cómo funciona el elemento "select" y su código HTML es el siguiente:
 </p>
-<code><pre>
-&lt;form&gt;
-&lt;label for="nombre2"&gt;nombre&lt;/label&gt;
-&lt;select name="nombre" id="nombre2"&gt;
-&lt;option value="dowo"&gt;dowo&lt;/option&gt;
-&lt;option value="dowa"&gt;dowa&lt;/option&gt;
-&lt;/select&gt;
-&lt;/form&gt;</pre></code>
+<figure class="figure">
+    <figcaption class="figure__titulo">Estructura del ejemplo</figcaption>
+        <code><pre class="codigo__bloque">
+        &lt;form&gt;
+            &lt;fieldset&gt;
+            
+                &lt;legend&gt;Ejemplo select&lt;/legend&gt;
 
-<h3>
+                &lt;label for="nombre2"&gt;nombre&lt;/label&gt;
+
+                &lt;select name="nombre" id="nombre2"&gt;
+                &lt;option value="dowo"&gt;dowo&lt;/option&gt;
+                &lt;option value="dowa"&gt;dowa&lt;/option&gt;
+                &lt;/select&gt;
+
+            &lt;/fieldset&gt;
+        &lt;/form&gt;</pre></code>
+</figure>
+
+<h3 class="apunte__titulo-h3">
     Más sobre checkbox y radio
 </h3>
-<p>
+<p class="apunte__parrafo">
     Estos 2 tipos de "input" en particular, sirven para <strong>marcar opciones</strong>. En el caso de "checkbox", se
     pueden elegir una o más opciones.
     Mientras que en el caso de "radio", solo se puede marcar una de las opciones
     , generalmente, las diferentes opciones se envuelven en un fieldset para una mayor claridad.
 </p>
-<h4>
+<h4 class="apunte__titulo-h4">
     Checkbox
 </h4>
-<p>
+<p class="apunte__parrafo">
     Los tres atributos esenciales para usar "checkbox" son:
 </p>
-<ul>
-    <li>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
         type (Indica que le "input" será un "checkbox")
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         name (Es el atributo que se encarga de relacionar a los diferentes checkbox)
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         value (El valor de la casilla)
     </li>
 </ul>
-<form>
-    <fieldset>
-        <legend>Ejemplo checkbox</legend>
+
+<form class="formulario">
+    <fieldset class="formulario__envoltura">
+        <legend class="formulario__titulo">Ejemplo checkbox</legend>
         <label for="musica">Música</label>
         <input type="checkbox" name="gustos" id="musica">
         <label for="peliculas">Películas</label>
@@ -218,44 +271,48 @@
         <input type="checkbox" name="gustos" id="juegos">
     </fieldset>
 </form>
-<p>
-    El ejemplo anterior sirve para entender el cómo funciona el tipo "checkbox" y su código HTML es el siguiente:
-</p>
-<code><pre>
-&lt;form&gt;
-&lt;fieldset&gt;
-&lt;legend&gt;ejemplo checkbox&lt;/legend&gt;
 
-&lt;label for="musica">Música&lt;/label&gt;
-&lt;input type="checkbox" name="gustos" id="musica"&gt;
-&lt;label for="peliculas">Películas&lt;/label&gt;
-&lt;input type="checkbox" name="gustos" id="peliculas"&gt;
-&lt;label for="juegos">Juegos&lt;/label&gt;
-&lt;input type="checkbox" name="gustos" id="juegos"&gt;
+<figure class="figure">
+    <figcaption class="figure__titulo">Estructura del ejemplo</figcaption>
+    <code><pre class="codigo__bloque">
+    &lt;form&gt;
+        &lt;fieldset&gt;
 
-&lt;/fieldset&gt;
-&lt;/form&gt;</pre></code>
+        &lt;legend&gt;ejemplo checkbox&lt;/legend&gt;
+        
+        &lt;label for="musica">Música&lt;/label&gt;
+        &lt;input type="checkbox" name="gustos" id="musica"&gt;
 
-<h4>
+        &lt;label for="peliculas">Películas&lt;/label&gt;
+        &lt;input type="checkbox" name="gustos" id="peliculas"&gt;
+
+        &lt;label for="juegos">Juegos&lt;/label&gt;
+        &lt;input type="checkbox" name="gustos" id="juegos"&gt;
+        
+        &lt;/fieldset&gt;
+    &lt;/form&gt;</pre></code>
+</figure>
+
+<h4 class="apunte__titulo-h4">
     Radio
 </h4>
-<p>
+<p class="apunte__parrafo">
     Los tres atributos esenciales para usar "radio" son:
 </p>
-<ul>
-    <li>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
         type (Indica que le "input" será un "radio")
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         name (Es el atributo que se encarga de relacionar a los diferentes "radio")
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         value (El valor del "radio")
     </li>
 </ul>
-<form>
-    <fieldset>
-        <legend>ejemplo radio/gustos</legend>
+<form class="formulario">
+    <fieldset class="formulario__envoltura">
+        <legend class="formulario__titulo">Ejemplo radio/gustos</legend>
         
         <label for="musica-r">Música</label>
         <input type="radio" name="radio" id="musica-r" value="musica">
@@ -266,20 +323,24 @@
         
     </fieldset>
 </form>
-<p>
-    El ejemplo anterior sirve para entender el cómo funciona el tipo "radio" y su código HTML es el siguiente:
-</p>
-<code><pre>
-&lt;form&gt;
-&lt;fieldset&gt;
-&lt;legend&gt;ejemplo radio/gustos&lt;/legend&gt;
 
-&lt;label for="musica-r"&gt;Música&lt;/label&gt;
-&lt;input type="radio" name="radio" id="musica-r" value="musica"&gt;
-&lt;label for="peliculas-r"&gt;Películas&lt;/label&gt;
-&lt;input type="radio" name="radio" id="peliculas-r" value="peliculas"&gt;
-&lt;label for="juegos-r"&gt;Juegos&lt;/label&gt;
-&lt;input type="radio" name="radio" id="juegos-r" value="juegos"&gt;
+<figure class="figure">
+    <figcaption class="figure__titulo">Estructura del ejemplo</figcaption>
+    <code><pre class="codigo__bloque">
+    &lt;form&gt;
+        &lt;fieldset&gt;
 
-&lt;/fieldset&gt;
-&lt;/form&gt;</pre></code>
+        &lt;legend&gt;ejemplo radio/gustos&lt;/legend&gt;
+        
+        &lt;label for="musica-r"&gt;Música&lt;/label&gt;
+        &lt;input type="radio" name="radio" id="musica-r" value="musica"&gt;
+
+        &lt;label for="peliculas-r"&gt;Películas&lt;/label&gt;
+        &lt;input type="radio" name="radio" id="peliculas-r" value="peliculas"&gt;
+        
+        &lt;label for="juegos-r"&gt;Juegos&lt;/label&gt;
+        &lt;input type="radio" name="radio" id="juegos-r" value="juegos"&gt;
+        
+        &lt;/fieldset&gt;
+    &lt;/form&gt;</pre></code>
+</figure>

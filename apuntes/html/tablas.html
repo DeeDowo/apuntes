@@ -1,5 +1,5 @@
 <h2 class="apunte__titulo-h2">
-    <span class="titulo-h2__span">Tablas</span>
+    Tablas
 </h2>
 
 <p class="apunte__parrafo">
@@ -42,7 +42,6 @@
     </div>
 
     <table class="informacion-tabular__tabla">
-        <caption>Elementos principales de una tabla</caption>
         <thead class="tabla__head">
             <tr class="head__row">
                 <th class="head__titulo" scope="col">Elemento</th>
@@ -78,17 +77,17 @@
 
 <ul class="lista-desordenada">
     <li class="lista-desordenada__elemento">
-        <span class="codigo__linea">colspan="cantidad de casillas"</span> (Indica la cantidad de celdas,
+        colspan="cantidad de casillas" (Indica la cantidad de celdas,
         horizontalmente, que abarcará una celda)
     </li>
     <li class="lista-desordenada__elemento">
-        <span class="codigo__linea">rowspan="cantidad de casillas"</span> (Indica la cantidad de celdas, verticalmente,
+        rowspan="cantidad de casillas" (Indica la cantidad de celdas, verticalmente,
         que abarcará una celda)
     </li>
 </ul>
 
 <h3 class="apunte__titulo-h3">
-    <span class="titulo-h3__span">Accesibilidad en tablas</span>
+    Accesibilidad en tablas
 </h3>
 
 <p class="apunte__parrafo">
@@ -101,8 +100,8 @@
 <dl class="lista-descriptiva">
     <div class="lista-descriptiva__bloque">
         <dt class="lista-descriptiva__titulo">Caption</dt>
-        <dd class="lista-descriptiva__definicion">
-            El elemento <span class="codigo__linea">&lt;caption&gt; &lt;/caption&gt;</span>
+        <dd class="lista-descriptiva__descripcion">
+            El elemento &lt;caption&gt; ... &lt;/caption&gt;
             debe ser el primer elemento anidado en una tabla y contiene una descripción clara y concisa sobre qué
             tratará
             la tabla, como un título para esta.
@@ -110,16 +109,16 @@
     </div>
     <div class="lista-descriptiva__bloque">
         <dt class="lista-descriptiva__titulo">Scope</dt>
-        <dd class="lista-descriptiva__definicion">
+        <dd class="lista-descriptiva__descripcion">
             El atributo "scope" se agrega a las celdas de tipo "header" e indica la relación entre estas con el resto de
             celdas, es decir,
             indica de qué celdas es el título:
             <ul class="lista-desordenada">
-                <li class="lista-desordenada__elemento"><strong>scope="col"</strong> (Es el encabezado de toda una
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco"><strong>scope="col"</strong> (Es el encabezado de toda una
                     columna)</li>
-                <li class="lista-desordenada__elemento"><strong>scope="row"</strong> (Es el encabezado de toda una fila)
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco"><strong>scope="row"</strong> (Es el encabezado de toda una fila)
                 </li>
-                <li class="lista-desordenada__elemento">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
                     <strong>scope="colgroup/rowgroup"</strong> (Mismo comportamiento que los dos puntos anteriores
                     respectivamente, pero para encabezados que abarcan múltiples columnas o filas, aquellos headers que
                     tienen el atributo "colspan" o "rowspan")
@@ -130,7 +129,7 @@
 </dl>
 
 <h4 class="apunte__titulo-h4">
-    <span class="titulo-h4__span">Id y headers</span>
+    Id y headers
 </h4>
 
 <p class="apunte__parrafo">
@@ -158,7 +157,7 @@
 </p>
 
 <h3 class="apunte__titulo-h3">
-    <span class="titulo-h3__span">Otros elementos</span>
+    Otros elementos
 </h3>
 
 <p class="apunte__parrafo">
@@ -169,33 +168,31 @@
 
 <ul class="lista-desordenada">
     <li class="lista-desordenada__elemento">
-        <span class="codigo__linea">&lt;thead&gt; ... &lt;/thead&gt;</span> (Normalmente contiene la primera fila,
+        &lt;thead&gt; ... &lt;/thead&gt; (Normalmente contiene la primera fila,
         generalmente
         títulos)
     </li>
     <li class="lista-desordenada__elemento">
-        <span class="codigo__linea">&lt;tbody&gt; ... &lt;/tbody&gt;</span> (Normalmente contiene el resto de elementos
+        &lt;tbody&gt; ... &lt;/tbody&gt; (Normalmente contiene el resto de elementos
         no
         asignados por "thead" y "tfoot". Cuando este
         no se define explícitamente, el "tbody" se agrega de forma automática y abarca a todos los elementos)
     </li>
     <li class="lista-desordenada__elemento">
-        <span class="codigo__linea">&lt;tfoot&gt; ... &lt;/tfoot&gt;</span> (Normalmente contiene el final de la tabla,
+        &lt;tfoot&gt; ... &lt;/tfoot&gt; (Normalmente contiene el final de la tabla,
         generalmente resultados)
     </li>
 </ul>
 
 <h3 class="apunte__titulo-h3">
-    <span class="titulo-h3__span">Buenas prácticas para tablas</span>
+    >Buenas prácticas para tablas
 </h3>
 
 <ul class="lista-desordenada">
-    <li class="lista-desordenada__elemento">Usar <span class="codigo__linea">th</span> para encabezados</li>
-    <li class="lista-desordenada__elemento">Agregar el elemento <span class="codigo__linea">caption</span></li>
+    <li class="lista-desordenada__elemento">Usar "th" para encabezados</li>
+    <li class="lista-desordenada__elemento">Agregar el elemento "caption"</li>
     <li class="lista-desordenada__elemento">Solo usar tablas para información tabular</li>
-    <li class="lista-desordenada__elemento">Usar <span class="codigo__linea">scope</span> o <span
-            class="codigo__linea">id-headers</span></li>
+    <li class="lista-desordenada__elemento">Usar "scope" o "id-headers"</li>
     <li class="lista-desordenada__elemento">Aplicar estilos sin perder semántica</li>
-    <li class="lista-desordenada__elemento">Solo usar <span class="codigo__linea">colspan</span> y <span
-            class="codigo__linea">rowspan</span> si es necesario</li>
+    <li class="lista-desordenada__elemento">Solo usar "colspan" y "rowspan" solo si es necesario</li>
 </ul>
