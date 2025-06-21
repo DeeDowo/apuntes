@@ -1,350 +1,347 @@
- <section id="DOM scripting">
-                    <h2>
-                        DOM scripting
-                    </h2>
+<h2 class="apunte__titulo-h2">
+    DOM <span class="titulo-h2__span">scripting</span>
+</h2>
 
-<p>
-    Al escribir código para "web apps" o "web pages", una de las acciones más comunes es le querer modificar
+<p class="apunte__parrafo">
+    Al escribir código para "web apps" o "web pages", una de las acciones más comunes es querer modificar
     de alguna manera la estructura del documento. La manipulación del documento mediante JavaScript
-    es posible gracias a la API "Document
-    Object Model" (DOM).
+    es posible gracias a la API "Document Object Model" (DOM).
 </p>
 
-<h3>Navegadores</h3>
+<h3 class="apunte__titulo-h3">Navegadores</h3>
 
-<p>
+<p class="apunte__parrafo">
     Un navegador web es complicado en varios sentidos, de los cuales la mayoría no pueden
-    ser controlados por nosotros a través del uso de JS, aunque esto parezca una limitación
-    en primer lugar, es una medida se seguridad, ya que de esta forma las páginas no
+    ser controlados por nosotros a través del uso de JS. Aunque esto parezca una limitación
+    en primer lugar, es una medida de seguridad, ya que de esta forma las páginas no
     pueden acceder a información sensible.
 </p>
 
-<p>
-    Sin embargo, aún con dichas limitaciones, las "web APIs" nos siguen dando un acceso a
+<p class="apunte__parrafo">
+    Sin embargo, aún con dichas limitaciones, las "web APIs" nos siguen dando acceso a
     una gran variedad de funcionalidades que nos permiten hacer una gran cantidad de cosas
     con las páginas web.
 </p>
 
-<p>Una página se divide en en el navegador, la ventana y el documento.</p>
+<p class="apunte__parrafo">Una página se divide en el navegador, la ventana y el documento.</p>
 
-<dl>
-    <dt>
-        El navegador
-    </dt>
-    <dd>
-        Representa el estado e identidad del buscador, en JavaScript es representado 
-        como el "navigator object", a través de este podemos recolectar información 
-        como el lenguaje de preferencia del usuario.
-    </dd>
-    <dt>
-        La ventana
-    </dt>
-    <dd>
-        Es la "pestaña" del navegador en donde una página web es cargada, 
-        esta es representada en JavaScript como el "window object", a 
-        través de este podemos saber el tamaño de la ventana o manipular 
-        el documento cargado en la ventana por mencionar algunos ejemplos.
-    </dd>
-    <dt>
-        El documento
-    </dt>
-    <dd>
-        Es la página cargada en la ventana y es representada en JavaScript por 
-        el "document object", a través de este podemos manipular información en el HTML y 
-        CSS que componen el documento, cambiado el texto en algún contenido, 
-        aplicando nuevos estilos, crear nuevos elementos o incluso eliminarlos por mencionar algunos ejemplos.
-    </dd>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            El navegador
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Representa el estado e identidad del buscador. En JavaScript es representado
+            como el "navigator object". A través de este podemos recolectar información
+            como el lenguaje de preferencia del usuario.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            La ventana
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Es la "pestaña" del navegador en donde una página web es cargada.
+            Esta es representada en JavaScript como el "window object". A
+            través de este podemos saber el tamaño de la ventana o manipular
+            el documento cargado en la ventana por mencionar algunos ejemplos.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            El documento
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Es la página cargada en la ventana y es representada en JavaScript por
+            el "document object". A través de este podemos manipular información en el HTML y
+            CSS que componen el documento: cambiando el texto en algún contenido,
+            aplicando nuevos estilos, creando nuevos elementos o incluso eliminándolos por mencionar algunos ejemplos.
+        </dd>
+    </div>
 </dl>
 
-<h3>El modelo "document object"</h3>
+<h3 class="apunte__titulo-h3">El modelo "document object"</h3>
 
-<p>
-    Cada documento mostrado en cada pestaña de un navegador es represando por un DOM,
-    este es una representación en forma de una estructura de ramificaciones creada por el navegador,
-    permite que la estructura HTML se de fácil acceso a través de código.
+<p class="apunte__parrafo">
+    Cada documento mostrado en cada pestaña de un navegador es representado por un DOM.
+    Este es una representación en forma de una estructura de ramificaciones creada por el navegador
+    que permite que la estructura HTML sea de fácil acceso a través de código.
     Por ejemplo, el propio navegador la utiliza para poder
-    aplicar de forma correcta los estilos a determinado elementos.
+    aplicar de forma correcta los estilos a determinados elementos.
     Nosotros podemos manipular el DOM con JavaScript una vez este se haya cargado por completo.
 </p>
 
-<p>
+<p class="apunte__parrafo">
     El DOM visualmente es una cadena de ramificaciones. Cada elemento en el "árbol"
     es un nodo y los diferentes nodos son referidos por su posición en el "árbol" en relación a otros.
 </p>
 
-<dl>
-    <dt>
-        root node
-    </dt>
-    <dd>
-        El nodo más alto en el "arbor", que en el caso de un documento HTML, 
-        siempre será el nodo HTML.
-    </dd>
-    <dt>
-        Child node
-    </dt>
-    <dd>
-        Un nodo que es un "hijo" directo de otro.
-    </dd>
-    <dt>
-        Descendant node
-    </dt>
-    <dd>
-        Un nodo anidado en cual sea el nivel dentro de otro.
-    </dd>
-    <dt>
-        Parent node
-    </dt>
-    <dd>
-        Un nodo el cual contiene al menos otro nodo dentro de este.
-    </dd>
-    <dt>
-        Sibling nodes
-    </dt>
-    <dd>
-        Nodos que están en el mismo nivel en el "árbol".
-    </dd>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            root node
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            El nodo más alto en el "árbol", que en el caso de un documento HTML,
+            siempre será el nodo HTML.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Child node
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Un nodo que es un "hijo" directo de otro.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Descendant node
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Un nodo anidado en cualquier nivel dentro de otro.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Parent node
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Un nodo que contiene al menos otro nodo dentro de este.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Sibling nodes
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Nodos que están en el mismo nivel en el "árbol".
+        </dd>
+    </div>
 </dl>
 
-<p>
-    Es util familiarizarse con estos términos ya que se suelen usar en multiples
+<p class="apunte__parrafo">
+    Es útil familiarizarse con estos términos ya que se suelen usar en múltiples
     lenguajes.
 </p>
 
-<h3>Manipulación básica del DOM</h3>
+<h3 class="apunte__titulo-h3">Manipulación básica del DOM</h3>
 
-<p>
+<p class="apunte__parrafo">
     Para manipular un elemento en el DOM, primero tenemos que crear una referencia a
-    este, por ejemplo, para seleccionar el primer elemento link de una página lo
+    este. Por ejemplo, para seleccionar el primer elemento link de una página lo
     haríamos de la siguiente manera:
-</p> 
+</p>
 
-<figure>
-    <figcaption>Ejemplo seleccionando un elemento mediante el DOM</figcaption>
-    <var>
-        <pre>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo seleccionando un elemento mediante el DOM</figcaption>
+    <pre class="codigo__bloque">
 const link = document.querySelector("a");</pre>
-    </var>
 </figure>
 
-<p>
+<p class="apunte__parrafo">
     Una vez creada la referencia a algún elemento, podemos manipular este utilizando las
     diferentes propiedades y métodos disponibles. Estas diferentes herramientas para
     un entendimiento básico se pueden clasificar en tres tipos:
 </p>
-<ul>
-    <li>
-        Aquellas exclusivas para 
-        dicho tipo de elemento.
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        Aquellas exclusivas para dicho tipo de elemento.
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         Aquellas compartidas con algunos otros elementos.
     </li>
-    <li>
-        Aquellas 
-        generales para todos los elementos.
+    <li class="lista-desordenada__elemento">
+        Aquellas generales para todos los elementos.
     </li>
 </ul>
 
-<p>Ahora en este podríamos aplicar modificar la URL y agregar un texto al elemento de la siguiente forma:</p> 
+<p class="apunte__parrafo">Ahora en este podríamos modificar la URL y agregar un texto al elemento de la siguiente
+    forma:</p>
 
-<figure>
-    <figcaption>Ejemplo modificando un elemento mediante el DOM</figcaption>
-    <code>
-        <pre>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo modificando un elemento mediante el DOM</figcaption>
+    <pre class="codigo__bloque">
 link.textContent = "link 1";
 link.href = "https...";</pre>
-    </code>
 </figure>
 
-<p>
-    Existen multiples formas de seleccionar un elemento para poder guardar la
+<p class="apunte__parrafo">
+    Existen múltiples formas de seleccionar un elemento para poder guardar la
     referencia a este en una variable.
 </p>
 
-<dl>
-    <dt>
-        Document.querySelector()
-    </dt>
-    <dd>
-        Es la recomendación actualmente, permite seleccionar 
-        un elemento utilizando selectores de CSS.
-        Solo selecciona la primera instancia de un link en el elemento
-    </dd>
-    <dd>
-        <figure>
-            <figcaption>Ejemplo querySelector()</figcaption>
-            <var>
-                <pre>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Document.querySelector()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Es la recomendación actualmente. Permite seleccionar
+            un elemento utilizando selectores de CSS.
+            Solo selecciona la primera instancia de un elemento.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo querySelector()</figcaption>
+                <pre class="codigo__bloque">
 const para = document.querySelector("p");</pre>
-            </var>
-        </figure>
-    </dd>
-    <dt>
-        Document.querySelectorAll()
-    </dt>
-    <dd>
-        Sirve para seleccionar todos los elementos 
-        que posean dicho selector especificado. Este genera un "nodeList" con toas 
-        las referencias.
-    </dd>
-    <dd>
-        <figure>
-            <figcaption>Ejemplo querySelectorAll()</figcaption>
-            <var>
-                <pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Document.querySelectorAll()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Sirve para seleccionar todos los elementos
+            que posean dicho selector especificado. Este genera un "nodeList" con todas
+            las referencias.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo querySelectorAll()</figcaption>
+                <pre class="codigo__bloque">
 const paraAll = document.querySelectorAll("p");</pre>
-            </var>
-        </figure>
-    </dd>
-    
+            </figure>
+        </dd>
+    </div>
 </dl>
 
-<p>
-    Estas son las formas más actuales de trabajar con el DOM (querySelector/querySelectorAll), pero existen
+<p class="apunte__parrafo">
+    Estas son las formas más actuales de trabajar con el DOM (querySelector/querySelectorAll). Existen
     métodos más antiguos que pueden ser útiles al trabajar con navegadores
-    de este tipo ya que estos no suelen soportar "querySelector()" ni "querySelectorAll()".
+    antiguos que no suelen soportar "querySelector()" ni "querySelectorAll()".
 </p>
 
-<dl>
-    <dt>
-        Document.getElementById()
-    </dt>
-    <dd>
-        Selecciona un elemento con una cierta "ID"
-    </dd>
-    <dd>
-        <figure>
-            <figcaption>Ejemplo getElementById()</figcaption>
-            <var>
-        <pre>
-    const paraId = document.getElementById(para)</pre>
-            </var>
-        </figure>
-    </dd>
-    <dt>
-        Document.getElementByTagName()
-    </dt>
-    <dd>
-        Devuelve una "node list" conteniendo 
-        todos los elementos en la página del tipo especificado.
-    </dd>
-    <dd>
-        <figure>
-            <figcaption>Ejemplo getElementByTagName()</figcaption>
-            <var>
-                <pre>
-const paraTag = document.getElementByTagName(p);</pre>
-            </var>
-        </figure>
-    </dd>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Document.getElementById()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Selecciona un elemento con una cierta "ID".
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo getElementById()</figcaption>
+                <pre class="codigo__bloque">
+const paraId = document.getElementById("para");</pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Document.getElementByTagName()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Devuelve una "node list" conteniendo
+            todos los elementos en la página del tipo especificado.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo getElementByTagName()</figcaption>
+                <pre class="codigo__bloque">
+const paraTag = document.getElementsByTagName("p");</pre>
+            </figure>
+        </dd>
+    </div>
 </dl>
 
-<h3>Creando y posicionando nuevos nodos</h3>
+<h3 class="apunte__titulo-h3">Creando y posicionando nuevos nodos</h3>
 
-<p>
-    Una practica común es el crear nuevos nodos y posicionar estos en donde
-    deseemos, para esto tenemos que seguir una serie de pasos:
+<p class="apunte__parrafo">
+    Una práctica común es crear nuevos nodos y posicionarlos en donde
+    deseemos. Para esto tenemos que seguir una serie de pasos:
 </p>
 
-<ol>
-    <li>
-        Creamos la referencia al elemento en donde queremos colocar 
+<ol class="lista-ordenada lista-desordenada">
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Creamos la referencia al elemento en donde queremos colocar
         este nuevo nodo.
     </li>
-    <li>
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
         Creamos un nuevo elemento utilizando "Document.createElement()".
     </li>
-    <li>
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
         Podemos darle algún contenido a nuestro nuevo elemento utilizando la propiedad "textContent".
     </li>
-    <li>
-        Una vez realizados los pasos anteriores, el elemento existe, pero no realmente en la 
-        página ya que no hemos especificado su posición. una forma de posicionar un nuevo elemento es
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Una vez realizados los pasos anteriores, el elemento existe pero no está en la
+        página ya que no hemos especificado su posición. Una forma de posicionar un nuevo elemento es
         utilizando el método "appendChild()", el cual agrega un elemento como "hijo" dentro de otro.
     </li>
 </ol>
 
-<p>
-    También existe una forma de poder crear un nodo de texto el cual se podría agregar a
+<p class="apunte__parrafo">
+    También existe una forma de crear un nodo de texto el cual se podría agregar a
     cualquier texto existente, esto se realiza mediante "Document.createTextNode()".
 </p>
 
-<p>
-    Al posicionar un nodo de texto mediante "appendChild()", este se agregará al final del nodo de texto preexistente,
-    sin embargo,
-    este texto es agregado de forma literal, es decir, si queremos espacios
-    o saltos de lineas, estos tienen que ser explícitamente agregados.
+<p class="apunte__parrafo">
+    Al posicionar un nodo de texto mediante "appendChild()", este se agregará al final del nodo de texto preexistente.
+    Sin embargo, este texto es agregado de forma literal. Si queremos espacios
+    o saltos de línea, estos tienen que ser explícitamente agregados.
 </p>
 
-<h3>Mover y remover elementos</h3>
+<h3 class="apunte__titulo-h3">Mover y remover elementos</h3>
 
-<p>
-    Otra práctica común es la de querer mover algún elemento ya existente o
+<p class="apunte__parrafo">
+    Otra práctica común es querer mover algún elemento ya existente o
     querer eliminar estos del documento.
 </p>
 
-<p>
+<p class="apunte__parrafo">
     Para poder mover un elemento solo hay que tener su referencia y podríamos
-    utiliza "Document.appendChild()" para convertir un elemento en "hijo" de otro.
+    utilizar "Document.appendChild()" para convertir un elemento en "hijo" de otro.
 </p>
 
-<p>
-    A primera vista podría parecer que estamos creando un copia al crear la
+<p class="apunte__parrafo">
+    A primera vista podría parecer que estamos creando una copia al crear la
     referencia a un objeto, pero lo que realmente hacemos internamente es
-    crear una especie de "puntero", es decir, estamos tomando al elemento
-    original y aplicando métodos o propiedades a este, no a una copia. para
+    crear una especie de "puntero". Estamos tomando al elemento
+    original y aplicando métodos o propiedades a este, no a una copia. Para
     poder crear una copia de un nodo, podemos utilizar "node.cloneNode()".
 </p>
 
-<p>
+<p class="apunte__parrafo">
     Para remover un nodo anidado podemos utilizar el siguiente método "node.removeChild()".
     Esto eliminaría por completo el elemento del documento. También es
-    posible eliminar un elemento en referencia a si mismo, para esto utilizamos "node.remove()",
-    el problema con este método es que no es soportado por navegador más
-    antiguos, ya que esos no tienen un método para decirle a un nodo que
-    se elimine a si mismo, sin embargo, una forma de simular este comportamiento
+    posible eliminar un elemento en referencia a sí mismo. Para esto utilizamos "node.remove()",
+    el problema con este método es que no es soportado por navegadores más
+    antiguos. Una forma de simular este comportamiento
     es utilizando "parentNode.removeChild(elemento);".
 </p>
 
-<h3>Manipulando estilos</h3> 
+<h3 class="apunte__titulo-h3">Manipulando estilos</h3>
 
-<p>
-    Otra practica común es que es posible manipular estilos CSS a través de JavaScript.
-    Una primera forma sencilla es agregando "inline styles" (mala practica) de forma directa en los
-    elementos, esto se puede realizar utilizando "HTMLElement.style" e indicando la
+<p class="apunte__parrafo">
+    Otra práctica común es que es posible manipular estilos CSS a través de JavaScript.
+    Una primera forma sencilla es agregando "inline styles" (mala práctica) de forma directa en los
+    elementos. Esto se puede realizar utilizando "HTMLElement.style" e indicando la
     propiedad que queremos modificar.
 </p>
 
-<figure>
-    <figcaption>Ejemplo inline styles con JavaScript</figcaption>
-    <code><pre>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo inline styles con JavaScript</figcaption>
+    <pre class="codigo__bloque">
 referencia.style.color = "red";
-referencia.style.backgroundColor = "black";</pre></code>
+referencia.style.backgroundColor = "black";</pre>
 </figure>
 
-<p>Si miramos el html de la página podremos ver como estas propiedades son agregadas.</p>
+<p class="apunte__parrafo">Si miramos el HTML de la página podremos ver como estas propiedades son agregadas.</p>
 
-<p>
+<p class="apunte__parrafo">
     Una segunda forma de manipular estilos de forma dinámica es mediante el uso de
-    clases, es decir, podemos tener ciertos estilos aplicados a una clase y
+    clases. Podemos tener ciertos estilos aplicados a una clase y
     en lugar de agregar "inline styles"
     agregamos la clase a los elementos que queramos estilar. Esto lo realizamos con
-    el método "Element.setAttribute()", este toma 2 argumentos, el atributo que
-    queremos agregar al elemento y el valor que queremos asignarle a este, en el
+    el método "Element.setAttribute()". Este toma 2 argumentos: el atributo que
+    queremos agregar al elemento y el valor que queremos asignarle a este. En el
     caso de aplicar estilos, el atributo que queremos es una clase y el valor es
     el nombre de la clase que tiene dichos estilos.
 </p>
 
-<figure>
-    <figcaption>Ejemplo asignando clases con JavaScript</figcaption>
-    <code><pre>
-para.setAttribute("class", "estilos");</pre></code>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo asignando clases con JavaScript</figcaption>
+    <pre class="codigo__bloque">
+para.setAttribute("class", "estilos");</pre>
 </figure>
 
-<p>
+<p class="apunte__parrafo">
     De esta forma evitamos "ensuciar" el código HTML de forma innecesaria.
-    Realmente el uso del DOM en páginas estáticas, no suele tener una gran utilidad
-    ya que suele ser más fácil y eficiente el agregar las cosas directamente en el documento HTML o CSS.
+    Realmente el uso del DOM en páginas estáticas no suele tener una gran utilidad
+    ya que suele ser más fácil y eficiente agregar las cosas directamente en el documento HTML o CSS.
 </p>
-                </section>

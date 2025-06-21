@@ -1,197 +1,169 @@
-<section id="JSON">
-                    <h2>
-                        JSON
-                    </h2>
+<h2 class="apunte__titulo-h2">
+    JSON
+</h2>
 
-<p>
-    JavaScript Object Notation (JSON), es el formato de texto estándar para representar
+<p class="apunte__parrafo">
+    JavaScript Object Notation (JSON) es el formato de texto estándar para representar
     estructuras de información (objetos, arrays) basado en la sintaxis de los objetos
-    de JavaScript. Una de sus principales funciones es el transmitir información a
-    través de la web, enviando o recibiendo información. Este puede y es usado independientemente de JavaScript.
-</p> 
+    de JavaScript. Una de sus principales funciones es transmitir información a
+    través de la web, enviando o recibiendo datos. Puede ser usado independientemente de JavaScript.
+</p>
 
-<p>
+<p class="apunte__parrafo">
     El proceso de convertir un string a un objeto es llamado "deserialization",
     mientras que el proceso de convertir un objeto a un string es llamado "serialization".
 </p>
 
-<p>
+<p class="apunte__parrafo">
     Un JSON "string" puede ser almacenado en su propio archivo, el cual es
-    básicamente solo un archivo de texto con la extension ".json".
+    básicamente un archivo de texto con la extensión ".json".
 </p>
 
-<h3>Estructura de JSON</h3>
+<h3 class="apunte__titulo-h3">Estructura de JSON</h3>
 
-<p>
-    Una vez más, el contenido de un archivo ".json" es un string cuyo
-    formato es muy parecido al de los "literal objects" en JavaScript.
+<p class="apunte__parrafo">
+    El contenido de un archivo ".json" es un string cuyo
+    formato es muy parecido al de los "object literals" en JavaScript.
 </p>
 
-<figure>
-    <figcaption>Ejemplo estructura JSON</figcaption>
-    <span><pre>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo estructura JSON</figcaption>
+    <pre class="codigo__bloque"><span>
 {
-	"nombre": "dowo",
-	"edad": 24,
-	"sexo": "hombre",
-	"vivo": true
-}</pre></span>
+    "nombre": "dowo",
+    "edad": 24,
+    "sexo": "hombre",
+    "vivo": true
+}</span></pre>
 </figure>
 
-<p>
+<p class="apunte__parrafo">
     Es posible cargar un archivo ".json" en nuestro programa como un
     "string", luego por medio de un método del "JSON object" convertirlo a un
-    objeto y por ultimo acceder a la
-    información en este objecto justo como haríamos con cualquier otro objeto.
-    Lo importante a comprender es que al pasar un archivo ".json" a su
-    formato original, este no tendrá nada de especial realmente.
+    objeto y finalmente acceder a la información en este objeto como haríamos con cualquier otro.
 </p>
 
-<p>
-    Un archivo ".json" puede contener tanto arrays como objetos o combinaciones de estos en cual
-    sea la complejidad, pero el ".json" estará definido principalmente por cual sea
-    el envoltorio principal, es decir, si el contenido en el ".json" está envuelto
-    entre ({}), se tratará como un objeto, si este está envuelvo por ([]), se tratará como un array.
-    Los ".json" también pueden solo contener algún dato de tipo primitivo,
-    como un número, un "string" o un boolean.
+<p class="apunte__parrafo">
+    Un archivo ".json" puede contener arrays, objetos o combinaciones de estos en cualquier
+    complejidad, pero estará definido principalmente por su envoltorio principal:
 </p>
-
-<h3>Restricciones de sintaxis</h3>
-
-<p>
-    Todo archivo ".json" valido puede ser comprendido como un valor primitivo, objeto,
-    array o una combinación de estos, pero no cualquier elemento puede
-    ser convertido en un ".json". Los archivo ".json" solo pueden contener información de tipo serializable, es decir:
-</p>
-<ul>
-    <li>
-        Solo object literals, arrays o valores primitivos (string literals, number literals, true, false y null)
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        Contenido entre <code>{}</code>: Se trata como objeto
     </li>
-    <li>
-        No acepta "undefined", "NaN" o infinito.
-    </li>
-    <li>
-        No acepta funciones o 
-        algún otro tipo de objeto.
-    </li>
-    <li>
-        Los objetos y arreglos dentro de un archivo ".json" deben contener 
-        valores validos (los primitivos descritos anteriormente).
-    </li>
-    <li>
-        Los string deben usar comillas dobles, no simples.
-    </li>
-    <li>
-        Los números deben ser escritos en notación decimal.
-    </li>
-    <li>
-        Cada miembro de un objeto debe estar con el formato '"miembro": valor'.
-        Los nombres de los miembros deben ser string literals envueltas en comillas dobles.
-    </li>
-    <li>
-        Los objetos o arrays no pueden tener "comas finales".
-    </li>
-    <li>
-        Los comentarios no son permitidos en un archivo ".json".
+    <li class="lista-desordenada__elemento">
+        Contenido entre <code>[]</code>: Se trata como array
     </li>
 </ul>
 
-<p>
-    El romper alguna de las reglas descritas anteriormente pueden hacer que un
-    documento ".json" sea invalido y por ello hacer que este falle, generalmente
-    los documentos ".json" creadnos por medio de computadoras, no suelen fallar,
-    pero también existen aplicaciones para poder validarlos.
+<p class="apunte__parrafo">
+    Los ".json" también pueden contener datos primitivos como números, strings o booleanos.
 </p>
 
-<h3>Conversión entre objetos y texto</h3>
+<h3 class="apunte__titulo-h3">Restricciones de sintaxis</h3>
 
-<p>Existen métodos para hacer conversiones entre objetos y textos, principalmente:</p> 
+<p class="apunte__parrafo">
+    Los archivos ".json" válidos pueden contener valores primitivos, objetos o arrays,
+    pero con las siguientes restricciones:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        Solo acepta object literals, arrays o valores primitivos (strings, números, true, false y null)
+    </li>
+    <li class="lista-desordenada__elemento">
+        No acepta "undefined", "NaN" o infinito
+    </li>
+    <li class="lista-desordenada__elemento">
+        No acepta funciones u otros tipos de objeto
+    </li>
+    <li class="lista-desordenada__elemento">
+        Strings deben usar comillas dobles, no simples
+    </li>
+    <li class="lista-desordenada__elemento">
+        Números deben escribirse en notación decimal
+    </li>
+    <li class="lista-desordenada__elemento">
+        Miembros de objetos deben tener formato: <code>"miembro": valor</code>
+    </li>
+    <li class="lista-desordenada__elemento">
+        Sin comas finales en objetos o arrays
+    </li>
+    <li class="lista-desordenada__elemento">
+        Sin comentarios permitidos
+    </li>
+</ul>
 
-<dl>
-    <dt>
-        JSON.parse()
-    </dt>
-    <dd>
-        Acepta un documento ".json" como parámetro y devuelve el objeto JavaScript correspondiente.
-    </dd>
-    <dt>
-        JSON.stringify()
-    </dt>
-    <dd>
-        Acepta un objeto como parámetro y devuelve un "JSON" string.
-    </dd>
+<p class="apunte__parrafo">
+    Romper estas reglas hace que un documento ".json" sea inválido. Existen herramientas para validar JSON.
+</p>
+
+<h3 class="apunte__titulo-h3">Conversión entre objetos y texto</h3>
+
+<p class="apunte__parrafo">Métodos principales para conversión:</p>
+
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            JSON.parse()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Acepta un string JSON como parámetro y devuelve el objeto JavaScript correspondiente
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            JSON.stringify()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Acepta un objeto como parámetro y devuelve un string JSON
+        </dd>
+    </div>
 </dl>
 
-<h3>Async/Await</h3>
+<h3 class="apunte__titulo-h3">Async/Await</h3>
 
-<p>"async" y "await" son dos palabras claves en JavaScript utilizadas para funciones asíncronas.</p>
+<p class="apunte__parrafo">"async" y "await" son palabras clave en JavaScript para manejar operaciones asíncronas:</p>
 
-<dl>
-    <dt>
-        Async
-    </dt>
-    <dd>
-        "async" indica que una función será asíncrona, es decir, que se puede "parar" 
-        a esperar ciertos resultados sin afectar al resto de la página.
-    </dd>
-    <dt>
-        Await
-    </dt>
-    <dd>
-        "await" indica la espera del resultado de alguna operación en una función 
-        asíncrona, estos resultados generalmente se guardan en objetos de tipo "promesa"
-        para sus futuras aplicaciones. Su uso principal es en variables que 
-        reciben resultados como "promesas" o llamadas a otras funciones asíncronas.
-    </dd>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Async
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Indica que una función será asíncrona, permitiendo pausar su ejecución sin afectar el resto de la página
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Await
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Espera el resultado de una operación asíncrona, generalmente almacenando resultados en promesas
+        </dd>
+    </div>
 </dl>
 
-<figure>
-    <figcaption>Ejemplo async/await</figcaption>
-    <code>
-        <pre>
-async function obtenerClima(){ 
-
-    // Con el uso de la palabra clave async, indicamos 
-    // que se trata de una función asíncrona.
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo async/await</figcaption>
+    <pre class="codigo__bloque"><code>
+async function obtenerClima() { 
+    // Palabra clave async indica función asíncrona
     
-    try{ 
-        
-        // uso de "try/catch", en el bloque "try" se inserta 
-        // todo el código que queremos ejecutar.
-                                                                            
+    try { 
+        // Bloque try para código que podría generar errores
         const datos = await datosClima(); 
-            
-            // asignamos la promesa generada por "datosClima()" a la 
-            // variable "datos", si esta llegase a producir un error, esto nos 
-            // llevaría a ejecutar el bloque catch.
-            // utiliza await ya que esperamos hasta obtener el 
-            // resultado de esta promesa 
-                                                                
+        // await pausa hasta obtener resultado de la promesa
+        
         mostrarClima(datos); 
-        
-            // Si todo lo anterior resulta correctamente, utilizamos "mostrarClima()"
-            // para poder mostrar los datos con el formato que 
-            // hayamos diseñado.
+        // Se ejecuta si todo es correcto
     
-    }catch(error){ 
-        
-        // El bloque catch se ejecutará si sucede algún error, el parámetro que recibe es un
-        // nombre arbitrario para cualquier objeto de tipo "error" que se lance desde el
-        // bloque try.
-        
+    } catch(error) { 
+        // Bloque catch maneja errores
         manejarError(error); 
-        
-            // Ejecutará una función para manejar cual sea el error obtenido.
     
-    }finally{  
-        
-        // El bloque finally es algo que se ejecutará siempre sin importar si la función
-        // se ejecutó correctamente o no, es opcional su existencia.
-                    
-        console.log("proceso finalizado");
+    } finally {  
+        // Bloque finally siempre se ejecuta
+        console.log("Proceso finalizado");
     }
-}</pre>
-    </code>
+}</code></pre>
 </figure>
-
-                </section>

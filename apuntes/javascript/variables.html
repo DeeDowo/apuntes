@@ -1,209 +1,238 @@
- <section id="Variables">
-                    <h2>
-                        Variables
-                    </h2>
-                    <p>
-                        Una variable es un contenedor de un valor. Por ejemplo, una variable puede contener un numero (3) o un string ("texto") 
-                        por mencionar algunos. En el caso de JavaScript, las variables se suelen usar especialmente para recordar 
-                        cualquier tipo de información del usuario o para guardar referencias a elementos HTML. La estructura de una variable es la siguiente:
-                    </p>
-                    <figure>
-                        <figcaption>Estructura de una variable</figcaption>
-                        <span><pre>
-palabraClave nombreDeLaVariable = valorDeLaVariable;</pre></span>
-                    </figure>
-                    <p>
-                        En JavaScript, las variables pueden contener prácticamente cualquier tipo de información. Algo a tener siempre presente es que 
-                        las variables contienen información, como una especie de caja, pero estas en si mismas no son dicha información.
-                    </p>
-                    <h3>
-                        Definiendo una variable
-                    </h3>
-                    <p>
-                        En java script, se utiliza principalmente tres palabras claves para definir variables:
-                    </p>
-                    <dl>
-                        <dt>
-                            Const
-                        </dt>
-                        <dd>
-                            La palabra clave "const" se utiliza para definir una variable la cual no cambiará su valor.
-                        </dd>
-                        <dt>
-                            Let
-                        </dt>
-                        <dd>
-                            La palabra clave "let" se utiliza para definir una variable la cual puede llegar a cambiar su valor.
-                        </dd>
-                        <dt>
-                            Var
-                        </dt>
-                        <dd>
-                            La palabra clave "var" al igual que "let", permite definir una variable a la cual se le puede llegar a cambiar el valor. Este era el estándar
-                            anteriormente para definir una variable. Sin embargo, actualmente su uso está desaconsejado debido a ciertos comportamientos
-                            conflictivos. Algunos 
-                            de estos son:
-                            <ul>
-                                <li>
-                                    "var" tiene un scope global, es decir, a diferencia de una variable cuyo scope suele ser el bloque en donde se declara, este no es 
-                                    el caso con var.
-                                </li>
-                                <li>
-                                    "var" permite la redefinición. Cuando JavaScript detecta que estamos tratando de volver a definir una variable preexistente, este nos lo
-                                    impedirá, con "var" esto no sucede.
-                                </li>
-                                <li>
-                                    "var" añade propiedades al objeto global (window).
-                                </li>
-                            </ul>
-                        </dd>
-                    </dl>
-                    <p>
-                        Cuando una variable está "definida", pero no inicializada, es decir, no tiene ningún valor asignado, esta 
-                        devuelve "undefined". Para crear una variable solo hay que definirla, no es necesario inicializarla. También es posible 
-                        inicializar un variable con "null", esto significa que esta está vacía de forma explicita.
-                    </p>
-                    <p>
-                        La diferencia clave entre una variable sin inicializar y una variable no definida, es que la no inicializada es como una "caja" vacía, mientras 
-                        que la variable sin definir, directamente no existe.
-                    </p>
-                    <h3>
-                        Constantes en JavaScript
-                    </h3>
-                    <p>
-                        Una constante es una variable cuyo valor asignado no puede 
-                        modificarse, este puede ser una valor fijo o más comúnmente referencias a otros elementos,
-                        este comportamiento es similar al de un puntero constante en C++, es decir, esta variable 
-                        siempre apunta a un mismo elemento, sin embargo este elemento puede cambiar, esto es notorio al asignar un 
-                        objeto por ejemplo, la constante no podrá dejar de apuntar a este objeto, pero este objeto si puede cambiar 
-                        características de este mismo.
-                    </p>
-                    <h3>
-                        Const o Let
-                    </h3>
-                    <p>
-                        El usar "const" o "let" al definir una variable depende del contexto, 
-                        generalmente en un lenguaje uno usa const para cosas que no quiere que se modifiquen, mientras que let sirve 
-                        para elementos que requieren un cambio, por ejemplo, contadores. Sin embargo en JavaScript en particular, la practica más común es 
-                        utilizar "const" cada vez que sea posible y usar let solo cuando sea necesario.
-                    </p>
-                    <h3>
-                        Inicializando una variable
-                    </h3>
-                    <p>
-                        El inicializar una variable significa darle un valor a esta, esto se realiza utilizando la definición de la variable en conjunto 
-                        con el operador "=" y el valor que queremos asignar a esta variable, una variable no necesariamente tiene que ser inicializada a la vez que es definida.
-                    </p>
-                    <h3>
-                        Actualizando una variable
-                    </h3>
-                    <p>
-                        Una vez una variable ha sido inicializada con un valor, este puede ser modificado siempre y cuando la variable no sea de tipo constante.
-                    </p>
-                    <h3>
-                        Nombrando variables
-                    </h3>
-                    <p>
-                        Una variable en JavaScript puede ser nombrada prácticamente de cualquier forma, sin embargo, 
-                        existen algunas reglas:, uno debería usar solo nombres que contengan a-z, A-Z, 0-9 y el "_" (guión bajo)
-                    </p>
-                    <ul>
-                        <li>
-                            Los nombres solo deben contener los caracteres a-z, A-Z, 0-9 y el "_" (guión bajo).
-                        </li>
-                        <li>        
-                            No usar "_" como inicio de una variable, estos tienen otro propósito en JavaScript cuando se usan al inicio.
-                        </li>
-                        <li>
-                            No usar números al inicio de una variable.
-                        </li>
-                        <li>
-                            Usar "lower camel case", es decir, usar minúsculas y solo usar una mayúscula al separar una palabra de otra.
-                        </li>
-                        <li>
-                            Usar nombres intuitivos que puedan ser autodescriptivos sobre su contenido.
-                        </li>
-                        <li>
-                            No usar palabras reservadas, como "var", "funtion", "let", etc.
-                        </li>
-                    </ul>   
-                    <h3>
-                        Tipos de variables
-                    </h3>
-                    <p>
-                        En JavaScript existen diferentes posibles tipos de variables que podemos definir, algunos ejemplos son:
-                    </p>
-                    <dl>
-                        <dt>
-                            Numbers
-                        </dt>
-                        <dd>
-                            Se pueden guardar números en variable, ya sean enteros (integers) o decimales (floats). 
-                            A diferencia de otros lenguajes de programación, en JavaScript no es necesario indicar el tipo de dato 
-                            de una variable. en el caso de los números, los valores no se asignan literalmente.
-                            <figure>
-                                <figcaption>Ejemplo Numbers</figcaption>
-<code><var><pre>
+<h2 class="apunte__titulo-h2">
+    Variables
+</h2>
+<p class="apunte__parrafo">
+    Una variable es un contenedor de un valor. Por ejemplo, una variable puede contener un número (3) o un string
+    ("texto")
+    por mencionar algunos. En el caso de JavaScript, las variables se suelen usar especialmente para recordar
+    cualquier tipo de información del usuario o para guardar referencias a elementos HTML. La estructura de una variable
+    es la siguiente:
+</p>
+<figure class="figure">
+    <figcaption class="figure__titulo">Estructura de una variable</figcaption>
+    <pre class="codigo__bloque">
+palabraClave nombreDeLaVariable = valorDeLaVariable;</pre>
+</figure>
+<p class="apunte__parrafo">
+    En JavaScript, las variables pueden contener prácticamente cualquier tipo de información. Algo a tener siempre
+    presente es que
+    las variables contienen información, como una especie de caja, pero estas en sí mismas no son dicha información.
+</p>
+<h3 class="apunte__titulo-h3">
+    Definiendo una variable
+</h3>
+<p class="apunte__parrafo">
+    En JavaScript, se utilizan principalmente tres palabras clave para definir variables:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Const
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La palabra clave "const" se utiliza para definir una variable la cual no cambiará su valor.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Let
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La palabra clave "let" se utiliza para definir una variable la cual puede llegar a cambiar su valor.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Var
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La palabra clave "var" al igual que "let", permite definir una variable a la cual se le puede llegar a
+            cambiar el valor. Este era el estándar
+            anteriormente para definir una variable. Sin embargo, actualmente su uso está desaconsejado debido a ciertos
+            comportamientos
+            conflictivos. Algunos
+            de estos son:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    "var" tiene un scope global, es decir, a diferencia de una variable cuyo scope suele ser el bloque
+                    en donde se declara, este no es
+                    el caso con var.
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    "var" permite la redefinición. Cuando JavaScript detecta que estamos tratando de volver a definir
+                    una variable preexistente, este nos lo
+                    impedirá, con "var" esto no sucede.
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    "var" añade propiedades al objeto global (window).
+                </li>
+            </ul>
+        </dd>
+    </div>
+</dl>
+<p class="apunte__parrafo">
+    Cuando una variable está "definida", pero no inicializada, es decir, no tiene ningún valor asignado, esta
+    devuelve "undefined". Para crear una variable solo hay que definirla, no es necesario inicializarla. También es
+    posible
+    inicializar una variable con "null", esto significa que esta está vacía de forma explícita.
+</p>
+<p class="apunte__parrafo">
+    La diferencia clave entre una variable sin inicializar y una variable no definida, es que la no inicializada es como
+    una "caja" vacía, mientras
+    que la variable sin definir, directamente no existe.
+</p>
+<h3 class="apunte__titulo-h3">
+    Constantes en JavaScript
+</h3>
+<p class="apunte__parrafo">
+    Una constante es una variable cuyo valor asignado no puede
+    modificarse, este puede ser un valor fijo o más comúnmente referencias a otros elementos,
+    este comportamiento es similar al de un puntero constante en C++, es decir, esta variable
+    siempre apunta a un mismo elemento, sin embargo este elemento puede cambiar, esto es notorio al asignar un
+    objeto por ejemplo, la constante no podrá dejar de apuntar a este objeto, pero este objeto sí puede cambiar
+    características de este mismo.
+</p>
+<h3 class="apunte__titulo-h3">
+    Const o Let
+</h3>
+<p class="apunte__parrafo">
+    El usar "const" o "let" al definir una variable depende del contexto,
+    generalmente en un lenguaje uno usa const para cosas que no quiere que se modifiquen, mientras que let sirve
+    para elementos que requieren un cambio, por ejemplo, contadores. Sin embargo en JavaScript en particular, la
+    práctica más común es
+    utilizar "const" cada vez que sea posible y usar let solo cuando sea necesario.
+</p>
+<h3 class="apunte__titulo-h3">
+    Inicializando una variable
+</h3>
+<p class="apunte__parrafo">
+    El inicializar una variable significa darle un valor a esta, esto se realiza utilizando la definición de la variable
+    en conjunto
+    con el operador "=" y el valor que queremos asignar a esta variable. Una variable no necesariamente tiene que ser
+    inicializada a la vez que es definida.
+</p>
+<h3 class="apunte__titulo-h3">
+    Actualizando una variable
+</h3>
+<p class="apunte__parrafo">
+    Una vez una variable ha sido inicializada con un valor, este puede ser modificado siempre y cuando la variable no
+    sea de tipo constante.
+</p>
+<h3 class="apunte__titulo-h3">
+    Nombrando variables
+</h3>
+<p class="apunte__parrafo">
+    Una variable en JavaScript puede ser nombrada prácticamente de cualquier forma, sin embargo,
+    existen algunas reglas:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        Los nombres solo deben contener los caracteres a-z, A-Z, 0-9 y el "_" (guión bajo).
+    </li>
+    <li class="lista-desordenada__elemento">
+        No usar "_" como inicio de una variable, estos tienen otro propósito en JavaScript cuando se usan al inicio.
+    </li>
+    <li class="lista-desordenada__elemento">
+        No usar números al inicio de una variable.
+    </li>
+    <li class="lista-desordenada__elemento">
+        Usar "lower camel case", es decir, usar minúsculas y solo usar una mayúscula al separar una palabra de otra.
+    </li>
+    <li class="lista-desordenada__elemento">
+        Usar nombres intuitivos que puedan ser autodescriptivos sobre su contenido.
+    </li>
+    <li class="lista-desordenada__elemento">
+        No usar palabras reservadas, como "var", "function", "let", etc.
+    </li>
+</ul>
+<h3 class="apunte__titulo-h3">
+    Tipos de variables
+</h3>
+<p class="apunte__parrafo">
+    En JavaScript existen diferentes posibles tipos de variables que podemos definir, algunos ejemplos son:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Numbers
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Se pueden guardar números en variables, ya sean enteros (integers) o decimales (floats).
+            A diferencia de otros lenguajes de programación, en JavaScript no es necesario indicar el tipo de dato
+            de una variable. En el caso de los números, los valores no se asignan literalmente.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo Numbers</figcaption>
+                <pre class="codigo__bloque">
 let numero = 55;
-let numeroDos = 44;</pre></var></code>
-                            </figure>
-                        </dd>
-                        <dt>
-                            Strings
-                        </dt>
-                        <dd>
-                            Los "strings" son cadenas de texto, estos deben asignarse utilizando "" (comillas doble) o ''(comillas simples) o ``(backticks).
-                            <figure>
-                                <figcaption>Ejemplo Strings</figcaption>
-<code><var><pre>
+let numeroDos = 44;</pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Strings
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Los "strings" son cadenas de texto, estos deben asignarse utilizando "" (comillas dobles) o ''(comillas
+            simples) o ``(backticks).
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo Strings</figcaption>
+                <pre class="codigo__bloque">
 let texto = "hola";
 let textoDos = 'adios'
-let textoTres = `abc`;</pre></var></code>
-                            </figure>
-                        </dd>
-                        <dt>
-                            Booleans
-                        </dt>
-                        <dd>
-                            Los "booleans" son los valores "true" o "false" (verdadero o falso), si bien se puede asignar la palabra clave directamente, es más común
-                            usarlos para almacenar el resultado de comparaciones.
-                            <figure>
-                                <figcaption>Ejemplo Booleans</figcaption>
-<code><var><pre>
+let textoTres = `abc`;</pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Booleans
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Los "booleans" son los valores "true" o "false" (verdadero o falso), si bien se puede asignar la palabra
+            clave directamente, es más común
+            usarlos para almacenar el resultado de comparaciones.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo Booleans</figcaption>
+                <pre class="codigo__bloque">
 let verdadero = true;
-let falso = (5 > 2);</pre></var></code>
-                            </figure>
-                        </dd>
-                        <dt>
-                            Arrays
-                        </dt>
-                        <dd>
-                            Un array es un objeto único que contiene un conjunto de elementos, cada uno de estos elementos posee un 
-                            lugar especificado por un indice, este comienza desde "0".
-                            <figure>
-                                <figcaption>Ejemplo Arrays</figcaption>
-<code><var><pre>
-let conjuntoNumeros = [1,2,3,4,5];</pre></var></code>
-                            </figure>
-                        </dd>
-                        <dt>
-                            Objects
-                        </dt>
-                        <dd>
-                            Los objetos son estructuras de datos que representan características de algo.
-                            <figure>
-                                <figcaption>Ejemplo Objects</figcaption>
-<code><var><pre>
+let falso = (5 > 2);</pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Arrays
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Un array es un objeto único que contiene un conjunto de elementos, cada uno de estos elementos posee un
+            lugar especificado por un índice, este comienza desde "0".
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo Arrays</figcaption>
+                <pre class="codigo__bloque">
+let conjuntoNumeros = [1,2,3,4,5];</pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Objects
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Los objetos son estructuras de datos que representan características de algo.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo Objects</figcaption>
+                <pre class="codigo__bloque">
 let dowo = {
     nombre: "dowo",
     edad: 24,
     trabajo: false
-};</pre></var></code>
-                            </figure>
-                        </dd>
-                    </dl>
-                    <p>
-                        JavaScript es un lenguaje de tipado dinámico, esto significa que no es necesario especificar el tipo de
-                        información que se ingresará a una variable.
-                    </p>
-                </section>
+};</pre>
+            </figure>
+        </dd>
+    </div>
+</dl>
+<p class="apunte__parrafo">
+    JavaScript es un lenguaje de tipado dinámico, esto significa que no es necesario especificar el tipo de
+    información que se ingresará a una variable.
+</p>

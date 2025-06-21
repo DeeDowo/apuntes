@@ -1,244 +1,263 @@
-<section id="Arrays">
-                    <h2>
-                        Arrays
-                    </h2>
-                    <p>
-                        Los arrays son una manera especial de guardar listas de información, podría entenderse como una forma de envolver multiples valores en una sola variable.
-                    </p>
-                    <p>
-                        Usualmente descrito como "list-like objects", son objetos que contienen multiples valores guardados como una 
-                        "lista". Nosotros tenemos acceso a cada unos de estos elementos y podemos realizar acciones con cada uno de ellos de forma 
-                        individual. Generalmente se utilizan para "envolver" valores que tienen algún tipo de relación. Por ejemplo, especies de animales, 
-                        precios, artículos de una tienda, libro, etc. Sin los arrays. Sin embargo, los arrays no necesariamente tienen que ser contenedores de 
-                        información relacionada.
-                    </p>
-                    <h3>
-                        Creando un array
-                    </h3>
-                    <p>
-                        Un array consiste de elemento separados por comas (",") envueltos entre corchetes ("[]").
-                    </p>
-                    <figure>
-                        <figcaption>Ejemplo Array</figcaption>
-<var><pre>
-const arregloNumeros = [1,2,3,4,5];</pre></var>
-                    </figure>
-                    <p>
-                        En JavaScript, los arrays pueden contener prácticamente cualquier tipo de dato, objetos, otros arreglos e incluso combinaciones de estos.
-                    </p>
-                    <figure>
-                        <figcaption>Ejemplo Arrays combinados</figcaption>
-<var><pre>
-const arrayCombinado = [1, "dos", [2,3]]</pre></var>
-                    </figure>
-                    <h3>
-                        El tamaño de un array
-                    </h3>
-                    <p>
-                        Para poder saber el tamaño de un array, es decir, la cantidad de elementos que posee, podemos usar el método "length", este nos devolverá 
-                        la cantidad de elementos.
-                    </p>
-                    <h3>
-                        Acceso y modificación
-                    </h3>
-                    <p> 
-                        Un array es una colección indexada, es decir, cada elemento tiene un indice el cual indica su ubicación, 
-                        este iniciando desde 0. La forma de acceso a cada elemento a traves de este es con la notación:
-                    </p>    
-                    <figure>
-                        <figcaption>Ejemplo Array index</figcaption>
-                        <span>
-<pre>
+<h2 class="apunte__titulo-h2">
+    Arrays
+</h2>
+<p class="apunte__parrafo">
+    Los arrays son una manera especial de guardar listas de información, podría entenderse como una forma de envolver
+    múltiples valores en una sola variable.
+</p>
+<p class="apunte__parrafo">
+    Usualmente descritos como "list-like objects", son objetos que contienen múltiples valores guardados como una
+    "lista". Nosotros tenemos acceso a cada uno de estos elementos y podemos realizar acciones con cada uno de ellos de
+    forma
+    individual. Generalmente se utilizan para "envolver" valores que tienen algún tipo de relación. Por ejemplo,
+    especies de animales,
+    precios, artículos de una tienda, libro, etc. Sin arrays sería más complicado manejar estos conjuntos. Sin embargo,
+    los arrays no necesariamente tienen que ser contenedores de
+    información relacionada.
+</p>
+<h3 class="apunte__titulo-h3">
+    Creando un array
+</h3>
+<p class="apunte__parrafo">
+    Un array consiste de elementos separados por comas (",") envueltos entre corchetes ("[]").
+</p>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo Array</figcaption>
+    <pre class="codigo__bloque">
+const arregloNumeros = [1,2,3,4,5];</pre>
+</figure>
+<p class="apunte__parrafo">
+    En JavaScript, los arrays pueden contener prácticamente cualquier tipo de dato, objetos, otros arreglos e incluso
+    combinaciones de estos.
+</p>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo Arrays combinados</figcaption>
+    <pre class="codigo__bloque">
+const arrayCombinado = [1, "dos", [2,3]]</pre>
+</figure>
+<h3 class="apunte__titulo-h3">
+    El tamaño de un array
+</h3>
+<p class="apunte__parrafo">
+    Para poder saber el tamaño de un array, es decir, la cantidad de elementos que posee, podemos usar el método
+    "length", este nos devolverá
+    la cantidad de elementos.
+</p>
+<h3 class="apunte__titulo-h3">
+    Acceso y modificación
+</h3>
+<p class="apunte__parrafo">
+    Un array es una colección indexada, es decir, cada elemento tiene un índice el cual indica su ubicación,
+    este inicia desde 0. La forma de acceso a cada elemento a través de este es con la notación:
+</p>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo Array index</figcaption>
+    <pre class="codigo__bloque">
 ...Array[1] = segundo elemento en un array;</pre>
-                        </span>
-                    </figure>
-                    <p>
-                        Para conocer el indice de cualquier elemento tenemos el método
-                        "indexOf()" que toma como parámetro el valor del que queremos conocer su indice. Cuando el elemento se encuentra en el array, este método devolverá su 
-                        indice, pero si este no se encuentra en el array, devolverá "-1".
-                    </p>
-                    <h3>
-                        Agregando y eliminando elementos 
-                    </h3>
-                    <p>
-                        Existen métodos cuya función en especial es el agregar y eliminar elementos en un array, estos son:
-                    </p>
-                    <dl>
-                        <dt>
-                            Push()
-                        </dt>
-                        <dd>
-                            El método "push()" sirve para agregar elementos al final de un array. Este toma como parámetro el elemento o elementos a agregar. Este método
-                            devuelve el nuevo tamaño del array.
-                        </dd>
-                        <dd>
-                            <figure>
-                                <figcaption>Ejemplo push()</figcaption>
-                                <span><pre>
-array.push("nuevo elemento");</pre></span>
-                            </figure>
-                        </dd>
-                        <dt>
-                            Unshift()
-                        </dt>
-                        <dd>
-                            El método "unshift()" sirve para agregar elementos al inicio de un array. Este toma como parámetro el elemento o elementos a agregar. Este método
-                            devuelve el nuevo tamaño del array,
-                        </dd>
-                        <dd>
-                            <figure>
-                                <figcaption>Ejemplo unshift()</figcaption>
-                                <span><pre>     
-array.unshift("nuevo elemento");</pre></span>
-                            </figure>
-                        </dd>
-                        <dt>
-                            Pop()
-                        </dt>
-                        <dd>
-                            El método "pop()" sirve para eliminar el ultimo elemento en un array. Este devuelve como resultado el elemento eliminado.
-                        </dd>
-                        <dd>
-                            <figure>
-                                <figcaption>Ejemplo pop()</figcaption>
-<span><pre>
-array.pop();</pre></span>
-                            </figure>
-                        </dd>
-                        <dt>
-                            Shift()
-                        </dt>
-                        <dd>
-                            El método "shift()" sirve para eliminar el primer elemento en un array. Este devuelve como resultado el elemento eliminado.
-                        </dd>
-                        <dd>
-                            <figure>
-                                <figcaption>Ejemplo push()</figcaption>
-<span><pre>
-array.shift()</pre></span>
-                            </figure>
-                        </dd>
-                        <dt>
-                            Splice()
-                        </dt>
-                        <dd>
-                            El método "splice()" sirve para poder eliminar un elemento en una posición dada y con la posibilidad de eliminar más elementos a partir de 
-                            esta posición. "splice()" toma 2 argumentos, el primero para indicar el indice del elemento que queremos eliminar y le segundo 
-                            para la cantidad de elementos a partir de este punto que queremos eliminar. Este método devuelvo los elementos eliminados.
-                        </dd>
-                    </dl>
-                    <p>
-                        Algo a considerar es que a diferencia de los métodos para strings, los métodos mencionados para arrays sí modifican el array original.
-                    </p>
-                    <h3>
-                        Acceso los elementos de un array
-                    </h3>
-                    <p>
-                        Para poder acceder a los elementos de un array de forma ordenada tenemos tres formas principalmente, para la mayoría de casos. Estos son:
-                    </p>
-                    <dl>
-                        <dt>
-                            Bucle for...of
-                        </dt>
-                        <dd>
-                            Un bucle "for...of" sirve para recorrer un arreglo de forma ordenada de inicio a fin. En la mayoría de casos es la opción más 
-                            versátil.
-                        </dd>
-                        <dd>
-                            <figure>
-                                <figcaption>Ejemplo for...of</figcaption>
-                                <code>
-<pre>
+</figure>
+<p class="apunte__parrafo">
+    Para conocer el índice de cualquier elemento tenemos el método
+    "indexOf()" que toma como parámetro el valor del que queremos conocer su índice. Cuando el elemento se encuentra en
+    el array, este método devolverá su
+    índice, pero si este no se encuentra en el array, devolverá "-1".
+</p>
+<h3 class="apunte__titulo-h3">
+    Agregando y eliminando elementos
+</h3>
+<p class="apunte__parrafo">
+    Existen métodos cuya función en especial es agregar y eliminar elementos en un array, estos son:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Push()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            El método "push()" sirve para agregar elementos al final de un array. Este toma como parámetro el elemento o
+            elementos a agregar. Este método
+            devuelve el nuevo tamaño del array.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo push()</figcaption>
+                <pre class="codigo__bloque">
+array.push("nuevo elemento");</pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Unshift()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            El método "unshift()" sirve para agregar elementos al inicio de un array. Este toma como parámetro el
+            elemento o elementos a agregar. Este método
+            devuelve el nuevo tamaño del array.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo unshift()</figcaption>
+                <pre class="codigo__bloque">
+array.unshift("nuevo elemento");</pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Pop()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            El método "pop()" sirve para eliminar el último elemento en un array. Este devuelve como resultado el
+            elemento eliminado.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo pop()</figcaption>
+                <pre class="codigo__bloque">
+array.pop();</pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Shift()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            El método "shift()" sirve para eliminar el primer elemento en un array. Este devuelve como resultado el
+            elemento eliminado.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo shift()</figcaption>
+                <pre class="codigo__bloque">
+array.shift()</pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Splice()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            El método "splice()" sirve para poder eliminar un elemento en una posición dada y con la posibilidad de
+            eliminar más elementos a partir de
+            esta posición. "splice()" toma 2 argumentos, el primero para indicar el índice del elemento que queremos
+            eliminar y el segundo
+            para la cantidad de elementos a partir de este punto que queremos eliminar. Este método devuelve los
+            elementos eliminados.
+        </dd>
+    </div>
+</dl>
+<p class="apunte__parrafo">
+    Algo a considerar es que a diferencia de los métodos para strings, los métodos mencionados para arrays sí modifican
+    el array original.
+</p>
+<h3 class="apunte__titulo-h3">
+    Acceso a los elementos de un array
+</h3>
+<p class="apunte__parrafo">
+    Para poder acceder a los elementos de un array de forma ordenada tenemos tres formas principalmente, para la mayoría
+    de casos. Estos son:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Bucle for...of
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Un bucle "for...of" sirve para recorrer un arreglo de forma ordenada de inicio a fin. En la mayoría de casos
+            es la opción más
+            versátil.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo for...of</figcaption>
+                <pre class="codigo__bloque">
 const arreglo = [1,2,3,4,5];
 
 for(const temp of arreglo){
     console.log(temp);
 }</pre>
-                                </code>
-                            </figure>
-                        </dd>
-                        <dt>
-                            Map()
-                        </dt>
-                        <dd>
-                            Algunas veces necesitaremos realizar una misma acción en cada elemento de un array y creando un nuevo array con 
-                            los elementos modificados, para esta acción en particular existe el método "map()" el cual toma como argumento una función con las 
-                            acciones que queremos realizar en cada elemento del array y devuelve como resultado una copia del array modificado.
-                        </dd>
-                        <dd>
-                            <figure>
-                        <figcaption>Ejemplo map()</figcaption>
-                        <code><pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Map()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Algunas veces necesitaremos realizar una misma acción en cada elemento de un array y crear un nuevo array
+            con
+            los elementos modificados, para esta acción en particular existe el método "map()" el cual toma como
+            argumento una función con las
+            acciones que queremos realizar en cada elemento del array y devuelve como resultado una copia del array
+            modificado.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo map()</figcaption>
+                <pre class="codigo__bloque">
 function double(number){
-return number *2;
+    return number * 2;
 }
 const numbers = [1,2,3,4,5];
-const doubleNumbers = numbers.map(double);</pre></code>
-                    </figure>
-                        
-                        </dd>
-                        <dt>
-                            Filter()
-                        </dt>
-                        <dd>
-                            Algunas veces necesitaremos filtrar los elementos de un array y crear uno nuevo con los elementos filtrados, para esta acción en particular
-                            existe el método "filter()", el cual como parámetro toma una función "test". Cada elemento del array pasa por este "test" y si devuelven "true"
-                            como resultado, el valor se guarda en el array filtrado, si devuelven "false", se descarta el elemento y se pasa al siguiente.
-                        </dd>
-                        <dd>
-                            <figure>
-                                <figcaption>Ejemplo filter()</figcaption>
-                                <code><pre>
+const doubleNumbers = numbers.map(double);</pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Filter()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Algunas veces necesitaremos filtrar los elementos de un array y crear uno nuevo con los elementos filtrados,
+            para esta acción en particular
+            existe el método "filter()", el cual como parámetro toma una función "test". Cada elemento del array pasa
+            por este "test" y si devuelven "true"
+            como resultado, el valor se guarda en el array filtrado, si devuelven "false", se descarta el elemento y se
+            pasa al siguiente.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo filter()</figcaption>
+                <pre class="codigo__bloque">
 function filter(number){
-return number > 5;
+    return number > 5;
 }
 
 const arrayBase = [4,5,6];
-const array_filtrado = arrayBase.filter(filter);</pre></code>
-                            </figure>
-                        </dd>
-                    </dl>
-                    <h3>
-                        Conversiones entre strings y arrays
-                    </h3>
-                    <p>
-                        Para esto tenemos 2 métodos principalmente:
-                    </p>
-                    <dl>
-                        <dt>
-                            Split()
-                        </dt>
-                        <dd>
-                            Una forma de poder convertir una cadena de texto en un array es con el método "split()", en su 
-                            forma más simple este toma un solo parámetro, un carácter o caracteres que fungirán como el separador 
-                            para los diferentes elementos para el array.
-                        </dd>
-                        <dd>
-                            <figure>
-                                <figcaption>Ejemplo split()</figcaption>
-                                <code><pre>
+const array_filtrado = arrayBase.filter(filter);</pre>
+            </figure>
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    Conversiones entre strings y arrays
+</h3>
+<p class="apunte__parrafo">
+    Para esto tenemos 2 métodos principalmente:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Split()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Una forma de poder convertir una cadena de texto en un array es con el método "split()", en su
+            forma más simple este toma un solo parámetro, un carácter o caracteres que fungirán como el separador
+            para los diferentes elementos para el array.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo split()</figcaption>
+                <pre class="codigo__bloque">
 const texto = "uno,dos,tres";
 
-const arrTexto = texto.split(",");</pre></code>
-                            </figure>
-                        </dd>
-                        <dt>
-                            Join()
-                        </dt>
-                        <dd>
-                            Una forma de poder convertir un array en una cadena de texto es con el método "join()", este toma como parámetro el carácter o caracteres que 
-                            separarán cada elemento del array al convertirlo a un string, puede dejarse en blanco.
-                            Otra forma de realizar esta misma acción es por medio del método "toString()", hasta 
-                            cierto punto más fácil ya que no requiere de un parámetro, pero este siempre separa los diferentes elementos 
-                            del array por medio de comas ",", a diferencia de "join()" donde se puede modificar este separador.
-                        </dd>
-                        <dd>
-                            <figure>
-                                <figcaption>Ejemplo join()</figcaption>
-                                <code><pre>
+const arrTexto = texto.split(",");</pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Join()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Una forma de poder convertir un array en una cadena de texto es con el método "join()", este toma como
+            parámetro el carácter o caracteres que
+            separarán cada elemento del array al convertirlo a un string, puede dejarse en blanco.
+            Otra forma de realizar esta misma acción es por medio del método "toString()", hasta
+            cierto punto más fácil ya que no requiere de un parámetro, pero este siempre separa los diferentes elementos
+            del array por medio de comas ",", a diferencia de "join()" donde se puede modificar este separador.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo join()</figcaption>
+                <pre class="codigo__bloque">
 const arreglo = [1,2,3,4,5];
-const textoArr = arreglo.join(", ");</pre></code>
-                            </figure>
-                        </dd>
-                    </dl>
-                </section>
+const textoArr = arreglo.join(", ");</pre>
+            </figure>
+        </dd>
+    </div>
+</dl>

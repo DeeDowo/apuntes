@@ -1,149 +1,176 @@
-<section id="Network requests">
-                    <h2>
-                        Network requests
-                    </h2>
+<h2 class="apunte__titulo-h2">
+    Network requests
+</h2>
 
-<p>
+<p class="apunte__parrafo">
     Otra practica común a lo referente a paginas web es el hacer "peticiones" para recuperar fragmentos
     individuales de información al servidos para actualizar solo ciertas secciones de una página,
     de eta forma evitamos tener que recargas todo la página web cada vez que se requiera cargar
     nuevo contenido.
 </p>
 
-<h3>HTTP request</h3>
+<h3 class="apunte__titulo-h3">HTTP request</h3>
 
-<p>
+<p class="apunte__parrafo">
     Una petición HTTP o HTTPS (cifrada) es una solicitud por parte del "server-client" a un
     servidor web utilizando el protocolo HTTP/HTTPS, esta solicitud contiene la información
     que el servidor utilizará para generar una respuesta para esta solicitud.
 </p>
 
-<p>Los métodos más comunes disponibles para estas peticiones son: </p>
+<p class="apunte__parrafo">Los métodos más comunes disponibles para estas peticiones son: </p>
 
-<dl>
-<dt>
-    GET
-</dt>
-<dd>
-    Solicita dados.
-</dd>
-<dt>
-    POST
-</dt>
-<dd>
-    Envía datos.
-</dd>
-<dt>
-    PUT/PATCH
-</dt>
-<dd>
-    Actualiza datos existentes.
-</dd>
-<dt>
-    DELETE
-</dt>
-<dd>
-    Elimina datos.
-</dd>
-</dl>
-<p>Estas peticiones se estructuran con los siguientes componentes:</p>
-<dl>
-    <dt>
-        URL
-    </dt>
-    <dd>
-        La dirección del recurso solicitado.
-    </dd>
-    <dt>
-        Método
-    </dt>
-    <dd>    
-        (GET, POST, PUT/PATCH, DELETE...).
-    </dd>
-    <dt>
-        Headers
-    </dt>
-    <dd>
-        Metadatos (idioma, navegador, formato de datos).
-    </dd>
-    <dt>
-        Body
-    </dt>
-    <dd>
-        Datos enviados.
-    </dd>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            GET
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Solicita dados.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            POST
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Envía datos.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            PUT/PATCH
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Actualiza datos existentes.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            DELETE
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Elimina datos.
+        </dd>
+    </div>
 </dl>
 
-<p>
+<p class="apunte__parrafo">Estas peticiones se estructuran con los siguientes componentes:</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            URL
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La dirección del recurso solicitado.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Método
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            (GET, POST, PUT/PATCH, DELETE...).
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Headers
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Metadatos (idioma, navegador, formato de datos).
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Body
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Datos enviados.
+        </dd>
+    </div>
+</dl>
+
+<p class="apunte__parrafo">
     Al obtener una "respuesta", esta vendrá acompañada con "códigos de estado", los cuales indican qué
     sucedió con la petición, algunos códigos comunes son:
-</p> 
-
-<dl>
-    <dt>
-        404
-    </dt>
-    <dd>
-        No se encontró la información.
-    </dd>
-    <dt>
-        200
-    </dt>
-    <dd>
-        Todo salió correctamente.
-    </dd>
-    <dt>
-        500
-    </dt>
-    <dd>
-        Error interno en el servidor.
-    </dd>
-    <dt>
-        301
-    </dt>
-    <dd>    
-        Una redirección.
-    </dd>
-    <dt>
-        401
-    </dt>
-    <dd>
-        No autorizado.
-    </dd>
-</dl>
-
-<p>Existen muchos más matices acerca de los HTTP request en general, pero este un buen punto de partida.</p>
-
-<h3>Callbacks</h3>
-
-<p>
-    Un callback es una función como parámetro de otra, esta puede ser definida de forma
-    separada o como una función anónima. Un callback es una función que se ejecutará
-     después de la función que lo llama, por ello son especialmente útiles en la
-     programación asíncrona, ya que se puede ejecutar con el resultado
-     de esta operación una vez finalizada.
 </p>
 
-<h3>Por qué hacer peticiones?</h3>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            404
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            No se encontró la información.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            200
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Todo salió correctamente.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            500
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Error interno en el servidor.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            301
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Una redirección.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            401
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            No autorizado.
+        </dd>
+    </div>
+</dl>
 
-<p>
+<p class="apunte__parrafo">Existen muchos más matices acerca de los HTTP request en general, pero este un buen punto de
+    partida.</p>
+
+<h3 class="apunte__titulo-h3">Callbacks</h3>
+
+<p class="apunte__parrafo">
+    Un callback es una función como parámetro de otra, esta puede ser definida de forma
+    separada o como una función anónima. Un callback es una función que se ejecutará
+    después de la función que lo llama, por ello son especialmente útiles en la
+    programación asíncrona, ya que se puede ejecutar con el resultado
+    de esta operación una vez finalizada.
+</p>
+
+<h3 class="apunte__titulo-h3">Por qué hacer peticiones?</h3>
+
+<p class="apunte__parrafo">
     El modelo básico del cómo se carga una página web consiste en que el navegador
     hace los "http request" al servidor por los archivos requeridos para poder
     mostrar esta y el servidor responde con ellos. al visitar otra página web, el
-     proceso se repite, hacemos las peticiones y el servidor nos responde.
-     Para la mayoría de sitios esto funciona perfectamente
+    proceso se repite, hacemos las peticiones y el servidor nos responde.
+    Para la mayoría de sitios esto funciona perfectamente
 </p>
 
-<p>
+<p class="apunte__parrafo">
     Para sitios que dependen en especial de grandes cantidades de
     información, estos generalmente no necesitan actualizar todo su contenido al
-    realizar ciertas peticiones, por ello, si usaran  el modelo básico
+    realizar ciertas peticiones, por ello, si usaran el modelo básico
     tendrían que recargar la página una y otra vez. Para evitar recargas innecesarias, la mayoría
     de sitios web utilizan APIs para poder actualizar ciertos contenidos en la
     página sin tener que recargar esta.
 </p>
 
-<p>
+<p class="apunte__parrafo">
     La API principal para esta tarea es "Fetch API", esta permite hacer
     peticiones HTTP para recibir información especifica y al recibir esta,
     JavaScript puede usar la información para actualizar el elemento, usualmente
@@ -151,75 +178,74 @@
     formato "JSON" (java script object notation).
 </p>
 
+<h3 class="apunte__titulo-h3">JSON</h3>
 
-<h3>JSON</h3>
-
-<p>
+<p class="apunte__parrafo">
     JSON significa "JavaScript Object Notation". Aunque lleva "JavaScript" en su
     nombre, JSON es un formato independiente que solo se basa en la sintaxis
     de los objetos de JavaScript. Es ampliamente utilizado para intercambiar
     datos entre clientes y servidores en aplicaciones web.
 </p>
 
-<p>Los archivos ".json" contienen datos representados como texto y son:</p>
+<p class="apunte__parrafo">Los archivos ".json" contienen datos representados como texto y son:</p>
 
-<ul>
-    <li>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
         Fáciles de leer por humanos.
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         Fáciles de procesar por máquinas.
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         Livianos y rápidos de transmitir.
     </li>
 </ul>
 
-<p>
+<p class="apunte__parrafo">
     Por estas razones, "JSON" se ha convertido en el formato estándar
     para el intercambio de datos, especialmente en peticiones HTTP/HTTPS.
 </p>
 
-<p>Algunas reglas de json:</p>
+<p class="apunte__parrafo">Algunas reglas de json:</p>
 
-<ul>
-    <li>
-        En un archivo "JSON" pueden haber objetos, arrays, valores literales o 
-más comúnmente, combinaciones de todos estos.
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        En un archivo "JSON" pueden haber objetos, arrays, valores literales o
+        más comúnmente, combinaciones de todos estos.
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         "JSON" Solo permite tipos de datos primitivos, es decir: numero, strings, booleans y null.
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         "JSON" No permite funciones ni variables ni "undefined".
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         No se permite "," final.
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         El nombre de los valores debe ir entre comillas dobles.
     </li>
 </ul>
 
-"JSON" acepta dos estructuras para definir sus datos:
+<p class="apunte__parrafo">"JSON" acepta dos estructuras para definir sus datos:</p>
 
-<ul>
-    <li>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
         {"nombre": valor} (para objetos)
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         [valor, valor2, valor3] (para arrays)
     </li>
 </ul>
 
-<p>
+<p class="apunte__parrafo">
     Estas se pueden combinar entre sí, al igual que pueden anidarse de
     formas aún más complejas. Por ejemplo:
 </p>
 
-<figure>
-    <figcaption>Ejemplo JSON</figcaption>
-    <span><pre>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo JSON</figcaption>
+    <pre class="codigo__bloque"><span>
 {
     "texto": "Hola",
     "numero": 42,
@@ -229,15 +255,15 @@ más comúnmente, combinaciones de todos estos.
     "objeto": {"clave": "valor"},
     "nulo": null,
     "arrayDeObjetos": [{"clave": "valor"},  {"clave": "valor"},  {"clave": "valor"}]
-}</pre></span>
+}</span></pre>
 </figure>
 
-<p>
+<p class="apunte__parrafo">
     Las ventajas de usar peticiones con "fetch" es que los elementos se actualizan
-    de forma más rápida y menos información es descargada lo cual es especialmente util en móviles.
+    de forma más rápida y menos información es descargada lo cual es especialmente útil en móviles.
 </p>
 
-<p>
+<p class="apunte__parrafo">
     La técnica de solo actualizar ciertos elementos en una página web en lugar de
     esta en su totalidad se le llama "AJAX", este nombre significa "Asynchronous
     JavaScript and XML" ya que se hacían peticiones con XML, actualmente este
@@ -245,74 +271,79 @@ más comúnmente, combinaciones de todos estos.
     termino para describir este proceso (actualmente se usa principalmente "JSON").
 </p>
 
-<p>
+<p class="apunte__parrafo">
     Para poder hacer más eficaz este proceso, algunos sitios almacenan información
     en el propio dispositivo del usuario después de la primera solicitud, de esta
     forma en subsecuentes visitas se usará la versión local en lugar de tener
     que descargar nuevas copias.
 </p>
 
-<h3>Promesas</h3>
+<h3 class="apunte__titulo-h3">Promesas</h3>
 
-<p>
+<p class="apunte__parrafo">
     Una "promesa" es un objeto especial en JavaScript que representa
     una operación que aun no ha terminado, estos objetos son
     especialmente útiles para el manejo de operaciones asíncronas. Una
     promesa tiene tres estados:
-</p> 
+</p>
 
-<dl>
-    <dt>
-        Pending
-    </dt>
-    <dd>
-        el estado inicial, indica que aun no finaliza la operación.
-    </dd>
-    <dt>
-        Fulfilled
-    </dt>
-    <dd>
-        La operación finalizó con éxito y devuelve un valor.
-    </dd>
-    <dt>
-        Rejected
-    </dt>
-    <dd>
-        La operación falló y devuelve un error.
-    </dd>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Pending
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            el estado inicial, indica que aun no finaliza la operación.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Fulfilled
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La operación finalizó con éxito y devuelve un valor.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Rejected
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La operación falló y devuelve un error.
+        </dd>
+    </div>
 </dl>
 
-<p>
+<p class="apunte__parrafo">
     Diferentes promesas se pueden encadenar y estas pueden tener cualquier nombre,
     sin embargo, una buena practica es asignar nombres autodescriptivos.
 </p>
 
-<h3>La Fetch API</h3>
+<h3 class="apunte__titulo-h3">La Fetch API</h3>
 
-<p>
+<p class="apunte__parrafo">
     En términos coloquiales podríamos decir que fetch "va a buscar" (recursos)
-     y "los trae de vuelta", un ejemplo podría verse como:
+    y "los trae de vuelta", un ejemplo podría verse como:
 </p>
 
-<figure>
-    <figcaption>Ejemplo Fetch</figcaption>
-    <span>
-        <pre>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo Fetch</figcaption>
+    <pre class="codigo__bloque"><span>
 fetch(url) 
 
-    // Devuelve una promesa esperando la respuesta del servidor.
+    // Devuelve una promesa esperando la respuesta del servidor
 
-	.then((response) => { 
+    .then((response) => { 
         
         // El resultado de la promesa se guarda en "response" y 
-        // ejecutamos un callback con una función anónima.
-	
-		if(!response.ok){ 
+        // ejecutamos un callback con una función anónima
+    
+        if(!response.ok){ 
             
-            // Hacemos un comprobación para ver si la respuesta 
-            // fue un error utilizando la propiedad "ok" del objeto promesa.
-		
-			throw new Error('error'); 
+            // Hacemos una comprobación para ver si la respuesta 
+            // fue un error utilizando la propiedad "ok" del objeto promesa
+        
+            throw new Error('error'); 
             
                 // En caso de un error, creamos un nuevo objeto "Error", este puede 
                 // contener un mensaje personalizado para ayudar a entender qué 
@@ -321,32 +352,31 @@ fetch(url)
                 // el cual nos saca del "flujo normal" de la función y busca un 
                 // ".catch", el cual es un método que recibe los objetos de tipo "Error"
                 // para delegarle la tarea de manejar a este.
-		}
+        }
 
-		return response.txt(); 
+        return response.text(); 
             
             // En caso de no haber error, se continua con normalidad, 
             // lo común será tomar la respuesta y aplicar
             // un método en esta para convertirla a un formato deseado. 
-            // Por ejemplo, a un texto usando ".txt()".
-	})
-	
-	.then((text) => { 
+            // Por ejemplo, a un texto usando ".text()"
+    })
+    
+    .then((text) => { 
         
-        // Podemos encadenar multiples ".then" para seguir manipulando nuestras promesas,
+        // Podemos encadenar múltiples ".then" para seguir manipulando nuestras promesas,
         // en este caso el parámetro "text" es el nombre que asignamos a nuestro objeto
         // resultante del ".then" anterior.
-						 		   
-		display.textContent = text; 
+                                      
+        display.textContent = text; 
         
             // Ahora podemos usar una referencia creada por nosotros 
             // por medio del DOM API, como "display" para poder
             // mostrar nuestro texto obtenido en algún elemento
-            // en nuestra pagina.
-	
-	})
-	
-	.catch((error) => { 
+            // en nuestra página
+    })
+    
+    .catch((error) => { 
         
         // Como punto final tenemos el método ".catch" el 
         // cual recibe los objetos "Error" que
@@ -355,48 +385,46 @@ fetch(url)
         // se especifica como parámetro, es el nombre 
         // que asignamos para manipular el objeto
         // que nuestra función pueda recibir.
-									 
-		display.textContent = error ${error}; 
+                                     
+        display.textContent = `error ${error}`; 
         
             // En el contenido de nuestro callback podemos tener 
-            // algún mecanismo para mostrar datos del error.
-	
-	})</pre>
-    </span>
+            // algún mecanismo para mostrar datos del error
+    })</span></pre>
 </figure>
 
-<p>En este ejemplo puede verse a rasgos generales es el cómo funciona la "FETCH API". Algunas anotaciones serían:</p> 
+<p class="apunte__parrafo">En este ejemplo puede verse a rasgos generales es el cómo funciona la "FETCH API". Algunas
+    anotaciones serían:</p>
 
-<ul>
-    <li>
-        "fetch()" aparte de la "URL" puede tomar otros parámetros opcionales.
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        "fetch()" aparte de la "URL" puede tomar otros parámetros opcionales
     </li>
-    <li>
-        "fetch()" es una API asíncrona que devuelve promesas.
+    <li class="lista-desordenada__elemento">
+        "fetch()" es una API asíncrona que devuelve promesas
     </li>
-    <li>
-        Las promesas devueltas por "fetch()" son usadas luego como parámetros en 
+    <li class="lista-desordenada__elemento">
+        Las promesas devueltas por "fetch()" son usadas luego como parámetros en
         los diferentes "callbacks"
-        dentro de ".then" y ".catch".
+        dentro de ".then" y ".catch"
     </li>
-    <li>
-        "fetch()" nos da diferentes métodos para poder interpretar el "body" de la respuesta 
-        cuando esta se ejecuta correctamente (".json()", ".text()", ".blob()", ".arrayBuffer", 
-        ".formData"). Algo a considerar es que el "body" solo puede ser interpretado una vez.
+    <li class="lista-desordenada__elemento">
+        "fetch()" nos da diferentes métodos para poder interpretar el "body" de la respuesta
+        cuando esta se ejecuta correctamente (".json()", ".text()", ".blob()", ".arrayBuffer",
+        ".formData"). Algo a considerar es que el "body" solo puede ser interpretado una vez
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         En caso de que nuestra promesa nos haya devuelto un error se ejecuta ".catch", el
         método encargado de manejar los objetos de tipo "Error", este no se crea de forma
-        automática, por ello hay que declararlo usando "throw new Error...". Es 
-        buena practica incur la mayor cantidad de información relevante para 
-        entender qué clase de error ocurrió en este.
+        automática, por ello hay que declararlo usando "throw new Error...". Es
+        buena práctica incluir la mayor cantidad de información relevante para
+        entender qué clase de error ocurrió en este
     </li>
 </ul>
 
-<h3>La XMLHttpRequest API</h3>
+<h3 class="apunte__titulo-h3">La XMLHttpRequest API</h3>
 
-<p>
+<p class="apunte__parrafo">
     La api XMLHttpRequest (usualmente abreviada como "XHR") era el estándar para el método "AJAX",
     actualmente está en desuso.
 </p>
-                </section>

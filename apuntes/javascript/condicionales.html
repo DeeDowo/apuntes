@@ -1,46 +1,49 @@
-<section id="Condicionales">
-                    <h2>
-                        Condicionales
-                    </h2>
-                    <p>
-                        En cualquier lenguaje de programación se necesitan tomar decisiones para ejecutar acciones. las condicionales 
-                        permiten representar esta toma de decisiones.
-                    </p>
-                    <dl>
-                        <dt>
-                            If...else 
-                        </dt>
-                        <dd>
-                            El tipo más básico de condicional, el if...else. "if" es la palabra clave, seguida de un par de paréntesis 
-                            que toma como argumento alguna expresión y cuando esta sea cierta o se pueda entender como cierta (true), 
-                            se ejecutará el bloque de código, si este argumento no es verdadero, entonces se ejecuta el bloque contiguo a 
-                            la palabra clave "else". Esencialmente se toma un parámetro que dependiendo de valor booleano (true/false), hará que
-                            se ejecute un bloque de código u otro. La parte de "else" no es realmente necesaria, ya que esta solo indica el caso contrario y 
-                            que en caso de no haberlo, no tendría sentido agregarlo.
-                        </dd>
-                        <dd>
-                            <figure>
-                                <figcaption>Ejemplo If...else</figcaption>
-                                <code><pre>
+<h2 class="apunte__titulo-h2">
+    Condicionales
+</h2>
+<p class="apunte__parrafo">
+    En cualquier lenguaje de programación se necesitan tomar decisiones para ejecutar acciones. Las condicionales
+    permiten representar esta toma de decisiones.
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            If...else
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            El tipo más básico de condicional, el if...else. "if" es la palabra clave, seguida de un par de paréntesis
+            que toma como argumento alguna expresión y cuando esta sea cierta o se pueda entender como cierta (true),
+            se ejecutará el bloque de código, si este argumento no es verdadero, entonces se ejecuta el bloque contiguo
+            a
+            la palabra clave "else". Esencialmente se toma un parámetro que dependiendo de valor booleano (true/false),
+            hará que
+            se ejecute un bloque de código u otro. La parte de "else" no es realmente necesaria, ya que esta solo indica
+            el caso contrario y
+            que en caso de no haberlo, no tendría sentido agregarlo.
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo If...else</figcaption>
+                <pre class="codigo__bloque">
 if (variable > 10) {
     console.log(`la variable ${variable} es mayor que 10.`);
 } else {
     console.log(`la variable ${variable} no es mayor que 10`);
-}</pre></code>
-                            </figure>
-                        </dd>
-                        <dt>
-                            Else if
-                        </dt>
-                        <dd>
-                            Con "if...else" tenemos la posibilidad de tener dos posibles resultados para cuando una expresión
-                            es "true" o "false". Para poder tener más de estar dos posibilidades existe la palabra clave "else if", la cual se "encadena" como un "else" normal,
-                            con la diferencia de que este incluye su propia expresión de control. Es posible encadenar multiples "else if".
-                        </dd>
-                        <dd>
-                            <figure>
-                                <figcaption>Ejemplo else if</figcaption>
-                                <span><pre>
+}</pre>
+            </figure>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Else if
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Con "if...else" tenemos la posibilidad de tener dos posibles resultados para cuando una expresión
+            es "true" o "false". Para poder tener más de estar dos posibilidades existe la palabra clave "else if", la
+            cual se "encadena" como un "else" normal,
+            con la diferencia de que este incluye su propia expresión de control. Es posible encadenar multiples "else
+            if".
+            <figure class="figure">
+                <figcaption class="figure__titulo">Ejemplo else if</figcaption>
+                <pre class="codigo__bloque">
 if (condición) {
     bloque 1
 } else if (condición para el bloque 2) {
@@ -49,125 +52,139 @@ if (condición) {
     bloque 3
 } else {
     bloque final
-}</pre></span>
-                            </figure>
-                        </dd>
-                        <dd>
-                            Al utilizar multiples "else if" podemos agregar un "else" final, el cual ejecutará su 
-                            código cuando ninguna de las condiciones anteriores hayan sido verdaderas. Nuevamente, este no es necesario.
-                        </dd>
-                    </dl>
-                    <p>
-                        Algo a considerar es que cualquier valor que no sea "false", "undefined" (no existe la variable), "null", 
-                        "NaN" (not a number) o un string vació (""), devuelven "true" al ser utilizados como una condición. De esta forma se puede 
-                        usar como condición una variable y si existe y es valida, devolverá true.
-                    </p>
-                    <h3>
-                        Anidando if...else
-                    </h3>
-                    <p>
-                        Es posible anidar un "if...else" dentro de un "if..else", cada uno de estos, funcionan de manera independiente, 
-                        sin embargo, anidar demasiados pueden complicar el código y hacerlo difícil de comprender.
-                    </p>
-                    <h3>
-                        Operadores lógicos
-                    </h3>
-                    <p>
-                        Para poder crear "test" más complejos podemos utilizar los operadores lógicos, esta es una alternativa a usar "if...else" anidados.
-                        Existen tres:
-                    </p>
-                    <dl>
-                        <dt>
-                            AND
-                        </dt>
-                        <dd>
-                            El operador "AND" (&&) compara si ambos expresiones son "true", si lo son devuelve "true", si no lo son devuelve "false".
-                        </dd>
-                        <dt>
-                            OR
-                        </dt>
-                        <dd>
-                            El operador "OR" (||) compara dos expresiones y si al menos una es "true" devuelve "true" como resultado.
-
-                        </dd>
-                        <dt>
-                            NOT
-                        </dt>
-                        <dd>
-                            El operador "NOT" (!), no compara realmente, este "niega" una expresión, es decir, devuelve el valor contrario al original. 
-                            En otras palabras, "NOT" (!) invierte el valor original
-                        </dd>
-                    </dl>
-                    <p>
-                        Los diferentes operadores pueden combinarse en cadenas con cualquier complejidad para crear expresiones más complejas.
-                    </p>
-                    <h3>
-                        Switch
-                    </h3>
-                    <p>
-                        A simple vista parece similar a "if...else", sin embargo, el "switch" se especializa en comparaciones 
-                        de valores, es decir, tomando un valor como referencia, compara este con diferentes casos predefinidos 
-                        y si este valor es igual al de alguno de los casos, realiza las acciones especificadas.
-                        Otra forma de entenderlo, es que "if...else" suele servir más para casos más "generales" o "flexibles", mientras que switch 
-                        sirve más para casos "particulares" o "rígidos". la estructura de un "switch" es:
-                    </p>
-                    <figure>
-                        <figcaption>Ejemplo switch</figcaption>
-                        <span><pre>
+}</pre>
+            </figure>
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            Al utilizar multiples "else if" podemos agregar un "else" final, el cual ejecutará su
+            código cuando ninguna de las condiciones anteriores hayan sido verdaderas. Nuevamente, este no es necesario.
+        </dd>
+    </div>
+</dl>
+<p class="apunte__parrafo">
+    Algo a considerar es que cualquier valor que no sea "false", "undefined" (no existe la variable), "null",
+    "NaN" (not a number) o un string vacío (""), devuelven "true" al ser utilizados como una condición. De esta forma se
+    puede
+    usar como condición una variable y si existe y es válida, devolverá true.
+</p>
+<h3 class="apunte__titulo-h3">
+    Anidando if...else
+</h3>
+<p class="apunte__parrafo">
+    Es posible anidar un "if...else" dentro de un "if..else", cada uno de estos, funcionan de manera independiente,
+    sin embargo, anidar demasiados pueden complicar el código y hacerlo difícil de comprender.
+</p>
+<h3 class="apunte__titulo-h3">
+    Operadores lógicos
+</h3>
+<p class="apunte__parrafo">
+    Para poder crear "test" más complejos podemos utilizar los operadores lógicos, esta es una alternativa a usar
+    "if...else" anidados.
+    Existen tres:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            AND
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            El operador "AND" (&&) compara si ambas expresiones son "true", si lo son devuelve "true", si no lo son
+            devuelve "false".
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            OR
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            El operador "OR" (||) compara dos expresiones y si al menos una es "true" devuelve "true" como resultado.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            NOT
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            El operador "NOT" (!), no compara realmente, este "niega" una expresión, es decir, devuelve el valor
+            contrario al original.
+            En otras palabras, "NOT" (!) invierte el valor original
+        </dd>
+    </div>
+</dl>
+<p class="apunte__parrafo">
+    Los diferentes operadores pueden combinarse en cadenas con cualquier complejidad para crear expresiones más
+    complejas.
+</p>
+<h3 class="apunte__titulo-h3">
+    Switch
+</h3>
+<p class="apunte__parrafo">
+    A simple vista parece similar a "if...else", sin embargo, el "switch" se especializa en comparaciones
+    de valores, es decir, tomando un valor como referencia, compara este con diferentes casos predefinidos
+    y si este valor es igual al de alguno de los casos, realiza las acciones especificadas.
+    Otra forma de entenderlo, es que "if...else" suele servir más para casos más "generales" o "flexibles", mientras que
+    switch
+    sirve más para casos "particulares" o "rígidos". La estructura de un "switch" es:
+</p>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo switch</figcaption>
+    <pre class="codigo__bloque">
 switch (valor a comparar){
 case opción1:
-código
-break;
+    código
+    break;
 
 case opción2:
-código
-break;
+    código
+    break;
 
 default:
-código
-break;
-}</pre></span>
-                    </figure>
-                    <p>
-                        En este ejemplo tenemos:
-                    </p>
-                    <ol>
-                        <li>
-                            La palabra clave "switch".
-                        </li>
-                        <li>
-                            Un par de paréntesis que envuelven la expresión o variable que vamos a comparar con los diferentes casos disponibles.
-                        </li>
-                        <li>
-                            La palabra clave "case" para indicar cada caso posible.
-                        </li>
-                        <li>
-                            Un valor para cada caso.
-                        </li>
-                        <li>
-                            Un código que se ejecutará cuando el valor del caso y el valor a comparar sean iguales.
-                        </li>
-                        <li>    
-                            La palabra clave "break" al final de cada caso para indicar que el "switch" terminó, de esta forma no revisará ninguno de 
-                            los siguientes casos posibles y solo se "saldrá" del "switch".
-                        </li>
-                        <li>
-                            Cuando ninguno de los casos coinciden, es recomendable tener un caso especial, este se define con la palabra 
-                            clave "default", no posee un valor e indica el código que se ejecutará cuando ningún caso coincida con el valor 
-                            a comparar ingresado. En el caso "default" no es necesario indicar un "break" ya que al ser el ultimo caso, de 
-                            cualquier forma el "switch statement" finalizará.
-                        </li>
-                    </ol>
-                    <h3>
-                        Operador ternario
-                    </h3>
-                    <p>
-                        El operador ternario, podría entenderse como una contracción de un "if...else", ya que toma una condición y con 
-                        base en el resultado booleano de esta, ejecuta un código u otro, generalmente se usa para asignar valores a variables.
-                    </p>
-                    <figure>
-                        <figcaption>Ejemplo Operador ternario</figcaption>
-                        <span><pre>
-condición ? código si el resultado es "true" : código si el resultado es "false";</pre></span>
-                    </figure>
-                </section>
+    código
+    break;
+}</pre>
+</figure>
+<p class="apunte__parrafo">
+    En este ejemplo tenemos:
+</p>
+<ol class="lista-ordenada">
+    <li class="lista-ordenada__elemento">
+        La palabra clave "switch".
+    </li>
+    <li class="lista-ordenada__elemento">
+        Un par de paréntesis que envuelven la expresión o variable que vamos a comparar con los diferentes casos
+        disponibles.
+    </li>
+    <li class="lista-ordenada__elemento">
+        La palabra clave "case" para indicar cada caso posible.
+    </li>
+    <li class="lista-ordenada__elemento">
+        Un valor para cada caso.
+    </li>
+    <li class="lista-ordenada__elemento">
+        Un código que se ejecutará cuando el valor del caso y el valor a comparar sean iguales.
+    </li>
+    <li class="lista-ordenada__elemento">
+        La palabra clave "break" al final de cada caso para indicar que el "switch" terminó, de esta forma no revisará
+        ninguno de
+        los siguientes casos posibles y solo se "saldrá" del "switch".
+    </li>
+    <li class="lista-ordenada__elemento">
+        Cuando ninguno de los casos coinciden, es recomendable tener un caso especial, este se define con la palabra
+        clave "default", no posee un valor e indica el código que se ejecutará cuando ningún caso coincida con el valor
+        a comparar ingresado. En el caso "default" no es necesario indicar un "break" ya que al ser el último caso, de
+        cualquier forma el "switch statement" finalizará.
+    </li>
+</ol>
+<h3 class="apunte__titulo-h3">
+    Operador ternario
+</h3>
+<p class="apunte__parrafo">
+    El operador ternario, podría entenderse como una contracción de un "if...else", ya que toma una condición y con
+    base en el resultado booleano de esta, ejecuta un código u otro, generalmente se usa para asignar valores a
+    variables.
+</p>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo Operador ternario</figcaption>
+    <pre class="codigo__bloque">
+condición ? código si el resultado es "true" : código si el resultado es "false";</pre>
+</figure>
