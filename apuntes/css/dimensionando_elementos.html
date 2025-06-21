@@ -1,70 +1,70 @@
-<article id="Dimensionando elementos en CSS">
-                <h2>
-                    Dimensionando elementos en CSS
-                </h2>
-                <h3>
-                    El tamaño intrínseco de las cosas
-                </h3>
-                <p>
-                    En HTML, los elementos tienen un tamaño "intrínseco".
-                    Por ejemplo, una imagen posee un tamaño que está determinado por la imagen misma.
-                </p>
-                <p>
-                    Por otro lado, un "div", no tiene un tamaño por si mismo ya que
-                    depende del contenido que este posea, su tamaño "intrínseco" es aquel que le da su contenido
-                </p>
-                <h3>
-                    Especificando el tamaño
-                </h3>
-                <p>
-                    El tamaño "extrínseco", significa que nosotros le damos un tamaño a algo
-                    con las propiedades "width/height" usualmente. Un problema que sucede cuando
-                    asignamos longitudes fijas es que limitamos el tamaño y por ende, abrimos la
-                    posibilidad a un "overflow" de contenido. 
-                </p>
-                <h3>
-                    Usando porcentajes
-                </h3>
-                <p>
-                    Un porcentaje, puede funcionar igual que una longitud, al ser
-                    una unidad relativa, depende del tamaño del elemento de referencia.
-                </p>
-                <h4>
-                    Porcentajes en margenes y paddings
-                </h4>
-                <p>
-                    Cuando usamos porcentajes para modificar un margen o padding,
-                    se toma como referencia al tamaño "inline" del elemento mismo.
-                </p>
-                <h3>
-                    Tamaño mínimo y máximo
-                </h3>
-                <p>
-                    Aparte de asignar un tamaño fijo a elementos, también podemos asignar un tamaño mínimo o máximo (más flexible).
-                    Por ejemplo, si se quiere tener un elemento que al menos siempre tenga
-                    un tamaño, se usa el tamaño mínimo, ya sea en altura, ancho o ambos. A diferencia de un
-                    tamaño fijo, el tamaño mínimo sí permite que la caja se redimensione de forma automática.
-                </p>
-                <p>
-                    También podemos imponer un tamaño máximo, sin
-                    embargo, este sí podría provocar un "overflow" ya que una vez
-                    sobrepasado el tamaño máximo, la caja no se redimensionará 
-                    más. El valor máximo es puede ser util al trabajar con imágenes por ejemplo,
-                    ya que no permitiría que estas crezcan más allá del tamaño máximo
-                    establecido.
-                </p>
-                <h3>
-                    Unidades viewport
-                </h3>
-                <p>
-                    El viewport es el espacio visible en una pagina, el
-                    cual puede variar constantemente, ya sea por diferencia en dispositivos o por el propio usuario
-                    al redimensionar el navegador.
-                </p>
-                <p>
-                    las unidades relacionadas a este, cambiarán su tamaño constantemente entre
-                    dispositivos, con una buena plantación, puede ser una de las unidades más útiles en la mayoría de los casos, sin embargo, este
-                    también tiene sus limitaciones, una de las más grandes es que si se usa en el tamaño del texto, este no crecerá ni se
-                    reducirá si el usuario hace "zoom-in" o "zoom-out" en la página.
-                </p>
-            </article>
+<h2 class="apunte__titulo-h2">
+    Dimensionando elementos en <span class="titulo-h2__span">CSS</span>
+</h2>
+<h3 class="apunte__titulo-h3">
+    El tamaño intrínseco de las cosas
+</h3>
+<p class="apunte__parrafo">
+    En HTML, los elementos tienen un tamaño "intrínseco".
+    Por ejemplo, una imagen posee un tamaño que está determinado por la imagen misma.
+</p>
+<p class="apunte__parrafo">
+    Por otro lado, un "div", no tiene un tamaño por sí mismo ya que
+    depende del contenido que este posea, su tamaño "intrínseco" es aquel que le da su contenido.
+</p>
+<h3 class="apunte__titulo-h3">
+    Especificando el tamaño
+</h3>
+<p class="apunte__parrafo">
+    El tamaño "extrínseco", significa que nosotros le damos un tamaño a algo
+    con las propiedades "width/height" usualmente. Un problema que sucede cuando
+    asignamos longitudes fijas es que limitamos el tamaño y por ende, abrimos la
+    posibilidad a un "overflow" de contenido.
+</p>
+<h3 class="apunte__titulo-h3">
+    Usando porcentajes
+</h3>
+<p class="apunte__parrafo">
+    Un porcentaje, puede funcionar igual que una longitud, al ser
+    una unidad relativa, depende del tamaño del elemento de referencia.
+</p>
+<h4 class="apunte__titulo-h4">
+    Porcentajes en márgenes y paddings
+</h4>
+<p class="apunte__parrafo">
+    Cuando usamos porcentajes para modificar un margen o padding,
+    se toma como referencia al tamaño "inline" del elemento mismo.
+</p>
+<h3 class="apunte__titulo-h3">
+    Tamaño mínimo y máximo
+</h3>
+<p class="apunte__parrafo">
+    Aparte de asignar un tamaño fijo a elementos, también podemos asignar un tamaño mínimo o máximo (más flexible).
+    Por ejemplo, si se quiere tener un elemento que al menos siempre tenga
+    un tamaño, se usa el tamaño mínimo, ya sea en altura, ancho o ambos. A diferencia de un
+    tamaño fijo, el tamaño mínimo sí permite que la caja se redimensione de forma automática.
+</p>
+<p class="apunte__parrafo">
+    También podemos imponer un tamaño máximo, sin
+    embargo, este sí podría provocar un "overflow" ya que una vez
+    sobrepasado el tamaño máximo, la caja no se redimensionará
+    más. El valor máximo puede ser útil al trabajar con imágenes por ejemplo,
+    ya que no permitiría que estas crezcan más allá del tamaño máximo
+    establecido.
+</p>
+<h3 class="apunte__titulo-h3">
+    Unidades viewport
+</h3>
+<p class="apunte__parrafo">
+    El viewport es el espacio visible en una página, el
+    cual puede variar constantemente, ya sea por diferencia en dispositivos o por el propio usuario
+    al redimensionar el navegador.
+</p>
+<p class="apunte__parrafo">
+    Las unidades relacionadas a este, cambiarán su tamaño constantemente entre
+    dispositivos. Con una buena planificación, pueden ser una de las unidades más útiles en la mayoría de los casos. Sin
+    embargo, estas
+    también tienen sus limitaciones; una de las más grandes es que si se usan en el tamaño del texto, este no crecerá ni
+    se
+    reducirá si el usuario hace "zoom-in" o "zoom-out" en la página.
+</p>

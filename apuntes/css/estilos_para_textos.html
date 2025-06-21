@@ -1,383 +1,419 @@
-<article id="CSS text styling">
-                <h2>
-                    Estilos para textos
-                </h2>
-                <p>
-                    Uno de los usos principales para CSS es el de estilar textos.
-                    El texto dentro de un elemento se acomoda en la parte del "contenido" de una "caja", el cómo se acomoda un texto depende del 
-                    idioma, pero generalmente
-                    este comienza a ordenarse desde la parte superior izquierda y continua hasta el final
-                    de la linea disponible, una vez lo alcanza, continua en la siguiente
-                    linea y repite este proceso una y otra vez.
-                </p>
-                <p>
-                    Las propiedades para comenzar a estilizar textos pueden separarse en dos categorías principalmente:
-                </p>
-                <dl>
-                    <dt>
-                        Font styles
-                    </dt>
-                    <dd>    
-                        Propiedades que afectan el cómo se verá un texto.
-                    </dd>
-                    <dt>
-                        Text layout
-                    </dt>
-                    <dd>
-                        Propiedades que afectan el cómo se distribuirá un texto.
-                    </dd>
-                </dl>
-                <p>
-                    Sin importar la clase de modificaciones que queramos realizar en un texto,
-                    estas se aplicarán a todo el texto de dicho elemento y estas se heredarán a sus hijos posteriores sin importar el
-                    nivel de anidación.
-                    Para poder afectar solo ciertos "trozos" en particular de un texto, se necesita el uso de
-                    otras etiquetas como <span class="codigo--linea">&lt;span&gt; ... &lt;/span&gt;</span> o algún pseudo elemento como
-                    "::first-letter" (envuelve la primera letra de algo) o "::first-line" (envuelve la primera linea de algo).
-                </p>
-                <h3>
-                    Algunos conceptos para fuentes
-                </h3>
-                <dl>
-                    <dt>
-                        Fuentes
-                    </dt>
-                    <dd>    
-                        Una "fuente" es el estilo tipográfico que tendrá un texto.
-                        En CSS tenemos dos propiedades personalizar estas y sus características:
-                    </dd>
-                    <dt>
-                        Web safe fonts
-                    </dt>
-                    <dd>    
-                        Existen fuentes que están disponibles
-                        en prácticamente todos los sistemas operativos, estas son llamadas "web safe fonts", algunos ejemplos son: 
-                        <ul>
-                            <li>
-                                Arial o Helvetica
-                            </li>
-                            <li>
-                                Courier New o Courier
-                            </li>
-                            <li>
-                                Georgia
-                            </li>
-                            <li>
-                                Times New Roman o Times
-                            </li>
-                            <li>
-                                Trebuchet MS
-                            </li>
-                            <li>
-                                Verdana
-                            </li>
-                        </ul>
-                        Estas son solo algunas de las "web safe fonts" disponibles.
-                        La principal función de estas es ser "fallbacks" para cuando pudiera ocurrir
-                        algún problema al intentar cargar nuestra o nuestras fuentes principales.
-                    </dd>
-                    <dt>
-                        Tipos de fuentes
-                    </dt>
-                    <dd>
-                        Generalmente las fuentes llevan en sus nombres el tipo de fuente que son, algunos ejemplos serían:
-                        <ul>
-                            <li>
-                                serif (texto con decoraciones. generalmente para títulos)
-                            </li>
-                            <li>
-                                san-serif (sin serif, es decir, textos sin decoraciones. generalmente para texto normal)
-                            </li>
-                            <li>
-                                monospace (texto donde cada carácter tiene el mismo tamaño. generalmente para programación o para caracteres en
-                                diferentes idiomas)
-                            </li>
-                            <li>
-                                cursive (emula la cursiva)
-                            </li>
-                            <li>
-                                fantasy (decorativas. no es texto en si)
-                            </li>
-                        </ul>
-                        El agregar estos tipos como fallbacks, hará que se aplique la primer fuente que sea del tipo especificado.
-                    </dd>
-                    <dt>
-                        Font stacks
-                    </dt>
-                    <dd>
-                        Es el conjunto de multiples fuentes que especificamos para que el navegador
-                        tenga opciones en caso de que una no se encuentre disponible, cada fuente se separa por comas
-                        y van en orden de aplicación,
-                        es decir, primero se agrega el "caso ideal", luego algunas opciones y por
-                        ultimo los tipos mas genéricos posibles, pero que hasta cierto punto sigan funcionando para nuestro diseño. 
-                        Por ejemplo:
-                        <ul>
-                            <li>
-                                <span class="codigo--linea">font-family: "fuente deseada", arial, sans-serif;</span>
-                            </li>
-                        </ul>
-                        Algo a considerar es que aquellas fuentes cuyos nombres tengan espacios de por medio, es
-                        recomendable ponerlas entre comillas al igual que cualquier nombre que pueda ser
-                        interpretada como un tipo genérico o una palabra clave en CSS.
-                    </dd>
-                </dl>
-                <h3>
-                    Algunas propiedades para el "Font style"
-                </h3>
-                <dl>
-                    <dt>
-                        Color
-                    </dt>
-                    <dd>
-                        "color" en el caso de textos, cambia su color, pero en realidad lo que hace es
-                        fijar el color del "foreground", es decir, lo que está al frente de los elementos como el
-                        underline, el overline o más comúnmente las fuentes.
-                    </dd>
-                    <dt>
-                        Font family
-                    </dt>
-                    <dd>
-                        "font-family" aplica una fuente o listas de fuentes diferentes
-                        al texto. el navegador solo aplicará una fuente, en el caso de una
-                        lista de fuentes, la primera disponible, si ninguna está disponible el
-                        navegador usa la fuente por defecto de este.
-                    </dd>
-                    <dt>
-                        Font size
-                    </dt>
-                    <dd>
-                        "font-size" sirve para definir el tamaño que tendrá una fuente dentro
-                        de un elemento. los valores más comunes que se usan para esto son:
-                        <ul>
-                            <li>
-                                px (pixeles)
-                            </li>
-                            <li>
-                                em (unidad relativa al tamaño del texto del padre)
-                            </li>
-                            <li>
-                                rem (unidad relativa al tamaño del texto del elemento raíz)
-                            </li>
-                        </ul>
-                        Por defecto el "font-size" es heredado del elemento padre, esto
-                        comienza desde el elemento raíz, cuyo
-                        estándar es de 16 px.
-                    </dd>
-                    <dt>
-                        Font style
-                    </dt>
-                    <dd>
-                        "font-style" se usa para poner un texto en modo "italic" (simular cursiva), recibe
-                        3 valores:
-                        <ul>
-                            <li>
-                                normal (sin itálica)
-                            </li>
-                            <li>
-                                italic (muestra el texto en us forma itálica si es que esta existe)
-                            </li>
-                            <li>
-                                oblique (simula una forma itálica si esta no existe por defecto)
-                            </li>
-                        </ul>
-                        Cuando se usa "italic"
-                        y no existe esta version de la fuente, se aplica "oblique" internamente
-                    </dd>
-                    <dt>
-                        Font weight
-                    </dt>
-                    <dd>
-                        "font-weight" se usa para especificar el grosor de un texto.
-                        Por lo general cada fuente puede tener su propio rango de grosores
-                        (light, normal, bold, extrabold, black, etc.), pero en la realidad
-                        solo suelen usarse 2 tipos comúnmente:
-                        <ul>
-                            <li>
-                                normal (grosor normal)
-                            </li>
-                            <li>
-                                bold (grosor mayor al normal)
-                            </li>
-                        </ul> 
-                        Otras opciones
-                        comunes son "lighter" y "bolder", las cuales fijan un grosor menor o mayor
-                        respecto al grosor de light y bold. El grosor también se puede expresar
-                        numéricamente lo cual da mayor control sobre este en comparación con el uso
-                        de palabras clave, el rango generalmente es de 100-900.
-                    </dd>
-                    <dt>
-                        Text transform
-                    </dt>
-                    <dd>
-                        "text-transform" como su propio nombre lo indica,
-                        permite la transformación de un texto, puede tomar 5 valores:
-                        <ul>
-                            <li>
-                                none (previene cualquier transformación)
-                            </li>
-                            <li>
-                                uppercase (transforma todo en texto a mayúsculas)
-                            </li>
-                            <li>
-                                lowercase (transforma todo el texto a minúsculas)
-                            </li>
-                            <li>
-                                capitalize (transforma todas las iniciales de cada palabra en
-                                mayúsculas)
-                            </li>
-                            <li>
-                                full-width (normaliza diferentes escrituras o
-                                símbolos)
-                            </li>
-                        </ul>
-                        "text-transform: full-width;" en especial,
-                        funciona como si creara una cuadricula donde
-                        cada carácter o símbolo abarcará todo el espacio disponible en su respectivo contenedor,
-                        esto hace que todos los símbolos o caracteres
-                        posean el mismo tamaño y distribución lo cual hace que tengan un estilo visual
-                        consistente. Generalmente se usa para caracteres o símbolos en otro idioma.
-                    </dd>
-                    <dt>
-                        Text decoration
-                    </dt>
-                    <dd>
-                        "text-decoration" se usa para activar o desactivar decoraciones
-                        en textos, un ejemplo, el subrayado. los valores que puede tomar principalmente son:
-                        <ul>
-                            <li>
-                                none (desactiva todas las decoraciones presentes en un texto)
-                            </li>
-                            <li>
-                                underline (rayado debajo del texto)
-                            </li>
-                            <li>
-                                overline (rayado sobre el texto)
-                            </li>
-                            <li>
-                                line-through (rayado en medio del texto, lo "tacha")
-                            </li>
-                        </ul>
-                        A su vez, esta propiedad es un shorthand para "text-decoration-line", "text-decoration-style",
-                        "text-decoration-color". Por ejemplo:
-                        <ul>
-                            <li>
-                                <span class="codigo--linea">text-decoration: line-through red wavy;</span>
-                            </li>
-                        </ul>
-                    </dd>
-                    <dt>
-                        Text shadow
-                    </dt>
-                    <dd>
-                        Se pueden agregar sombras a un texto usando la propiedad "text-shadow",
-                        puede tomar 4 valores:
-                        <ul>
-                            <li>
-                                a qué distancia aparecerá la sombra horizontalmente
-                            </li>
-                            <li>
-                                a qué distancia aparecerá la sombra verticalmente
-                            </li>
-                            <li>
-                                el blur, es decir, que tan solida se verá la sombra. cuanto más alto
-                                el valor, menos solida y clara será la sombra. su valor es 0 por defecto
-                            </li>
-                            <li>
-                                el color, el valor por defecto es el propio color actual
-                            </li>
-                        </ul>
-                        Se pueden agregar multiples sombras separando lo valores de cada una por una ','.
-                    </dd>
-                </dl>
-                <h3>
-                    Algunas propiedades para el "Text layout"
-                </h3>
-                <p>
-                    Una vez entendidas algunas de las propiedades esenciales para la edición de textos,
-                    el siguiente paso es el "layout", es decir, de qué forma se distribuyen estos.
-                </p>
-                <dl>
-                    <dt>
-                        Text align
-                    </dt>
-                    <dd>
-                        la propiedad "text-align" se usa para controlar la alineación de un texto, es decir, desde donde fluye el texto. 
-                        Existen cuatro valores:
-                        <ul>
-                            <li>
-                                center (centrado)
-                            </li>
-                            <li>
-                                left (izquierda)
-                            </li>
-                            <li>
-                                right (derecha)
-                            </li>
-                            <li>
-                                justify (justificado)
-                            </li>
-                        </ul>
-                        El único valor con el que realmente hay que tener "cuidado" es con el texto justificado
-                        ya que este hará que el texto tenga espacios diferentes, esto para que cada
-                        linea cubra exactamente todo el espacio disponible.
-                        Generalmente se ve mal.
-                    </dd>
-                    <dt>
-                        Line height
-                    </dt>
-                    <dd>
-                        La propiedad "line-height" dicta la altura de cada linea de texto (line-box).
-                        El mejor practica para asignar es usar valores sin unidades, es decir,
-                        multiplicadores. Una altura recomendada es 1.5 o 2 (doble espacio) estos
-                        significan 1.5 y 2 veces el tamaño del texto.
-                    <dt>
-                        Letter spacing y Word spacing
-                    </dt>
-                    <dd>
-                        las propiedades "letter-spacing" y "word-spacing" son similares a "line-height", estas
-                        sirven para modificar el espaciado entre letras y palabras respectivamente. Al igual
-                        que con "line-height", la mejor practica al asignar un valor es usando multiplicadores.
-                    </dd>
-                </dl>
-                <h3>
-                    Font shorthand
-                </h3>
-                <p>
-                    Varias de las propiedades descritas pueden ser modificadas mediante el shorthand "font", estas son las siguientes:
-                </p>
-                <ul>
-                    <li>
-                        font-style
-                    </li>
-                    <li>
-                        font-variant
-                    </li>
-                    <li>
-                        font-weight
-                    </li>
-                    <li>
-                        font-stretch
-                    </li>
-                    <li>
-                        font-size
-                    </li>
-                    <li>
-                        line-height
-                    </li>
-                    <li>
-                        font-family
-                    </li>
-                </ul>
-                <p>
-                    De entre todas las propiedades a asignar disponibles, las únicas requeridas
-                    tanto en presencia como en orden son "font-size" y "font-family", es decir, el "font-size" siempre debe
-                    declarada antes de "font-family"
-                </p>
-                <p>
-                    Otra regla para este shorthand es que el "font-size" siempre debe ir separado del
-                    "line-height" por medio de un '/'.
-                </p>
-                <p>
-                    Existen más propiedades disponibles para modificar textos, tanto para los etilos como para la distribución.
-                </p>
-            </article>
+<h2 class="apunte__titulo-h2">
+    Estilos para <span class="titulo-h2__span">textos</span>
+</h2>
+<p class="apunte__parrafo">
+    Uno de los usos principales para CSS es el de estilizar textos.
+    El texto dentro de un elemento se acomoda en la parte del "contenido" de una "caja", el cómo se acomoda un texto
+    depende del
+    idioma, pero generalmente
+    este comienza a ordenarse desde la parte superior izquierda y continúa hasta el final
+    de la línea disponible, una vez lo alcanza, continúa en la siguiente
+    línea y repite este proceso una y otra vez.
+</p>
+<p class="apunte__parrafo">
+    Las propiedades para comenzar a estilizar textos pueden separarse en dos categorías principalmente:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Font styles
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Propiedades que afectan el cómo se verá un texto.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Text layout
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Propiedades que afectan el cómo se distribuirá un texto.
+        </dd>
+    </div>
+</dl>
+<p class="apunte__parrafo">
+    Sin importar la clase de modificaciones que queramos realizar en un texto,
+    estas se aplicarán a todo el texto de dicho elemento y estas se heredarán a sus hijos posteriores sin importar el
+    nivel de anidación.
+    Para poder afectar solo ciertos "trozos" en particular de un texto, se necesita el uso de
+    otras etiquetas como <span class="codigo--linea">&lt;span&gt; ... &lt;/span&gt;</span> o algún pseudo elemento como
+    "::first-letter" (envuelve la primera letra de algo) o "::first-line" (envuelve la primera línea de algo).
+</p>
+<h3 class="apunte__titulo-h3">
+    Algunos conceptos para fuentes
+</h3>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Fuentes
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Una "fuente" es el estilo tipográfico que tendrá un texto.
+            En CSS tenemos dos propiedades para personalizar estas y sus características.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Web safe fonts
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Existen fuentes que están disponibles
+            en prácticamente todos los sistemas operativos, estas son llamadas "web safe fonts", algunos ejemplos son:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    Arial o Helvetica
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    Courier New o Courier
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    Georgia
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    Times New Roman o Times
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    Trebuchet MS
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    Verdana
+                </li>
+            </ul>
+            Estas son solo algunas de las "web safe fonts" disponibles.
+            La principal función de estas es ser "fallbacks" para cuando pudiera ocurrir
+            algún problema al intentar cargar nuestra o nuestras fuentes principales.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Tipos de fuentes
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Generalmente las fuentes llevan en sus nombres el tipo de fuente que son, algunos ejemplos serían:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    serif (texto con decoraciones. generalmente para títulos)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    sans-serif (sin serif, es decir, textos sin decoraciones. generalmente para texto normal)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    monospace (texto donde cada carácter tiene el mismo tamaño. generalmente para programación o para
+                    caracteres en
+                    diferentes idiomas)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    cursive (emula la cursiva)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    fantasy (decorativas. no es texto en sí)
+                </li>
+            </ul>
+            El agregar estos tipos como fallbacks, hará que se aplique la primera fuente que sea del tipo especificado.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Font stacks
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Es el conjunto de múltiples fuentes que especificamos para que el navegador
+            tenga opciones en caso de que una no se encuentre disponible, cada fuente se separa por comas
+            y van en orden de aplicación,
+            es decir, primero se agrega el "caso ideal", luego algunas opciones y por
+            último los tipos más genéricos posibles, pero que hasta cierto punto sigan funcionando para nuestro diseño.
+            Por ejemplo:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    <span class="codigo--linea">font-family: "fuente deseada", arial, sans-serif;</span>
+                </li>
+            </ul>
+            Algo a considerar es que aquellas fuentes cuyos nombres tengan espacios de por medio, es
+            recomendable ponerlas entre comillas al igual que cualquier nombre que pueda ser
+            interpretado como un tipo genérico o una palabra clave en CSS.
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    Algunas propiedades para el "Font style"
+</h3>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Color
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "color" en el caso de textos, cambia su color, pero en realidad lo que hace es
+            fijar el color del "foreground", es decir, lo que está al frente de los elementos como el
+            underline, el overline o más comúnmente las fuentes.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Font family
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "font-family" aplica una fuente o lista de fuentes diferentes
+            al texto. El navegador solo aplicará una fuente, en el caso de una
+            lista de fuentes, la primera disponible, si ninguna está disponible el
+            navegador usa la fuente por defecto de este.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Font size
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "font-size" sirve para definir el tamaño que tendrá una fuente dentro
+            de un elemento. Los valores más comunes que se usan para esto son:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    px (píxeles)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    em (unidad relativa al tamaño del texto del padre)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    rem (unidad relativa al tamaño del texto del elemento raíz)
+                </li>
+            </ul>
+            Por defecto el "font-size" es heredado del elemento padre, esto
+            comienza desde el elemento raíz, cuyo
+            estándar es de 16 px.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Font style
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "font-style" se usa para poner un texto en modo "italic" (simular cursiva), recibe
+            3 valores:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    normal (sin itálica)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    italic (muestra el texto en su forma itálica si es que esta existe)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    oblique (simula una forma itálica si esta no existe por defecto)
+                </li>
+            </ul>
+            Cuando se usa "italic"
+            y no existe esta versión de la fuente, se aplica "oblique" internamente
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Font weight
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "font-weight" se usa para especificar el grosor de un texto.
+            Por lo general cada fuente puede tener su propio rango de grosores
+            (light, normal, bold, extrabold, black, etc.), pero en la realidad
+            solo suelen usarse 2 tipos comúnmente:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    normal (grosor normal)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    bold (grosor mayor al normal)
+                </li>
+            </ul>
+            Otras opciones
+            comunes son "lighter" y "bolder", las cuales fijan un grosor menor o mayor
+            respecto al grosor de light y bold. El grosor también se puede expresar
+            numéricamente lo cual da mayor control sobre este en comparación con el uso
+            de palabras clave, el rango generalmente es de 100-900.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Text transform
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "text-transform" como su propio nombre lo indica,
+            permite la transformación de un texto, puede tomar 5 valores:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    none (previene cualquier transformación)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    uppercase (transforma todo el texto a mayúsculas)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    lowercase (transforma todo el texto a minúsculas)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    capitalize (transforma todas las iniciales de cada palabra en
+                    mayúsculas)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    full-width (normaliza diferentes escrituras o
+                    símbolos)
+                </li>
+            </ul>
+            "text-transform: full-width;" en especial,
+            funciona como si creara una cuadrícula donde
+            cada carácter o símbolo abarcará todo el espacio disponible en su respectivo contenedor,
+            esto hace que todos los símbolos o caracteres
+            posean el mismo tamaño y distribución lo cual hace que tengan un estilo visual
+            consistente. Generalmente se usa para caracteres o símbolos en otro idioma.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Text decoration
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "text-decoration" se usa para activar o desactivar decoraciones
+            en textos, un ejemplo, el subrayado. Los valores que puede tomar principalmente son:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    none (desactiva todas las decoraciones presentes en un texto)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    underline (rayado debajo del texto)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    overline (rayado sobre el texto)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    line-through (rayado en medio del texto, lo "tacha")
+                </li>
+            </ul>
+            A su vez, esta propiedad es un shorthand para "text-decoration-line", "text-decoration-style",
+            "text-decoration-color". Por ejemplo:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    <span class="codigo--linea">text-decoration: line-through red wavy;</span>
+                </li>
+            </ul>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Text shadow
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Se pueden agregar sombras a un texto usando la propiedad "text-shadow",
+            puede tomar 4 valores:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    A qué distancia aparecerá la sombra horizontalmente
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    A qué distancia aparecerá la sombra verticalmente
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    El blur, es decir, qué tan sólida se verá la sombra. Cuanto más alto
+                    el valor, menos sólida y clara será la sombra. Su valor es 0 por defecto
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    El color, el valor por defecto es el propio color actual
+                </li>
+            </ul>
+            Se pueden agregar múltiples sombras separando los valores de cada una por una ','.
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    Algunas propiedades para el "Text layout"
+</h3>
+<p class="apunte__parrafo">
+    Una vez entendidas algunas de las propiedades esenciales para la edición de textos,
+    el siguiente paso es el "layout", es decir, de qué forma se distribuyen estos.
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Text align
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La propiedad "text-align" se usa para controlar la alineación de un texto, es decir, desde donde fluye el
+            texto.
+            Existen cuatro valores:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    center (centrado)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    left (izquierda)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    right (derecha)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    justify (justificado)
+                </li>
+            </ul>
+            El único valor con el que realmente hay que tener "cuidado" es con el texto justificado
+            ya que este hará que el texto tenga espacios diferentes, esto para que cada
+            línea cubra exactamente todo el espacio disponible.
+            Generalmente se ve mal.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Line height
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La propiedad "line-height" dicta la altura de cada línea de texto (line-box).
+            La mejor práctica para asignar es usar valores sin unidades, es decir,
+            multiplicadores. Una altura recomendada es 1.5 o 2 (doble espacio) estos
+            significan 1.5 y 2 veces el tamaño del texto.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Letter spacing y Word spacing
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Las propiedades "letter-spacing" y "word-spacing" son similares a "line-height", estas
+            sirven para modificar el espaciado entre letras y palabras respectivamente. Al igual
+            que con "line-height", la mejor práctica al asignar un valor es usando multiplicadores.
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    Font shorthand
+</h3>
+<p class="apunte__parrafo">
+    Varias de las propiedades descritas pueden ser modificadas mediante el shorthand "font", estas son las siguientes:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        font-style
+    </li>
+    <li class="lista-desordenada__elemento">
+        font-variant
+    </li>
+    <li class="lista-desordenada__elemento">
+        font-weight
+    </li>
+    <li class="lista-desordenada__elemento">
+        font-stretch
+    </li>
+    <li class="lista-desordenada__elemento">
+        font-size
+    </li>
+    <li class="lista-desordenada__elemento">
+        line-height
+    </li>
+    <li class="lista-desordenada__elemento">
+        font-family
+    </li>
+</ul>
+<p class="apunte__parrafo">
+    De entre todas las propiedades a asignar disponibles, las únicas requeridas
+    tanto en presencia como en orden son "font-size" y "font-family", es decir, el "font-size" siempre debe
+    declararse antes de "font-family"
+</p>
+<p class="apunte__parrafo">
+    Otra regla para este shorthand es que el "font-size" siempre debe ir separado del
+    "line-height" por medio de un '/'.
+</p>
+<p class="apunte__parrafo">
+    Existen más propiedades disponibles para modificar textos, tanto para los estilos como para la distribución.
+</p>

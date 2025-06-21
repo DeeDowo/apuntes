@@ -1,42 +1,49 @@
-<article id="tablas">
-                <h2>
-                    Estilando tablas
-                </h2>
-                <p>
-                    Al ver una tabla por primera vez, podremos notar como esta se ve "amontonada", esto se debe a que en las tablas,
-                    cada celda solo toma el espacio necesario por defecto. Estos estilos predeterminados son malos objetivamente y siempre deberían modificarse al 
-                    menos un poco para tener así una mayor claridad. El estilar una tabla es un trabajo relativamente sencillo, siempre y cuando esta se 
-                    haya creado utilizando los elementos disponibles en HTML
-                    de forma correcta. Algunas propiedades especialmente útiles son:
-                </p>
-                <dl>
-                    <dt>
-                        "table-layout:fixed"
-                    </dt>
-                    <dd>
-                        Esta propiedad permite fijar tamaños específicos para las celdas, de esta forma podremos crear una tabla menos 
-                        "amontonada".
-                    </dd>
-                    <dt>
-                        "border-collapse:collapse"
-                    </dt>
-                    <dd>
-                        Esta propiedad hace que los diferentes bordes de una tabla se "junten". Por
-                        defecto los bordes de una tabla se muestran de forma individual (cada celda y
-                        la propia tabla tiene su borde), al usar "border-collapse:collapse"
-                        los diferentes bordes se combinan dando como resultado que solo se muestre un borde en general.
-                    </dd>
-                </dl>
-                <h3>
-                    Lineas de zebra
-                </h3>
-                <p>
-                    "Las lineas de zebra" son un efecto común, pero muy util para mejorar la legibilidad de una tabla. 
-                    Este efecto, como su nombre da a entender, significa que el color de las diferentes filas cambia simulando el patrón de las franjas de una zebra.
-                </p>
-                <figure>
-                    <figcaption>CSS lineas de zebra</figcaption>
-<code><pre>
+<h2 class="apunte__titulo-h2">
+    Estilando <span class="titulo-h2__span">tablas</span>
+</h2>
+<p class="apunte__parrafo">
+    Al ver una tabla por primera vez, podremos notar cómo esta se ve "amontonada", esto se debe a que en las tablas,
+    cada celda solo toma el espacio necesario por defecto. Estos estilos predeterminados son malos objetivamente y
+    siempre deberían modificarse al
+    menos un poco para tener así una mayor claridad. El estilar una tabla es un trabajo relativamente sencillo, siempre
+    y cuando esta se
+    haya creado utilizando los elementos disponibles en HTML
+    de forma correcta. Algunas propiedades especialmente útiles son:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            "table-layout:fixed"
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Esta propiedad permite fijar tamaños específicos para las celdas, de esta forma podremos crear una tabla
+            menos
+            "amontonada".
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            "border-collapse:collapse"
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Esta propiedad hace que los diferentes bordes de una tabla se "junten". Por
+            defecto los bordes de una tabla se muestran de forma individual (cada celda y
+            la propia tabla tiene su borde), al usar "border-collapse:collapse"
+            los diferentes bordes se combinan dando como resultado que solo se muestre un borde en general.
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    Líneas de cebra
+</h3>
+<p class="apunte__parrafo">
+    "Las líneas de cebra" son un efecto común, pero muy útil para mejorar la legibilidad de una tabla.
+    Este efecto, como su nombre da a entender, significa que el color de las diferentes filas cambia simulando el patrón
+    de las franjas de una cebra.
+</p>
+<figure class="figure">
+    <figcaption class="figure__titulo">CSS líneas de cebra</figcaption>
+    <code><pre class="codigo__bloque">
 tbody tr:nth-child(odd) {
 background-color: #ff33cc;
 }
@@ -44,15 +51,15 @@ background-color: #ff33cc;
 tbody tr:nth-child(even) {
 background-color: #e495e4;
 }</pre></code>
-                </figure>
-                <p>
-                    En el código anterior se aplica un "background-color" a las filas de una tabla (anidadas en el tbody explicito o
-                    implícito) con ayuda de las pseudoclase "nth-child", cuyo propósito es apuntar a un hijo en particular, en este caso
-                    lo usamos en conjunto con una función para aplicar una regla a los hijos pares y una a los hijos impares y de esta forma es
-                    como podemos crear de forma sencilla el patrón de "lineas de zebra" en nuestras tablas.
-                </p>
-                <p>
-                    La posición del "caption" de una tabla también se puedo modificar.
-                    Con la propiedad "caption-side" podemos elegir donde se mostrará (top/bottom).
-                </p>
-            </article>
+</figure>
+<p class="apunte__parrafo">
+    En el código anterior se aplica un "background-color" a las filas de una tabla (anidadas en el tbody explícito o
+    implícito) con ayuda de la pseudoclase "nth-child", cuyo propósito es apuntar a un hijo en particular, en este caso
+    lo usamos en conjunto con una función para aplicar una regla a los hijos pares y una a los hijos impares y de esta
+    forma es
+    como podemos crear de forma sencilla el patrón de "líneas de cebra" en nuestras tablas.
+</p>
+<p class="apunte__parrafo">
+    La posición del "caption" de una tabla también se puede modificar.
+    Con la propiedad "caption-side" podemos elegir dónde se mostrará (top/bottom).
+</p>

@@ -1,233 +1,255 @@
-<article id="Fondos y bordes">
-                <h2>
-                    Fondos y bordes
-                </h2>
-                <p>
-                    Posiblemente los elementos más comunes para dar estilos a un
-                    elemento en CSS son los bordes y los fondos.
-                </p>
-                <h3>
-                    Estilando fondos
-                </h3>
-                <p>
-                    Las principales propiedades para estilizar fondos son:
-                </p>
-                <dl>
-                    <dt>
-                        Colores de fondo
-                    </dt>
-                    <dd>
-                        "background-color" permite definir un color como fondo de algún elemento,
-                        acepta cualquiera de las formas disponibles para expresar un color.
-                    </dd>
-                    <dt>
-                        Imágenes de fondo
-                    </dt>
-                    <dd>
-                        Para poner una imagen como fondo de algún elemento se usa la propiedad "background-image"
-                        la cual como valor toma una imagen mediante la función "url()", en esta se indica la
-                        dirección (URL) de esta imagen, ya sea relativa o absoluta.
-                    </dd>
-                    <dd>
-                        Por defecto las imágenes no se redimensionan y aparecen desde la
-                        esquina superior izquierda. Estas imágenes se
-                        repiten indefinidamente hasta llenar el contenedor, es decir, cuando una imagen es más chica que su contenedor, esta se repetirá
-                        indefinidamente hasta abarcar todo el tamaño de su contenedor tanto vertical como horizontalmente.
-                        Mientras que si una imagen es más grande qué su contenedor,
-                        solo se mostrará un parte de ella.
-                    </dd>
-
-                    <dt>
-                        Degradados como fondo
-                    </dt>
-                    <dd>
-                        Un degradado puede ser usado como fondo, existen páginas especializadas para generar estos y hacer su uso más fácil.
-                        Se agregan con la propiedad "background-image" y como valor utiliza una función dependiendo del
-                        tipo de degradado que se quiera lograr.
-                        A los degradados se les pueden aplicar todas las mismas propiedades que a los fondos con imágenes.
-                    </dd>
-                    <dt>
-                        Repetición de fondos
-                    </dt>
-                    <dd>
-                        La propiedad "background-repeat", como su nombre lo indica,
-                        sirve para establecer el comportamiento de repetición de un fondo, sus valores son:
-                        <ul>
-                            <li>
-                                no-repeat (El fondo no se repite)
-                            </li>
-                            <li>
-                                repeat-x (El valor solo se repite en el eje x)
-                            </li>
-                            <li>
-                                repeat-y (El valor solo se repite en el eje y)
-                            </li>
-                            <li>
-                                repeat (El valor por defecto, hace que el fondo se repita tanto en el eje x como en el eje y)
-                            </li>
-                            <li>
-                                space (Repite tanto cómo sea posible el fondo completo y agrega espacio si es que lo hay)
-                            </li>
-                            <li>
-                                round (Similar a space con la diferencia de que en lugar de espacio, expande los fondos para que llenen los espacios)
-                            </li>
-                        </ul>
-                    </dd>
-                    <dt>
-                        Tamaño del fondo
-                    </dt>
-                    <dd>
-                        A una imagen de fondo se le puede asignar un tamaño con la propiedad
-                        "background-size", la cual puede tomar cualquier valor del tipo "length" o palabras claves (más común)
-                        <ul>
-                            <li>
-                                cover (Hará que la imagen cubra completamente la caja, pero sin cambiar su aspect ratio)
-                            </li>
-                            <li>
-                                contain (Hará que la imagen completa se encuentre en la caja, sin embargo, si
-                                esta no es del mismo aspect ratio que la imagen, habrán espacios en blanco en la caja)
-                            </li>
-                        </ul>
-                    </dd>
-                    <dt>
-                        Posición del fondo
-                    </dt>
-                    <dd>
-                        Para elegir la posición de origen de una imagen de fondo, es decir, desde donde aparece, podemos usar
-                        la propiedad "background-position", la cual toma 2 valores, uno horizontal y uno vertical
-                    </dd>
-                </dl>
-                <h4>
-                    Multiples fondos
-                </h4>
-                <p>
-                    En la propiedad "background-image" es posible definir multiples fondos a la vez, ya sean imágenes, degradados o colores.
-                    Estos se agregan como lo harían normalmente, simplemente separados con una ','
-                    y la forma en que estos se aplicarán será en un orden "descendiente", es decir, uno debajo
-                    del otro, el primer fondo agregado será el visible y a partir de el se irán
-                    agregando el resto por debajo. Una recomendación al agregar multiples fondos es siempre tener como "fallback" un fondo de un color solido
-                    al final.
-                </p>
-                <p>
-                    Cuando se agregan multiples fondos, el resto de propiedades disponibles ahora pueden tomar un valor para cada
-                    fondo, cada uno de estos valores separados por una ',' y cada valor afecta a un fondo diferente dependiendo del
-                    orden de declaración. Cuando se tienen menos
-                    valores que fondos, estos comienzan a ciclarse.
-                </p>
-                <h3>
-                    La propiedad "background"
-                </h3>
-                <p>
-                    Generalmente los fondos son aplicados usando la propiedad shorthand
-                    "background", en lugar de usar cada una de las diferentes propiedades descritas por separado.
-                </p>
-                <p>
-                    Cada fondo agregado usando "background" tendrá que tener definidas sus propiedades
-                    (tamaño, posición, repetición...) después del mismo. Al usarse multiples
-                    fondos, estos se separan por medio de comas, mientras que las propiedades de estos se separan con solo espacios.
-                </p>
-                <p>
-                    La unica regla estricta al usar "background" es que al fijar propiedades para los diferentes fondos,
-                    la posición siempre debe ir seguida del tamaño con un '/' entre estos.
-                </p>
-                <h3>
-                    Accesibilidad considerando fondos
-                </h3>
-                <p>
-                    Al agregar fondos, ya sean imágenes, colores o degradados, se tiene que tener en consideration
-                    que estos no afecten de forma negativa
-                    a los elementos html. Por ejemplo, que no afecten la legibilidad de algún texto.
-                </p>
-                <p>
-                    Siempre al agregar imágenes como fondos o degradados, agregar un color solido en caso de que el
-                    resto no llegaran a funcionar correctamente.
-                </p>
-                <p>
-                    Todo elemento agregado por css, no es realmente "visible" para el navegador, es decir, no
-                    es recomendable agregar información o elementos relevantes para el entendimiento de la misma
-                    mediante fondos, los fondos deben ser meramente decorativos.
-                </p>
-                <h3>
-                    Estilando bordes
-                </h3>
-                <p>
-                    Las principales propiedades para estilizar bordes son:
-                </p>
-                <dl>
-                    <dt>
-                        Estilo
-                    </dt>
-                    <dd>
-                        "border-style" sirve para definir el estilo de un borde, los valores más comunes son:
-                        <ul>
-                            <li>
-                                solid (Una linea contigua)
-                            </li>
-                            <li>
-                                dashed (Una linea segmentada)
-                            </li>
-                            <li>
-                                dotted (Una linea punteada)
-                            </li>
-                            <li>
-                                double (Doble linea)
-                            </li>
-                            <li>
-                                none (Sin borde alguno)
-                            </li>
-                        </ul>
-                        sin "border-style", el resto de propiedades para los bordes no tiene efecto alguno ya que estos son dependientes del estilo.
-                    <dt>
-                        Color
-                    </dt>
-                    <dd>
-                        "border-color" sirve para definir el color de un borde, acepta como valor cualquiera de las formas disponibles para
-                        declarar un color.
-                    </dd>
-                    <dt>
-                        Grosor
-                    </dt>
-                    <dd>
-                        "border-width" sirve para definir el grosor que tendrá un borde, acepta como valor cualquier tipo de medida
-                    </dd>
-                </dl>
-                <h4>
-                    Esquinas redondeadas
-                </h4>
-                <p>
-                    Al manejar bordes, una practica común, es hacer que las esquinas sean
-                    redondeadas, esto se logra usando la propiedad "border-radius" la cual
-                    es una shorthand para los 4 vertices de un borde.
-                    Al igual que con "border", se puede desglosar en propiedades más especificas
-                    (border-top-right-radius...).
-                </p>
-                <h3>
-                    La propiedad "border"
-                </h3>
-                <p>
-                    Para agregar bordes a nuestros elementos HTML, tenemos la
-                    propiedad shorthand "border", la cual nos permite modificar
-                    tanto su estilo, color y tamaño (grosor).
-                    Es posible afectar solo un lado en particular de un borde usando propiedades más especificas:
-                </p>
-                <ul>
-                    <li>
-                        border-top
-                    </li>
-                    <li>
-                        border-bottom
-                    </li>
-                    <li>
-                        border-left
-                    </li>
-                    <li>
-                        border-right
-                    </li>
-                </ul>
-                <p>
-                    Es posible ser aun más especifico usando una combinación del
-                    lado en especifico junto con la propiedad que queremos modificar de
-                    este (border-top-style...).
-                </p>
-                
-            </article>
+<h2 class="apunte__titulo-h2">
+    Fondos y <span class="titulo-h2__span">bordes</span>
+</h2>
+<p class="apunte__parrafo">
+    Posiblemente los elementos más comunes para dar estilos a un
+    elemento en CSS son los bordes y los fondos.
+</p>
+<h3 class="apunte__titulo-h3">
+    Estilando fondos
+</h3>
+<p class="apunte__parrafo">
+    Las principales propiedades para estilizar fondos son:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Colores de fondo
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "background-color" permite definir un color como fondo de algún elemento,
+            acepta cualquiera de las formas disponibles para expresar un color.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Imágenes de fondo
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Para poner una imagen como fondo de algún elemento se usa la propiedad "background-image"
+            la cual como valor toma una imagen mediante la función "url()", en esta se indica la
+            dirección (URL) de esta imagen, ya sea relativa o absoluta.
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            Por defecto las imágenes no se redimensionan y aparecen desde la
+            esquina superior izquierda. Estas imágenes se
+            repiten indefinidamente hasta llenar el contenedor, es decir, cuando una imagen es más pequeña que su
+            contenedor, esta se repetirá
+            indefinidamente hasta abarcar todo el tamaño de su contenedor tanto vertical como horizontalmente.
+            Mientras que si una imagen es más grande que su contenedor,
+            solo se mostrará una parte de ella.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Degradados como fondo
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Un degradado puede ser usado como fondo, existen páginas especializadas para generar estos y hacer su uso
+            más fácil.
+            Se agregan con la propiedad "background-image" y como valor utiliza una función dependiendo del
+            tipo de degradado que se quiera lograr.
+            A los degradados se les pueden aplicar todas las mismas propiedades que a los fondos con imágenes.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Repetición de fondos
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La propiedad "background-repeat", como su nombre lo indica,
+            sirve para establecer el comportamiento de repetición de un fondo, sus valores son:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    no-repeat (El fondo no se repite)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    repeat-x (El valor solo se repite en el eje x)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    repeat-y (El valor solo se repite en el eje y)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    repeat (El valor por defecto, hace que el fondo se repita tanto en el eje x como en el eje y)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    space (Repite tanto cómo sea posible el fondo completo y agrega espacio si es que lo hay)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    round (Similar a space con la diferencia de que en lugar de espacio, expande los fondos para que
+                    llenen los espacios)
+                </li>
+            </ul>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Tamaño del fondo
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            A una imagen de fondo se le puede asignar un tamaño con la propiedad
+            "background-size", la cual puede tomar cualquier valor del tipo "length" o palabras claves (más común)
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    cover (Hará que la imagen cubra completamente la caja, pero sin cambiar su aspect ratio)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    contain (Hará que la imagen completa se encuentre en la caja, sin embargo, si
+                    esta no es del mismo aspect ratio que la imagen, habrán espacios en blanco en la caja)
+                </li>
+            </ul>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Posición del fondo
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Para elegir la posición de origen de una imagen de fondo, es decir, desde donde aparece, podemos usar
+            la propiedad "background-position", la cual toma 2 valores, uno horizontal y uno vertical
+        </dd>
+    </div>
+</dl>
+<h4 class="apunte__titulo-h4">
+    Múltiples fondos
+</h4>
+<p class="apunte__parrafo">
+    En la propiedad "background-image" es posible definir múltiples fondos a la vez, ya sean imágenes, degradados o
+    colores.
+    Estos se agregan como lo harían normalmente, simplemente separados con una ','
+    y la forma en que estos se aplicarán será en un orden "descendiente", es decir, uno debajo
+    del otro, el primer fondo agregado será el visible y a partir de él se irán
+    agregando el resto por debajo. Una recomendación al agregar múltiples fondos es siempre tener como "fallback" un
+    fondo de un color sólido
+    al final.
+</p>
+<p class="apunte__parrafo">
+    Cuando se agregan múltiples fondos, el resto de propiedades disponibles ahora pueden tomar un valor para cada
+    fondo, cada uno de estos valores separados por una ',' y cada valor afecta a un fondo diferente dependiendo del
+    orden de declaración. Cuando se tienen menos
+    valores que fondos, estos comienzan a ciclarse.
+</p>
+<h3 class="apunte__titulo-h3">
+    La propiedad "background"
+</h3>
+<p class="apunte__parrafo">
+    Generalmente los fondos son aplicados usando la propiedad shorthand
+    "background", en lugar de usar cada una de las diferentes propiedades descritas por separado.
+</p>
+<p class="apunte__parrafo">
+    Cada fondo agregado usando "background" tendrá que tener definidas sus propiedades
+    (tamaño, posición, repetición...) después del mismo. Al usarse múltiples
+    fondos, estos se separan por medio de comas, mientras que las propiedades de estos se separan con solo espacios.
+</p>
+<p class="apunte__parrafo">
+    La única regla estricta al usar "background" es que al fijar propiedades para los diferentes fondos,
+    la posición siempre debe ir seguida del tamaño con un '/' entre estos.
+</p>
+<h3 class="apunte__titulo-h3">
+    Accesibilidad considerando fondos
+</h3>
+<p class="apunte__parrafo">
+    Al agregar fondos, ya sean imágenes, colores o degradados, se tiene que tener en consideración
+    que estos no afecten de forma negativa
+    a los elementos HTML. Por ejemplo, que no afecten la legibilidad de algún texto.
+</p>
+<p class="apunte__parrafo">
+    Siempre al agregar imágenes como fondos o degradados, agregar un color sólido en caso de que el
+    resto no llegaran a funcionar correctamente.
+</p>
+<p class="apunte__parrafo">
+    Todo elemento agregado por CSS, no es realmente "visible" para el navegador, es decir, no
+    es recomendable agregar información o elementos relevantes para el entendimiento de la misma
+    mediante fondos, los fondos deben ser meramente decorativos.
+</p>
+<h3 class="apunte__titulo-h3">
+    Estilando bordes
+</h3>
+<p class="apunte__parrafo">
+    Las principales propiedades para estilizar bordes son:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Estilo
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "border-style" sirve para definir el estilo de un borde, los valores más comunes son:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    solid (Una línea contigua)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    dashed (Una línea segmentada)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    dotted (Una línea punteada)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    double (Doble línea)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    none (Sin borde alguno)
+                </li>
+            </ul>
+            Sin "border-style", el resto de propiedades para los bordes no tiene efecto alguno ya que estos son
+            dependientes del estilo.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Color
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "border-color" sirve para definir el color de un borde, acepta como valor cualquiera de las formas
+            disponibles para
+            declarar un color.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Grosor
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "border-width" sirve para definir el grosor que tendrá un borde, acepta como valor cualquier tipo de medida
+        </dd>
+    </div>
+</dl>
+<h4 class="apunte__titulo-h4">
+    Esquinas redondeadas
+</h4>
+<p class="apunte__parrafo">
+    Al manejar bordes, una práctica común, es hacer que las esquinas sean
+    redondeadas, esto se logra usando la propiedad "border-radius" la cual
+    es una shorthand para los 4 vértices de un borde.
+    Al igual que con "border", se puede desglosar en propiedades más específicas
+    (border-top-right-radius...).
+</p>
+<h3 class="apunte__titulo-h3">
+    La propiedad "border"
+</h3>
+<p class="apunte__parrafo">
+    Para agregar bordes a nuestros elementos HTML, tenemos la
+    propiedad shorthand "border", la cual nos permite modificar
+    tanto su estilo, color y tamaño (grosor).
+    Es posible afectar solo un lado en particular de un borde usando propiedades más específicas:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        border-top
+    </li>
+    <li class="lista-desordenada__elemento">
+        border-bottom
+    </li>
+    <li class="lista-desordenada__elemento">
+        border-left
+    </li>
+    <li class="lista-desordenada__elemento">
+        border-right
+    </li>
+</ul>
+<p class="apunte__parrafo">
+    Es posible ser aún más específico usando una combinación del
+    lado en específico junto con la propiedad que queremos modificar de
+    este (border-top-style...).
+</p>

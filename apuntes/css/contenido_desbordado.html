@@ -1,72 +1,78 @@
- <article id="Contenido desbordado">
-                <h2>
-                    Contenido desbordado
-                </h2>
-                <p>
-                    El desbordamiento u "overflow" es lo que sucede cuando el contenido supera el
-                    tamaño de la "caja" que lo contiene, existen diferentes métodos y propiedades para controlar
-                    este comportamiento.
-                </p>
-                <h3>
-                    CSS y la información
-                </h3>
-                <p>
-                    Cuando sucede un desbordamiento, CSS sobrepone el mostrar el contenido a ocultarlo,
-                    es decir, CSS por defecto siempre mostrará el contenido desbordado sin importar
-                    cómo afecte esto al resto de la pagina en si.
-                </p>
-                <p>
-                    Cuando se fija el tamaño de una "caja", se tiene que tener en consideración todos estos posibles
-                    escenarios al igual que mecanismos implementados para poder manejarlos.
-                </p>
-                <h3>
-                    La propiedad "overflow"
-                </h3>
-                <p>
-                    "overflow" es unna propiedad que permite modificar el comportamiento de una "caja" cuando ocurre un desbordamiento,
-                    por defecto tiene el valor "visible", es decir, el contenido se mostrará y será visible el cómo se desborda. Algunos otros 
-                    valores que puede tomar son:
-                </p>
-                <dl>
-                    <dt>
-                        hidden
-                    </dt>
-                    <dd>
-                        Al usar este valor, forzamos al navegador a ocultar el contenido cuando ocurre un desborde,
-                        sin embargo esta no debería ser una solución, ya que ocurre una perdida de información.
-                    </dd>
-                    <dt>
-                        scroll
-                    </dt>
-                    <dd>
-                        A diferencia de "hidden", "scroll" es una solución más razonable ya que permite el
-                        poder desplazarse dentro de la propia "caja", de esta forma el contenido "desbordado"
-                        no saldrá de esta ni se ocultará del usuario,
-                        ya que tomará el espacio necesario mientras que la "caja" se comportará más como una
-                        "ventana" a este contenido.
-                    </dd>
-                    <dd>
-                        Por defecto, los scrolls siempre aparecen en ambos ejes e incluso si no hay un desbordamiento, para esto
-                        tenemos varias opciones, la primera es usar overflow-x u overflow-y para solo mostrar un
-                        scroll en uno de los ejes, sin embargo, esto igual siempre los mostrara incluso si no son necesarios.
-                    <dt>
-                        auto
-                    </dt>
-                    <dd>
-                        El valor "auto" permite que el navegador se encargue de decidir si
-                        mostrar o no los scrolls cuando no son necesarios.
-                    </dd>
-                </dl>
-                <h3>
-                    Desbordamiento no deseado
-                </h3>
-                <p>
-                    Al diseñar una web, siempre se tiene que tener en consideración qué puede
-                    provocar y cómo poder solucionar los desbordamientos, así como tratar de
-                    evitar que si quiera ocurran en primer lugar.
-                </p>
-                <p>
-                    Es una buena practica el probar que nuestro código CSS sea "robusto", es decir,
-                    que no ocurran compartimientos inesperados.
-                </p>
-            </article>
+<h2 class="apunte__titulo-h2">
+    Contenido <span class="titulo-h2__span">desbordado</span>
+</h2>
+<p class="apunte__parrafo">
+    El desbordamiento u "overflow" es lo que sucede cuando el contenido supera el
+    tamaño de la "caja" que lo contiene, existen diferentes métodos y propiedades para controlar
+    este comportamiento.
+</p>
+<h3 class="apunte__titulo-h3">
+    CSS y la información
+</h3>
+<p class="apunte__parrafo">
+    Cuando sucede un desbordamiento, CSS sobrepone el mostrar el contenido a ocultarlo,
+    es decir, CSS por defecto siempre mostrará el contenido desbordado sin importar
+    cómo afecte esto al resto de la página en sí.
+</p>
+<p class="apunte__parrafo">
+    Cuando se fija el tamaño de una "caja", se tiene que tener en consideración todos estos posibles
+    escenarios al igual que mecanismos implementados para poder manejarlos.
+</p>
+<h3 class="apunte__titulo-h3">
+    La propiedad "overflow"
+</h3>
+<p class="apunte__parrafo">
+    "overflow" es una propiedad que permite modificar el comportamiento de una "caja" cuando ocurre un desbordamiento,
+    por defecto tiene el valor "visible", es decir, el contenido se mostrará y será visible cómo se desborda. Algunos
+    otros
+    valores que puede tomar son:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            hidden
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Al usar este valor, forzamos al navegador a ocultar el contenido cuando ocurre un desborde,
+            sin embargo esta no debería ser una solución, ya que ocurre una pérdida de información.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            scroll
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            A diferencia de "hidden", "scroll" es una solución más razonable ya que permite el
+            poder desplazarse dentro de la propia "caja", de esta forma el contenido "desbordado"
+            no saldrá de esta ni se ocultará del usuario,
+            ya que tomará el espacio necesario mientras que la "caja" se comportará más como una
+            "ventana" a este contenido.
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            Por defecto, los scrolls siempre aparecen en ambos ejes e incluso si no hay un desbordamiento, para esto
+            tenemos varias opciones, la primera es usar overflow-x u overflow-y para solo mostrar un
+            scroll en uno de los ejes, sin embargo, esto igual siempre los mostrará incluso si no son necesarios.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            auto
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            El valor "auto" permite que el navegador se encargue de decidir si
+            mostrar o no los scrolls cuando no son necesarios.
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    Desbordamiento no deseado
+</h3>
+<p class="apunte__parrafo">
+    Al diseñar una web, siempre se tiene que tener en consideración qué puede
+    provocar y cómo poder solucionar los desbordamientos, así como tratar de
+    evitar que siquiera ocurran en primer lugar.
+</p>
+<p class="apunte__parrafo">
+    Es una buena práctica el probar que nuestro código CSS sea "robusto", es decir,
+    que no ocurran comportamientos inesperados.
+</p>

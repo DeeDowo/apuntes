@@ -1,259 +1,267 @@
-<article id="CSS (cascading style sheets)">
-                <h2>
-                    Introducción a CSS
-                </h2>
-                <p>
-                    Cascading Style Sheets (CSS) es el lenguaje para modificar los estilos de los elementos en un documento.
-                </p>
-                <h3>
-                    Estilos por defecto
-                </h3>
-                <p>
-                    Existen para asegurarse de que el contenido web sea entendible visualmente incluso si no los modificamos nosotros mismos.
-                    Por defecto se usa una "hoja de estilos" interna predefinida por los navegadores, esta es la responsable de cosas como:
-                </p>
-                <ul>
-                    <li>
-                        Resaltar títulos por sobre el texto normal
-                    </li>
-                    <li>
-                        Resaltar "links" por sobre el texto normal
-                    </li>
-                    <li>
-                        Hacer que las "listas" tengan un cierto formato
-                    </li>
-                </ul>
-                <h3>
-                    ¿Para qué es CSS?
-                </h3>
-                <p>
-                    Usando CSS podemos controlar con precision el cómo queremos que cada elemento de nuestra pagina se vea. Algunos ejemplos
-                    serían:
-                </p>
-                <ul>
-                    <li>
-                        Modificando textos
-                    </li>
-                    <li>
-                        Modificando la distribución de los elementos (layouts)
-                    </li>
-                    <li>
-                        Efectos especiales (animaciones)
-                    </li>
-                </ul>
-                <p>
-                    Sin embargo, siempre hay que considerar que aunque tengamos el poder de modificar
-                    cualquier elemento de cualquier forma que deseemos, este no siempre es el mejor acercamiento.
-                    Un ejemplo, las características distintivas de un elemento, como el resaltado visual de un titulo.  
-                </p>
-                <h3>
-                    Sintaxis básica de CSS
-                </h3>
-                <p>
-                    CSS es un <strong>lenguaje basado en reglas</strong> que se pueden aplicar a uno o más elementos HTML. Donde las partes principales de estas reglas 
-                    se pueden definir de la siguiente manera: 
-                </p>
-                <ul>
-                    <li>
-                        selector: como su nombre indica, selecciona un elemento en el documento.
-                    </li>
-                    <li>
-                        propiedad: indica que aspecto queremos modificar o agregar. 
-                    </li>
-                    <li>
-                        valor: como su nombre indica, se refiere al valor de un propiedad.
-                    </li>
-                </ul>
-                <figure>
-                    <figcaption>Estructura básica de la reglas en CSS</figcaption>
-                    <code><pre>
+<h2 class="apunte__titulo-h2">
+    Introducción a <span class="titulo-h2__span">CSS</span>
+</h2>
+<p class="apunte__parrafo">
+    Cascading Style Sheets (CSS) es el lenguaje para modificar los estilos de los elementos en un documento.
+</p>
+<h3 class="apunte__titulo-h3">
+    Estilos por defecto
+</h3>
+<p class="apunte__parrafo">
+    Existen para asegurarse de que el contenido web sea entendible visualmente incluso si no los modificamos nosotros
+    mismos.
+    Por defecto se usa una "hoja de estilos" interna predefinida por los navegadores, esta es la responsable de cosas
+    como:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        Resaltar títulos por sobre el texto normal
+    </li>
+    <li class="lista-desordenada__elemento">
+        Resaltar "links" por sobre el texto normal
+    </li>
+    <li class="lista-desordenada__elemento">
+        Hacer que las "listas" tengan un cierto formato
+    </li>
+</ul>
+<h3 class="apunte__titulo-h3">
+    ¿Para qué es CSS?
+</h3>
+<p class="apunte__parrafo">
+    Usando CSS podemos controlar con precisión cómo queremos que cada elemento de nuestra página se vea. Algunos
+    ejemplos
+    serían:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        Modificando textos
+    </li>
+    <li class="lista-desordenada__elemento">
+        Modificando la distribución de los elementos (layouts)
+    </li>
+    <li class="lista-desordenada__elemento">
+        Efectos especiales (animaciones)
+    </li>
+</ul>
+<p class="apunte__parrafo">
+    Sin embargo, siempre hay que considerar que aunque tengamos el poder de modificar
+    cualquier elemento de cualquier forma que deseemos, este no siempre es el mejor acercamiento.
+    Un ejemplo, las características distintivas de un elemento, como el resaltado visual de un título.
+</p>
+<h3 class="apunte__titulo-h3">
+    Sintaxis básica de CSS
+</h3>
+<p class="apunte__parrafo">
+    CSS es un <strong>lenguaje basado en reglas</strong> que se pueden aplicar a uno o más elementos HTML. Donde las
+    partes principales de estas reglas
+    se pueden definir de la siguiente manera:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        selector: como su nombre indica, selecciona un elemento en el documento.
+    </li>
+    <li class="lista-desordenada__elemento">
+        propiedad: indica qué aspecto queremos modificar o agregar.
+    </li>
+    <li class="lista-desordenada__elemento">
+        valor: como su nombre indica, se refiere al valor de una propiedad.
+    </li>
+</ul>
+<figure class="figure">
+    <figcaption class="figure__titulo">Estructura básica de las reglas en CSS</figcaption>
+    <pre class="codigo__bloque"><code>
 selector {
 
 propiedad : valor ;
 propiedad : valor ;
 
-}</pre></code>
-                </figure>
-                <figure>
-                    <figcaption>Ejemplo: estilando un título</figcaption>
-        <code><pre>
+}</code></pre>
+</figure>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo: estilando un título</figcaption>
+    <pre class="codigo__bloque"><code>
 h1 {
 
 color: red;
 font-size: 2.5rem;
 
-}</pre></code>
-                </figure>
-                <p>
-                    En el ejemplo anterior tenemos: 
-                </p>
-                <ul>
-                    <li>
-                        h1: Selector.
-                    </li>
-                    <li>
-                        llaves ({}): Contenedor de las declaraciones.
-                    </li>
-                    <li>
-                        color, font-size: Propiedades que queremos modificar.
-                    </li>
-                    <li>
-                        dos puntos (:): Asignador.
-                    </li>
-                    <li>
-                        red, 2.5rem: Valores a asignar.
-                    </li>
-                    <li>
-                        punto y coma (;): Final de una declaración.
-                    </li>
-                </ul>
-
-                <h3>
-                    ¿Cómo se aplica CSS?
-                </h3>
-                <p>
-                    Existen tres diferentes formas de aplicar CSS a un documento HTML
-                </p>
-                <ul>
-                    <li>
-                        External style sheets (se enlaza con el elemento link)
-                    </li>
-                    <li>
-                        Internal stylesheets (entre las etiquetas <span class="codigo--linea">&lt;style&gt; &lt;/style&gt;</span>)
-                    </li>
-                    <li>
-                        Inline styles (como atributos en elementos, no recomendable)
-                    </li>
-                </ul>
-                <dl>
-                    <dt>    
-                        External stylesheets
-                    </dt>
-                    <dd>
-                        Las instrucciones se encuentran en otro documento ".css", es la forma mas común.
-                        Es posible enlazar un solo archivo ".css" a multiples documentos para así formatear todos
-                        de la misma forma y tener un estilo consistente.
-                    </dd>
-                    <dd>
-                        Para enlazar un documento ".css" a un documento ".html" se usa la etiqueta "link" en  el
-                        elemento <span class="codigo--linea">&lt;head&gt; &lt;/head&gt;</span>, 
-                        con los atributos "href" para la URL y "rel" par indicar el tipo de relación, en este caso, "stylesheet".
-                    </dd>
-                    <dt>
-                        Internal stylesheets
-                    </dt>
-                    <dd>
-                        Las reglas están contenidas en el propio documento HTML.
-                        Anidadas en el elemento <span class="codigo--linea">&lt;style&gt; &lt;/style&gt;</span>.
-                    </dd>
-                    <dd>
-                        Es util cuando no tenemos acceso al documento ".css" o
-                        para hacer una pre visualización rápida. Sin embargo,
-                        no es util para la re utilización ni para la practica a gran escala.
-                    </dd>
-                    <dt>
-                        Inline stylesheets
-                    </dt>
-                    <dd>
-                        Utiliza el atributo "style" dentro de los elementos HTML, es donde se pueden definir una o mas propiedades con sus respectivos
-                        valores, solo afecta al elemento donde se use la propiedad.
-                        A diferencia de "internal stylesheet" donde sí existe una posible utilidad, los inline
-                        stylesheet son considerados una mala practica en general,
-                        especialmente porque combina estilos con semántica, lo cual no es correcto.
-                    </dd>
-                </dl>
-                <h3>
-                    Selectores
-                </h3>
-                <p>
-                    Visto en los puntos anteriores, es el apartado de las reglas CSS que indican a qué elemento o elementos se le aplicarán las diferentes 
-                    declaraciones dentro del bloque de reglas.
-                </p>
-                <dl>
-                    <dt>
-                        Seleccionando elementos de HTML
-                    </dt>
-                    <dd>
-                        Podemos utilizar como selector cualquier elemento "general" de HTML.
-                    </dd>
-                    <dt>
-                        Seleccionando por clases
-                    </dt>
-                    <dd>
-                        Especialmente util cuando no queremos modificar todos los elementos de un tipo en
-                        nuestro archivo, para esto podemos utilizar las clases (class), las
-                        cuales al usarlas como selectores sirven para solo modificar aquellos elementos que posean dicha clase en particular.
-                    </dd>
-                    <dt>
-                        Seleccionando por su ubicación
-                    </dt>
-                    <dd>
-                        Se definen relaciones entre selectores mediante diferentes símbolos (" ", +, &gt;, ~), estos establecen
-                        una regla especifica entre un par de selectores (solo se comparan dos selectores a la vez). 
-                        <ul>
-                            <li>
-                                " " (Indica un elemento anidado dentro de otro sin importar el nivel)
-                            </li>
-                            <li>
-                                &gt; (Indica un elemento anidado dentro de otro, solo en el primer nivel)
-                            </li>
-                            <li>
-                                + (Indica solo el primer elemento subsecuente)
-                            </li>
-                            <li>
-                                ~ (Indica todos los elementos subsecuentes)
-                            </li>
-                        </ul>
-                    </dd>
-                    <dt>
-                        Seleccionando basados en su estado
-                    </dt>
-                    <dd>
-                        El ejemplo más claro para este tipo de selectores es con un link, 
-                        que tiene dos estados, antes y después de haberlo visitado, otro ejemplo es
-                        al hacer "hover" sobre un elemento, es decir, al pasar el cursor sobre el.
-                    </dd>
-                </dl>
-                <h3>
-                    Más sintaxis de CSS
-                </h3>
-                <dl>
-                    <dt>
-                        Funciones
-                    </dt>
-                    <dd>
-                        Existe valores que pueden tomar la forma de una función. Una de las principales ventajas del uso de funciones es que permiten crear valores
-                        más "dinámicos".
-                    </dd>
-                    <dt>
-                        @rules
-                    </dt>
-                    <dd>
-                        Las "@rules" dan instrucciones sobre cómo se debe comportar CSS en algún dado caso.
-                    </dd>
-                    <dt>
-                        Shorthand properties
-                    </dt>
-                    <dd>
-                        Son propiedades que permiten ingresar mas de un valor a la vez.
-                    </dd>
-                    <dt>
-                        Comentarios en CSS
-                    </dt>
-                    <dd>
-                        Al igual que con HTML o algún lenguaje de programación,
-                        existen los comentarios en CSS, es decir, bloques de texto cuya función puede ser documentar, organizar, recordatorios, etc.
-                        Para agregar algún comentario en CSS, se hace con la notación "/* comentario */".
-                    </dd>
-                    <dt>
-                        Espacio blanco en CSS
-                    </dt>
-                    <dd>
-                        Estos son espacios, tab's o nuevas lineas.
-                        Al igual que en HTML, el navegador ignora los espacios extras innecesarios, sin embargo estos son útiles para un código más claro.
-                        Sin embargo, no todos los espacios en blanco son innecesarios ni irrelevantes para el navegador, 
-                        en el caso de propiedades que aceptan multiples parámetros (shorthand properties),
-                        estos son necesarios para separar un valor de otro, por otra parte, ningún nombre de parámetro tiene espacios en blanco.
-                    </dd>
-                </dl>
-            </article>
+}</code></pre>
+</figure>
+<p class="apunte__parrafo">
+    En el ejemplo anterior tenemos:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        h1: Selector.
+    </li>
+    <li class="lista-desordenada__elemento">
+        llaves ({}): Contenedor de las declaraciones.
+    </li>
+    <li class="lista-desordenada__elemento">
+        color, font-size: Propiedades que queremos modificar.
+    </li>
+    <li class="lista-desordenada__elemento">
+        dos puntos (:): Asignador.
+    </li>
+    <li class="lista-desordenada__elemento">
+        red, 2.5rem: Valores a asignar.
+    </li>
+    <li class="lista-desordenada__elemento">
+        punto y coma (;): Final de una declaración.
+    </li>
+</ul>
+<h3 class="apunte__titulo-h3">
+    ¿Cómo se aplica CSS?
+</h3>
+<p class="apunte__parrafo">
+    Existen tres diferentes formas de aplicar CSS a un documento HTML
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        External style sheets (se enlaza con el elemento link)
+    </li>
+    <li class="lista-desordenada__elemento">
+        Internal stylesheets (entre las etiquetas <span class="codigo--linea">&lt;style&gt; &lt;/style&gt;</span>)
+    </li>
+    <li class="lista-desordenada__elemento">
+        Inline styles (como atributos en elementos, no recomendable)
+    </li>
+</ul>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">External stylesheets</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Las instrucciones se encuentran en otro documento ".css", es la forma más común.
+            Es posible enlazar un solo archivo ".css" a múltiples documentos para así formatear todos
+            de la misma forma y tener un estilo consistente.
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            Para enlazar un documento ".css" a un documento ".html" se usa la etiqueta "link" en el
+            elemento <span class="codigo--linea">&lt;head&gt; &lt;/head&gt;</span>,
+            con los atributos "href" para la URL y "rel" para indicar el tipo de relación, en este caso, "stylesheet".
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Internal stylesheets</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Las reglas están contenidas en el propio documento HTML.
+            Anidadas en el elemento <span class="codigo--linea">&lt;style&gt; &lt;/style&gt;</span>.
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            Es útil cuando no tenemos acceso al documento ".css" o
+            para hacer una previsualización rápida. Sin embargo,
+            no es útil para la reutilización ni para la práctica a gran escala.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Inline stylesheets</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Utiliza el atributo "style" dentro de los elementos HTML, es donde se pueden definir una o más propiedades
+            con sus respectivos
+            valores, solo afecta al elemento donde se use la propiedad.
+            A diferencia de "internal stylesheet" donde sí existe una posible utilidad, los inline
+            stylesheet son considerados una mala práctica en general,
+            especialmente porque combinan estilos con semántica, lo cual no es correcto.
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    Selectores
+</h3>
+<p class="apunte__parrafo">
+    Visto en los puntos anteriores, es el apartado de las reglas CSS que indican a qué elemento o elementos se le
+    aplicarán las diferentes
+    declaraciones dentro del bloque de reglas.
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Seleccionando elementos de HTML</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Podemos utilizar como selector cualquier elemento "general" de HTML.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Seleccionando por clases</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Especialmente útil cuando no queremos modificar todos los elementos de un tipo en
+            nuestro archivo. Para esto podemos utilizar las clases (class), las
+            cuales al usarlas como selectores sirven para solo modificar aquellos elementos que posean dicha clase en
+            particular.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Seleccionando por su ubicación</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Se definen relaciones entre selectores mediante diferentes símbolos (" ", +, &gt;, ~), estos establecen
+            una regla específica entre un par de selectores (solo se comparan dos selectores a la vez).
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    " " (Indica un elemento anidado dentro de otro sin importar el nivel)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    &gt; (Indica un elemento anidado dentro de otro, solo en el primer nivel)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    + (Indica solo el primer elemento subsecuente)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    ~ (Indica todos los elementos subsecuentes)
+                </li>
+            </ul>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Seleccionando basados en su estado</dt>
+        <dd class="lista-descriptiva__descripcion">
+            El ejemplo más claro para este tipo de selectores es con un link,
+            que tiene dos estados, antes y después de haberlo visitado. Otro ejemplo es
+            al hacer "hover" sobre un elemento, es decir, al pasar el cursor sobre él.
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    Más sintaxis de CSS
+</h3>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Funciones</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Existen valores que pueden tomar la forma de una función. Una de las principales ventajas del uso de
+            funciones es que permiten crear valores
+            más "dinámicos".
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">@rules</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Las "@rules" dan instrucciones sobre cómo se debe comportar CSS en algún dado caso.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Shorthand properties</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Son propiedades que permiten ingresar más de un valor a la vez.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Comentarios en CSS</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Al igual que con HTML o algún lenguaje de programación,
+            existen los comentarios en CSS, es decir, bloques de texto cuya función puede ser documentar, organizar,
+            recordatorios, etc.
+            Para agregar algún comentario en CSS, se hace con la notación "/* comentario */".
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Espacio blanco en CSS</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Estos son espacios, tabulaciones o nuevas líneas.
+            Al igual que en HTML, el navegador ignora los espacios extras innecesarios. Sin embargo, estos son útiles
+            para un código más claro.
+            No obstante, no todos los espacios en blanco son innecesarios ni irrelevantes para el navegador.
+            En el caso de propiedades que aceptan múltiples parámetros (shorthand properties),
+            estos son necesarios para separar un valor de otro. Por otra parte, ningún nombre de parámetro tiene
+            espacios en blanco.
+        </dd>
+    </div>
+</dl>

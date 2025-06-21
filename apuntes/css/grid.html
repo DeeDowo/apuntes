@@ -1,341 +1,356 @@
-<article id="CSS grid layout">
-                <h2>
-                    Grid
-                </h2>
-                <p>
-                    "grid" es otro método para distribuir los elementos en una pagina web
-                    permite organizar el contenido en filas y columnas o más bien, permite 
-                    organizar el contenido de una pagina en una reticula.
-                    "grid" permite crear distribuciones más complejas y con mayor facilidad que el 
-                    resto de métodos presentados, generalmente "grid" se usa como un 
-                    esqueleto-base para el resto de técnicas.
-                </p>
-                <h3>
-                    Grid layout
-                </h3>
-                <p>
-                    Es un conjunto de líneas horizontales y verticales que 
-                    crean sectores en los cuales podemos posicionar nuestros elementos.
-                    Los elementos generales de un "grid" son columnas, filas y espacios entre estas o 
-                    "gutters" (espacios entre columnas y filas).
-                </p>
-                <p>
-                    Para definir un "grid", primero tenemos que tener un elemento 
-                    al cual le queremos dar esta propiedad y que este elemento
-                    tenga elementos hijos a los cuales queramos distribuir.
-                </p>
-                <p>
-                    Al igual que con "flex", tenemos que fijar la propiedad "display: grid" al 
-                    contenedor en cuestión. Por defecto "grid" agrega una sola columna en donde 
-                    se van acomodando los elementos en diferentes filas, similar al comportamiento por defecto.
-                </p>
-                <p>
-                    Para definir columnas diferentes podemos aplicar la propiedad "grid-template-columns", la cual define 
-                    la cantidad de columnas que se crearán. Por ejemplo, "grid-template-column:
-                    200px 200px 200px;" crearé un "grid" de 3 columnas donde cada una tendrá un tamaño de 200px.
-                </p>
-                <p>
-                    Sin embargo, no es recomendable aplicar tamaños fijos a elementos en general
-                    ya que abren la posibilidad a "overflows" de contenido. "grid" nos 
-                    permite el uso de "fr", la cual es una unidad fraccionaria, es decir, 
-                    un porción que distribuye el espacio en partes iguales.
-                    Por ejemplo, si usamos "grid-template-columns: 
-                    1fr 1fr 1fr;" esto nos creará 3 columnas, similar al punto anterior, 
-                    pero con la diferencia de que estas 3 columnas se dividirán 
-                    equitativamente el espacio disponible, el proceso para esto 
-                    es de la siguiente forma: 
-                </p>
-                <ol>
-                    <li>
-                        Primero se hace una division del espacio total 
-                        disponible entre la cantidad total de "fr" que hayamos especificado.
-                    </li>
-                    <li>
-                        Luego estas se dividen dependiendo de la porción asignada a cada columna.
-                    </li>
-                </ol>
-                <p>
-                    Por ejemplo, si tenemos "grid-template-columns: 2fr 1fr 1fr;", esto hará 
-                    que el espacio total se divida en 4 partes y que a la primera columna 
-                    se le asignen 2 de estas 4 partes, mientras que a la segunda y tercera 
-                    columna se le asignarán solo una de estas partes.
-                </p>
-                <p>
-                    Las unidades fijas se 
-                    pueden combinar con las unidades fraccionarias, en este caso, primero se 
-                    asignan las fijas y luego con el espacio restante disponible se calculan las fraccionarias.
-                </p>
-                <h3>
-                    Espacios en la reticula
-                </h3>
-                <p>
-                    Para poder crear entre filas, columnas o ambas, tenemos 3 propiedades a nuestra disposición:
-                </p>
-                <ul>
-                    <li>
-                        columns-gap (columnas)
-                    </li>
-                    <li>
-                        row-gap (filas)
-                    </li>
-                    <li>
-                        gap (shorthand para "column-gap" y "row-gap")
-                    </li>
-                </ul>
-                <p>
-                    Los espacios pueden ser de cualquier tipo de unidad, ya sea relativa o absoluta, pero no se pueden usar "fr".
-                </p>
-                <p>
-                    Una vez entendido lo anterior, podremos notar que no es precisamente 
-                    lo más practico especificar el tamaño de cada una de las columnas a la vez.
-                    Para facilitar esto podemos hacer uso de la función "repeat()", esta función permite 
-                    indicar primero la cantidad de repeticiones que habrán (en este caso la
-                    cantidad de columnas que queremos) y el tamaño de cada una de estas. Por ejemplo:
-                </p>
-                <figure>
-                    <figcaption>Ejemplo repeat() en grid</figcaption>
-<code><pre>
-grid-template-columns: repeat(4, 1fr);</pre></code>
-                </figure>
-                <p>
-                    De esta forma podemos crear 4 
-                    columnas donde cada una tendrá una fracción del espacio disponible.
-                </p>
-                <h3>
-                    Grids explícitos e implícitos
-                </h3>
-                <dl>
-                    <dt>
-                        Grid explicito:
-                    </dt>
-                    <dd>
-                        Es aquel que definimos. Creado usando "grid-template-columns" 
-                        o "grid-template-rows".
-                    </dd>
-                    <dt>    
-                        Grid implícito:
-                    </dt>   
-                    <dd>
-                        Genera columnas o filas de manera automática al notar 
-                        que no hay suficientes espacios para los elementos.
-                    </dd>
-                </dl>
-                <p>
-                    Por defecto el tamaño de las columnas o filas creadas implícitamente 
-                    tienen un tamaño "auto", es decir, son lo suficientemente grandes
-                    para contener su contenido. Si lo que queremos es asignar un tamaño 
-                    fijo a estos, podemos utilizar las propiedades "grid-auto-columns" o "grid-auto-rows" dependiendo del caso y con estas 
-                    asignar el tamaño que tendrán estas cuando se generen.
-                </p>
-                <h3>
-                    La función minmax() en grid
-                </h3>
-                <p>
-                    El fijar tamaños a cualquier 
-                    elemento no suele ser la mejor opción y en grid no es la excepción. Fijar tamaños abre la ventana a 
-                    posibles "overflows", para evitar esto podemos usar la función "minmax()",
-                    la cual nos da más control para estos casos. Nos permite fijar un tamaño
-                    mínimo y dejar en "auto" cuando el contenido de un elemento sea superior
-                    a este.Por ejemplo, teniendo "minmax(100px, auto)", estamos 
-                    diciendo que el tamaño mínimo de estos contenedores será de 100px,
-                    pero en el caso de que este tamaño se llegara a sobrepasar, 
-                    el contenedor crecerá de forma automática, algo a considerar, 
-                    es que esta expansion, solo afecta a la fila o columna en cuestión.
-                </p>
-                <h3>
-                    Tantas columnas como sea posible
-                </h3>
-                <p>
-                    Podemos combinar todo lo mencionado anteriormente para crear un 
-                    "patrón" que creará columnas de forma automática, utilizando 
-                    todo el espacio disponible, esto se hace de la siguiente forma:
-                </p>
-<code><pre>
-display: grid;
+<h2 class="apunte__titulo-h2">
+    Grid
+</h2>
+<p class="apunte__parrafo">
+    "grid" es otro método para distribuir los elementos en una página web
+    que permite organizar el contenido en filas y columnas, o más bien, permite
+    organizar el contenido de una página en una retícula.
+    "grid" permite crear distribuciones más complejas y con mayor facilidad que el
+    resto de métodos presentados. Generalmente "grid" se usa como un
+    esqueleto-base para el resto de técnicas.
+</p>
+<h3 class="apunte__titulo-h3">
+    Grid layout
+</h3>
+<p class="apunte__parrafo">
+    Es un conjunto de líneas horizontales y verticales que
+    crean sectores en los cuales podemos posicionar nuestros elementos.
+    Los elementos generales de un "grid" son columnas, filas y espacios entre estas o
+    "gutters" (espacios entre columnas y filas).
+</p>
+<p class="apunte__parrafo">
+    Para definir un "grid", primero tenemos que tener un elemento
+    al cual le queremos dar esta propiedad y que este elemento
+    tenga elementos hijos a los cuales queramos distribuir.
+</p>
+<p class="apunte__parrafo">
+    Al igual que con "flex", tenemos que fijar la propiedad "display: grid" al
+    contenedor en cuestión. Por defecto "grid" agrega una sola columna en donde
+    se van acomodando los elementos en diferentes filas, similar al comportamiento por defecto.
+</p>
+<p class="apunte__parrafo">
+    Para definir columnas diferentes podemos aplicar la propiedad "grid-template-columns", la cual define
+    la cantidad de columnas que se crearán. Por ejemplo, "grid-template-columns:
+    200px 200px 200px;" creará un "grid" de 3 columnas donde cada una tendrá un tamaño de 200px.
+</p>
+<p class="apunte__parrafo">
+    Sin embargo, no es recomendable aplicar tamaños fijos a elementos en general
+    ya que abren la posibilidad a "overflows" de contenido. "grid" nos
+    permite el uso de "fr", la cual es una unidad fraccionaria, es decir,
+    una porción que distribuye el espacio en partes iguales.
+    Por ejemplo, si usamos "grid-template-columns:
+    1fr 1fr 1fr;" esto nos creará 3 columnas, similar al punto anterior,
+    pero con la diferencia de que estas 3 columnas se dividirán
+    equitativamente el espacio disponible. El proceso para esto
+    es de la siguiente forma:
+</p>
+<ol class="lista-ordenada lista-desordenada">
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Primero se hace una división del espacio total
+        disponible entre la cantidad total de "fr" que hayamos especificado.
+    </li>
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Luego estas se dividen dependiendo de la porción asignada a cada columna.
+    </li>
+</ol>
+<p class="apunte__parrafo">
+    Por ejemplo, si tenemos "grid-template-columns: 2fr 1fr 1fr;", esto hará
+    que el espacio total se divida en 4 partes y que a la primera columna
+    se le asignen 2 de estas 4 partes, mientras que a la segunda y tercera
+    columna se le asignarán solo una de estas partes.
+</p>
+<p class="apunte__parrafo">
+    Las unidades fijas se
+    pueden combinar con las unidades fraccionarias. En este caso, primero se
+    asignan las fijas y luego con el espacio restante disponible se calculan las fraccionarias.
+</p>
+<h3 class="apunte__titulo-h3">
+    Espacios en la retícula
+</h3>
+<p class="apunte__parrafo">
+    Para poder crear espacios entre filas, columnas o ambas, tenemos 3 propiedades a nuestra disposición:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        column-gap (columnas)
+    </li>
+    <li class="lista-desordenada__elemento">
+        row-gap (filas)
+    </li>
+    <li class="lista-desordenada__elemento">
+        gap (shorthand para "column-gap" y "row-gap")
+    </li>
+</ul>
+<p class="apunte__parrafo">
+    Los espacios pueden ser de cualquier tipo de unidad, ya sea relativa o absoluta, pero no se pueden usar "fr".
+</p>
+<p class="apunte__parrafo">
+    Una vez entendido lo anterior, podremos notar que no es precisamente
+    lo más práctico especificar el tamaño de cada una de las columnas a la vez.
+    Para facilitar esto podemos hacer uso de la función "repeat()". Esta función permite
+    indicar primero la cantidad de repeticiones que habrán (en este caso la
+    cantidad de columnas que queremos) y el tamaño de cada una de estas. Por ejemplo:
+</p>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo repeat() en grid</figcaption>
+    <pre class="codigo__bloque"><code>grid-template-columns: repeat(4, 1fr);</code></pre>
+</figure>
+<p class="apunte__parrafo">
+    De esta forma podemos crear 4
+    columnas donde cada una tendrá una fracción del espacio disponible.
+</p>
+<h3 class="apunte__titulo-h3">
+    Grids explícitos e implícitos
+</h3>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Grid explícito:
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Es aquel que definimos. Creado usando "grid-template-columns"
+            o "grid-template-rows".
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Grid implícito:
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Genera columnas o filas de manera automática al notar
+            que no hay suficientes espacios para los elementos.
+        </dd>
+    </div>
+</dl>
+<p class="apunte__parrafo">
+    Por defecto el tamaño de las columnas o filas creadas implícitamente
+    tienen un tamaño "auto", es decir, son lo suficientemente grandes
+    para contener su contenido. Si lo que queremos es asignar un tamaño
+    fijo a estos, podemos utilizar las propiedades "grid-auto-columns" o "grid-auto-rows" dependiendo del caso y con
+    estas
+    asignar el tamaño que tendrán estas cuando se generen.
+</p>
+<h3 class="apunte__titulo-h3">
+    La función minmax() en grid
+</h3>
+<p class="apunte__parrafo">
+    El fijar tamaños a cualquier
+    elemento no suele ser la mejor opción y en grid no es la excepción. Fijar tamaños abre la ventana a
+    posibles "overflows". Para evitar esto podemos usar la función "minmax()",
+    la cual nos da más control para estos casos. Nos permite fijar un tamaño
+    mínimo y dejar en "auto" cuando el contenido de un elemento sea superior
+    a este. Por ejemplo, teniendo "minmax(100px, auto)", estamos
+    diciendo que el tamaño mínimo de estos contenedores será de 100px,
+    pero en el caso de que este tamaño se llegara a sobrepasar,
+    el contenedor crecerá de forma automática. Algo a considerar,
+    es que esta expansión solo afecta a la fila o columna en cuestión.
+</p>
+<h3 class="apunte__titulo-h3">
+    Tantas columnas como sea posible
+</h3>
+<p class="apunte__parrafo">
+    Podemos combinar todo lo mencionado anteriormente para crear un
+    "patrón" que creará columnas de forma automática, utilizando
+    todo el espacio disponible. Esto se hace de la siguiente forma:
+</p>
+<pre class="codigo__bloque"><code>display: grid;
 grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 grid-auto-rows: minmax(50px, auto);
-gap: 20px;</pre></code>
-                <p>
-                    Este código realiza lo siguiente:
-                </p>
-                <ol>
-                    <li>
-                        Asignamos "display: grid;".
-                    </li>
-                    <li>
-                        Asignamos "grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))", 
-                        utilizando la función "repeat",
-                        luego usamos la palabra clave "auto-fit", que significa que se 
-                        crearán tantas columnas como sea posible, y por ultimo la función minmax(), 
-                        la cual indica qué tamaño mínimo tendrá cada columna y que de ser posible un tamaño superior, cada una será de 
-                        "1fr", es decir, del mismo tamaño. En esencia esta declaración está asegurando que siempre tendremos el espacio
-                        lleno de columnas de al menos 100px, que todas serán del mismo tamaño y
-                        que estas ocuparán todo el espacio disponible.
-                    </li>
-                    <li>
-                        Asignamos "grid-auto-rows: minmax(50px, auto);" eso significa 
-                        que cada fila creada de forma automática tendrá al menos 50px de altura, pero que si necesita más, se expandirá para abarcarlo.
-                    </li>
-                    <li>
-                        Por ultimo asignamos "gap: 20px;", con esto decimos que entre 
-                        cada columna y fila habrán 20px de espacio como separación.
-                    </li>
-                </ol>
-                <h3>
-                    Ubicación basada en "lineas"
-                </h3>
-                <p>
-                    Una vez entendidos los conceptos fundamentales para crear un "grid",
-                    podemos comenzar a usarlo, es decir, comenzar a acomodar contenido dentro de la reticula creada.
-                </p>
-                <p>
-                    Lo primero para poder posicionar nuestro contenido utilizando "grid", es
-                    entender el cómo se "ve" este, para el navegador solo son líneas que separan
-                    sectores, cada una tiene un numero comenzando 
-                    desde el "1", por ejemplo, si tenemos un grid con 2 columnas y 2 filas,
-                    eso significaría que tenemos 4 cuadrantes disponibles:
-                </p>
-                <ul>
-                    <li>
-                        "1-2/1-2" (columna/fila)
-                    </li>
-                    <li>
-                        "2-3/1-2" (columna/fila)
-                    </li>
-                    <li> 
-                        "1-2/2-3" (columna/fila)
-                    </li>
-                    <li>
-                        "2-3/2-3" (columna/fila)
-                    </li>
-                </ul>
-                <p>
-                    Usamos estas líneas como referencia para poder posicionar nuestros elementos
-                    dentro de un "grid", la dirección de estos "números" depende del "writing mode" 
-                    del navegador (depende de idioma).
-                </p>
-                <p>
-                    Volviendo al cómo ubicar nuestros elementos, para esto tenemos 
-                    varias propiedades que indican una linea de inicio y una linea de fin.
-                </p>
-                <dl>
-                    <dt>
-                        grid-column-start
-                    </dt>
-                    <dd>
-                        Para indicar la columna desde dónde inicia nuestro elemento.
-                    </dd>
-                    <dt>
-                        grid-columns-end
-                    </dt>
-                    <dd>
-                        Para indicar la columna en dónde finaliza nuestro elemento.
-                    </dd>
-                    <dt>
-                        grid-row-start
-                    </dt>
-                    <dd>
-                        Para indicar la fila desde dónde inicia nuestro elemento.
-                    </dd>
-                    <dt>
-                        grid-row-end
-                    </dt>
-                    <dd>
-                        Para indicar la fila en dónde termina nuestro elemento.
-                    </dd>
-                    <dt>    
-                        grid-column
-                    </dt>
-                    <dd>
-                        Permite indicar tanto el inicio como el final de las columnas separadas por un '/'.
-                    </dd>
-                    <dt>
-                        grid-row
-                    </dt>
-                    <dd>
-                        Permite indicar tanto el inicio como el final de las filas separadas por un '/'.
-                    </dd>
-                </dl>
-                <p>
-                    Cuando aplicamos "display: grid" a un elemento, lo convertimos en un 
-                    contenedor "grid" y todos sus elementos se acomodarán es el sector que 
-                    especifiquemos. Cuando no especificamos explícitamente que lugar o
-                    cuantos lugares tomará cada elemento, estos se acomodan conforma aparezcan en el documento HTML.
-                </p>
-                <h3>
-                    Ubicación basada en "areas"
-                </h3>
-                <p>
-                    Una forma alternativa para poder posicionar elementos en un 
-                    "grid", más sencilla e intuitiva, ess a traves de la
-                    propiedad "grid-template-areas" donde a cada sector del "grid" se le asigna 
-                    un nombre y luego estos nombres al ser referenciados con la propiedad "grid-area"
-                    hará que dicho elemento se posicione en el sector o sectores indicados.
-                </p>
-                <p>
-                    La recomendación principal para su uso es saber de antemano la clase de 
-                    distribución que queramos hacer y al asignar los nombres de los cuadrantes,
-                    utilizar los propios nombres de los elementos o algunos autodescriptivos.
-                    Un ejemplo de la notación del "grid-template-areas" es:
-                </p>
-                <figure>
-                    <figcaption>Ejemplo areas "grid"</figcaption>
-<code><pre>
-contenedor{
-display: grid;
-grid-template-areas:
-"area1 area1"
-"area2 area2"
-"area3 area3";
+gap: 20px;</code></pre>
+<p class="apunte__parrafo">
+    Este código realiza lo siguiente:
+</p>
+<ol class="lista-ordenada lista-desordenada">
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Asignamos "display: grid;".
+    </li>
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Asignamos "grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))",
+        utilizando la función "repeat",
+        luego usamos la palabra clave "auto-fit", que significa que se
+        crearán tantas columnas como sea posible, y por último la función minmax(),
+        la cual indica qué tamaño mínimo tendrá cada columna y que de ser posible un tamaño superior, cada una será de
+        "1fr", es decir, del mismo tamaño. En esencia esta declaración está asegurando que siempre tendremos el espacio
+        lleno de columnas de al menos 100px, que todas serán del mismo tamaño y
+        que estas ocuparán todo el espacio disponible.
+    </li>
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Asignamos "grid-auto-rows: minmax(50px, auto);" eso significa
+        que cada fila creada de forma automática tendrá al menos 50px de altura, pero que si necesita más, se expandirá
+        para abarcarlo.
+    </li>
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Por último asignamos "gap: 20px;", con esto decimos que entre
+        cada columna y fila habrán 20px de espacio como separación.
+    </li>
+</ol>
+<h3 class="apunte__titulo-h3">
+    Ubicación basada en "líneas"
+</h3>
+<p class="apunte__parrafo">
+    Una vez entendidos los conceptos fundamentales para crear un "grid",
+    podemos comenzar a usarlo, es decir, comenzar a acomodar contenido dentro de la retícula creada.
+</p>
+<p class="apunte__parrafo">
+    Lo primero para poder posicionar nuestro contenido utilizando "grid", es
+    entender el cómo se "ve" este. Para el navegador solo son líneas que separan
+    sectores, cada una tiene un número comenzando
+    desde el "1". Por ejemplo, si tenemos un grid con 2 columnas y 2 filas,
+    eso significaría que tenemos 4 cuadrantes disponibles:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        "1-2/1-2" (columna/fila)
+    </li>
+    <li class="lista-desordenada__elemento">
+        "2-3/1-2" (columna/fila)
+    </li>
+    <li class="lista-desordenada__elemento">
+        "1-2/2-3" (columna/fila)
+    </li>
+    <li class="lista-desordenada__elemento">
+        "2-3/2-3" (columna/fila)
+    </li>
+</ul>
+<p class="apunte__parrafo">
+    Usamos estas líneas como referencia para poder posicionar nuestros elementos
+    dentro de un "grid". La dirección de estos "números" depende del "writing mode"
+    del navegador (depende de idioma).
+</p>
+<p class="apunte__parrafo">
+    Volviendo al cómo ubicar nuestros elementos, para esto tenemos
+    varias propiedades que indican una línea de inicio y una línea de fin.
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            grid-column-start
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Para indicar la columna desde dónde inicia nuestro elemento.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            grid-columns-end
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Para indicar la columna en dónde finaliza nuestro elemento.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            grid-row-start
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Para indicar la fila desde dónde inicia nuestro elemento.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            grid-row-end
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Para indicar la fila en dónde termina nuestro elemento.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            grid-column
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Permite indicar tanto el inicio como el final de las columnas separadas por un '/'.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            grid-row
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Permite indicar tanto el inicio como el final de las filas separadas por un '/'.
+        </dd>
+    </div>
+</dl>
+<p class="apunte__parrafo">
+    Cuando aplicamos "display: grid" a un elemento, lo convertimos en un
+    contenedor "grid" y todos sus elementos se acomodarán en el sector que
+    especifiquemos. Cuando no especificamos explícitamente qué lugar o
+    cuántos lugares tomará cada elemento, estos se acomodan conforme aparezcan en el documento HTML.
+</p>
+<h3 class="apunte__titulo-h3">
+    Ubicación basada en "areas"
+</h3>
+<p class="apunte__parrafo">
+    Una forma alternativa para poder posicionar elementos en un
+    "grid", más sencilla e intuitiva, es a través de la
+    propiedad "grid-template-areas" donde a cada sector del "grid" se le asigna
+    un nombre y luego estos nombres al ser referenciados con la propiedad "grid-area"
+    hará que dicho elemento se posicione en el sector o sectores indicados.
+</p>
+<p class="apunte__parrafo">
+    La recomendación principal para su uso es saber de antemano la clase de
+    distribución que queramos hacer y al asignar los nombres de los cuadrantes,
+    utilizar los propios nombres de los elementos o algunos autodescriptivos.
+    Un ejemplo de la notación del "grid-template-areas" es:
+</p>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo areas "grid"</figcaption>
+    <pre class="codigo__bloque"><code>contenedor {
+    display: grid;
+    grid-template-areas:
+        "area1 area1"
+        "area2 area2"
+        "area3 area3";
 }
 
 ...
 
-selector{
-grid-area: area1;
-} </pre></code>
-                </figure>
-                <p>
-                    En este ejemplo el elemento seleccionado se posicionará en los sectores con el nombre clave "area1". 
-                    Para pode usar "grid-template-areas" se tienen que seguir ciertas reglas:
-                </p>
-                <ul>
-                    <li>    
-                        Todas los sectores deben ser nombrados.
-                    </li>
-                    <li>
-                        Para usar mas de una sector se debe repetir el nombre.
-                    </li>
-                    <li>
-                        Para dejar un sector vacío se usa un '.'.
-                    </li>
-                    <li>
-                        Las areas deben ser formas rectangulares, no pueden haber formas 'L' o de cualquier tipo diferente al rectangular.
-                    </li>
-                    <li>
-                        Las areas iguales solo pueden ser contiguas, no pueden estar dispersadas en cualquier parte.
-                    </li>
-                </ul>
-                <p>
-                    El uso de "grid-template-areas" es muy util para un layout general, ya que 
-                    es muy fácil de expresar y entender a simple vista.
-                </p>
-                <h3>
-                    Grids anidados y "subgrid"
-                </h3>
-                <p>
-                    Al igual que con flex, es posible anidar "grids" dentro de "grids", 
-                    esto crea un "grid" anidado.
-                </p>
-                <p>
-                    Un valor que se puede usar en "grids" anidados es el de "subgrid" el cual sirve para que 
-                    estos "grids" anidados, sigan las líneas del "grid" padre, es decir, las filas y columnas de este.
-                    Por ejemplo, si un "grid"
-                    anidado ocupa 2 columnas de un "grid" padre de 3 columnas y en este "grid" anidado usamos 
-                    <span class="codigo--linea">"grid-template-column: subgrid;"</span> este "grid" anidado tendrá las lineas de las 2 columnas que ocupa en el padre.
-                    En esta ejemplo solo declaramos
-                    "subgrid" para las columnas, lo que significa que las filas se crearán 
-                    de forma automática o las podemos definir nosotros, pero estas
-                    no estarán ligadas al "grid" del padre, sin embargo, igual podríamos aplicar "subgrid" para estas.
-                </p>
-            </article>
+selector {
+    grid-area: area1;
+}</code></pre>
+</figure>
+<p class="apunte__parrafo">
+    En este ejemplo el elemento seleccionado se posicionará en los sectores con el nombre clave "area1".
+    Para poder usar "grid-template-areas" se tienen que seguir ciertas reglas:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        Todos los sectores deben ser nombrados.
+    </li>
+    <li class="lista-desordenada__elemento">
+        Para usar más de un sector se debe repetir el nombre.
+    </li>
+    <li class="lista-desordenada__elemento">
+        Para dejar un sector vacío se usa un '.'.
+    </li>
+    <li class="lista-desordenada__elemento">
+        Las áreas deben ser formas rectangulares, no pueden haber formas 'L' o de cualquier tipo diferente al
+        rectangular.
+    </li>
+    <li class="lista-desordenada__elemento">
+        Las áreas iguales solo pueden ser contiguas, no pueden estar dispersas en cualquier parte.
+    </li>
+</ul>
+<p class="apunte__parrafo">
+    El uso de "grid-template-areas" es muy útil para un layout general, ya que
+    es muy fácil de expresar y entender a simple vista.
+</p>
+<h3 class="apunte__titulo-h3">
+    Grids anidados y "subgrid"
+</h3>
+<p class="apunte__parrafo">
+    Al igual que con flex, es posible anidar "grids" dentro de "grids",
+    esto crea un "grid" anidado.
+</p>
+<p class="apunte__parrafo">
+    Un valor que se puede usar en "grids" anidados es el de "subgrid" el cual sirve para que
+    estos "grids" anidados sigan las líneas del "grid" padre, es decir, las filas y columnas de este.
+    Por ejemplo, si un "grid"
+    anidado ocupa 2 columnas de un "grid" padre de 3 columnas y en este "grid" anidado usamos
+    <span class="codigo--linea">"grid-template-columns: subgrid;"</span> este "grid" anidado tendrá las líneas de las 2
+    columnas que ocupa en el padre.
+    En este ejemplo solo declaramos
+    "subgrid" para las columnas, lo que significa que las filas se crearán
+    de forma automática o las podemos definir nosotros, pero estas
+    no estarán ligadas al "grid" del padre. Sin embargo, igual podríamos aplicar "subgrid" para estas.
+</p>

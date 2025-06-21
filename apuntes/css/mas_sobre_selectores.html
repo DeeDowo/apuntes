@@ -1,430 +1,340 @@
-<article id="Más sobre selectores">
-                <h2>
-                    Más sobre selectores
-                </h2>
-                <p>
-                    Posiblemente la parte más importante en CSS, los selectores son los indicadores de a qué se le aplicarán las reglas declaradas. 
-                    Estos pueden combinarse de multiples formas, complejas o sencillas. En otras palabras, los selectores indican el "camino" hacia el 
-                    elemento al cual queremos aplicar ciertos estilos. Existen muchos formas de definir un selector, algunos ejemplos:
-                </p>
-                <ul>
-                    <li>
-                        Elementos HTML
-                    </li>
-                    <li>
-                        Clases en elementos HTML
-                    </li>
-                    <li>
-                        ID's en elementos HTML
-                    </li>
-                </ul>
-                
-                <h3>
-                    Selector universal
-                </h3>
-                <p>
-                    Un selector de particular importancia es el selector universal '*', selecciona todo el documento.
-                    Un uso "común" es en conjunto col los combinadores o para "normalizar" estilos a gran escala en el documento.
-                </p>
-                <ul>
-                    <li>
-                        * {...} (todos los selectores de un documento)
-                    </li>
-                    <li>
-                        article * {...} (Todos los "hijos" dentro de un elemento)
-                    </li>
-                    <li>
-                        article > * {...} (Todos los "hijos directos" dentro de un elemento)
-                    </li>
-                    <li>
-                        article ~ * {...} (Todos los "hermanos" posteriores de un elemento)
-                    </li>
-                    <li>
-                        article + * {...} (Todos los "primeros hermanos" de un elemento)
-                    </li>
-                </ul>
-                <h3>
-                    Elementos HTML como selectores
-                </h3>
-                <p>
-                    Todos los elementos HTML puedes ser utilizados como selectores, el principal uso de esto es para
-                    poder aplicar reglas generales a multiples elementos de una forma sencilla y practica.
-                </p>
-                <ul>
-                    <li>
-                        h1 {...} (Se aplican estilos a todo los elementos "h1")
-                    </li>
-                    <li>
-                        p {...} (Se aplican estilos a todo los elementos "p")
-                    </li>
-                    <li>
-                        section {...} (Se aplican estilos a todo los elementos "section")
-                    </li>
-                    <li>
-                        body {...} (Se aplican estilos a todo el elemento "body")
-                    </li>
-                    <li>
-                        span {...} (Se aplican estilos a todo los elementos "span")
-                    </li>
-                </ul>
-                <p>
-                    Algo a considerar es que estos selectores al ser tan generales, no deberían usarse justamente para
-                    reglas especificas.
-                </p>
-                <h3>
-                    Clases HTML como selectores
-                </h3>
-                <p>
-                    El usar clases como selectores es la practica más común al usar CSS, permite aplicar reglas a solo elementos que posean dichas clases.
-                    Estas son sensible a mayúsculas y minúsculas. A diferencia de los selectores de elementos generales, estas permiten aplicar
-                    reglas a elementos más específicos. Es posible usar multiples clases a la vez para selectores aún más específicos.
-                </p>
-                <ul>
-                    <li>
-                        .clase {...}
-                    </li>
-                    <li>
-                        .clase.clase2{...}
-                    </li>
-                    <li>
-                        .clase.clase2.clase3{...}
-                    </li>
-                    <li>
-                </ul>
-                <h3>
-                    Elementos con clase
-                </h3>
-                <p>
-                    Selecciona todos los elementos que a su vez posean una clase en particular.
-                    Una practica común es el combinar diferentes tipos de selectores, por ejemplo, elementos generales con clases,
-                    esta practica reduce el "scope" (alcance) de las reglas.
-                </p>
-                <ul>
-                    <li>
-                        h1.clase{...}
-                    </li>
-                    <li>
-                        p.clase.clase{...}
-                    </li>
-                    <li>
-                        span.clase{...}
-                    </li>
-                </ul>
-                <h3>
-                    Selectores por ID
-                </h3>
-                <p>
-                    Al igual que con las clases, estos selectores son sensibles a mayúsculas y minúsculas, incluye el prefijo '#' seguido del "ID".
-                    Selecciona solo un elemento (un ID debe único), aquel con el ID indicado.
-                </p>
-                <ul>
-                    <li>
-                        #ID {...}
-                    </li>
-                </ul>
-                <p>
-                    En CSS, los selectores por ID son aquellos que tienen la mayor especificidad posible.
-                </p>
-                <h3>
-                    Lista de selectores
-                </h3>
-                <p>
-                    Cuando tenemos reglas que se pueden aplicar a más de un selector, lo mejor es agruparlos para no tener que reescribir reglas multiples veces.
-                    En esta "lista de selectores", cada elemento se separa por una ','.
-                </p>
-                <ul>
-                    <li>
-                         h1, #ID, .clase, .clase1.clase2, p > span {...}
-                    </li>
-                </ul>
-                <p>
-                    Algo a considerar al usar "listar de selectores" es que cuando creamos una, si alguno de los selectores tiene una error de sintaxis
-                    ("..clase", "# ID", etc.),
-                    las reglas no se aplicarán a ningún elemento.
-                </p>
-                <h3>
-                    Selectores de atributos
-                </h3>
-                <p>
-                    Una practica no tan común, pero también es posibles seleccionar elementos que posean ciertos atributos asignados en el documento HTML. Estos se pueden
-                    clasificar de la siguiente forma:
-                </p>
-                <dl>
-                    <dt>
-                        Presencia
-                    </dt>
-                    <dd>
-                        Selecciona elementos que tengan un cierto atributo:
-                        <ul>
-                            <li>
-                                [atributo] {...}
-                            </li>
-                        </ul>
-                    </dd>
-                    <dt>
-                        Valor de atributos
-                    </dt>
-                    <dd>
-                        Selecciona elementos que tengan un cierto valor en un atributo:
-                        <ul>
-                            <li>
-                                [atributo="valor_exacto"] {...}
-                            </li>
-                            <li>
-                                [atributo~="contiene el valor exacto solo o como parte de una lista de clases"] {...}
-                            </li>
-                            <li>
-                                [atributo|="contiene el valor exacto o como inicio + '-' (importa la ubicación)] {...}
-                            </li>
-                        </ul>
-                    </dd>
-                    <dt>
-                        Coincidencia parcial del valor de un atributo
-                    </dt>
-                    <dd>
-                        Selecciona elementos que tengan un parte de un string en su valor
-                        <ul>
-                            <li>
-                                [atributo^="inicia con un texto"] {...}
-                            </li>
-                            <li>
-                                [atributo$="termina con un texto"] {...}
-                            </li>
-                            <li>
-                                [atributo*="contiene un texto en cualquier punto"] {...}
-                            </li>
-                        </ul>
-                    </dd>
-                </dl>
-                <h3>
-                    Selectores de pseudoclases y pseudoelementos
-                </h3>
-                <p>
-                    Otra practica común es el uso de pseudoselectores y pseudoclases, la principal ventaja de estos es que se "adaptan"
-                    a contenido variable.
-                </p>
-                <dl>
-                    <dt>
-                        Pseudoclases
-                    </dt>
-                    <dd>
-                        Seleccionan un elemento que está en un estado especifico,
-                        existen muchas y sirven para propósitos específicos, como el primer elemento de un tipo o
-                        cuando se pasa el cursor sobre un elemento
-                    </dd>
-                    <dd>
-                        Usualmente actúan como si los elementos tuvieran cierta clase aplicada sin tener que aplicarla
-                        explícitamente en el documento HTML, de ahí su nombre, lo cual crea un código más flexible.
-                        Las pseudoclases comienzan con ':' seguidas de su nombre clave. Algunos ejemplos: 
-                        <ul>
-                            <li>
-                                p:first-child {...} (Selecciona un párrafo cuando es el primer hijo de algún elemento)
-                            </li>
-                            <li>
-                                article > p:first-child {...} (Selecciona un párrafo cuando es el primer hijo de un article)
-                            </li>
-                            <li>
-                                article ul li:first-child {...} (Selecciona el primer hijo "li" anidado en una "ul" anidada en un article)
-                            </li>
-                        </ul>
-                    </dd>
-                    <dd>
-                        Otros ejemplos de pseudoclases:
-                        <ul>
-                            <li>
-                                :hover (Cuando el cursor se pasa sobre un elemento)
-                            </li>
-                            <li>
-                                :nth-child() (Selecciona a un hijo de un tipo de elemento, toma como parámetro el número del hijo)
-                            </li>
-                            <li>
-                                :last-child (Selecciona un elemento cuando es el ultimo hijo)
-                            </li>
-                            <li>
-                                :active (Cuando se hace "click" en un elemento)
-                            </li>
-                        </ul>
-                        No es necesario que una pseudoclase esté en conjunto con selector,
-                        se esta forma puede tener un comportamiento más "abierto", sin embargo, no es muy recomendable. 
-                    </dd>
-                    <dt>
-                        Pseudoelementos
-                    </dt>
-                    <dd>
-                        Los pseudoelementos tienen un comportamiento similar a las pseudoclases.
-                        Sin embargo, como su nombre sugiere, estas actúan como si se hubiera agregado un elemento totalmente nuevo al documento HTML.
-                        En otras palabras, una
-                        pseudoclase simula una "señalización", mientras que un pseudoelemento simula un elemento totalmente nuevo.
-                        A diferencia de las pseudoclases, su notación es "::" seguidos del nombre clave del pseudoelemento,
-                        algunos pseudo elementos utiliza solo ':', eso es más por antiguedad,
-                        actualmetne todos los pseudo elementos deberían tener la notación de "::".
-                        
-                    </dd>
-                    <dd>
-                        Por ejemplo, para seleccionar solo una linea de un elemento "p", podríamos usar:
-                        <ul>
-                            <li>
-                                p::first-line {...}
-                            </li>
-                        </ul>
-                        Si bien este comportamiento no queda claro a simple vista, lo que
-                        está ocurriendo es que "envolvemos" la primera linea de un párrafo en un "span virtual", de esta forma
-                        sin importar si el texto aumenta de tamaño o se reduce, siempre estaremos envolviendo solo la primera linea.
-                    </dd>
-                    <dt>
-                        ::before y ::after
-                    </dt>
-                    <dd>
-                        ::before (antes) y ::after (después) son 2 pseduoelementos especiales y por ello merecen su propia
-                        explicación. Estos se suelen usar con la propiedad
-                        "content" para insertar contenido en el documento mediante CSS. Se suele usar para elementos visuales como iconos por
-                        mencionar alguno.
-                        Usamos "content" para agregar strings vacíos a los cuales luego podemos modificar para que tomen cierta forma
-                        por ejemplo:
-                        <code><pre>
-.box::before {
-content: "";
-display: block;
-width: 100px;
-height: 100px;
-background-color: red;
-border: 1px solid black;
-}</pre></code>
-                        Este ejemplo agrega un cuadrado de color rojo de 100px de alto por 100px de ancho con un borde negro al
-                        inicio de un elemento con la clase "box",
-                        aparte, al ser de tipo "display: block;", genera un salto de linea antes y después de este.
-                    </dd>
-                    <dd>
-                        Usar ::before o ::after en conjunto con la propiedad content, es llamado "generated content" en CSS y su uso debería estar
-                        limitado a elementos visuales, todo contenido significativo para una pagina debe ser agregado por medio del
-                        documento HTML.
-                    </dd>
-                    
-                </dl>
-                <h3>
-                    Combinando pseduoclases y pseudoelementos
-                </h3>
-                <p>
-                    Otra practica común para aplicar reglas más "flexibles" es combinando 
-                    las pseudoclases con los pseudoelementos. Por ejemplo, si solo
-                    quisiéramos aplicar una modificación a la primera linea del
-                    primer párrafo cuando este sea el primer hijo en cualquier article, podríamos usar el siguiente selector:
-                </p>
-                <ul>
-                    <li>
-                        article p:first-child::first-line {...}
-                    </li>
-                </ul>
-                <h3>
-                    Más sobre los combinadores
-                </h3>
-                <p>
-                    Mencionado en un punto anterior, los combinadores se usan para crear relaciones entre selectores 
-                    de tal forma que nos permiten seleccionar elementos
-                    basados en su localización.
-                </p>
-                <table>
-                    <caption>Los diferentes combinadores</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">
-                                Tipo
-                            </th>
-                            <th scope="col">
-                                Función
-                            </th>
-                            <th scope="col">
-                                Ejemplo
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">
-                                Selector de descendientes (" ")
-                            </th>
-                            <td>
-                                Para modificar solo elementos anidados en otro elemento (no importa el nivel de anidación siempre y
-                                cuando este exista).
-                            </td>
-                            <td>
-                                Si queremos afectar a un elemento <span class="codigo--linea">&lt;span&gt; ... &lt;/span&gt;</span> solo
-                                cuando este esté anidado en un elemento párrafo.
-                                <figure>
-<code><pre>
-p span{
-...
-}</pre>
-</code>
-                                </figure>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                Selector de hijos directos (&gt;)
-                            </th>
-                            <td>
-                                Similar al "selector de descendientes", pero este solo apunta a un primer hijo directo
-                            </td>
-                            <td>
-                                Si solo queremos afectar a un elemento &lt;span&gt; &lt;/span&gt; solo
-                                cuando este sea un hijo directo de un elemento párrafo.
-                                <figure>
-<code><pre>
-p > span{
-...
-}</pre>
-</code>
-                                </figure>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                Selector de hermanos adyacentes (+)
-                            </th>
-                            <td>
-                                A diferencia del "selector de descendientes" o del "selector de hijos directos",
-                                este apunta a elementos contiguos o en otras palabras, a elementos "hermanos"
-                            </td>
-                            <td>
-                                Si queremos seleccionar todos los primeros elementos "párrafos" que vayan después de un elementos "h2"
-                                (sin elementos intermedios)
-                                <figure>
-<code>
-<pre>
-h2 + p{
-...
-}</pre>
-</code>
-                                </figure>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                Selector de hermanos generales (~)
-                            </th>
-                            <td>
-                                Similar al "selector de hermanos adyacentes",
-                                para con la diferencia de no solo apuntar al "primer hermano", sino a todos los "hermanos" en el mismo nivel después de
-                                un elemento
-                            </td>
-                            <td>
-                                Si querremos seleccionar a todos los elementos "párrafos" después de un elemento "h2" (con posibles
-                                elementos intermedios)
-                                <figure>
-<code>
-<pre>
-h2 ~ p{
-...
-}</pre>
-</code>
-                                </figure>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>
-                    Es posible combinar multiples selectores y combinadores creando cadenas más complejas. 
-                </p>
-                </ul>
-            </article>
+<h2 class="apunte__titulo-h2">
+    Más sobre <span class="titulo-h2__span">selectores</span>
+</h2>
+<p class="apunte__parrafo">
+    Posiblemente la parte más importante en CSS, los selectores son los indicadores de a qué se le aplicarán las reglas
+    declaradas.
+    Estos pueden combinarse de múltiples formas, complejas o sencillas. En otras palabras, los selectores indican el
+    "camino" hacia el
+    elemento al cual queremos aplicar ciertos estilos. Existen muchas formas de definir un selector, algunos ejemplos:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">Elementos HTML</li>
+    <li class="lista-desordenada__elemento">Clases en elementos HTML</li>
+    <li class="lista-desordenada__elemento">ID's en elementos HTML</li>
+</ul>
+<h3 class="apunte__titulo-h3">Selector universal</h3>
+<p class="apunte__parrafo">
+    Un selector de particular importancia es el selector universal '*', selecciona todo el documento.
+    Un uso "común" es en conjunto con los combinadores o para "normalizar" estilos a gran escala en el documento.
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">* {...} (todos los selectores de un documento)</li>
+    <li class="lista-desordenada__elemento">article * {...} (Todos los "hijos" dentro de un elemento)</li>
+    <li class="lista-desordenada__elemento">article > * {...} (Todos los "hijos directos" dentro de un elemento)</li>
+    <li class="lista-desordenada__elemento">article ~ * {...} (Todos los "hermanos" posteriores de un elemento)</li>
+    <li class="lista-desordenada__elemento">article + * {...} (Todos los "primeros hermanos" de un elemento)</li>
+</ul>
+<h3 class="apunte__titulo-h3">Elementos HTML como selectores</h3>
+<p class="apunte__parrafo">
+    Todos los elementos HTML pueden ser utilizados como selectores. El principal uso de esto es para
+    poder aplicar reglas generales a múltiples elementos de una forma sencilla y práctica.
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">h1 {...} (Se aplican estilos a todos los elementos "h1")</li>
+    <li class="lista-desordenada__elemento">p {...} (Se aplican estilos a todos los elementos "p")</li>
+    <li class="lista-desordenada__elemento">section {...} (Se aplican estilos a todos los elementos "section")</li>
+    <li class="lista-desordenada__elemento">body {...} (Se aplican estilos a todo el elemento "body")</li>
+    <li class="lista-desordenada__elemento">span {...} (Se aplican estilos a todos los elementos "span")</li>
+</ul>
+<p class="apunte__parrafo">
+    Algo a considerar es que estos selectores, al ser tan generales, no deberían usarse justamente para
+    reglas específicas.
+</p>
+<h3 class="apunte__titulo-h3">Clases HTML como selectores</h3>
+<p class="apunte__parrafo">
+    El usar clases como selectores es la práctica más común al usar CSS. Permite aplicar reglas solo a elementos que
+    posean dichas clases.
+    Estas son sensibles a mayúsculas y minúsculas. A diferencia de los selectores de elementos generales, estas permiten
+    aplicar
+    reglas a elementos más específicos. Es posible usar múltiples clases a la vez para selectores aún más específicos.
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">.clase {...}</li>
+    <li class="lista-desordenada__elemento">.clase.clase2 {...}</li>
+    <li class="lista-desordenada__elemento">.clase.clase2.clase3 {...}</li>
+</ul>
+<h3 class="apunte__titulo-h3">Elementos con clase</h3>
+<p class="apunte__parrafo">
+    Selecciona todos los elementos que a su vez posean una clase en particular.
+    Una práctica común es combinar diferentes tipos de selectores, por ejemplo, elementos generales con clases,
+    esta práctica reduce el "scope" (alcance) de las reglas.
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">h1.clase {...}</li>
+    <li class="lista-desordenada__elemento">p.clase.clase {...}</li>
+    <li class="lista-desordenada__elemento">span.clase {...}</li>
+</ul>
+<h3 class="apunte__titulo-h3">Selectores por ID</h3>
+<p class="apunte__parrafo">
+    Al igual que con las clases, estos selectores son sensibles a mayúsculas y minúsculas, incluyen el prefijo '#'
+    seguido del "ID".
+    Selecciona solo un elemento (un ID debe ser único), aquel con el ID indicado.
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">#ID {...}</li>
+</ul>
+<p class="apunte__parrafo">
+    En CSS, los selectores por ID son aquellos que tienen la mayor especificidad posible.
+</p>
+<h3 class="apunte__titulo-h3">Lista de selectores</h3>
+<p class="apunte__parrafo">
+    Cuando tenemos reglas que se pueden aplicar a más de un selector, lo mejor es agruparlos para no tener que
+    reescribir reglas múltiples veces.
+    En esta "lista de selectores", cada elemento se separa por una coma (',').
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">h1, #ID, .clase, .clase1.clase2, p > span {...}</li>
+</ul>
+<p class="apunte__parrafo">
+    Algo a considerar al usar "listas de selectores" es que si alguno de los selectores tiene un error de sintaxis
+    ("..clase", "# ID", etc.), las reglas no se aplicarán a ningún elemento.
+</p>
+<h3 class="apunte__titulo-h3">Selectores de atributos</h3>
+<p class="apunte__parrafo">
+    Una práctica no tan común, pero también es posible seleccionar elementos que posean ciertos atributos asignados en
+    el documento HTML. Estos se pueden
+    clasificar de la siguiente forma:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Presencia</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Selecciona elementos que tengan un cierto atributo:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">[atributo] {...}</li>
+            </ul>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Valor de atributos</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Selecciona elementos que tengan un cierto valor en un atributo:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">[atributo="valor_exacto"]
+                    {...}</li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">[atributo~="contiene el
+                    valor exacto solo o como parte de una lista de clases"] {...}</li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">[atributo|="contiene el
+                    valor exacto o como inicio + '-' (importa la ubicación)] {...}</li>
+            </ul>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Coincidencia parcial del valor de un atributo</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Selecciona elementos que tengan una parte de un string en su valor
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">[atributo^="inicia con un
+                    texto"] {...}</li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">[atributo$="termina con un
+                    texto"] {...}</li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">[atributo*="contiene un
+                    texto en cualquier punto"] {...}</li>
+            </ul>
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">Selectores de pseudoclases y pseudoelementos</h3>
+<p class="apunte__parrafo">
+    Otra práctica común es el uso de pseudoselectores y pseudoclases. La principal ventaja de estos es que se "adaptan"
+    a contenido variable.
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Pseudoclases</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Seleccionan un elemento que está en un estado específico.
+            Existen muchas y sirven para propósitos específicos, como el primer elemento de un tipo o
+            cuando se pasa el cursor sobre un elemento.
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            Usualmente actúan como si los elementos tuvieran cierta clase aplicada sin tener que aplicarla
+            explícitamente en el documento HTML, de ahí su nombre, lo cual crea un código más flexible.
+            Las pseudoclases comienzan con ':' seguidas de su nombre clave.
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            No es necesario que una pseudoclase esté en conjunto con un selector.
+            De esta forma puede tener un comportamiento más "abierto", sin embargo, no es muy recomendable.
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">p:first-child {...}
+                    (Selecciona un párrafo cuando es el primer hijo de algún elemento)</li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">article > p:first-child
+                    {...} (Selecciona un párrafo cuando es el primer hijo de un article)</li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">article ul li:first-child
+                    {...} (Selecciona el primer hijo "li" anidado en una "ul" anidada en un article)</li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">:hover (Cuando el cursor
+                    se pasa sobre un elemento)</li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">:nth-child() (Selecciona a
+                    un hijo de un tipo de elemento, toma como parámetro el número del hijo)</li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">:last-child (Selecciona un
+                    elemento cuando es el último hijo)</li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">:active (Cuando se hace
+                    "click" en un elemento)
+                </li>
+            </ul>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">Pseudoelementos</dt>
+        <dd class="lista-descriptiva__descripcion">
+            Los pseudoelementos tienen un comportamiento similar a las pseudoclases.
+            Sin embargo, como su nombre sugiere, estos actúan como si se hubiera agregado un elemento totalmente nuevo
+            al documento HTML.
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            En otras palabras, una pseudoclase simula una "señalización", mientras que un pseudoelemento simula un
+            elemento totalmente nuevo.
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            A diferencia de las pseudoclases, su notación es "::" seguida del nombre clave del pseudoelemento.
+            Algunos pseudoelementos utilizan solo ':', eso es más por antigüedad.
+            Actualmente todos los pseudoelementos deberían tener la notación de "::".
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            Si bien este comportamiento no queda claro a simple vista, lo que
+            está ocurriendo es que "envolvemos" la primera línea de un párrafo en un "span virtual", de esta forma,
+            sin importar si el texto aumenta de tamaño o se reduce, siempre estaremos envolviendo solo la primera línea.
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">p::first-line {...}</li>
+            </ul>
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">::before y ::after</dt>
+        <dd class="lista-descriptiva__descripcion">
+            ::before (antes) y ::after (después) son dos pseudoelementos especiales y por ello merecen su propia
+            explicación. Estos se suelen usar con la propiedad
+            "content" para insertar contenido en el documento mediante CSS. Se suelen usar para elementos visuales como
+            íconos por
+            mencionar alguno.
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            Usamos "content" para agregar strings vacíos a los cuales luego podemos modificar para que tomen cierta
+            forma.
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            Usar ::before o ::after en conjunto con la propiedad content se llama "generated content" en CSS y su uso
+            debería estar
+            limitado a elementos visuales. Todo contenido significativo para una página debe ser agregado por medio del
+            documento HTML.
+        </dd>
+    </div>
+</dl>
+
+<h3 class="apunte__titulo-h3">Combinando pseudoclases y pseudoelementos</h3>
+<p class="apunte__parrafo">
+    Otra práctica común para aplicar reglas más "flexibles" es combinando
+    las pseudoclases con los pseudoelementos. Por ejemplo, si solo
+    quisiéramos aplicar una modificación a la primera línea del
+    primer párrafo cuando este sea el primer hijo en cualquier article, podríamos usar el siguiente selector:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">article p:first-child::first-line {...}</li>
+</ul>
+<h3 class="apunte__titulo-h3">Más sobre los combinadores</h3>
+<p class="apunte__parrafo">
+    Mencionado en un punto anterior, los combinadores se usan para crear relaciones entre selectores
+    de tal forma que nos permiten seleccionar elementos
+    basados en su localización.
+</p>
+<div class="informacion-tabular">
+    <div class="informacion-tabular__cards">
+        <figure class="card">
+            <figcaption class="card__titulo">Selector de descendientes (" ")</figcaption>
+            <p class="card__parrafo">Para modificar solo elementos anidados en otro elemento (no importa el nivel
+            de anidación siempre y cuando este exista).</p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">Selector de hijos directos (&gt;)</figcaption>
+            <p class="card__parrafo"></p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">Selector de hermanos adyacentes (+)</figcaption>
+            <p class="card__parrafo">A diferencia del selector de descendientes o del de hijos directos, este
+            apunta a elementos contiguos o "hermanos".</p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">Selector de hermanos generales (~)</figcaption>
+            <p class="card__parrafo">Similar al de hermanos adyacentes, pero apunta a todos los "hermanos" en el
+            mismo nivel después de un elemento.</p>
+        </figure>
+    </div>
+    <div class="informacion-tabular__tabla">
+        <table class="informacion-tabular__tabla">
+            <thead class="tabla__head">
+                <tr>
+                    <th scope="col" class="head__titulo">Tipo</th>
+                    <th scope="col" class="head__titulo">Función</th>
+                    <th scope="col" class="head__titulo">Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="body__row">
+                    <th scope="row" class="body__titulo">Selector de descendientes (" ")</th>
+                    <td class="body__celda">Para modificar solo elementos anidados en otro elemento (no importa el nivel
+                        de anidación siempre y cuando este exista).</td>
+                    <td class="body__celda">
+                        Si queremos afectar a un elemento <span class="codigo--linea">&lt;span&gt; ...
+                            &lt;/span&gt;</span> solo
+                        cuando este esté anidado en un elemento párrafo.
+                        <figure class="figure">
+                            <figcaption class="figure__titulo">Ejemplo</figcaption>
+                            <pre class="codigo__bloque"><code>p span{
+    ...
+}</code></pre>
+                        </figure>
+                    </td>
+                </tr>
+                <tr class="body__row">
+                    <th scope="row" class="body__titulo">Selector de hijos directos (&gt;)</th>
+                    <td class="body__celda">Similar al selector de descendientes, pero este solo apunta a un primer hijo
+                        directo.</td>
+                    <td class="body__celda">
+                        Si solo queremos afectar a un elemento &lt;span&gt; solo cuando este sea un hijo directo de un
+                        párrafo.
+                        <figure class="figure">
+                            <figcaption class="figure__titulo">Ejemplo</figcaption>
+                            <pre class="codigo__bloque"><code>p > span{
+    ...
+}</code></pre>
+                        </figure>
+                    </td>
+                </tr>
+                <tr class="body__row">
+                    <th scope="row" class="body__titulo">Selector de hermanos adyacentes (+)</th>
+                    <td class="body__celda">A diferencia del selector de descendientes o del de hijos directos, este
+                        apunta a elementos contiguos o "hermanos".</td>
+                    <td class="body__celda">
+                        Si queremos seleccionar todos los primeros elementos párrafo que vayan después de un elemento
+                        "h2" sin elementos intermedios.
+                        <figure class="figure">
+                            <figcaption class="figure__titulo">Ejemplo</figcaption>
+                            <pre class="codigo__bloque"><code>h2 + p{
+    ...
+}</code></pre>
+                        </figure>
+                    </td>
+                </tr>
+                <tr class="body__row">
+                    <th scope="row" class="body__titulo">Selector de hermanos generales (~)</th>
+                    <td class="body__celda">Similar al de hermanos adyacentes, pero apunta a todos los "hermanos" en el
+                        mismo nivel después de un elemento.</td>
+                    <td class="body__celda">
+                        Si queremos seleccionar a todos los elementos párrafo después de un elemento "h2" con posibles
+                        elementos intermedios.
+                        <figure class="figure">
+                            <figcaption class="figure__titulo">Ejemplo</figcaption>
+                            <pre class="codigo__bloque"><code>h2 ~ p{
+    ...
+}</code></pre>
+                        </figure>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<p class="apunte__parrafo">
+    Es posible combinar múltiples selectores y combinadores creando cadenas más complejas.
+</p>

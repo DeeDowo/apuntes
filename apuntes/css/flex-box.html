@@ -1,340 +1,348 @@
-<article id="Flexbox">
-                <h2>
-                    Flexbox
-                </h2>
-                <p>
-                    Flexbox es un modelo de layout en CSS diseñado para distribuir y alinear
-                    elementos de manera eficiente en una sola dimensión principalmente (ya sea horizontal o vertical).
-                    Es ideal cuando queremos que el contenedor se adapte de forma dinámica a sus
-                    elementos hijos, en lugar de forzar un diseño rígido.
-                </p>
-                <p>
-                    Para empezar, flexbox depende de 2 factores principalmente, el
-                    contenedor de los elementos flexbox y los elementos flexbox,
-                    es decir, primero hay que definir qué elemento tendrá la propiedad
-                    "display:flex" esto lo convertir en un contenedor (flex container),
-                    esto lo convertirá en un elemento block, para evitar esto se puede usar la propiedad
-                    "display:inline flex". Una vez convertido en un contenedor
-                    a un elemento, todos sus hijos ahora serán elemento flex (flex items).
-                </p>
-                <p>
-                    Por defecto, al asignar a un elemento el valor "flex", los elementos
-                    dentro de este se acomodarán en forma de una sola fila,
-                    con el mismo tamaño y altura.
-                </p>
-                <dl>
-                    <dt>
-                        flex container
-                    </dt>
-                    <dd>
-                        Es el contenedor de todos los flex items
-                    </dd>
-                    <dt>
-                        flex items
-                    </dt>
-                    <dd>
-                        Los elementos anidados dentro del flex container (solo los hijos directos)
-                    </dd>
-                </dl>
-                <h3>
-                    El modelo flex
-                </h3>
-                <p>
-                    Cuando los elementos son distribuidos como flex items,
-                    estos se distribuyen en dos ejes.
-                </p>
-                <dl>
-                    <dt>
-                        Main axis
-                    </dt>
-                    <dd>    
-                        Es el eje principal, es decir, la dirección en que los "flex
-                        items" son mostrados (fila o columna). El incoo y fin de
-                        este eje son llamados "main start" y "main end", la distancia entre estos
-                        puntos es llamado "main size".
-                    </dd>
-                    <dt>
-                        Cross axis
-                    </dt>
-                    <dd>
-                        Es el eje perpendicular al "main axis", en otras palabras, es el otro eje
-                        respecto al principal. Similar al "main axis", posee un "cross start", "cross end" y "cross size".
-                    </dd>
-                </dl>
-                <h3>
-                    Columnas o filas
-                </h3>
-                <p>
-                    La propiedad "flex-direction", permite indicar
-                    cual será el "main axis" ("row" o "column"), el valor por defecto es "row".
-                </p>
-                <h3>
-                    "Wrapping"
-                </h3>
-                <p>
-                    Los "flex items" dentro de un contenedor crearán
-                    un desbordamiento cuando el tamaño del elemento padre sea superado,
-                    esto sucede ya que por defecto los navegadores tratarán de acomodar
-                    a los hijos siempre en una sola fila o columna, para evitar esto
-                    existe la propiedad "flex-wrap:wrap", la cual permite que
-                    automáticamente cuando se detecte que los flex items superarán
-                    el tamaño del contenedor, estos se posicionan en una nueva linea ya sea horizontal o vertical
-                    dependiendo del "flex-direction" establecido.
-                </p>
-                <h3>
-                    Shorthand f;ex-flow
-                </h3>
-                <p>
-                    Al igual que con muchas otras propiedades, flexbox
-                    también tiene un shorthand para "flex-direction" y "flex-wrap", este siendo "flex-flow". De esta forma podemos tanto indicar la
-                    dirección de nuestro flujo como el tipo de "envoltura".
-                </p>
-                <h3>
-                    Tamaño variable con "flex"
-                </h3>
-                <p>
-                    La propiedad "flex", permite repartir el espacio restante de
-                    forma fraccionaria, es decir, si tenemos un contenedor cuyo espacio
-                    no se cubre en su totalidad, este espacio
-                    restante puede ser repartido usando flex. La forma en que "flex" funciona es dividendo todo el espacio restantes en una cantidad de porciones 
-                    y luego repartiendo estas.
-                </p>
-                <p>
-                    En un ejemplo donde hay tres "flex items" y los
-                    primeros dos tienen la propiedad "flex:1;" mientras que el tercero
-                    tiene la propiedad "flex: 2;", el espacio restante se
-                    dividirá en 4 partes y estas serán repartidas dependiendo
-                    de la propiedad flex de cada elemento.
-                </p>
-                <ul>
-                    <li>
-                        <span class="codigo--linea">flex: 1;</span> (Una fracción del espacio a repartir)
-                    </li>
-                    <li>
-                        <span class="codigo--linea">flex: 2;</span> (Dos fracciones del espacio a repartir)
-                    </li>
-                </ul>
-                <p>
-                    La propiedad "flex" también permite indicar el factor de reducción y un tamaño base mínimo. El 
-                    factor de reducción se aplica cuando un "flex container" no puede contener en su totalidad a los "flex items", este factor
-                    dicta en que porción se reducirán los elementos para evitar un overflow. El tamaño mínimo quiere decir que
-                    si un "flex item" tiene un valor menor al indicado,
-                    este crecerá, pero sii el tamaño del "flex item" es mayor, este ignorará el tamaño base.
-                    luego el resto de espacio se repartirá en partes iguales a menos que se indique lo contrario.
-                    Por ejemplo <span class="codigo--linea">"flex: 1 0 100px"</span> indica
-                    que el espacio sobrante se repartirá equitativamente,
-                    que no se reducirá y que el valor inicial de cada "flex item" será de 100px.
-                </p>
-                <h3>
-                    Flex shorthand vs longhand
-                </h3>
-                <p>
-                    la propiedad "flex" es un shorthand para 3 propiedades:
-                </p>
-                <dl>
-                    <dt>
-                        flex-grow
-                    </dt>
-                    <dd>
-                         Indica que porción del espacio sobrante se repartirá para cada elemento.
-                    </dd>
-                    <dt>
-                        flex-shrink
-                    </dt>
-                    <dd>
-                        Indica en que porción se reducirá en tamaño un elemento cuando haya un "overflow".
-                    </dd>
-                    <dt>
-                        flex-basis
-                    </dt>
-                    <dd>
-                        Indica el tamaño base para cada "flex item", si estos tiene una valor superior, ignoran flex-basis.
-                    </dd>
-                </dl>
-                <h3>
-                    Alineación horizontal y vertical 
-                </h3>
-                <p>
-                    Los "flex items" se pueden acomodar de forma respectiva
-                    a su contenedor, es decir, podemos alinear "flex items" sobre el "main axis", "cross axis" o sobre ambos.
-                </p>
-                <table>
-                    <caption>
-                        Propiedades para alineas "flex items"
-                    </caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">
-                                Eje
-                            </th>
-                            <th scope="col">
-                                Propiedad
-                            </th>
-                            <th scope="col">
-                                Valor
-                            </th>
-                            <th scope="col">
-                                Descripción
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th rowspan="5" scope="rowgroup">
-                                Main axis (eje principal)
-                            </th>
-                            <td rowspan="5">
-                                justify-content
-                            </td>
-                            <td>
-                                start
-                            </td>
-                            <td>
-                                Los elementos se acomodan desde el inicio del "main axis".
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <ul>
-                                    <li>
-                                        end
-                                    </li>
-                                    <li>
-                                        flex-end
-                                    </li>
-                                </ul>
-                            </td>
-                            <td>
-                                Los elementos se acomodan al final del "main axis".
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                center
-                            </td>
-                            <td>
-                                Los elementos se acomodan al
-                                centro del "main axis".
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                space-around
-                            </td>
-                            <td>
-                                Los elementos se distribuyen dejando espacios iguales entre ellos, incluso al
-                                inicio y fin.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                space-between
-                            </td>
-                            <td>
-                                Similar a "space-around", los elementos se acomodan dejando espacios iguales entre ellos, con la diferencia
-                                de que no se dejan espacio al inicio y fin.
-                            </td>
-                        </tr>
-                        <tr>
-                            <th rowspan="4" scope="rowgroup">
-                                Cross axis
-                            </th>
-                            <td rowspan="4">
-                                align-items
-                            </td>
-                            <td>
-                                stretch
-                            </td>
-                            <td>
-                                Los elementos se
-                                estrechan para llenar todo el espacio en el "cross axis", cuando el
-                                contenedor no tiene una dimension fija para el "cross axis", los
-                                "flex items" tendrán la altura del "flex item" más alto
-                                entre ellos.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                center
-                            </td>
-                            <td>
-                                Los elementos mantienen sus dimensiones
-                                sus dimensiones intrínseca, pero que se centren a lo largo del
-                                "cross axis".
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <ul>
-                                    <li>
-                                        start
-                                    </li>
-                                    <li>
-                                        self-start
-                                    </li>
-                                    <li>    
-                                        flex-start
-                                    </li>
-                                </ul>
-                                
-                            </td>
-                            <td>
-                                los elementos se acomodan al inicio (parte inferior normalmente) del "cross axis" .
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <ul>
-                                    <li>
-                                        end
-                                    </li>
-                                    <li>
-                                        self-end
-                                    </li>
-                                    <li>
-                                        flex-end
-                                    </li>
-                                </ul>
-                            </td>
-                            <td>
-                                Los elementos se acomodan al final (parte superior normalmente) del "cross axis"
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>
-                    La propiedad "align-items" (cross axis) se puede
-                    sobrescribir para cada "flex item" por separado utilizando la propiedad "align-self".
-                </p>
-                <h3>
-                    Orden de los flex items
-                </h3>
-                <p>
-                    Los "flex items" pueden moverse sin la necesidad de
-                    afectar al documento mismo, para esto se usa la propiedad "order", que por
-                    defecto todos tiene un valor de "0", eso significa que los elementos se mostrarán conforme
-                    aparezcan en el documento, un valor más alto hará que aparezca
-                    después mientras que un valor mas bajo hará que aparezcan antes. Sin embargo,
-                    esto no afecta el orden real de los elementos de
-                    la pagina, por lo mismo es mejor evitar su uso y solo
-                    basarse en el propio documento para cambiar el orden de los diferentes elementos.
-                </p>
-                <h3>
-                    Algunas aplicaciones comunes de flexbox:
-                </h3>
-                <ul>
-                    <li>
-                        Centrar contenido de manera vertical y horizontal
-                    </li>
-                    <li>
-                        Distribuir espacio disponible entre elementos de manera proporcional
-                    </li>
-                    <li>
-                        Ordenar o reorganizar elementos sin modificar el HTML
-                    </li>
-                </ul>
-                <p>
-                    Otra practica común es anidar cajas "flexbox", es decir,
-                    podemos hacer que un "flex item" sea a la vez un "flex container". En otras palabras, es posible anidar diferentes "flex layouts".
-                </p>
-            </article>
+<h2 class="apunte__titulo-h2">
+    Flexbox
+</h2>
+<p class="apunte__parrafo">
+    Flexbox es un modelo de layout en CSS diseñado para distribuir y alinear
+    elementos de manera eficiente en una sola dimensión principalmente (ya sea horizontal o vertical).
+    Es ideal cuando queremos que el contenedor se adapte de forma dinámica a sus
+    elementos hijos, en lugar de forzar un diseño rígido.
+</p>
+<p class="apunte__parrafo">
+    Para empezar, flexbox depende de 2 factores principalmente, el
+    contenedor de los elementos flexbox y los elementos flexbox,
+    es decir, primero hay que definir qué elemento tendrá la propiedad
+    "display:flex" esto lo convierte en un contenedor (flex container),
+    esto lo convertirá en un elemento block, para evitar esto se puede usar la propiedad
+    "display:inline flex". Una vez convertido en un contenedor
+    a un elemento, todos sus hijos ahora serán elemento flex (flex items).
+</p>
+<p class="apunte__parrafo">
+    Por defecto, al asignar a un elemento el valor "flex", los elementos
+    dentro de este se acomodarán en forma de una sola fila,
+    con el mismo tamaño y altura.
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            flex container
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Es el contenedor de todos los flex items
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            flex items
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Los elementos anidados dentro del flex container (solo los hijos directos)
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    El modelo flex
+</h3>
+<p class="apunte__parrafo">
+    Cuando los elementos son distribuidos como flex items,
+    estos se distribuyen en dos ejes.
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Main axis
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Es el eje principal, es decir, la dirección en que los "flex
+            items" son mostrados (fila o columna). El inicio y fin de
+            este eje son llamados "main start" y "main end", la distancia entre estos
+            puntos es llamado "main size".
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Cross axis
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Es el eje perpendicular al "main axis", en otras palabras, es el otro eje
+            respecto al principal. Similar al "main axis", posee un "cross start", "cross end" y "cross size".
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    Columnas o filas
+</h3>
+<p class="apunte__parrafo">
+    La propiedad "flex-direction", permite indicar
+    cuál será el "main axis" ("row" o "column"), el valor por defecto es "row".
+</p>
+<h3 class="apunte__titulo-h3">
+    "Wrapping"
+</h3>
+<p class="apunte__parrafo">
+    Los "flex items" dentro de un contenedor crearán
+    un desbordamiento cuando el tamaño del elemento padre sea superado,
+    esto sucede ya que por defecto los navegadores tratarán de acomodar
+    a los hijos siempre en una sola fila o columna, para evitar esto
+    existe la propiedad "flex-wrap:wrap", la cual permite que
+    automáticamente cuando se detecte que los flex items superarán
+    el tamaño del contenedor, estos se posicionen en una nueva línea ya sea horizontal o vertical
+    dependiendo del "flex-direction" establecido.
+</p>
+<h3 class="apunte__titulo-h3">
+    Shorthand flex-flow
+</h3>
+<p class="apunte__parrafo">
+    Al igual que con muchas otras propiedades, flexbox
+    también tiene un shorthand para "flex-direction" y "flex-wrap", este siendo "flex-flow". De esta forma podemos tanto
+    indicar la
+    dirección de nuestro flujo como el tipo de "envoltura".
+</p>
+<h3 class="apunte__titulo-h3">
+    Tamaño variable con "flex"
+</h3>
+<p class="apunte__parrafo">
+    La propiedad "flex", permite repartir el espacio restante de
+    forma fraccionaria, es decir, si tenemos un contenedor cuyo espacio
+    no se cubre en su totalidad, este espacio
+    restante puede ser repartido usando flex. La forma en que "flex" funciona es dividiendo todo el espacio restante en
+    una cantidad de porciones
+    y luego repartiendo estas.
+</p>
+<p class="apunte__parrafo">
+    En un ejemplo donde hay tres "flex items" y los
+    primeros dos tienen la propiedad "flex:1;" mientras que el tercero
+    tiene la propiedad "flex: 2;", el espacio restante se
+    dividirá en 4 partes y estas serán repartidas dependiendo
+    de la propiedad flex de cada elemento.
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        <span class="codigo--linea">flex: 1;</span> (Una fracción del espacio a repartir)
+    </li>
+    <li class="lista-desordenada__elemento">
+        <span class="codigo--linea">flex: 2;</span> (Dos fracciones del espacio a repartir)
+    </li>
+</ul>
+<p class="apunte__parrafo">
+    La propiedad "flex" también permite indicar el factor de reducción y un tamaño base mínimo. El
+    factor de reducción se aplica cuando un "flex container" no puede contener en su totalidad a los "flex items", este
+    factor
+    dicta en qué porción se reducirán los elementos para evitar un overflow. El tamaño mínimo quiere decir que
+    si un "flex item" tiene un valor menor al indicado,
+    este crecerá, pero si el tamaño del "flex item" es mayor, este ignorará el tamaño base.
+    Luego el resto de espacio se repartirá en partes iguales a menos que se indique lo contrario.
+    Por ejemplo <span class="codigo--linea">"flex: 1 0 100px"</span> indica
+    que el espacio sobrante se repartirá equitativamente,
+    que no se reducirá y que el valor inicial de cada "flex item" será de 100px.
+</p>
+<h3 class="apunte__titulo-h3">
+    Flex shorthand vs longhand
+</h3>
+<p class="apunte__parrafo">
+    La propiedad "flex" es un shorthand para 3 propiedades:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            flex-grow
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Indica qué porción del espacio sobrante se repartirá para cada elemento.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            flex-shrink
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Indica en qué porción se reducirá en tamaño un elemento cuando haya un "overflow".
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            flex-basis
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Indica el tamaño base para cada "flex item", si estos tiene un valor superior, ignoran flex-basis.
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    Alineación horizontal y vertical
+</h3>
+<p class="apunte__parrafo">
+    Los "flex items" se pueden acomodar de forma respectiva
+    a su contenedor, es decir, podemos alinear "flex items" sobre el "main axis", "cross axis" o sobre ambos.
+</p>
+<div class="informacion-tabular">
+    <div class="informacion-tabular__cards">
+        <figure class="card">
+            <figcaption class="card__titulo">
+                justify-content
+            </figcaption>
+            <p class="card__parrafo">
+                Main axis (eje principal)
+            </p>
+        </figure>
+        <figure class="card">
+            <figcaption class="card__titulo">
+                align-items
+            </figcaption>
+            <p class="card__parrafo">
+                Cross axis (eje secundario)
+            </p>
+        </figure>
+    </div>
+    <div class="informacion-tabular__tabla">
+        <table class="informacion-tabular__tabla">
+            <thead class="tabla__head">
+                <tr class="head__row">
+                    <th class="head__titulo" scope="col">
+                        Eje
+                    </th>
+                    <th class="head__titulo" scope="col">
+                        Propiedad
+                    </th>
+                    <th class="head__titulo" scope="col">
+                        Valor
+                    </th>
+                    <th class="head__titulo" scope="col">
+                        Descripción
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="body__row">
+                    <th rowspan="5" class="body__titulo" scope="rowgroup">
+                        Main axis (eje principal)
+                    </th>
+                    <td rowspan="5" class="body__celda">
+                        justify-content
+                    </td>
+                    <td class="body__celda">
+                        start
+                    </td>
+                    <td class="body__celda">
+                        Los elementos se acomodan desde el inicio del "main axis".
+                    </td>
+                </tr>
+                <tr class="body__row">
+                    <td class="body__celda">
+                        end
+                    </td>
+                    <td class="body__celda">
+                        Los elementos se acomodan al final del "main axis".
+                    </td>
+                </tr>
+                <tr class="body__row">
+                    <td class="body__celda">
+                        center
+                    </td>
+                    <td class="body__celda">
+                        Los elementos se acomodan al
+                        centro del "main axis".
+                    </td>
+                </tr>
+                <tr class="body__row">
+                    <td class="body__celda">
+                        space-around
+                    </td>
+                    <td class="body__celda">
+                        Los elementos se distribuyen dejando espacios iguales entre ellos, incluso al
+                        inicio y fin.
+                    </td>
+                </tr>
+                <tr class="body__row">
+                    <td class="body__celda">
+                        space-between
+                    </td>
+                    <td class="body__celda">
+                        Similar a "space-around", los elementos se acomodan dejando espacios iguales entre ellos, con la
+                        diferencia
+                        de que no se dejan espacio al inicio y fin.
+                    </td>
+                </tr>
+                <tr class="body__row">
+                    <th rowspan="4" class="body__titulo" scope="rowgroup">
+                        Cross axis (eje secundario)
+                    </th>
+                    <td rowspan="4" class="body__celda">
+                        align-items
+                    </td>
+                    <td class="body__celda">
+                        stretch
+                    </td>
+                    <td class="body__celda">
+                        Los elementos se
+                        estiran para llenar todo el espacio en el "cross axis", cuando el
+                        contenedor no tiene una dimensión fija para el "cross axis", los
+                        "flex items" tendrán la altura del "flex item" más alto
+                        entre ellos.
+                    </td>
+                </tr>
+                <tr class="body__row">
+                    <td class="body__celda">
+                        center
+                    </td>
+                    <td class="body__celda">
+                        Los elementos mantienen sus dimensiones
+                        intrínsecas, pero se centran a lo largo del
+                        "cross axis".
+                    </td>
+                </tr>
+                <tr class="body__row">
+                    <td class="body__celda">
+                        start
+                    </td>
+                    <td class="body__celda">
+                        Los elementos se acomodan al inicio (parte superior normalmente) del "cross axis".
+                    </td>
+                </tr>
+                <tr class="body__row">
+                    <td class="body__celda">
+                        end
+                    </td>
+                    <td class="body__celda">
+                        Los elementos se acomodan al final (parte inferior normalmente) del "cross axis"
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<p class="apunte__parrafo">
+    La propiedad "align-items" (cross axis) se puede
+    sobrescribir para cada "flex item" por separado utilizando la propiedad "align-self".
+</p>
+<h3 class="apunte__titulo-h3">
+    Orden de los flex items
+</h3>
+<p class="apunte__parrafo">
+    Los "flex items" pueden moverse sin la necesidad de
+    afectar al documento mismo, para esto se usa la propiedad "order", que por
+    defecto todos tiene un valor de "0", eso significa que los elementos se mostrarán conforme
+    aparezcan en el documento, un valor más alto hará que aparezca
+    después mientras que un valor más bajo hará que aparezcan antes. Sin embargo,
+    esto no afecta el orden real de los elementos de
+    la página, por lo mismo es mejor evitar su uso y solo
+    basarse en el propio documento para cambiar el orden de los diferentes elementos.
+</p>
+<h3 class="apunte__titulo-h3">
+    Algunas aplicaciones comunes de flexbox:
+</h3>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        Centrar contenido de manera vertical y horizontal
+    </li>
+    <li class="lista-desordenada__elemento">
+        Distribuir espacio disponible entre elementos de manera proporcional
+    </li>
+    <li class="lista-desordenada__elemento">
+        Ordenar o reorganizar elementos sin modificar el HTML
+    </li>
+</ul>
+<p class="apunte__parrafo">
+    Otra práctica común es anidar cajas "flexbox", es decir,
+    podemos hacer que un "flex item" sea a la vez un "flex container". En otras palabras, es posible anidar diferentes
+    "flex layouts".
+</p>

@@ -124,7 +124,9 @@
     background-color: var(--color-fondo);
     padding: var(--padding-grande);
 }   
-
+.lista-descriptiva__descripcion .codigo__bloque{
+    background-color: var(--color-blanco);
+}
 /* ================================Apuntes LISTA DESCRIPCIONES COMPLEJA================================ */
 
 .lista-descriptiva--con-ejemplos{
@@ -225,7 +227,10 @@
     .body__row:nth-child(even){
         background-color: var(--color-fondo);
     }
-    .body__row:nth-child(even) > .lista-desdordenada__elemento{
+    .body__row:nth-child(even) .lista-desdordenada__elemento{
+        background-color: var(--color-blanco);
+    }
+    .body__row:nth-child(even) .codigo__bloque{
         background-color: var(--color-blanco);
     }
 }

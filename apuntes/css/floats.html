@@ -1,81 +1,91 @@
-<article id="Floats">
-                <h2>
-                    Elementos flotantes
-                </h2>
-                <p>
-                    La propiedad "float", creada originalmente para imágenes
-                    "flotantes" dentro de un bloques de texto.
-                    Fue introducida para permitir agregar imágenes
-                    dentro de una columna de texto, donde el texto envolvería a la imagen
-                    a la derecha o izquierda de este, similar a un los artículos en un periódico o revista.
-                    Sin embargo, esto no estaba limitado a imágenes, podía realizar dicha
-                    función con cualquier elemento, entonces se popularizó el efecto de
-                     "drop-caps", actualmente dicho efecto
-                    se puede realiza con la propiedad "initial-letter" de una manera mucho más sencilla.
-                </p>
-                <p>
-                    Los "floats" solían usarse incluso para crear layouts completos de una
-                    pagina, pero actualmente no deberían usarse para más que su
-                    propósito inicial, ya que ahora existen multiples técnicas más actuales
-                    tanto para layouts como para efectos para los que solía servir "float".
-                </p>
-                <h3>
-                    Uso de float
-                </h3>
-                <p>
-                    La propiedad "float" hace que un elemento salga parcialmente
-                    del flujo normal "pegándose" a un lado de su contenedor (izquierda/derecha).
-                    su efecto sobre otros elementos depende del tipo de elemento, es decir:
-                </p>
-                <dl>
-                    <dt>
-                        Elemento block
-                    </dt>
-                    <dd>
-                        Estos elementos ignoran al elemento flotante y toman
-                        su espacio como si no existiera ahí.
-                    </dd>
-                    <dt>
-                        Line boxes
-                    </dt>
-                    <dd>
-                        Se ajustan su flujo para rodear al
-                        elemento flotante.
-                    </dd>
-                </dl>
-                <h3>
-                    Uso de clear
-                </h3>
-                <p>
-                    La propiedad "clear" se relaciona con "float" ya que hacen que
-                    un elemento "ignore" a estos elementos flotantes, es decir, respetará el espacio como si el elemento no fuera de tipo flotante.
-                </p>
-                <dl>
-                    <dt>
-                        Left
-                    </dt>
-                    <dd>
-                        "clear: left;" solo ignora elementos flotantes a la izquierda.
-                    </dd>
-                    <dt>
-                        Right
-                    </dt>
-                    <dd>
-                        "clear: right;" solo ignora elementos flotantes a la derecha.
-                    </dd>
-                    <dt>
-                        Both
-                    </dt>
-                    <dd>
-                        "clear: both;" ignora elementos flotantes a ambos lados.
-                    </dd>
-                </dl>
-                <p>
-                    Una forma para aislar elementos flotantes con solo ciertos elementos,
-                    es decir, que solo algunos  elementos de la pagina reconozcan y "envuelvan" al
-                    elemento flotante, se logra agrupándolos 
-                    en algún contenedor común para estos y dándole la propiedad a este contenedor de "display: flow-root", de
-                    esta forma solo los elementos relacionados dentro del del contenedor envolverán
-                    al elemento flotante, mientras que el resto de elementos en la pagina solo lo ignorarán y respetarán su espacio original.
-                </p>
-            </article>
+<h2 class="apunte__titulo-h2">
+    Elementos <span class="titulo-h2__span">flotantes</span>
+</h2>
+<p class="apunte__parrafo">
+    La propiedad "float", creada originalmente para imágenes
+    "flotantes" dentro de bloques de texto.
+    Fue introducida para permitir agregar imágenes
+    dentro de una columna de texto, donde el texto envolvería a la imagen
+    a la derecha o izquierda de este, similar a los artículos en un periódico o revista.
+    Sin embargo, esto no estaba limitado a imágenes, podía realizar dicha
+    función con cualquier elemento, entonces se popularizó el efecto de
+    "drop-caps", actualmente dicho efecto
+    se puede realizar con la propiedad "initial-letter" de una manera mucho más sencilla.
+</p>
+<p class="apunte__parrafo">
+    Los "floats" solían usarse incluso para crear layouts completos de una
+    página, pero actualmente no deberían usarse para más que su
+    propósito inicial, ya que ahora existen múltiples técnicas más actuales
+    tanto para layouts como para efectos para los que solía servir "float".
+</p>
+<h3 class="apunte__titulo-h3">
+    Uso de float
+</h3>
+<p class="apunte__parrafo">
+    La propiedad "float" hace que un elemento salga parcialmente
+    del flujo normal "pegándose" a un lado de su contenedor (izquierda/derecha).
+    Su efecto sobre otros elementos depende del tipo de elemento, es decir:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Elemento block
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Estos elementos ignoran al elemento flotante y toman
+            su espacio como si no existiera ahí.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Line boxes
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Se ajustan su flujo para rodear al
+            elemento flotante.
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    Uso de clear
+</h3>
+<p class="apunte__parrafo">
+    La propiedad "clear" se relaciona con "float" ya que hace que
+    un elemento "ignore" a estos elementos flotantes, es decir, respetará el espacio como si el elemento no fuera de
+    tipo flotante.
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Left
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "clear: left;" solo ignora elementos flotantes a la izquierda.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Right
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "clear: right;" solo ignora elementos flotantes a la derecha.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Both
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            "clear: both;" ignora elementos flotantes a ambos lados.
+        </dd>
+    </div>
+</dl>
+<p class="apunte__parrafo">
+    Una forma para aislar elementos flotantes con solo ciertos elementos,
+    es decir, que solo algunos elementos de la página reconozcan y "envuelvan" al
+    elemento flotante, se logra agrupándolos
+    en algún contenedor común para estos y dándole la propiedad a este contenedor de "display: flow-root", de
+    esta forma solo los elementos relacionados dentro del contenedor envolverán
+    al elemento flotante, mientras que el resto de elementos en la página solo lo ignorarán y respetarán su espacio
+    original.
+</p>

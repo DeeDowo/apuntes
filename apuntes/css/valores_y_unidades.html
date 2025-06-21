@@ -1,233 +1,248 @@
-<article id="Valores y unidades en CSS">
-                <h2>
-                    Valores en CSS
-                </h2>
-                <p>
-                    Cada propiedad en CSS tiene uno o varios "tipos de valores", estos definen que valores acepta una propiedad.
-                </p>
-                <h3>
-                    Qué es un valor CSS?
-                </h3>
-                <p>
-                    Un valor es una forma de expresar algo, por ejemplo un color usando la función rgb o una dimension usando pixeles.
-                </p>
-                <h3>
-                    Qué es un tipo de valor?
-                </h3>
-                <p>
-                    Un tipo de valor es el conjunto de
-                    las diferentes formas de expresar un valor. Por ejemplo, cuando decimos que una propiedad acepta como tipo de valor un color,
-                    nos referimos a que acepta cualquiera de las formar para expresar un color.
-                </p>
-                <h4>
-                    Números
-                </h4>
-                <p>
-                    Existen varias formas para expresar números:
-                </p>
-                <ul>
-                    <li>
-                        integer (números enteros, negativos o positivos)
-                    </li>
-                    <li>
-                        number (números decimales, puede o no tener el punto decimal, tanto negativos como positivos)
-                    </li>
-                    <li>
-                        dimension (un número con una unidad)
-                    </li>
-                    <li>
-                        percentage (un porcentaje de otro elemento)
-                    </li>
-                </ul>
-                <h4>
-                    Unidades
-                </h4>
-                <p>
-                    Uno de los tipos de datos más comunes en CSS, existen dos tipos:
-                </p>
-                <dl>
-                    <dt>
-                        Absolutas
-                    </dt>
-                    <dd>
-                        Tienen un tamaño predefinido que no cambia (cm, mm, q, in, pc, pt, px).
-                        el uso principal de las unidades absolutas es para imprimir contenido más que para mostrarlo.
-                    </dd>
-                    <dt>
-                        Relativas
-                    </dt>
-                    <dd>
-                        Dependen de otro valor de referencia para definir su propio tamaño, pueden ser
-                        relativas al viewport o relativas al contexto.
-                    </dd>
-                    <dd>
-                        Las unidades relativas al viewport se basan en el tamaño de la ventana del navegador (viewport).
-                        <ul>
-                            <li>
-                                vw (1% del ancho del viewport, util para diseños responsivos)
-                            </li>
-                            <li>
-                                vh (1% del alto del viewport, util para secciones a pantalla completa)
-                            </li>
-                            <li>
-                                vmin (1% del lado mas pequeño del viewport)
-                            </li>
-                            <li>
-                                vmax (1% del lado mas grande del viewport)
-                            </li>
-                        </ul>
-                    </dd>
-                    <dd>
-                        Las unidades relativas al contexto dependen de valores como el tamaño de la fuente o dimensiones de elementos "padres".
-                        <ul>
-                            <li>
-                                em (relativa al "font-size" del elemento actual. cuando se usa para definir el "font-size" la referencias es 
-                                el "font-size" del elemento padre)
-                            </li>
-                            <li>
-                                rem (relativa al font-size del elemento raíz)
-                            </li>
-                            <li>
-                                % (relativa al tamaño del elemento padre, su principal uso es para el width/height)
-                            </li>
-                        </ul>
-                        La principal ventaja del uso de las unidades relativas es la flexibilidad que ofrecen al no ser valores fijos.
-                    </dd>
-                </dl>
-                <h4>
-                    Color
-                </h4>
-                <p>
-                    Los colores son valores que pueden ser utilizados en una gran variedad de propiedades en CSS,
-                    ya sea para el color de un texto, bordes, fondos y más. 
-                    El estándar actualmente permite soportar colores en 24-bits, es decir, mostrar aproximadamente
-                    16.7 millones de colores destinos, mediante la combinación de rojo, verde y azul y con 256
-                    diferentes valores cada uno (256 x 256 x 256 = 16,777,216). Algunas formas de expresar colores son:
-                </p>
-                <dl>
-                    <dt>
-                        Color keywords
-                    </dt>
-                    <dd>
-                        La forma más básica de expresar un color es mediante una palabra clave
-                        (un nombre), son fáciles de usar y entender, pero limitados en la cantidad
-                        de colores que se pueden expresar.
-                    </dd>
-                    <dt>
-                        Color hexadecimal RGB values
-                    </dt>
-                    <dd>
-                        Expresa un color en formato hexadecimal con el prefijo '#',
-                        se puede usar con 3 o 6 caracteres en hexadecimal (#123 o #123456),
-                        con la opción de agregar uno o dos caracteres más para representar el
-                        canal alpha (opacidad).
-                    </dd>
-                    <dt>
-                        Color RGB values
-                    </dt>
-                    <dd>
-                        Usando la función "rgb()", toma 3 parámetros (0-255 o 0%-100%)
-                        separados por espacios que representan el rojo, verde y azul con la
-                        opción de un cuarto valor separado por un '/' para representar el
-                        canal alpha (opacidad) (0-1).
-                    </dd>
-                    <dt>
-                        Uso de Tonalidades (hue)
-                    </dt>
-                    <dd>
-                        Además de palabras claves, hexadecimales o la función "rgb()", podemos especificar un color
-                        mediante el uso de tonalidades (hues) basadas en el circulo cromático y sobre estas aplicar un mayor o menor nivel de
-                        brillo o saturación, de esta forma podemos trabajar de forma más "intuitiva" sobre un mismo color.
-                    </dd>
-                    <dd>
-                        El "hue" representa el tono base de 0 a 360, haciendo referencia a un "circulo", donde:
-                        <ul>
-                            <li>
-                                0 o 360 = rojo
-                            </li>
-                            <li>
-                                60 = amarillo
-                            </li>
-                            <li>
-                                120 = verde
-                            </li>
-                            <li>
-                                240 = azul
-                            </li>
-                            <li>
-                                300 = magenta
-                            </li>
-                        </ul>
-                        Una vez fijado el tono base, tenemos 2 funciones principalmente:
-                        <ul>
-                            <li>
-                                hwb( hue(tono) whiteness(blancura 0%-100%) blackness(negrura 0%-100%) / alpha(opacidad 0-1 o 0%-100%) )
-                            </li>
-                            <li>
-                                hsl( hue(tono) saturation(saturación 0%-100%) lightness(luminosidad 0%-100%) / alpha(opacidad 0-1 o 0%-100%) )
-                            </li>
-                        </ul>
-                    </dd>
-                </dl>
-                <h4>
-                    Imágenes
-                </h4>
-                <p>
-                    Este tipo de valor hace referencia a utilizar una imagen
-                    apuntada por medio de la función url o a un degradado
-                </p>
-                <h4>
-                    Posición
-                </h4>
-                <p>
-                    El tipo de valor "position" representa coordenadas 2d (x, y), usadas para
-                    posicionar un elemento, por ejemplo una imagen.
-                    puede tomar keywords (top, left, bottom, right y center) 0
-                    longitudes, las cuales representan distancias a partir
-                    del lado superior y el lado izquierdo de la "caja".
-                </p>
-                <p>
-                    Usualmente consiste de 2 valores, la primera controla
-                    el eje horizontal (x) y la segunda controla el eje vertical
-                    (y), cuando solo uno de estos se especifica,
-                    al restante por defecto se le asigna un valor de "center".
-                </p>
-                <h4>
-                    Strings
-                </h4>
-                <p>
-                    El tipo de valor "string", sirve para ingresar textos entre comillas, por ejemplo, con la propiedad "content".
-                </p>
-                <h4>
-                    Funciones
-                </h4>
-                <p>
-                    Similar a cualquier language de programación, las funciones sirven para realizar "algo" con ciertos parámetros.
-                    La principal ventaja de usar funciones es que hacen más flexible nuestro código.
-                    Algunas funciones comunes son:
-                </p>
-                <ul>
-                    <li>
-                        calc()
-                    </li>
-                    <li>
-                        translate()
-                    </li>
-                    <li>
-                        scale()
-                    </li>
-                    <li>
-                        rotate()
-                    </li>
-                    <li>
-                        min()
-                    </li>
-                    <li>
-                        max()
-                    </li>
-                </ul>
-                <p>
-                    Existen muchos más tipos de valores y formas de expresar dichos valores en CSS, pero estos pueden considerarse como 
-                    los más comunes. 
-                </p>
-            </article>
+<h2 class="apunte__titulo-h2">
+    Valores en <span class="titulo-h2__span">CSS</span>
+</h2>
+<p class="apunte__parrafo">
+    Cada propiedad en CSS tiene uno o varios "tipos de valores", estos definen qué valores acepta una propiedad.
+</p>
+<h3 class="apunte__titulo-h3">
+    Qué es un valor CSS?
+</h3>
+<p class="apunte__parrafo">
+    Un valor es una forma de expresar algo, por ejemplo un color usando la función rgb o una dimensión usando píxeles.
+</p>
+<h3 class="apunte__titulo-h3">
+    Qué es un tipo de valor?
+</h3>
+<p class="apunte__parrafo">
+    Un tipo de valor es el conjunto de
+    las diferentes formas de expresar un valor. Por ejemplo, cuando decimos que una propiedad acepta como tipo de valor
+    un color,
+    nos referimos a que acepta cualquiera de las formas para expresar un color.
+</p>
+<h4 class="apunte__titulo-h4">
+    Números
+</h4>
+<p class="apunte__parrafo">
+    Existen varias formas para expresar números:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        integer (números enteros, negativos o positivos)
+    </li>
+    <li class="lista-desordenada__elemento">
+        number (números decimales, puede o no tener el punto decimal, tanto negativos como positivos)
+    </li>
+    <li class="lista-desordenada__elemento">
+        dimension (un número con una unidad)
+    </li>
+    <li class="lista-desordenada__elemento">
+        percentage (un porcentaje de otro elemento)
+    </li>
+</ul>
+<h4 class="apunte__titulo-h4">
+    Unidades
+</h4>
+<p class="apunte__parrafo">
+    Uno de los tipos de datos más comunes en CSS, existen dos tipos:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Absolutas
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Tienen un tamaño predefinido que no cambia (cm, mm, q, in, pc, pt, px).
+            El uso principal de las unidades absolutas es para imprimir contenido más que para mostrarlo.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Relativas
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Dependen de otro valor de referencia para definir su propio tamaño, pueden ser
+            relativas al viewport o relativas al contexto.
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            Las unidades relativas al viewport se basan en el tamaño de la ventana del navegador (viewport).
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    vw (1% del ancho del viewport, útil para diseños responsivos)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    vh (1% del alto del viewport, útil para secciones a pantalla completa)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    vmin (1% del lado más pequeño del viewport)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    vmax (1% del lado más grande del viewport)
+                </li>
+            </ul>
+            Las unidades relativas al contexto dependen de valores como el tamaño de la fuente o dimensiones de
+            elementos "padres".
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    em (relativa al "font-size" del elemento actual. Cuando se usa para definir el "font-size" la
+                    referencia es
+                    el "font-size" del elemento padre)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    rem (relativa al font-size del elemento raíz)
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    % (relativa al tamaño del elemento padre, su principal uso es para el width/height)
+                </li>
+            </ul>
+            La principal ventaja del uso de las unidades relativas es la flexibilidad que ofrecen al no ser valores
+            fijos.
+        </dd>
+    </div>
+</dl>
+<h4 class="apunte__titulo-h4">
+    Color
+</h4>
+<p class="apunte__parrafo">
+    Los colores son valores que pueden ser utilizados en una gran variedad de propiedades en CSS,
+    ya sea para el color de un texto, bordes, fondos y más.
+    El estándar actualmente permite soportar colores en 24-bits, es decir, mostrar aproximadamente
+    16.7 millones de colores distintos, mediante la combinación de rojo, verde y azul con 256
+    diferentes valores cada uno (256 x 256 x 256 = 16,777,216). Algunas formas de expresar colores son:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Color keywords
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La forma más básica de expresar un color es mediante una palabra clave
+            (un nombre), son fáciles de usar y entender, pero limitados en la cantidad
+            de colores que se pueden expresar.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Color hexadecimal RGB values
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Expresa un color en formato hexadecimal con el prefijo '#',
+            se puede usar con 3 o 6 caracteres en hexadecimal (#123 o #123456),
+            con la opción de agregar uno o dos caracteres más para representar el
+            canal alpha (opacidad).
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Color RGB values
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Usando la función "rgb()", toma 3 parámetros (0-255 o 0%-100%)
+            separados por espacios que representan el rojo, verde y azul con la
+            opción de un cuarto valor separado por un '/' para representar el
+            canal alpha (opacidad) (0-1).
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Uso de Tonalidades (hue)
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Además de palabras clave, hexadecimales o la función "rgb()", podemos especificar un color
+            mediante el uso de tonalidades (hues) basadas en el círculo cromático y sobre estas aplicar un mayor o menor
+            nivel de
+            brillo o saturación, de esta forma podemos trabajar de forma más "intuitiva" sobre un mismo color.
+        </dd>
+        <dd class="lista-descriptiva__descripcion">
+            El "hue" representa el tono base de 0 a 360, haciendo referencia a un "círculo", donde:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    0 o 360 = rojo
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    60 = amarillo
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    120 = verde
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    240 = azul
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    300 = magenta
+                </li>
+            </ul>
+            Una vez fijado el tono base, tenemos 2 funciones principalmente:
+            <ul class="lista-desordenada">
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    hwb( hue(tono) whiteness(blancura 0%-100%) blackness(negrura 0%-100%) / alpha(opacidad 0-1 o
+                    0%-100%) )
+                </li>
+                <li class="lista-desordenada__elemento lista-desordenada__elemento--f-blanco">
+                    hsl( hue(tono) saturation(saturación 0%-100%) lightness(luminosidad 0%-100%) / alpha(opacidad 0-1 o
+                    0%-100%) )
+                </li>
+            </ul>
+        </dd>
+    </div>
+</dl>
+<h4 class="apunte__titulo-h4">
+    Imágenes
+</h4>
+<p class="apunte__parrafo">
+    Este tipo de valor hace referencia a utilizar una imagen
+    apuntada por medio de la función url o a un degradado
+</p>
+<h4 class="apunte__titulo-h4">
+    Posición
+</h4>
+<p class="apunte__parrafo">
+    El tipo de valor "position" representa coordenadas 2D (x, y), usadas para
+    posicionar un elemento, por ejemplo una imagen.
+    Puede tomar keywords (top, left, bottom, right y center) o
+    longitudes, las cuales representan distancias a partir
+    del lado superior y el lado izquierdo de la "caja".
+</p>
+<p class="apunte__parrafo">
+    Usualmente consiste de 2 valores, el primero controla
+    el eje horizontal (x) y el segundo controla el eje vertical
+    (y), cuando solo uno de estos se especifica,
+    al restante por defecto se le asigna un valor de "center".
+</p>
+<h4 class="apunte__titulo-h4">
+    Strings
+</h4>
+<p class="apunte__parrafo">
+    El tipo de valor "string", sirve para ingresar textos entre comillas, por ejemplo, con la propiedad "content".
+</p>
+<h4 class="apunte__titulo-h4">
+    Funciones
+</h4>
+<p class="apunte__parrafo">
+    Similar a cualquier lenguaje de programación, las funciones sirven para realizar "algo" con ciertos parámetros.
+    La principal ventaja de usar funciones es que hacen más flexible nuestro código.
+    Algunas funciones comunes son:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        calc()
+    </li>
+    <li class="lista-desordenada__elemento">
+        translate()
+    </li>
+    <li class="lista-desordenada__elemento">
+        scale()
+    </li>
+    <li class="lista-desordenada__elemento">
+        rotate()
+    </li>
+    <li class="lista-desordenada__elemento">
+        min()
+    </li>
+    <li class="lista-desordenada__elemento">
+        max()
+    </li>
+</ul>
+<p class="apunte__parrafo">
+    Existen muchos más tipos de valores y formas de expresar dichos valores en CSS, pero estos pueden considerarse como
+    los más comunes.
+</p>

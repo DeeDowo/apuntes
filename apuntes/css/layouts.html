@@ -1,195 +1,213 @@
-<article id="CSS layouts">
-                <h2>
-                    CSS layouts
-                </h2>
-                <p>
-                    Anteriormente se ha mostrado cómo funcionan y el comportamiento de los diferentes
-                    elementos HTML o "cajas" y el cómo modificar estos a nuestro
-                    gusto. Ahora veremos cómo dispersar estas "cajas" en relación
-                    con otras "cajas" al igual que el cómo crear diseños responsivos,
-                    es decir, diseños que sean capaces de adaptarse para los diferentes
-                    dispositivos.
-                </p>
-                <h3>
-                    Introducción
-                </h3>
-                <p>
-                    CSS nos da una gran variedad de herramientas para controlar el
-                    cómo son mostrados los elementos en relación con otros en nuestra pagina, es decir, más allá de la propia
-                    personalización de los elementos, nos permite controlar el cómo
-                    se muestran estos elementos en la pagina.Por ejemplo, que imágenes
-                    se muestren en un cuadricula o tener multiples párrafos que se
-                    muestren uno al lado de otro.
-                </p>
-                <p>
-                    Cada técnica tiene su propia metodología de uso, sus ventajas y desventajas,
-                    por ello es importante conocerlas todas al menos hasta cierto punto,
-                    para ser capaces de identificar en qué circunstancias es mejor un método sobre otro.
-                </p>
-                <p>
-                    Los elementos por defecto tienen un "natural layout", es decir,
-                    todos los elementos HTML
-                    se distribuyen de una forma por defecto, sin la necesidad de aplicar ninguna clase de propiedades CSS.
-                </p>
-                <p>
-                    Tener un documento bien estructurado que con tan solo su distribución natural sea fácil de
-                    leer tanto visual como literalmente, es el mejor punto de partida para
-                    comenzar a modificar la distribución de nuestro contenido.
-                    Esto no solo es una buena practica para el developer, sino también para el
-                    usuario, ya que en caso de estar usando un navegador limitado o por
-                    cualquier error o preferencia del propio usuario para que el documento
-                    CSS no se aplique, nuestra pagina seguirá teniendo una buena
-                    estructura y más importante, seguirá siendo accesible en su forma más básica.
-            
-                </p>
-                <h3>
-                    Flujo normal 
-                </h3>
-                <p>
-                    El proceso comienza exponiendo estas cajas, es decir, cada
-                    elemento tiene sus propias características y atributos indiferentemente del
-                    modelo de caja que estemos usando (predeterminado o alternativo), estos son:
-                </p>
-                <ul>
-                    <li>
-                        content
-                    </li>
-                    <li>
-                        padding
-                    </li>
-                    <li>
-                        border
-                    </li>
-                    <li>
-                        margin
-                    </li>
-                </ul>
-                <p>
-                    En particular el margen, aunque es más un elemento
-                    externo de las "cajas" ya que no se considera para el tamaño
-                    de estas, sí es parte de cada elemento y cada elemento puede
-                    determinar su propio margen, este es la separación entre diferentes "cajas".
-                </p>
-                <p>
-                    En otras palabras, cada elemento es
-                    expuesto como una "caja" con sus características y atributos, de esta forma,
-                    estas no se "enciman" unas con otras, sino que cada una
-                    es expuesta como una "caja" individual y a su vez cada "caja" posee un tipo de "display" por defecto
-                    (block, inline, inline-block), este es el que dicta  cómo se muestra una "caja" respecto a otras.
-                </p>
-                <dl>
-                    <dt>
-                        display: block;
-                    </dt>
-                    <dd>
-                        La "caja" tiene un salto de linea antes y después de esta,
-                        ocupa todo el ancho disponible en su contenedor.
-                    </dd>
-                    <dt>
-                        display: inline;
-                    </dt>
-                    <dd>
-                        La "caja" no genera saltos de linea, solo
-                        ocupa el espacio que su contenido ocupe.
-                    </dd>
-                    <dt>
-                        display: inline-block;
-                    </dt>
-                    <dd>
-                        Una combinación de "inline" y "block".
-                        Tiene la característica de poder agregar
-                        padding y margin top/bottom que afectará a los
-                        elementos circundantes a diferencia del display "inline" que
-                        solo permite la expresión de estos lateralmente, es decir,
-                        left/right. En otras palabras, "inline-block" es meter un elemento block dentro de un flujo inline sin que lo
-                        "rompa".
-                    </dd>
-                </dl>
-                <p>
-                    El display de cada "caja" puede ser modificado dependiendo de nuestras necesidades.
-                    Lo anterior explica el cómo son estructurados
-                    y mostrados los elementos individualmente.
-                </p>
-                <h3>
-                    Distribución natural
-                </h3>
-                <p>
-                    La distribución natural o "natural layout", es el cómo se muestran los diferentes elementos en relación a otros 
-                    en una página por defecto.
-                </p>
-                <p>
-                    Los elementos de tipo "block" son mostrados
-                    un el "block flow direction" el cual está basado en el "writing
-                    mode" del elemento padre, la cual es la propiedad
-                    que indica el sentido en que es mostrado el contenido (depende del idioma), por defecto "horizontal-tb" para la mayoría de idiomas.
-                </p>
-                <p>
-                    Cada elemento aparece en una nueva linea debajo de la
-                    anterior, en otros palabras, en un "writing mode" horizontal,
-                    la "escritura" de los elementos es de arriba hacia abajo.
-                    Todos los elementos de tipo "block" se muestran en un sentido vertical.
-                </p>
-                <p>
-                    Los elementos "inline" por otra parte, ellos no aparecen
-                    en una nueva linea, solo toman el espacio necesario en la misma.
-                    Los elementos "inline" solo tienen efecto sobre el resto del
-                    contenido a los laterales, es decir, solo el margin left/right y
-                    padding left/right son capaces de mover el contenido circundantes.
-                </p>
-                <h3>
-                    Sobrescribiendo el "normal flow"
-                </h3>
-                <p>
-                    Existen formas de sobrescribir el "normal flow" en un documento HTML, es decir, métodos para modificar el cómo se distribuyen los
-                    diferentes elementos.
-                    Una breve descripción de estos métodos es:
-                </p>
-                <dl>
-                    <dt>    
-                        Display
-                    </dt>
-                    <dd>
-                        La propiedad "display" con valores "block", "inline", "inline-block". puede cambiar el cómo
-                        un elemento se comporta respecto a otro en el documento.
-                    </dd>
-                    <dt>
-                        Float
-                    </dt>
-                    <dd>
-                        La propiedad "float", hace que un elemento de tipo "block" se "pegue" a otro, por ejemplo,
-                        cuando se tiene una imagen con texto adherido a un lado.
-                    </dd>
-                    <dt>
-                        Position
-                    </dt>
-                    <dd>
-                        La propiedad "position" permite controlar con precision en
-                        dónde se mostrará un elemento dentro de otros elementos, es decir, "cajas dentro de cajas".
-                    </dd>
-                    <dt>
-                        Flex-Grid
-                    </dt>
-                    <dd>
-                        Si bien estos son valores de "display", estos habilitan el uso a propiedades especiales para cada uno de los métodos en si.
-                        Estos alteran el cómo lo elementos hijos se
-                        distribuyen dentro de un elemento padre.
-                    </dd>
-                    </dt>
-                        Responsive design
-                    </dt>
-                    <dd>
-                        El diseño responsivo o "responsive design" es más aun concepto que una propiedad o valor especifico, hace referencia a que
-                        nuestros diseños sean capaces de adaptarse a diferentes
-                        resoluciones. La forma más común para definir
-                        estos diferentes comportamientos es mediante el uso de "@media", esta regla permite
-                        configurar diferentes layouts dependiendo del tamaño. 
-                    </dd>
-                </dl>
-                <p>
-                    Estas son algunas de las formas que tenemos a nuestra disposición para
-                    modificar la distribución natural de una pagina, algunas más convenientes
-                    que otras para ciertas tareas. Es buena conocerlas
-                    para poder ser más críticos a la hora de decidir cual aplicar
-                    para el problema en particular que queramos solucionar. La gran mayoría de estos métodos se suelen usar en conjunto.
-                </p>
-            </article>
+<h2 class="apunte__titulo-h2">
+    CSS <span class="titulo-h2__span">layouts</span>
+</h2>
+<p class="apunte__parrafo">
+    Anteriormente se ha mostrado cómo funcionan y el comportamiento de los diferentes
+    elementos HTML o "cajas" y el cómo modificar estos a nuestro
+    gusto. Ahora veremos cómo dispersar estas "cajas" en relación
+    con otras "cajas" al igual que el cómo crear diseños responsivos,
+    es decir, diseños que sean capaces de adaptarse para los diferentes
+    dispositivos.
+</p>
+<h3 class="apunte__titulo-h3">
+    Introducción
+</h3>
+<p class="apunte__parrafo">
+    CSS nos da una gran variedad de herramientas para controlar el
+    cómo son mostrados los elementos en relación con otros en nuestra página, es decir, más allá de la propia
+    personalización de los elementos, nos permite controlar el cómo
+    se muestran estos elementos en la página. Por ejemplo, que imágenes
+    se muestren en un cuadrícula o tener múltiples párrafos que se
+    muestren uno al lado de otro.
+</p>
+<p class="apunte__parrafo">
+    Cada técnica tiene su propia metodología de uso, sus ventajas y desventajas,
+    por ello es importante conocerlas todas al menos hasta cierto punto,
+    para ser capaces de identificar en qué circunstancias es mejor un método sobre otro.
+</p>
+<p class="apunte__parrafo">
+    Los elementos por defecto tienen un "natural layout", es decir,
+    todos los elementos HTML
+    se distribuyen de una forma por defecto, sin la necesidad de aplicar ninguna clase de propiedades CSS.
+</p>
+<p class="apunte__parrafo">
+    Tener un documento bien estructurado que con tan solo su distribución natural sea fácil de
+    leer tanto visual como literalmente, es el mejor punto de partida para
+    comenzar a modificar la distribución de nuestro contenido.
+    Esto no solo es una buena práctica para el developer, sino también para el
+    usuario, ya que en caso de estar usando un navegador limitado o por
+    cualquier error o preferencia del propio usuario para que el documento
+    CSS no se aplique, nuestra página seguirá teniendo una buena
+    estructura y más importante, seguirá siendo accesible en su forma más básica.
+</p>
+<h3 class="apunte__titulo-h3">
+    Flujo normal
+</h3>
+<p class="apunte__parrafo">
+    El proceso comienza exponiendo estas cajas, es decir, cada
+    elemento tiene sus propias características y atributos independientemente del
+    modelo de caja que estemos usando (predeterminado o alternativo), estos son:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        content
+    </li>
+    <li class="lista-desordenada__elemento">
+        padding
+    </li>
+    <li class="lista-desordenada__elemento">
+        border
+    </li>
+    <li class="lista-desordenada__elemento">
+        margin
+    </li>
+</ul>
+<p class="apunte__parrafo">
+    En particular el margen, aunque es más un elemento
+    externo de las "cajas" ya que no se considera para el tamaño
+    de estas, sí es parte de cada elemento y cada elemento puede
+    determinar su propio margen, este es la separación entre diferentes "cajas".
+</p>
+<p class="apunte__parrafo">
+    En otras palabras, cada elemento es
+    expuesto como una "caja" con sus características y atributos, de esta forma,
+    estas no se "enciman" unas con otras, sino que cada una
+    es expuesta como una "caja" individual y a su vez cada "caja" posee un tipo de "display" por defecto
+    (block, inline, inline-block), este es el que dicta cómo se muestra una "caja" respecto a otras.
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            display: block;
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La "caja" tiene un salto de línea antes y después de esta,
+            ocupa todo el ancho disponible en su contenedor.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            display: inline;
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La "caja" no genera saltos de línea, solo
+            ocupa el espacio que su contenido ocupe.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            display: inline-block;
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Una combinación de "inline" y "block".
+            Tiene la característica de poder agregar
+            padding y margin top/bottom que afectará a los
+            elementos circundantes a diferencia del display "inline" que
+            solo permite la expresión de estos lateralmente, es decir,
+            left/right. En otras palabras, "inline-block" es meter un elemento block dentro de un flujo inline sin que
+            lo
+            "rompa".
+        </dd>
+    </div>
+</dl>
+<p class="apunte__parrafo">
+    El display de cada "caja" puede ser modificado dependiendo de nuestras necesidades.
+    Lo anterior explica el cómo son estructurados
+    y mostrados los elementos individualmente.
+</p>
+<h3 class="apunte__titulo-h3">
+    Distribución natural
+</h3>
+<p class="apunte__parrafo">
+    La distribución natural o "natural layout", es el cómo se muestran los diferentes elementos en relación a otros
+    en una página por defecto.
+</p>
+<p class="apunte__parrafo">
+    Los elementos de tipo "block" son mostrados
+    un el "block flow direction" el cual está basado en el "writing
+    mode" del elemento padre, la cual es la propiedad
+    que indica el sentido en que es mostrado el contenido (depende del idioma), por defecto "horizontal-tb" para la
+    mayoría de idiomas.
+</p>
+<p class="apunte__parrafo">
+    Cada elemento aparece en una nueva línea debajo de la
+    anterior, en otras palabras, en un "writing mode" horizontal,
+    la "escritura" de los elementos es de arriba hacia abajo.
+    Todos los elementos de tipo "block" se muestran en un sentido vertical.
+</p>
+<p class="apunte__parrafo">
+    Los elementos "inline" por otra parte, ellos no aparecen
+    en una nueva línea, solo toman el espacio necesario en la misma.
+    Los elementos "inline" solo tienen efecto sobre el resto del
+    contenido a los laterales, es decir, solo el margin left/right y
+    padding left/right son capaces de mover el contenido circundante.
+</p>
+<h3 class="apunte__titulo-h3">
+    Sobrescribiendo el "normal flow"
+</h3>
+<p class="apunte__parrafo">
+    Existen formas de sobrescribir el "normal flow" en un documento HTML, es decir, métodos para modificar el cómo se
+    distribuyen los
+    diferentes elementos.
+    Una breve descripción de estos métodos es:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Display
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La propiedad "display" con valores "block", "inline", "inline-block". puede cambiar el cómo
+            un elemento se comporta respecto a otro en el documento.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Float
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La propiedad "float", hace que un elemento de tipo "block" se "pegue" a otro, por ejemplo,
+            cuando se tiene una imagen con texto adherido a un lado.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Position
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La propiedad "position" permite controlar con precisión en
+            dónde se mostrará un elemento dentro de otros elementos, es decir, "cajas dentro de cajas".
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Flex-Grid
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Si bien estos son valores de "display", estos habilitan el uso a propiedades especiales para cada uno de los
+            métodos en sí.
+            Estos alteran el cómo lo elementos hijos se
+            distribuyen dentro de un elemento padre.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Responsive design
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            El diseño responsivo o "responsive design" es más un concepto que una propiedad o valor específico, hace
+            referencia a que
+            nuestros diseños sean capaces de adaptarse a diferentes
+            resoluciones. La forma más común para definir
+            estos diferentes comportamientos es mediante el uso de "@media", esta regla permite
+            configurar diferentes layouts dependiendo del tamaño.
+        </dd>
+    </div>
+</dl>
+<p class="apunte__parrafo">
+    Estas son algunas de las formas que tenemos a nuestra disposición para
+    modificar la distribución natural de una página, algunas más convenientes
+    que otras para ciertas tareas. Es bueno conocerlas
+    para poder ser más críticos a la hora de decidir cuál aplicar
+    para el problema en particular que queramos solucionar. La gran mayoría de estos métodos se suelen usar en conjunto.
+</p>

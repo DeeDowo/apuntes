@@ -1,162 +1,167 @@
-<article id="Estilando links">
-                <h2>
-                    Estilando links
-                </h2>
-                <p>
-                    Los links tanto como sus estilos son una parte fundamental de la gran mayoría de páginas, tanto estáticas como dinámicas.
-                </p>
-                <h3>
-                    Estados de un link
-                </h3>
-                <p>
-                    La primer cosa que hay que entender sobre link es el concepto de los diferentes
-                    estados de un link, los cuales pueden ser estilados usando diferentes pseudo-clases:
-                </p>
-                <dl>
-                    <dt>
-                        Link
-                    </dt>
-                    <dd>
-                        La pseudoclase ":link", para links aun no visitados.
-                    </dd>
-                    <dt>
-                        Visited
-                    </dt>
-                    <dd>
-                        La pseudoclase ":visited", para links ya visitados (existen en el historial del navegador).
-                    </dd>
-                    <dt>
-                        Active
-                    </dt>
-                    <dd>
-                        La pseudoclase ":active", para links que están siendo presionados.
-                    </dd>
-                </dl>
-                <h3>
-                    Estilos por defecto
-                </h3>
-                <p>
-                    Los links tienen estilos predeterminados, estos son:
-                </p>
-                <ul>
-                    <li>
-                        Underline
-                    </li>
-                    <li>
-                        Links sin visitar son azules
-                    </li>
-                    <li>
-                        Links visitados son purpuras
-                    </li>
-                    <li>
-                        Al apuntar un link con el mouse cambia de una flecha a una mano
-                    </li>
-                    <li>
-                        Links activos cambian a rojo
-                    </li>
-                </ul>
-                <p>
-                    La mayoría de estos estilos son iguales a los estilos por defecto de 1990s, esto es porque
-                    los usuarios conocen y esperan estos comportamientos en cualquier link o al menos algo similar.
-                    Al nosotros querer estilizar links, estos tienen que al menos crear una nueva métrica homogénea e intuitiva.
-                    Un link debe poder entenderse como tal de forma intuitiva.
-                </p>
-                <h3>
-                    Estilando links
-                </h3>
-                <p>
-                    Una vez conocidos los estilos por defectos, podemos empezar a modificar nuestros links a nuestro criterio.
-                </p>
-<figure>
-    <figcaption>Estructura para editar links</figcaption>
-<code><pre>
+<h2 class="apunte__titulo-h2">
+    Estilando <span class="titulo-h2__span">links</span>
+</h2>
+<p class="apunte__parrafo">
+    Los links tanto como sus estilos son una parte fundamental de la gran mayoría de páginas, tanto estáticas como
+    dinámicas.
+</p>
+<h3 class="apunte__titulo-h3">
+    Estados de un link
+</h3>
+<p class="apunte__parrafo">
+    La primera cosa que hay que entender sobre links es el concepto de los diferentes
+    estados de un link, los cuales pueden ser estilados usando diferentes pseudo-clases:
+</p>
+<dl class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Link
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La pseudoclase ":link", para links aún no visitados.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Visited
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La pseudoclase ":visited", para links ya visitados (existen en el historial del navegador).
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            Active
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            La pseudoclase ":active", para links que están siendo presionados.
+        </dd>
+    </div>
+</dl>
+<h3 class="apunte__titulo-h3">
+    Estilos por defecto
+</h3>
+<p class="apunte__parrafo">
+    Los links tienen estilos predeterminados, estos son:
+</p>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
+        Underline
+    </li>
+    <li class="lista-desordenada__elemento">
+        Links sin visitar son azules
+    </li>
+    <li class="lista-desordenada__elemento">
+        Links visitados son púrpuras
+    </li>
+    <li class="lista-desordenada__elemento">
+        Al apuntar un link con el mouse cambia de una flecha a una mano
+    </li>
+    <li class="lista-desordenada__elemento">
+        Links activos cambian a rojo
+    </li>
+</ul>
+<p class="apunte__parrafo">
+    La mayoría de estos estilos son iguales a los estilos por defecto de 1990s, esto es porque
+    los usuarios conocen y esperan estos comportamientos en cualquier link o al menos algo similar.
+    Al nosotros querer estilizar links, estos tienen que al menos crear una nueva métrica homogénea e intuitiva.
+    Un link debe poder entenderse como tal de forma intuitiva.
+</p>
+<h3 class="apunte__titulo-h3">
+    Estilando links
+</h3>
+<p class="apunte__parrafo">
+    Una vez conocidos los estilos por defectos, podemos empezar a modificar nuestros links a nuestro criterio.
+</p>
+<figure class="figure">
+    <figcaption class="figure__titulo">Estructura para editar links</figcaption>
+    <pre class="codigo__bloque"><code>
 a {
-...
+    ...
 }
 
 a:link {
-...
+    ...
 }
 
 a:visited {
-...
+    ...
 }
 
 a:focus {
-...
+    ...
 }
 
 a:hover {
-...
+    ...
 }
 
 a:active {
-...
-}</pre>     </code>
+    ...
+}</code></pre>
 </figure>
-                <p>
-                    La plantilla anterior contiene todo lo necesario para para modificar el link en
-                    si mismo como cada uno de sus estados.
-                </p>
-                <p>
-                    Algo a considerar en particular sobre el estilizado de links, es que este orden
-                    importa, es decir, si estilizamos nuestros links de una forma distinta a la plantilla 
-                    podrían surgir comportamientos inesperados en algunos navegadores (especialmente los antiguos).
-                </p>
-                <h3>
-                    Iconos para links
-                </h3>
-                <p>
-                    Una practica común al estilar links es el agregar iconos a estos para de esta
-                    forma crear un indicador visual sobre qué clase de link se trata.
-                    Por ejemplo, se puede agregar un pequeño icono que haga referencia
-                    a que se redireccionará a otra pagina.
-                    Los iconos se suele agregar usando los pseaudoselectores ::after o ::before.
-                </p>
-                <figure>
-                    <figcaption>Ejemplo iconos para links</figcaption>
-<code><pre>
+<p class="apunte__parrafo">
+    La plantilla anterior contiene todo lo necesario para modificar el link en
+    sí mismo como cada uno de sus estados.
+</p>
+<p class="apunte__parrafo">
+    Algo a considerar en particular sobre el estilizado de links, es que este orden
+    importa, es decir, si estilizamos nuestros links de una forma distinta a la plantilla
+    podrían surgir comportamientos inesperados en algunos navegadores (especialmente los antiguos).
+</p>
+<h3 class="apunte__titulo-h3">
+    Iconos para links
+</h3>
+<p class="apunte__parrafo">
+    Una práctica común al estilar links es el agregar iconos a estos para de esta
+    forma crear un indicador visual sobre qué clase de link se trata.
+    Por ejemplo, se puede agregar un pequeño icono que haga referencia
+    a que se redireccionará a otra página.
+    Los iconos se suelen agregar usando los pseudoselectores ::after o ::before.
+</p>
+<figure class="figure">
+    <figcaption class="figure__titulo">Ejemplo iconos para links</figcaption>
+    <pre class="codigo__bloque"><code>
 a[href^="http"]::after {
-content: "";
-display: inline-block;
-width: 0.8em;
-height: 0.8em;
-margin-left: 0.25em;
-
-background-image: url("external-link-52.png");
-background-size: 100%;
-}</pre></code>
-                </figure>
-                <ol>
-                    <li>
-                        Primero usamos un selector para un elemento "a" con un atributo "href" y el cual tiene que tener
-                        como inicio "http" en su valor, esto indicaría un link a una nueva pagina, todo en conjunto con el
-                        pseduoselector "::after" para agregar contenido al final del elemento seleccionado.
-                    </li>
-                    <li>
-                        Una vez editando las reglas de nuestro selector, usamos "content" con un string
-                        vacío (""), lo cual crea una "caja" vacía al final del link donde podremos insertar el icono.
-                    </li>
-                    <li>
-                        Asignamos un display "inline-block"
-                    </li>
-                    <li>
-                        Asignamos un tamaño para esta caja y un margen para que no esté "pegado" al link".
-                    </li>
-                    <li>
-                        Por ultimo agregamos una imagen con un "background-size: 100%;" lo cual hará
-                        que este icono abarque todo el espacio posible en su contenedor, pero sin afectar su aspect ratio.
-                    </li>
-                </ol>
-                <p>
-                    Con este método podemos hacer aún más fácil el entendimiento de nuestros links.
-                </p>
-                <h3>
-                    Estilando links como botones
-                </h3>
-                <p>
-                    Actualmente por lo general los links se suelen estilar más cómo botones.
-                    Por ejemplo, en el caso de una barra de navegación. Una forma sencilla de hacer esto es
-                    agregando un color de fondo, padding, centrando el texto y un borde redondeado.
-                </p>
-            </article>
+    content: "";
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 0.25em;
+    
+    background-image: url("external-link-52.png");
+    background-size: 100%;
+}</code></pre>
+</figure>
+<ol class="lista-ordenada lista-desordenada">
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Primero usamos un selector para un elemento "a" con un atributo "href" y el cual tiene que tener
+        como inicio "http" en su valor, esto indicaría un link a una nueva página, todo en conjunto con el
+        pseudoselector "::after" para agregar contenido al final del elemento seleccionado.
+    </li>
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Una vez editando las reglas de nuestro selector, usamos "content" con un string
+        vacío (""), lo cual crea una "caja" vacía al final del link donde podremos insertar el icono.
+    </li>
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Asignamos un display "inline-block"
+    </li>
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Asignamos un tamaño para esta caja y un margen para que no esté "pegado" al link.
+    </li>
+    <li class="lista-ordenada__elemento lista-desordenada__elemento">
+        Por último agregamos una imagen con un "background-size: 100%;" lo cual hará
+        que este icono abarque todo el espacio posible en su contenedor, pero sin afectar su aspect ratio.
+    </li>
+</ol>
+<p class="apunte__parrafo">
+    Con este método podemos hacer aún más fácil el entendimiento de nuestros links.
+</p>
+<h3 class="apunte__titulo-h3">
+    Estilando links como botones
+</h3>
+<p class="apunte__parrafo">
+    Actualmente por lo general los links se suelen estilar más cómo botones.
+    Por ejemplo, en el caso de una barra de navegación. Una forma sencilla de hacer esto es
+    agregando un color de fondo, padding, centrando el texto y un borde redondeado.
+</p>
