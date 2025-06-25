@@ -1,174 +1,193 @@
-<section id="Debugging JavaScript">
-                    <h2>
-                        Debugging JavaScript
-                    </h2>
+<h2 class="apunte__titulo-h2">
+    Debugging <span class="titulo-h2__span">JavaScript</span>
+</h2>
 
-<p>
+<p class="apunte__parrafo">
     Al trabajar con código JS es posible que nos enfrentemos
-    a diversos errores, los maś comunes son errores de sintaxis y errores de lógica.
+    a diversos errores, los más comunes son errores de sintaxis y errores de lógica.
 </p>
 
-<p>
+<p class="apunte__parrafo">
     Para los errores de sintaxis, la propia consola nos indicará en dónde se encuentran estos.
-    Una buena practica siempre es el verificar que nuestro código sea valido en primer
+    Una buena práctica siempre es verificar que nuestro código sea válido en primer
     lugar, esto se puede hacer comprobándolo por medio de un verificador, estos existen
     tanto en forma web como en forma de extensiones en algunos editores de código.
 </p>
 
-<p>Algunos problemas comunes en JavaScript son:</p>
+<p class="apunte__parrafo">Algunos problemas comunes en JavaScript son:</p>
 
-<ul>
-    <li>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
         Problemas de sintaxis o lógica.
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         Variables no definidas en el scope correcto.
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         Confusión con la palabra clave "this".
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         Uso incorrecto de loops.
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         Querer utilizar resultados de funciones asíncronas antes de tiempo.
     </li>
 </ul>
 
-<h3>La consola del navegador</h3>
+<h3 class="apunte__titulo-h3">La consola del navegador</h3>
 
-<p>
-    las "devtools" de un navegador son especialmente útiles a la hora de que querer
-    resolver errores en un código JavaScript, ya que para empezar, los errores serán reportados en la consola del navegador.
+<p class="apunte__parrafo">
+    Las "devtools" de un navegador son especialmente útiles a la hora de querer
+    resolver errores en un código JavaScript, ya que para empezar, los errores serán reportados en la consola del
+    navegador.
 </p>
 
-<h3>La "console API"</h3>
+<h3 class="apunte__titulo-h3">La "console API"</h3>
 
-<p>
+<p class="apunte__parrafo">
     Esta API es la que permite interactuar al código JS con la consola de los
-    navegadores. Como cualquier otra API esta tiene multiples funciones disponibles, algunas de las más comunes son:
+    navegadores. Como cualquier otra API, esta tiene múltiples funciones disponibles, algunas de las más comunes son:
 </p>
 
-<dl>
-    <dt>
-        console.log()
-    </dt>
-    <dd>
-        Muestra un mensaje.
-    </dd>
-    <dt>
-        console.error()
-    </dt>
-    <dd>
-        Muestra un error en rojo.
-    </dd>
-    <dt>
-        console.warn()
-    </dt>
-    <dd>
-        Muestra una advertencia en amarillo.
-    </dd>
-    <dt>
-        console.info()
-    </dt>
-    <dd>
-        Similar a "console.log", pero muestra la información de forma estilizada.
-    </dd>
-    <dt>
-        console.table()
-    </dt>
-    <dd>
-        Muestra la información en formato tabular.
-    </dd>
-    <dt>
-        console.clear()
-    </dt>
-    <dd>
-        Limpia la consola de mensajes anteriores.
-    </dd>
-    <dt>
-        console.time() - console.timeEnd()
-    </dt>
-    <dd>    
-        Mide el tiempo de ejecución entre llamadas.
-    </dd>
-    <dt>
-        console.assert()
-    </dt>
-    <dd>
-        Toma 2 parámetros, una condición y un mensaje, si la condición es falsa, se muestra el mensaje.
-    </dd>
-    <dt>
-        console.group() - console.groupEnd()
-    </dt>
-    <dd>
-        Envuelve mensajes relacionados.
-    </dd>
-    <dt>
-        console.count()
-    </dt>
-    <dd>
-        Lleva el conteo de las cantidad de veces que se ha utilizado.
-    </dd>
-</dl>
+<div class="lista-descriptiva">
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            console.log()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Muestra un mensaje.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            console.error()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Muestra un error en rojo.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            console.warn()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Muestra una advertencia en amarillo.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            console.info()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Similar a "console.log", pero muestra la información de forma estilizada.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            console.table()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Muestra la información en formato tabular.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            console.clear()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Limpia la consola de mensajes anteriores.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            console.time() - console.timeEnd()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Mide el tiempo de ejecución entre llamadas.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            console.assert()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Toma 2 parámetros, una condición y un mensaje, si la condición es falsa, se muestra el mensaje.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            console.group() - console.groupEnd()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Envuelve mensajes relacionados.
+        </dd>
+    </div>
+    <div class="lista-descriptiva__bloque">
+        <dt class="lista-descriptiva__titulo">
+            console.count()
+        </dt>
+        <dd class="lista-descriptiva__descripcion">
+            Lleva el conteo de las cantidad de veces que se ha utilizado.
+        </dd>
+    </div>
+</div>
 
-<p>
-    Es una buena practica utilizar estas funciones a lo largo de nuestro código para poder
-    revisar el estado de nuestros programas. De todas los métodos mencionados
+<p class="apunte__parrafo">
+    Es una buena práctica utilizar estas funciones a lo largo de nuestro código para poder
+    revisar el estado de nuestros programas. De todos los métodos mencionados
     anteriormente, los más comunes de usar son:
-</p> 
+</p>
 
-<ul>
-    <li>
+<ul class="lista-desordenada">
+    <li class="lista-desordenada__elemento">
         console.log()
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         console.error()
     </li>
-    <li>
+    <li class="lista-desordenada__elemento">
         console.table()
     </li>
 </ul>
 
-<p>
-    Siempre se deben de eliminar todos estos mensajes una vez
+<p class="apunte__parrafo">
+    Siempre se deben eliminar todos estos mensajes una vez
     comprobado el correcto funcionamiento del programa.
 </p>
 
-<h3>Manejando errores en JavaScript</h3>
+<h3 class="apunte__titulo-h3">Manejando errores en JavaScript</h3>
 
-<p>
+<p class="apunte__parrafo">
     HTML y CSS son lenguajes permisivos, es decir, que los errores en estos
     generalmente solo serán ignorados y no tendrán un gran impacto en nuestras
-    páginas. Sin embargo, javascript no es así, cuando en un código javascript
+    páginas. Sin embargo, JavaScript no es así, cuando en un código JavaScript
     se encuentran problemas, este lanzará errores.
 </p>
 
-<p>
+<p class="apunte__parrafo">
     Nuestra primera herramienta para poder manejar errores es por medio de las condicionales,
     de esta forma podemos ejecutar diferentes bloques de código dependiendo
-    de diferentes resultado como posibles errores.
+    de diferentes resultados como posibles errores.
 </p>
 
-<h3>Errores personalizados</h3>
+<h3 class="apunte__titulo-h3">Errores personalizados</h3>
 
-<p>
-    Es posible crear nuestros propios mensaje de error para tener aun más
-    control sobre estos. esto se realiza creando un nuevo objeto "Error" y
+<p class="apunte__parrafo">
+    Es posible crear nuestros propios mensajes de error para tener aún más
+    control sobre estos. Esto se realiza creando un nuevo objeto "Error" y
     con la palabra clave "throw", esto "arrojará" un objeto de tipo "error" para ser manejado.
 </p>
 
-<h3>try...catch</h3>
+<h3 class="apunte__titulo-h3">try...catch</h3>
 
-<p>Es la declaración especialmente diseñada para manejar errores</p>
+<p class="apunte__parrafo">Es la declaración especialmente diseñada para manejar errores</p>
 
-<figure>
-    <figcaption>Estructura try...catch</figcaption>
-    <span><pre>
-try{
-	código;
-}catch (error){
-	código en caso de error;
-}</pre></span>
-</figure>
-                </section>
+<figure class="figure">
+    <figcaption class="figure__titulo">Estructura try...catch</figcaption>
+    <pre class="codigo__bloque">
+  try{
+    código;
+  }catch (error){
+    código en caso de error;
+  }</pre>
+    </figure>

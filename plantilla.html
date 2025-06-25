@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    
     <link rel="stylesheet" href="styles/normalize.css">
     
     <link rel="stylesheet" href="styles/variables.css">
@@ -13,6 +16,8 @@
     <script type="module" src="scripts/temas_titulos.js"></script>
     <script type="module" src="scripts/funciones.js"></script>
     <script type="module" src="scripts/app.js"></script>
+
+    <script type="module" src="scripts/navegacion_lateral.js"></script>
 </head>
 <body>
     <header>
@@ -27,38 +32,97 @@
     </header>
 
     <main>
+        <aside class="navegacion">
+            <div class="navegacion__head">
+                <a href="index.html" class="head__enlace">
+                    <span class="head__logo material-symbols-outlined">
+                        Terminal
+                    </span>
+                </a>
+                <button class="navegacion__toggle">
+                    <span class="toggle__icono material-symbols-rounded">
+                        chevron_left
+                    </span>
+                </button>
+            </div>
+            <nav class="navegacion__indice">
+                <ul class="navegacion__lista navegacion__lista--principal">
+                    <li class="navegacion__elemento">
+                        <a href="#" class="navegacion__enlace">
+                            <span class="enlace__icono material-symbols-rounded">
+                                list 
+                            </span>
+                            <span class="navegacion__etiqueta">Índice</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navegacion__lista navegacion__lista--secundaria">
+                    <li class="navegacion__elemento">
+                        <a href="#" class="navegacion__enlace">
+                            <span class="enlace__icono material-symbols-rounded">
+                                code
+                            </span>
+                            <span class="navegacion__etiqueta">HTML</span>
+                        </a>
+                    </li>
+                    <li class="navegacion__elemento">
+                        <a href="#" class="navegacion__enlace">
+                            <span class="enlace__icono material-symbols-rounded">
+                                css
+                            </span>
+                            <span class="navegacion__etiqueta">CSS</span>
+                        </a>
+                    </li>
+                    <li class="navegacion__elemento">
+                        <a href="#" class="navegacion__enlace">
+                            <span class="enlace__icono material-symbols-rounded">
+                                JavaScript
+                            </span>
+                            <span class="navegacion__etiqueta">JavaScript</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="navegacion__footer">
+
+            </div>
+        </aside>
+
+
+
         <section class="indice">
             
             <nav class="indice__navegacion">
                 <ul class="indice__lista">
                 </ul>
             </nav>
+            <nav class="navegacion-principal">
+            
+                <h2 class="hidden navegacion-principal__titulo apunte__titulo-h2">Otros temas</h2>
+            
+                <ul class="navegacion-principal__lista indice__lista">
+                    <li class="navegacion-principal__elemento">
+                        <a class="navegacion-principal__enlace indice__enlace" href="plantilla.html?tema=HTML">
+                            HTML
+                        </a>
+                    </li>
+                    <li class="navegacion-principal__elemento">
+                        <a class="navegacion-principal__enlace indice__enlace" href="plantilla.html?tema=CSS">
+                            CSS
+                        </a>
+                    </li>
+                    <li class="navegacion-principal__elemento">
+                        <a class="navegacion-principal__enlace indice__enlace" href="plantilla.html?tema=JavaScript">
+                            JavaScript
+                        </a>
+                    </li>
+            
+                </ul>
+                </nav>
         </section>
         <article class="contenido">
         </article>
-        <nav class="navegacion-principal">
-
-            <h2 class="hidden navegacion-principal__titulo apunte__titulo-h2" >Otros temas</h2>
-            
-            <ul class="navegacion-principal__lista indice__lista">
-                <li class="navegacion-principal__elemento">
-                    <a class="navegacion-principal__enlace indice__enlace" href="plantilla.html?tema=HTML">
-                        HTML
-                    </a>
-                </li>
-                <li class="navegacion-principal__elemento">
-                    <a class="navegacion-principal__enlace indice__enlace" href="plantilla.html?tema=CSS">
-                        CSS
-                    </a>
-                </li>
-                <li class="navegacion-principal__elemento">
-                    <a class="navegacion-principal__enlace indice__enlace" href="plantilla.html?tema=JavaScript">
-                        JavaScript
-                    </a>
-                </li>
-                
-            </ul>
-        </nav>
     </main>
     <footer></footer>
 </body>
