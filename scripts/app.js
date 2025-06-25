@@ -11,7 +11,7 @@ temaPrincipal.textContent = tema;
 const cuerpo = document.querySelector(".contenido");
 
 //DOM insertar indice
-const navegacion = document.querySelector(".indice__lista")
+const navegacion = document.querySelector(".navegacion__submenu")
 
 switch(tema){
     case "HTML":

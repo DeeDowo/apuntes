@@ -6,7 +6,7 @@
     top: 0;
     left: 0;
 
-    height: 100vh;
+    height: 100dvh;
     width: 15rem;
 
     background-color: antiquewhite;
@@ -89,6 +89,9 @@
 .enlace__icono{
     font-size: 3rem;
 }
+.submenu__icono{
+    padding-right: 1rem;
+}
 .navegacion__etiqueta{
     padding-left: 1rem;
 }
@@ -99,3 +102,17 @@
 .colapsada .navegacion__etiqueta{
     opacity: 0;
 }  
+.colapsada .navegacion__toggle{
+    transform: rotate(180deg);
+}
+.navegacion__submenu{
+    overflow: auto;
+    height: 100px;
+}
+.navegacion__enlace--submenu{
+    justify-content: space-between;
+}
+.submenu{
+    display: flex;
+    align-items: center;
+}

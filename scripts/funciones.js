@@ -10,9 +10,9 @@ export function generarIndice(array, navegacion, tema){
         linkIndice.href="#";
         linkIndice.textContent = array[i];
         linkIndice.dataset.url= array[i];
-        linkIndice.setAttribute("class", "indice__enlace")
+        linkIndice.setAttribute("class", "submenu__enlace")
         const listItemIndice = document.createElement("li");
-        listItemIndice.setAttribute("class", "indice__elemento")
+        listItemIndice.setAttribute("class", "submenu__elemento")
         listItemIndice.appendChild(linkIndice);
 
         navegacion.appendChild(listItemIndice);
